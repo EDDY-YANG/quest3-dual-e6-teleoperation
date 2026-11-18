@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Real-log comparison methods — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>Real-log comparison methods</span><a href="methods.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="real-log-comparison-methods">Real-log comparison methods</h1>
+<p>This is an <strong>observational analysis of existing hardware recordings</strong>, not a matched-trajectory benchmark, a new robot experiment, or evidence of universal superiority. The main comparison uses <strong>recordings labelled left arm only</strong>. The supplemental summaries preserve both-arm and right-arm results separately. No improvement percentages or statistical-significance claims are made.</p>
+<h2 id="cohorts-and-provenance">Cohorts and provenance</h2>
+<p>All 191 recording directories containing an <code>events.jsonl</code> file were inventoried. Eligibility is based on metadata and explicit runtime fields, never on whether an outcome looks favorable.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Cohort</th>
+<th>Runtime identification</th>
+<th>Available recording dates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local DLS IK (no QP)</td>
+<td><code>LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED</code>, no QP motion-reference field and no RangedIK object</td>
+<td>2026-11-04</td>
+</tr>
+<tr>
+<td>Local DLS IK + QP</td>
+<td>The same local IK solver and <code>FILTERED_VELOCITY_ACCELERATION_BOX_QP</code></td>
+<td>2026-11-04</td>
+</tr>
+<tr>
+<td>RangedIK v7 direct</td>
+<td><code>RANGEDIK_DIRECT</code> and <code>e6_world_pose_geodesic_warm_v7</code></td>
+<td>2026-11-17</td>
+</tr>
+</tbody>
+</table></div>
+<p>Records must originate from an explicit headset Arm attempt (<code>metadata.source = paired_headset</code>). Read-only diagnostics, explicit-Stop-only records, missing/ambiguous algorithm tags, and other RangedIK versions are excluded from these three cohorts and listed in <code>excluded_records.json</code>. No-outcome Arm attempts remain in the audit; they are not silently removed or automatically labelled failures. Seven IK records, twelve QP records, and twenty-six v7 arm records meet the all-arm cohort definitions. The primary left-only comparison uses seven, twelve, and seventeen records respectively.</p>
+<p>The video dates supplied by the operator are 11/04, 11/11, and 11/17. <strong>The available QP cohort is dated 11/04; the inspected 11/11 logs already contain RangedIK direct variants.</strong> Results must therefore be labelled by the verified recorded algorithm, not presented as exact measurements of an unaligned video. No source-video/time synchronization has been established. No real-hardware execution of a RangedIK-plus-DLS cascade was identified; that offline prototype is not a column in this hardware comparison.</p>
+<p><code>per_record_metrics.csv</code> and <code>sessions.json</code> list recording identifiers, event-file SHA-256, byte counts, recorded controller-source hashes, profile information, selection counts and segment details. They do not publish IP addresses, MAC addresses, absolute workstation paths or raw trajectory coordinates. Original logs remain untouched and local. Public summaries are auditable, but reproducing the full statistics requires access to those original logs.</p>
+<p>The cohorts are algorithm families, not frozen parameter-controlled trials. For example, the QP cohort contains 10-degree and 30-degree IK/tracking-window settings, while its reference velocity/acceleration settings are recorded separately. Per-record parameter snapshots and each group's parameter-variant counts are included in the JSON. They must not be described as a single-variable ablation.</p>
+<h2 id="time-and-segment-handling">Time and segment handling</h2>
+<ul>
+<li>Discard <code>pre_roll</code> rows from all quantitative measures. They are context from earlier activity, not new observations of the current attempt.</li>
+<li>Use the embedded <strong><code>host_monotonic_s</code></strong> for feedback and controller events. Do not subtract <code>pc_perf_ns</code> from those timestamps: their origins differ by about 22 seconds in some early Windows recordings. The observed offset is preserved in the audit to make the issue explicit. Quest display timestamps and robot wall-clock fields are not mixed into this timebase.</li>
+<li>A motion segment begins at <code>GRIP_ENGAGED</code> and ends at the associated <code>STOP_RESULT.evidence.requested_at</code>. Stop-settling tails and idle intervals between grips are excluded from motion metrics. Segments without a verifiable closing event or fresh anchor feedback are explicitly excluded and counted.</li>
+<li>Require valid, connected, finite feedback, with the same connection generation and coordinate-frame identity as the segment anchor. Duplicate generation/timestamp samples retain the last captured value and are counted. Missing feedback is not interpolated or invented.</li>
+<li>A reference/goal must have a timestamp <strong>strictly earlier</strong> than the feedback sample. Equal Windows monotonic ticks cannot establish within-tick ordering and do not qualify as a new causal reference.</li>
+</ul>
+<h2 id="tracking-gaps-two-distinct-references">Tracking gaps: two distinct references</h2>
+<ol>
+<li><strong>Accepted-reference gap</strong> compares measured TCP feedback with the latest causally preceding <code>TARGET_ACK.pose_mm_deg</code> in the same Grip segment. It is the difference from the accepted command reference. It includes command queue, execution and sampling effects; it is neither inverse-kinematics numerical residual nor proof that the controller had already completed that reference.</li>
+<li><strong>Processed-requested-goal gap</strong> compares feedback with the latest causally preceding <code>INCREMENT_WINDOW</code> whose decision is <code>PLANNED</code>, using <code>target_pose_mm_deg</code>. Where that event is absent, an explicitly recorded <code>IK_SOLUTION.requested_pose_mm_deg</code> can be used and the source is reported. No accepted-reference value is substituted for a missing requested goal. The v7 field may already include the documented orientation-cone projection.</li>
+</ol>
+<p>Neither measure is labelled <strong>raw hand-to-robot tracking error</strong>. Early recorded goals use measured-base incremental mapping; v7 retains Grip-anchored world goals. That difference, together with the different freehand motions and start configurations, limits cross-cohort causal interpretation.</p>
+<p>For position, each observation is the Euclidean difference in millimetres. RMSE is <code>sqrt(mean(error_mm**2))</code>; P50 and P95 are empirical percentiles (NumPy's default linear percentile convention). Pose orientation uses the shortest SO(3) rotation-angle difference, with fixed-axis XYZ Euler angles interpreted as <code>Rz @ Ry @ Rx</code>, rather than subtracting Euler components. Orientation results are in degrees.</p>
+<p>Statistics are pooled over eligible measured samples at the native recording cadence (approximately 20 Hz); they are not averages of per-record medians. Per-record metrics are supplied so another aggregation can be evaluated. Longer records contribute more samples. Temporal samples are correlated, so no independence-based significance test is applied.</p>
+<h2 id="speed-and-command-continuity">Speed and command continuity</h2>
+<p><strong>Measured TCP speed</strong> is estimated as <code>norm(p[i]-p[i-1]) / (t[i]-t[i-1])</code>, in mm/s, using consecutive valid feedback samples within the same Grip segment, generation and frame. Intervals must satisfy <code>0 &lt; dt &lt;= 0.2 s</code>; larger gaps, duplicate times and connection changes are rejected. Speed is a finite-difference estimate at the recorded cadence, not a native high-rate velocity measurement. No smoothing, speed cap or outlier clipping is applied. Stationary periods within a held Grip remain included. Faster is not automatically better.</p>
+<p><strong>Joint-command step</strong> is <code>max_j(abs(q_cmd[i,j]-q_cmd[i-1,j]))</code>, in degrees, between successive accepted targets within a Grip segment. It is a reproducible command-continuity proxy, <strong>not a measure of physical vibration, acceleration or jerk</strong>. The first command of a new Grip is not compared with an old command from a previous Grip. Large increments are retained, including the observed v7 maximum of about 37.36 degrees.</p>
+<h2 id="stops-and-data-integrity">Stops and data integrity</h2>
+<p>Normal labelled Stop reasons are <code>GRIP_RELEASED</code>, <code>OPERATOR_DISARMED</code>, and <code>SERVICE_CLEANUP</code>; other reasons are listed as <strong>non-normal Stop events</strong>. Such a reason is not automatically proof of an unintended physical failure: for example, stale-input events can be caused by leaving the input session. Counts are per recorded arm, not independent dual-arm failures.</p>
+<p>Stop counts cover all eligible Arm-attempt records, including attempts without valid Grip tracking. Consequently <strong>no stop-per-Grip-minute rate is published</strong>, because that would mix a broader numerator with a narrower denominator. The Arm-record count and tracked Grip duration are reported separately. Explicit action rejections and writer errors are also retained. A record with zero accepted targets is not automatically counted as a failed experiment.</p>
+<p>Queue-drop counts come from actual saved <code>session_end</code> fields; missing counts are reported as unknown, not silently converted to complete data. Zero queue drops does not prove perfect network tracking or complete physical-state coverage.</p>
+<h2 id="reproduction-and-checks">Reproduction and checks</h2>
+<p>Use Python 3.10+ and NumPy with a new output directory:</p>
+<pre><code class="language-powershell">python analyze_real_logs.py --recordings &quot;PATH_TO_E6_TELEOP_RECORDINGS&quot; --output results_new
+</code></pre>
+<p>The program refuses to overwrite an existing results directory, checks source-file size/mtime for changes during reading, hashes the exact read bytes, and blocks network connections with a Python audit hook. It imports no robot driver, SDK control class or native solver.</p>
+<p>Eleven isolated mathematical checks cover position norm, Euler-wrap orientation, constant-speed finite differences, generation/gap/zero-time rejection, causal and equal-tick association, empty values and RMSE. These mathematical checks are never included in the real-record distributions.</p>
+<p>The retained raw-metric distributions and per-record summaries permit independent recomputation. The observed values describe tradeoffs in this historical dataset; they cannot establish that one controller is globally more accurate, safer or smoother under identical commands.</p>
+</main></body></html>

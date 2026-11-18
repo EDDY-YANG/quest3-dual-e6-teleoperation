@@ -1,0 +1,47 @@
+[
+  {
+    "video": 1,
+    "file": "assets/videos/demo_01.mp4",
+    "duration_s": 35.862,
+    "sha256": "dd63eb47aa5cd0fec53cb34fb27178c023f2e34d752f262bb5b7c00034cc4070",
+    "capture_date_provided_by_author": "2026-11-04",
+    "exact_log_alignment": "not established",
+    "modified_video": false
+  },
+  {
+    "video": 2,
+    "file": "assets/videos/demo_02.mp4",
+    "duration_s": 15.0,
+    "sha256": "274edb312b0900359aaaa425b981dc0dd92e9814342ecdebec54774203baf8ea",
+    "capture_date_provided_by_author": "2026-11-11",
+    "exact_log_alignment": "not established",
+    "modified_video": false
+  },
+  {
+    "video": 3,
+    "file": "assets/videos/demo_03.mp4",
+    "duration_s": 25.333,
+    "sha256": "0e52cc8c74930877ecfe89c7b0f65d011faa89c0cc6e5770b2884f1e9fc40b4d",
+    "capture_date_provided_by_author": "2026-11-11",
+    "exact_log_alignment": "not established",
+    "modified_video": false
+  },
+  {
+    "video": 4,
+    "file": "assets/videos/demo_04.mp4",
+    "duration_s": 78.345,
+    "sha256": "cddc66c7ce7996b59a491c9c8cd7762062bb602b4b07ce59ceeb62bb36c85f32",
+    "capture_date_provided_by_author": "2026-11-17",
+    "exact_log_alignment": "not established",
+    "modified_video": false
+  },
+  {
+    "video": 5,
+    "file": "assets/videos/demo_05.mp4",
+    "duration_s": 47.033,
+    "sha256": "6ce059e80d14427972801abed8657e8264e1b01f08fb2b80605ffc9dad2dd82a",
+    "capture_date_provided_by_author": "2026-11-17",
+    "exact_log_alignment": "not established",
+    "modified_video": false
+  }
+]

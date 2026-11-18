@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>仓库范围与完整 SDK 的后续发布 — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>仓库范围与完整 SDK 的后续发布</span><a href="GITHUB_PREPARATION.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="仓库范围与完整-sdk-的后续发布">仓库范围与完整 SDK 的后续发布</h1>
+<p>本仓库发布项目展示网页、五段演示视频、系统图、真实日志统计摘要及分析/绘图工具。完整 SDK 的机器人控制源码、设备配置、Windows 原生库、原始运行日志和私有环境保留在单独工作包中，未随本展示仓库发布。操作手册和代码导读描述该单独 SDK，不代表 clone 本仓库即可控制机器人。</p>
+<p>以下是未来公开完整 SDK 前需要完成的工作，不是访问本展示网页的安装步骤。</p>
+<h2 id="可以保留的工程内容">可以保留的工程内容</h2>
+<ul>
+<li>README、代码导读、统一入口、各链路源码、测试、固定依赖与许可。</li>
+<li>机器人／手柄可视化模型与第三方源码需要连同原 LICENSE、manifest 和来源归属保留。</li>
+<li><code>packages/05_ranged_ik/files/runtime/rangedik_native/</code> 是交付所需原生库，不是普通会话日志目录。不要用一条全局 <code>runtime/</code> 忽略规则误删它而仍声称下载即可运行。</li>
+</ul>
+<h2 id="当前包中需明确处理的本机内容">当前包中需明确处理的本机内容</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>当前位置</th>
+<th>发布前处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>packages/10_sdk_runtime/files/config.json</code></td>
+<td>用经过审阅的通用初始配置／模板替换公开副本；本机配置另存，核对同 IP 双链路的源绑定要求</td>
+</tr>
+<tr>
+<td><code>packages/09_features/files/start_position_presets.json</code></td>
+<td>包含具体设备身份与运动目标；公开副本不能把他人 MAC／起点当作通用可执行默认值，需设计首次配置方式并验证</td>
+</tr>
+<tr>
+<td><code>packages/11_offline_algorithms/files/experiments/data/</code></td>
+<td>当前含真实历史记录、模型和预检信息；保留在本地，公开时选择经授权审阅的数据或明确外部数据安装步骤</td>
+</tr>
+<tr>
+<td>包 11 的历史结果／README／交接文件</td>
+<td>检查机器路径、身份、网络信息及结果归属；删去个人材料不能改变算法失败结论</td>
+</tr>
+<tr>
+<td>其它历史开发文档、截图、交接文件</td>
+<td>本地历史并非自动公开资料；检查真实地址、临时码、用户名、机器路径与现场记录</td>
+</tr>
+<tr>
+<td><code>app/</code>、<code>assembly-state.json</code>、虚拟环境、会话日志、TLS 私钥</td>
+<td>不提交生成结果或秘密材料；根 <code>.gitignore</code> 已覆盖主要生成目录和密钥后缀</td>
+</tr>
+</tbody>
+</table></div>
+<p>网络示例可使用文档明确标注的私有地址；不要把本机实际连接映射／设备身份包装成所有用户通用的事实。</p>
+<h2 id="特别注意文件清单的一致性">特别注意文件清单的一致性</h2>
+<p>各 <code>packages/&lt;包&gt;/package.json</code> 的 <code>files</code> 是组装输入清单。<strong>只把历史数据加进 <code>.gitignore</code>，却仍在清单中要求它，会使别人 clone 后 assemble 失败。</strong></p>
+<p>准备公开副本时，应一起完成：</p>
+<ol>
+<li>选择公开的源码／文档／数据范围，保留个人完整包。</li>
+<li>对配置提供真实可用的首次初始化流程；对不随仓库分发的研究数据明确来源、授权和安装位置。</li>
+<li>同步公开副本的文件清单、依赖、文档链接和验证条件，不以虚构数据填补缺失输入。</li>
+<li>从一个新的目录按 README 执行安装、组装与无设备检查，确认没有依赖原电脑的私有文件。</li>
+<li>查看实际待提交文件，确认没有私钥、采集日志或未经审阅的历史资料，再由用户发布。</li>
+</ol>
+<p>根 <code>.gitignore</code> 故意没有静默排除仍被清单依赖的配置和研究数据，以免制造一个无法组装却看似可发布的仓库。它不是完整脱敏工具。</p>
+<p>本 README 对当前行为的说明并不等于上述公开副本改造已经完成。若只上传 README 文本，保留与实际仓库结构一致的相对链接；若上传整个 SDK，先完成本清单。</p>
+</main></body></html>

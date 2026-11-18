@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.log
+analysis/results/
+analysis/results_v2/
+analysis/results_v3/
+*.zip
+/runtime/
+/CODEX_HANDOFF.md
+/LOCAL_REVIEW.json
+/external/
+/.venv/

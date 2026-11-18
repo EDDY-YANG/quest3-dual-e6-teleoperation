@@ -1,0 +1,11 @@
+{
+  "self_checks": {
+    "checks_passed": 11,
+    "scope": "MATHEMATICAL_SELF_CHECKS_ONLY_NOT_HARDWARE_DATA"
+  },
+  "independent_metric_checks": 18,
+  "private_identifier_scan": "PASS",
+  "source_files_read_only": true,
+  "script_sha256": "f64d63e39046b7464e7adb070e4929f1c076b0b4168b656d1eb76ad6461b4ea1",
+  "final_results": "results_v4"
+}

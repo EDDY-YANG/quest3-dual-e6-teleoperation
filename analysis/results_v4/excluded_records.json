@@ -1,0 +1,1506 @@
+[
+  {
+    "record_id": "2026-11-04-18-24-09-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "READ_ONLY_DIAGNOSTIC"
+  },
+  {
+    "record_id": "2026-11-04-18-45-26-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-45-53-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-46-06-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-46-26-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-46-53-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-38-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-39-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-41-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-42-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-42-left-v2",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-49-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-18-57-51-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-00-23-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-01-22-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-01-32-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-01-41-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-02-33-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-02-51-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-19-12-57-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-20-03-01-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-20-03-09-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-20-03-30-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-20-03-39-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "UNLABELLED_OR_LEGACY_VENDOR_IK"
+  },
+  {
+    "record_id": "2026-11-04-21-17-30-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-04-21-17-32-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-04-21-22-10-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-11-19-05-57-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-06-06-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-19-06-10-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-06-52-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-07-08-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-07-14-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-07-22-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-07-49-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-07-59-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-08-21-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-10-31-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-10-49-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-11-03-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-11-44-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-12-03-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-12-17-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-13-03-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-19-17-27-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-17-42-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-17-54-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-18-11-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-19-18-14-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-18-32-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-18-42-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-18-58-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-19-19-11-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_unloaded_wide_direct_v2",
+    "profile_sha256": "ac9f1e9313bddbfe9508ab897c8d2f05be5328b25e4cf839cac93c0c4437c7af",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-20-50-08-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_translation_direct_v3",
+    "profile_sha256": "7c8b6a3bcafbce3f001b20f9b2aa924b0a96bd44070b9b9718d1d350693f281e",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-20-50-16-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_translation_direct_v3",
+    "profile_sha256": "7c8b6a3bcafbce3f001b20f9b2aa924b0a96bd44070b9b9718d1d350693f281e",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-20-51-58-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_translation_direct_v3",
+    "profile_sha256": "7c8b6a3bcafbce3f001b20f9b2aa924b0a96bd44070b9b9718d1d350693f281e",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-20-52-15-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_translation_direct_v3",
+    "profile_sha256": "7c8b6a3bcafbce3f001b20f9b2aa924b0a96bd44070b9b9718d1d350693f281e",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-20-52-24-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_translation_direct_v3",
+    "profile_sha256": "7c8b6a3bcafbce3f001b20f9b2aa924b0a96bd44070b9b9718d1d350693f281e",
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-20-52-45-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-20-52-46-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-20-52-47-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-20-52-49-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-20-52-51-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-06-50-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-07-17-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-07-22-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-07-24-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-07-37-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-24-51-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "d03f5aa637b172e4b7112217d8e01cf57152861bbcde2370e5d408f8b7734f9a",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-11-21-25-11-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-11-21-25-12-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-07-04-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-07-29-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-07-31-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-07-47-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-07-49-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-14-15-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-16-17-51-12-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-51-42-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-52-10-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-52-42-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-55-36-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-56-29-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-56-48-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-17-56-51-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-57-12-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-57-37-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-57-58-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-58-09-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-17-59-05-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-18-31-41-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-18-46-44-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-04-left",
+    "reason": "OUTSIDE_THREE_VERIFIED_ALGORITHM_GROUPS",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_anchor_direct_v4",
+    "profile_sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    }
+  },
+  {
+    "record_id": "2026-11-16-18-47-20-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-21-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-23-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-25-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-26-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-34-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-36-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-37-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-46-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-47-48-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-16-18-54-34-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-17-38-43-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-17-39-02-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-17-59-34-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-00-33-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-01-24-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-02-15-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-08-07-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-09-56-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-09-57-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-09-58-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-18-14-57-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-02-39-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-07-10-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-10-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-33-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-33-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-35-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-35-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-38-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-07-38-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-09-17-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-09-17-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-09-20-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-09-20-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-09-26-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-09-26-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-19-26-20-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-26-20-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-27-57-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-27-57-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-30-26-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-30-26-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-36-08-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-19-36-08-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:pc_console"
+  },
+  {
+    "record_id": "2026-11-17-20-06-27-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-06-27-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-07-05-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-07-05-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-07-06-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-07-06-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-07-08-left",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  },
+  {
+    "record_id": "2026-11-17-20-07-08-right",
+    "reason": "NOT_HEADSET_ARM_RECORD",
+    "source": "EXPLICIT_STOP_ONLY:paired_headset"
+  }
+]

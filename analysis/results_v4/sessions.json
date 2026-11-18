@@ -1,0 +1,4640 @@
+[
+  {
+    "record_id": "2026-11-04-20-26-28-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 460,
+      "non_preroll_rows": 231,
+      "feedback_rows": 68,
+      "session_end_rows": 1,
+      "source_sha256": "43af0a4176c6a0bea0aeb637e23686a0684d377b53f6fd32530172dc44f8a4e4",
+      "source_bytes": 1641798,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.15253870000312
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0.125,
+    "valid_speed_duration_s": 0.09399999999732245,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.125,
+        "valid_feedback_count": 3,
+        "accepted_target_count": 0,
+        "requested_goal_count": 1,
+        "valid_speed_duration_s": 0.09399999999732245,
+        "end_reason": "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 2,
+        "mean": 0.23044419182305773,
+        "rmse": 0.3065233445723916,
+        "p50": 0.23044419182305773,
+        "p95": 0.4123511695081342,
+        "max": 0.4325630559175872
+      }
+    },
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-20-26-37-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 361,
+      "non_preroll_rows": 147,
+      "feedback_rows": 45,
+      "session_end_rows": 1,
+      "source_sha256": "4f7dcf8b961b58fe6d11ae903608c68d08f9d8b5ce8963425b947e6805c5caf5",
+      "source_bytes": 1516635,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152268100005458
+    },
+    "recorded_grip_segments": 0,
+    "closed_grip_segments_used": 0,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0,
+    "valid_speed_duration_s": 0,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {},
+    "segments": [],
+    "metrics": {},
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-20-26-44-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 392,
+      "non_preroll_rows": 936,
+      "feedback_rows": 252,
+      "session_end_rows": 1,
+      "source_sha256": "99f6576d8d3cd313781a2940953705d320bf39bbae1e91795ba42604d55fb904",
+      "source_bytes": 3474028,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152394050011353
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 9,
+    "grip_duration_s": 1.2969999999913853,
+    "valid_speed_duration_s": 1.2189999999973224,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 1.2969999999913853,
+        "valid_feedback_count": 27,
+        "accepted_target_count": 9,
+        "requested_goal_count": 9,
+        "valid_speed_duration_s": 1.2189999999973224,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 26,
+        "mean": 43.753868637105704,
+        "rmse": 55.20100897018424,
+        "p50": 39.54624819117555,
+        "p95": 107.7188144960386,
+        "max": 117.39000984269445
+      },
+      "requested_position_mm": {
+        "n": 25,
+        "mean": 4.924217345037539,
+        "rmse": 5.252546828982437,
+        "p50": 4.39759968886724,
+        "p95": 7.8597612644869965,
+        "max": 8.661898140705398
+      },
+      "requested_orientation_deg": {
+        "n": 25,
+        "mean": 0.6347958135516869,
+        "rmse": 0.6993590473466385,
+        "p50": 0.583146477264708,
+        "p95": 1.032435387044198,
+        "max": 1.2536573426600106
+      },
+      "reference_position_mm": {
+        "n": 24,
+        "mean": 4.980178355689104,
+        "rmse": 5.308530109026598,
+        "p50": 4.6028380629536025,
+        "p95": 7.865595929256118,
+        "max": 8.661898140705398
+      },
+      "reference_orientation_deg": {
+        "n": 24,
+        "mean": 0.6127167024819756,
+        "rmse": 0.6780721261018446,
+        "p50": 0.5564377877095388,
+        "p95": 1.0228944757637177,
+        "max": 1.2536573426600106
+      },
+      "command_joint_step_deg": {
+        "n": 8,
+        "mean": 6.3834,
+        "rmse": 6.447961734726719,
+        "p50": 6.210349999999998,
+        "p95": 7.771679999999999,
+        "max": 8.278199999999998
+      }
+    },
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-20-27-01-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 385,
+      "non_preroll_rows": 1836,
+      "feedback_rows": 360,
+      "session_end_rows": 1,
+      "source_sha256": "34622b091e2a6ec5a3e46f08c81b6df1809aa72bed835e6b757b58c07fa6091c",
+      "source_bytes": 5270044,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152484650000638
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 48,
+    "grip_duration_s": 7.046999999991385,
+    "valid_speed_duration_s": 6.953000000008615,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 7.046999999991385,
+        "valid_feedback_count": 146,
+        "accepted_target_count": 48,
+        "requested_goal_count": 48,
+        "valid_speed_duration_s": 6.953000000008615,
+        "end_reason": "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 145,
+        "mean": 62.72304711998315,
+        "rmse": 91.38899252410702,
+        "p50": 33.82561417707794,
+        "p95": 198.98453898824872,
+        "max": 306.70042629923233
+      },
+      "requested_position_mm": {
+        "n": 144,
+        "mean": 6.97681322362394,
+        "rmse": 8.987640003241523,
+        "p50": 5.588070832422059,
+        "p95": 18.45685869223406,
+        "max": 21.471389346935545
+      },
+      "requested_orientation_deg": {
+        "n": 144,
+        "mean": 2.2264862501976057,
+        "rmse": 2.7532701784130085,
+        "p50": 1.7504674354976077,
+        "p95": 6.092721600504087,
+        "max": 9.118316240911694
+      },
+      "reference_position_mm": {
+        "n": 142,
+        "mean": 6.775517926622809,
+        "rmse": 8.939410497657448,
+        "p50": 5.397630295945048,
+        "p95": 18.484465878666704,
+        "max": 21.471389346935545
+      },
+      "reference_orientation_deg": {
+        "n": 142,
+        "mean": 2.208170644146142,
+        "rmse": 2.7600909460298144,
+        "p50": 1.6726949127684785,
+        "p95": 6.102399198413871,
+        "max": 9.118316240911694
+      },
+      "command_joint_step_deg": {
+        "n": 47,
+        "mean": 3.9441680851063836,
+        "rmse": 4.552642478707961,
+        "p50": 3.1300999999999988,
+        "p95": 8.329269999999998,
+        "max": 11.7483
+      }
+    },
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-20-27-23-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 378,
+      "non_preroll_rows": 326,
+      "feedback_rows": 100,
+      "session_end_rows": 1,
+      "source_sha256": "1c53256f3c3d297701fe178618eda0660724c8691f4ce63c7943538b2e63a04a",
+      "source_bytes": 1904642,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.15333759999799
+    },
+    "recorded_grip_segments": 0,
+    "closed_grip_segments_used": 0,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0,
+    "valid_speed_duration_s": 0,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {},
+    "segments": [],
+    "metrics": {},
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-20-27-34-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 384,
+      "non_preroll_rows": 673,
+      "feedback_rows": 186,
+      "session_end_rows": 1,
+      "source_sha256": "4495062ac2ab8ee7b1fc076ada1ea3837d53049a4f7f8e9d03f11801469df06a",
+      "source_bytes": 2847947,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152117249997332
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 5,
+    "grip_duration_s": 0.7810000000026776,
+    "valid_speed_duration_s": 0.7350000000005821,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.7810000000026776,
+        "valid_feedback_count": 17,
+        "accepted_target_count": 5,
+        "requested_goal_count": 5,
+        "valid_speed_duration_s": 0.7350000000005821,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 16,
+        "mean": 28.4755549275338,
+        "rmse": 36.85840898446077,
+        "p50": 27.85394433226526,
+        "p95": 66.43746442248779,
+        "max": 75.69621465835321
+      },
+      "requested_position_mm": {
+        "n": 15,
+        "mean": 3.872409035694795,
+        "rmse": 4.021413341998867,
+        "p50": 3.8279823271006563,
+        "p95": 5.283212467452336,
+        "max": 5.424298137012706
+      },
+      "requested_orientation_deg": {
+        "n": 15,
+        "mean": 1.0997075948294845,
+        "rmse": 1.2228048584996065,
+        "p50": 1.1384299517469711,
+        "p95": 1.758654653327605,
+        "max": 1.8939306343615043
+      },
+      "reference_position_mm": {
+        "n": 14,
+        "mean": 3.713791199604998,
+        "rmse": 3.9014414338449868,
+        "p50": 3.7761579083610126,
+        "p95": 5.293290015278077,
+        "max": 5.424298137012706
+      },
+      "reference_orientation_deg": {
+        "n": 14,
+        "mean": 1.010595846334609,
+        "rmse": 1.15120009954277,
+        "p50": 0.8371711693608141,
+        "p95": 1.7683172234014553,
+        "max": 1.8939306343615043
+      },
+      "command_joint_step_deg": {
+        "n": 4,
+        "mean": 1.3340749999999983,
+        "rmse": 1.3594757399453636,
+        "p50": 1.2136499999999995,
+        "p95": 1.7008299999999947,
+        "max": 1.781499999999994
+      }
+    },
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-20-27-46-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik",
+    "algorithm_label": "Local DLS IK (no QP)",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": null,
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": null,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": null,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 385,
+      "non_preroll_rows": 912,
+      "feedback_rows": 175,
+      "session_end_rows": 1,
+      "source_sha256": "f86d1ef907d022208d9f4276bd5265ab81a289a473db48c5d8b2750949b0d5c9",
+      "source_bytes": 3266584,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.151975900010207
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 25,
+    "grip_duration_s": 3.577999999994063,
+    "valid_speed_duration_s": 3.547000000005937,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 3.577999999994063,
+        "valid_feedback_count": 77,
+        "accepted_target_count": 25,
+        "requested_goal_count": 25,
+        "valid_speed_duration_s": 3.547000000005937,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 76,
+        "mean": 61.27023061637883,
+        "rmse": 80.52382920271587,
+        "p50": 42.64755403250865,
+        "p95": 145.3658040932488,
+        "max": 223.52593459825684
+      },
+      "requested_position_mm": {
+        "n": 74,
+        "mean": 6.715241246801825,
+        "rmse": 7.627533537394298,
+        "p50": 5.873010243052592,
+        "p95": 12.830792706319071,
+        "max": 14.445286093573536
+      },
+      "requested_orientation_deg": {
+        "n": 74,
+        "mean": 3.794034265962742,
+        "rmse": 4.05120195078041,
+        "p50": 3.698709869110936,
+        "p95": 6.079300169090322,
+        "max": 6.704058762767246
+      },
+      "reference_position_mm": {
+        "n": 73,
+        "mean": 6.624581500712973,
+        "rmse": 7.6166761247061405,
+        "p50": 5.90644309957688,
+        "p95": 12.845139220804112,
+        "max": 14.445286093573536
+      },
+      "reference_orientation_deg": {
+        "n": 73,
+        "mean": 3.7289721822870527,
+        "rmse": 4.000686986003237,
+        "p50": 3.4860016687655766,
+        "p95": 6.079516148788929,
+        "max": 6.704058762767246
+      },
+      "command_joint_step_deg": {
+        "n": 24,
+        "mean": 2.9852291666666666,
+        "rmse": 3.160841721822949,
+        "p50": 2.834249999999998,
+        "p95": 5.1137450000000015,
+        "max": 5.4176
+      }
+    },
+    "controller_source_sha256": "fab250319f71a33f156ad519382470ad86dfc2a74bccd0684c79c98e4a46a6e3"
+  },
+  {
+    "record_id": "2026-11-04-21-02-11-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 399,
+      "non_preroll_rows": 917,
+      "feedback_rows": 235,
+      "session_end_rows": 1,
+      "source_sha256": "de5aa232ae196db8c6d9d4840ab68906949d801f9fab589cdda609abfd9ef543",
+      "source_bytes": 3590496,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.15201320000319
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 9,
+    "grip_duration_s": 1.5309999999881256,
+    "valid_speed_duration_s": 1.5,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 1.5309999999881256,
+        "valid_feedback_count": 33,
+        "accepted_target_count": 9,
+        "requested_goal_count": 9,
+        "valid_speed_duration_s": 1.5,
+        "end_reason": "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 32,
+        "mean": 14.439206804581184,
+        "rmse": 22.387120229137153,
+        "p50": 8.954291977850911,
+        "p95": 49.35976407507973,
+        "max": 83.60532464312423
+      },
+      "requested_position_mm": {
+        "n": 30,
+        "mean": 10.20428899632214,
+        "rmse": 13.664484744237782,
+        "p50": 7.444919643367902,
+        "p95": 26.85435291880637,
+        "max": 30.715983370585224
+      },
+      "requested_orientation_deg": {
+        "n": 30,
+        "mean": 2.107309481158556,
+        "rmse": 2.3336258853685363,
+        "p50": 1.8883702719703424,
+        "p95": 3.3972173561501937,
+        "max": 3.4675512395867827
+      },
+      "reference_position_mm": {
+        "n": 29,
+        "mean": 2.486033443233736,
+        "rmse": 3.727286689324731,
+        "p50": 1.7439689857677725,
+        "p95": 8.27897096849647,
+        "max": 12.001275073508507
+      },
+      "reference_orientation_deg": {
+        "n": 29,
+        "mean": 0.5929458801277969,
+        "rmse": 0.6863952869521139,
+        "p50": 0.6213346056538754,
+        "p95": 1.1909739157933914,
+        "max": 1.4077522199666772
+      },
+      "command_joint_step_deg": {
+        "n": 8,
+        "mean": 0.877716203328295,
+        "rmse": 0.9758260258561396,
+        "p50": 0.8350690611061342,
+        "p95": 1.5602853663942315,
+        "max": 1.7928915363645501
+      }
+    },
+    "controller_source_sha256": "ed096a68d0b4f5b7e72472e2f4b28277bd971069c9fd17ec2412e3f7a8524be2"
+  },
+  {
+    "record_id": "2026-11-04-21-02-27-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 386,
+      "non_preroll_rows": 341,
+      "feedback_rows": 93,
+      "session_end_rows": 1,
+      "source_sha256": "c18f8666d589b06f76a801a6eee66e4509a99ab0a619f111e24c2ca06eded4eb",
+      "source_bytes": 2445076,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152126100004885
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 2,
+    "grip_duration_s": 0.39100000000325963,
+    "valid_speed_duration_s": 0.375,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.39100000000325963,
+        "valid_feedback_count": 9,
+        "accepted_target_count": 2,
+        "requested_goal_count": 2,
+        "valid_speed_duration_s": 0.375,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 8,
+        "mean": 3.9064460864315755,
+        "rmse": 6.377909315540423,
+        "p50": 0.3774808711584537,
+        "p95": 12.03627609582248,
+        "max": 12.154428958209671
+      },
+      "requested_position_mm": {
+        "n": 6,
+        "mean": 3.404511819046533,
+        "rmse": 3.9198663555128,
+        "p50": 3.6213505344005688,
+        "p95": 5.3316303638939715,
+        "max": 5.3325867667683795
+      },
+      "requested_orientation_deg": {
+        "n": 6,
+        "mean": 1.8010401122550583,
+        "rmse": 2.1106196556209755,
+        "p50": 1.8274796543088023,
+        "p95": 2.902247058524681,
+        "max": 2.9027238963770468
+      },
+      "reference_position_mm": {
+        "n": 5,
+        "mean": 0.9012955319751231,
+        "rmse": 0.9533928778032389,
+        "p50": 0.8671789677918684,
+        "p95": 1.2556146770745764,
+        "max": 1.2583814279520464
+      },
+      "reference_orientation_deg": {
+        "n": 5,
+        "mean": 0.5799404276661326,
+        "rmse": 0.5874216140181515,
+        "p50": 0.5778296664927169,
+        "p95": 0.6811990560676179,
+        "max": 0.6814244136029577
+      },
+      "command_joint_step_deg": {
+        "n": 1,
+        "mean": 0.33414571150646566,
+        "rmse": 0.33414571150646566,
+        "p50": 0.33414571150646566,
+        "p95": 0.33414571150646566,
+        "max": 0.33414571150646566
+      }
+    },
+    "controller_source_sha256": "ed096a68d0b4f5b7e72472e2f4b28277bd971069c9fd17ec2412e3f7a8524be2"
+  },
+  {
+    "record_id": "2026-11-04-21-02-35-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 386,
+      "non_preroll_rows": 2573,
+      "feedback_rows": 382,
+      "session_end_rows": 1,
+      "source_sha256": "874cf4750ce7c4e7f8fa90d50b9a69eea0032848560c9e9c1fd32056de215717",
+      "source_bytes": 7305695,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152977299996188
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 78,
+    "grip_duration_s": 12.125,
+    "valid_speed_duration_s": 12.061999999990803,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 12.125,
+        "valid_feedback_count": 254,
+        "accepted_target_count": 78,
+        "requested_goal_count": 79,
+        "valid_speed_duration_s": 12.061999999990803,
+        "end_reason": "IK_NO_CONTINUOUS_SOLUTION_WITHIN_10_DEG",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 253,
+        "mean": 21.018250906941013,
+        "rmse": 25.609395025113045,
+        "p50": 18.83735492333779,
+        "p95": 49.625689393333495,
+        "max": 69.39965025247582
+      },
+      "requested_position_mm": {
+        "n": 252,
+        "mean": 9.069542597175753,
+        "rmse": 10.84829804727916,
+        "p50": 7.692307243169479,
+        "p95": 19.934108492816772,
+        "max": 32.60083827319532
+      },
+      "requested_orientation_deg": {
+        "n": 252,
+        "mean": 1.521261855019615,
+        "rmse": 1.9031210168541768,
+        "p50": 1.1580724517517744,
+        "p95": 3.549064454799701,
+        "max": 7.101700227388777
+      },
+      "reference_position_mm": {
+        "n": 250,
+        "mean": 2.4922835176908618,
+        "rmse": 3.1611137861038316,
+        "p50": 1.980200955426505,
+        "p95": 6.538558312131883,
+        "max": 9.427823676524364
+      },
+      "reference_orientation_deg": {
+        "n": 250,
+        "mean": 0.45503574976421146,
+        "rmse": 0.5800961448183386,
+        "p50": 0.3662554201748154,
+        "p95": 1.1623158583923467,
+        "max": 2.2029151614395843
+      },
+      "command_joint_step_deg": {
+        "n": 77,
+        "mean": 0.9461340688558406,
+        "rmse": 1.1523260688509505,
+        "p50": 0.6991995416621819,
+        "p95": 2.294157587543507,
+        "max": 2.9605333702560372
+      }
+    },
+    "controller_source_sha256": "ed096a68d0b4f5b7e72472e2f4b28277bd971069c9fd17ec2412e3f7a8524be2"
+  },
+  {
+    "record_id": "2026-11-04-21-02-55-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 490,
+      "non_preroll_rows": 632,
+      "feedback_rows": 146,
+      "session_end_rows": 1,
+      "source_sha256": "9f377a9821b9a07954f317931536dbc6aa7087361d093ebdf7d2a3b0a0fb6095",
+      "source_bytes": 3209707,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.15174580000108
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 10,
+    "grip_duration_s": 1.5460000000020955,
+    "valid_speed_duration_s": 1.5310000000026776,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 1.5460000000020955,
+        "valid_feedback_count": 34,
+        "accepted_target_count": 10,
+        "requested_goal_count": 10,
+        "valid_speed_duration_s": 1.5310000000026776,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 33,
+        "mean": 8.636445269738008,
+        "rmse": 11.861378284175167,
+        "p50": 6.303251653004536,
+        "p95": 25.005157304898418,
+        "max": 35.36278006000655
+      },
+      "requested_position_mm": {
+        "n": 31,
+        "mean": 5.279391045054048,
+        "rmse": 6.811476684447092,
+        "p50": 4.845284261132048,
+        "p95": 14.067737533415444,
+        "max": 16.46105134501949
+      },
+      "requested_orientation_deg": {
+        "n": 31,
+        "mean": 1.0746745627126186,
+        "rmse": 1.167924777664223,
+        "p50": 1.0139150055855437,
+        "p95": 1.9320253571820947,
+        "max": 2.049281944324573
+      },
+      "reference_position_mm": {
+        "n": 30,
+        "mean": 1.5294969011733253,
+        "rmse": 2.0268760109643087,
+        "p50": 1.180749900538903,
+        "p95": 4.2602152550441375,
+        "max": 5.683140582671907
+      },
+      "reference_orientation_deg": {
+        "n": 30,
+        "mean": 0.3540718714510316,
+        "rmse": 0.3844666351594898,
+        "p50": 0.3048128232494825,
+        "p95": 0.6100899602105753,
+        "max": 0.7589186124372962
+      },
+      "command_joint_step_deg": {
+        "n": 9,
+        "mean": 0.6352390739592535,
+        "rmse": 0.676455115311421,
+        "p50": 0.6398092976826195,
+        "p95": 0.9687223190142937,
+        "max": 1.0268087601080929
+      }
+    },
+    "controller_source_sha256": "ed096a68d0b4f5b7e72472e2f4b28277bd971069c9fd17ec2412e3f7a8524be2"
+  },
+  {
+    "record_id": "2026-11-04-21-03-05-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 10.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 416,
+      "non_preroll_rows": 413,
+      "feedback_rows": 120,
+      "session_end_rows": 1,
+      "source_sha256": "f37ba4c597f42a83d6a5a335cbc0aa71ae2f7983a652205efcae52771e75fe19",
+      "source_bytes": 2785327,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152314100000833
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 1,
+    "grip_duration_s": 0.3289999999979045,
+    "valid_speed_duration_s": 0.2659999999887077,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.3289999999979045,
+        "valid_feedback_count": 7,
+        "accepted_target_count": 1,
+        "requested_goal_count": 1,
+        "valid_speed_duration_s": 0.2659999999887077,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 6,
+        "mean": 0.2559081146216542,
+        "rmse": 0.45953668117527496,
+        "p50": 0.09772337221611904,
+        "p95": 0.8645592064909208,
+        "max": 1.105770828732116
+      },
+      "requested_position_mm": {
+        "n": 3,
+        "mean": 4.050138153656358,
+        "rmse": 4.050171176752394,
+        "p50": 4.061356127497808,
+        "p95": 4.061977636710712,
+        "max": 4.062046693289924
+      },
+      "requested_orientation_deg": {
+        "n": 3,
+        "mean": 1.120221919518795,
+        "rmse": 1.1202224977446509,
+        "p50": 1.1208432612608754,
+        "p95": 1.1211618076256695,
+        "max": 1.1211972016662022
+      },
+      "reference_position_mm": {
+        "n": 2,
+        "mean": 0.9310803778549139,
+        "rmse": 0.9312376597947275,
+        "p50": 0.9310803778549139,
+        "p95": 0.9464835036657447,
+        "max": 0.9481949620891704
+      },
+      "reference_orientation_deg": {
+        "n": 2,
+        "mean": 0.2600059058919376,
+        "rmse": 0.2600091349075355,
+        "p50": 0.2600059058919376,
+        "p95": 0.2611721394487602,
+        "max": 0.2613017209550738
+      }
+    },
+    "controller_source_sha256": "ed096a68d0b4f5b7e72472e2f4b28277bd971069c9fd17ec2412e3f7a8524be2"
+  },
+  {
+    "record_id": "2026-11-04-21-17-01-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 370,
+      "non_preroll_rows": 320,
+      "feedback_rows": 95,
+      "session_end_rows": 1,
+      "source_sha256": "6e5d24e1e5bbcf89f64ddd52895807abfb47d0f940a6f62927c8fe29c2a2e13f",
+      "source_bytes": 2018392,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152191300006002
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 2,
+    "grip_duration_s": 0.35899999999674037,
+    "valid_speed_duration_s": 0.3120000000053551,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.35899999999674037,
+        "valid_feedback_count": 8,
+        "accepted_target_count": 2,
+        "requested_goal_count": 2,
+        "valid_speed_duration_s": 0.3120000000053551,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 7,
+        "mean": 5.465406971433002,
+        "rmse": 11.113312570526228,
+        "p50": 0.2808285344910042,
+        "p95": 22.317556226041482,
+        "max": 27.861509244725422
+      },
+      "requested_position_mm": {
+        "n": 5,
+        "mean": 14.770208911608083,
+        "rmse": 17.09240929857975,
+        "p50": 21.79241339061039,
+        "p95": 21.794654179739045,
+        "max": 21.794999180628352
+      },
+      "requested_orientation_deg": {
+        "n": 5,
+        "mean": 1.3667003199518684,
+        "rmse": 1.3678749972065438,
+        "p50": 1.3402603341433883,
+        "p95": 1.4529899301978728,
+        "max": 1.4795816753731408
+      },
+      "reference_position_mm": {
+        "n": 4,
+        "mean": 2.446029704679325,
+        "rmse": 2.514380376243325,
+        "p50": 2.6574834128615015,
+        "p95": 2.9459155257054097,
+        "max": 2.9462027955789347
+      },
+      "reference_orientation_deg": {
+        "n": 4,
+        "mean": 0.7267427397594619,
+        "rmse": 0.7349695257682713,
+        "p50": 0.7714385642968145,
+        "p95": 0.8165439195059815,
+        "max": 0.8168407844946034
+      },
+      "command_joint_step_deg": {
+        "n": 1,
+        "mean": 1.257704083076817,
+        "rmse": 1.257704083076817,
+        "p50": 1.257704083076817,
+        "p95": 1.257704083076817,
+        "max": 1.257704083076817
+      }
+    },
+    "controller_source_sha256": "31e086bc83ded114f787c5d21f435fca3bbb6a82d94850c0bfa27ead9976cec4"
+  },
+  {
+    "record_id": "2026-11-04-21-17-14-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 10.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 490,
+      "non_preroll_rows": 1655,
+      "feedback_rows": 227,
+      "invalid_feedback_rows_excluded": 2,
+      "session_end_rows": 1,
+      "source_sha256": "95a4d394e899f4af8581521ecb7bc8168080a2295e50a0ca79431cc3a3c58913",
+      "source_bytes": 5142760,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.15265570000664
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 52,
+    "grip_duration_s": 8.297000000005937,
+    "valid_speed_duration_s": 8.21799999999348,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 8.297000000005937,
+        "valid_feedback_count": 175,
+        "accepted_target_count": 52,
+        "requested_goal_count": 52,
+        "valid_speed_duration_s": 8.21799999999348,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 174,
+        "mean": 29.586310044200992,
+        "rmse": 33.97261803931793,
+        "p50": 27.541372603322166,
+        "p95": 57.49138418288424,
+        "max": 83.42680567307535
+      },
+      "requested_position_mm": {
+        "n": 172,
+        "mean": 14.040823807631204,
+        "rmse": 16.550339005510168,
+        "p50": 11.938055250490958,
+        "p95": 32.566139972810504,
+        "max": 37.91674984373543
+      },
+      "requested_orientation_deg": {
+        "n": 172,
+        "mean": 2.0266473605404642,
+        "rmse": 3.035604780063744,
+        "p50": 1.2448157428482372,
+        "p95": 7.483993199482874,
+        "max": 10.53421343889937
+      },
+      "reference_position_mm": {
+        "n": 171,
+        "mean": 3.5322307041967234,
+        "rmse": 4.110287671715162,
+        "p50": 3.1314770994500343,
+        "p95": 7.50779321376518,
+        "max": 10.193524019653761
+      },
+      "reference_orientation_deg": {
+        "n": 171,
+        "mean": 0.6599957486846993,
+        "rmse": 0.9681039536783276,
+        "p50": 0.3772342747998307,
+        "p95": 2.2416016204581712,
+        "max": 3.693721834671776
+      },
+      "command_joint_step_deg": {
+        "n": 51,
+        "mean": 1.3489409407589146,
+        "rmse": 1.5364911299830037,
+        "p50": 1.263199848182623,
+        "p95": 2.5800573236581457,
+        "max": 3.5250000000814907
+      }
+    },
+    "controller_source_sha256": "31e086bc83ded114f787c5d21f435fca3bbb6a82d94850c0bfa27ead9976cec4"
+  },
+  {
+    "record_id": "2026-11-04-21-24-40-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 337,
+      "non_preroll_rows": 1740,
+      "feedback_rows": 286,
+      "session_end_rows": 1,
+      "source_sha256": "edc45b1140eea22a431ee399bd7d3d360c9e766d36161dbd24d24e6419f433d8",
+      "source_bytes": 5125114,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.151755900001213
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 46,
+    "grip_duration_s": 7.51600000000326,
+    "valid_speed_duration_s": 7.4689999999973224,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "INPUT_OR_ROBOT_CONTEXT_CHANGED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 7.51600000000326,
+        "valid_feedback_count": 160,
+        "accepted_target_count": 46,
+        "requested_goal_count": 47,
+        "valid_speed_duration_s": 7.4689999999973224,
+        "end_reason": "INPUT_OR_ROBOT_CONTEXT_CHANGED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 159,
+        "mean": 30.417758236168364,
+        "rmse": 36.79466808396711,
+        "p50": 25.025605858868328,
+        "p95": 70.1991787349331,
+        "max": 112.49877044743538
+      },
+      "requested_position_mm": {
+        "n": 158,
+        "mean": 15.120295763819412,
+        "rmse": 18.545502392105714,
+        "p50": 12.05084052784354,
+        "p95": 36.62271124475691,
+        "max": 46.447819774741376
+      },
+      "requested_orientation_deg": {
+        "n": 158,
+        "mean": 6.487545919730377,
+        "rmse": 8.983389934300005,
+        "p50": 4.4367092867281634,
+        "p95": 19.47730176951581,
+        "max": 25.90675163314748
+      },
+      "reference_position_mm": {
+        "n": 156,
+        "mean": 3.6505047659114918,
+        "rmse": 4.507112120284743,
+        "p50": 2.752383575848939,
+        "p95": 9.36491861358897,
+        "max": 12.517654035986867
+      },
+      "reference_orientation_deg": {
+        "n": 156,
+        "mean": 1.1424841373428392,
+        "rmse": 1.4412907396385162,
+        "p50": 0.8636369082304407,
+        "p95": 2.772248834756573,
+        "max": 5.109037543704514
+      },
+      "command_joint_step_deg": {
+        "n": 45,
+        "mean": 2.2027479653754614,
+        "rmse": 2.371680376188596,
+        "p50": 2.260500959475337,
+        "p95": 3.5250000000814907,
+        "max": 3.5250000000814907
+      }
+    },
+    "controller_source_sha256": "e892c533e3b8463ae9b4b0b60fa0c20bc88a892062d5d4947904104ac0662c73"
+  },
+  {
+    "record_id": "2026-11-04-21-25-25-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 385,
+      "non_preroll_rows": 281,
+      "feedback_rows": 85,
+      "session_end_rows": 1,
+      "source_sha256": "a8e57475a0b8ad81a265d7a38bb689d45b45bedcc461cd395479b948dfa02689",
+      "source_bytes": 2245997,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152308500000043
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0.20300000000861473,
+    "valid_speed_duration_s": 0.15600000000267755,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.20300000000861473,
+        "valid_feedback_count": 4,
+        "accepted_target_count": 0,
+        "requested_goal_count": 0,
+        "valid_speed_duration_s": 0.15600000000267755,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 3,
+        "mean": 0.07898299856157735,
+        "rmse": 0.09777217847155448,
+        "p50": 0.04790960152796336,
+        "p95": 0.14858298220556593,
+        "max": 0.15976891339196622
+      }
+    },
+    "controller_source_sha256": "e892c533e3b8463ae9b4b0b60fa0c20bc88a892062d5d4947904104ac0662c73"
+  },
+  {
+    "record_id": "2026-11-04-21-25-32-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 389,
+      "non_preroll_rows": 2872,
+      "feedback_rows": 391,
+      "session_end_rows": 1,
+      "source_sha256": "f92cf4f0d49228f55723cfd01921f7138ffe0a02f3b082cb41dd34e9ab8461ce",
+      "source_bytes": 7534925,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.15172120000294
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 93,
+    "grip_duration_s": 15.156000000002678,
+    "valid_speed_duration_s": 15.078000000008615,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "IK_NO_CONTINUOUS_SOLUTION_WITHIN_30_DEG": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 15.156000000002678,
+        "valid_feedback_count": 321,
+        "accepted_target_count": 93,
+        "requested_goal_count": 94,
+        "valid_speed_duration_s": 15.078000000008615,
+        "end_reason": "IK_NO_CONTINUOUS_SOLUTION_WITHIN_30_DEG",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 320,
+        "mean": 37.59997865481735,
+        "rmse": 44.759257414548436,
+        "p50": 33.81078916211885,
+        "p95": 80.67040077028086,
+        "max": 141.01709159444192
+      },
+      "requested_position_mm": {
+        "n": 318,
+        "mean": 16.57198157090531,
+        "rmse": 19.154571919263407,
+        "p50": 15.305901259079041,
+        "p95": 34.747420869278066,
+        "max": 52.48054191772445
+      },
+      "requested_orientation_deg": {
+        "n": 318,
+        "mean": 4.053220014169931,
+        "rmse": 5.506976017913333,
+        "p50": 3.0539955562456274,
+        "p95": 10.94119662439,
+        "max": 22.969354358244694
+      },
+      "reference_position_mm": {
+        "n": 317,
+        "mean": 4.564318595198404,
+        "rmse": 5.492646045183064,
+        "p50": 4.057624576936225,
+        "p95": 10.609495673459024,
+        "max": 14.971656922858893
+      },
+      "reference_orientation_deg": {
+        "n": 317,
+        "mean": 1.1701851682692712,
+        "rmse": 1.584266938093394,
+        "p50": 0.8738957864221253,
+        "p95": 3.492234598292459,
+        "max": 5.651137747334361
+      },
+      "command_joint_step_deg": {
+        "n": 92,
+        "mean": 2.0250634663843208,
+        "rmse": 2.3033468600465263,
+        "p50": 1.8710092705394934,
+        "p95": 3.5250000000814907,
+        "max": 3.9249999997991836
+      }
+    },
+    "controller_source_sha256": "e892c533e3b8463ae9b4b0b60fa0c20bc88a892062d5d4947904104ac0662c73"
+  },
+  {
+    "record_id": "2026-11-04-21-25-58-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 339,
+      "non_preroll_rows": 1350,
+      "feedback_rows": 276,
+      "session_end_rows": 1,
+      "source_sha256": "05b718d621be4023502a60d4e755654101f95dcfd2b5f200e75abde23c0a35fe",
+      "source_bytes": 4433595,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.151851149995462
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 27,
+    "grip_duration_s": 4.139999999999418,
+    "valid_speed_duration_s": 4.092999999993481,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "QUEST_DISCONNECTED_OR_STALE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 4.139999999999418,
+        "valid_feedback_count": 88,
+        "accepted_target_count": 27,
+        "requested_goal_count": 27,
+        "valid_speed_duration_s": 4.092999999993481,
+        "end_reason": "QUEST_DISCONNECTED_OR_STALE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 87,
+        "mean": 21.343480021799706,
+        "rmse": 25.061014437518555,
+        "p50": 21.408982232170377,
+        "p95": 44.242807852928344,
+        "max": 60.98130929422937
+      },
+      "requested_position_mm": {
+        "n": 85,
+        "mean": 9.485299040997749,
+        "rmse": 11.006584706289619,
+        "p50": 9.2101865247643,
+        "p95": 16.53968134528846,
+        "max": 30.463940894590063
+      },
+      "requested_orientation_deg": {
+        "n": 85,
+        "mean": 2.1135807034659426,
+        "rmse": 2.678872906043677,
+        "p50": 1.652000292083161,
+        "p95": 5.590716518853834,
+        "max": 8.411722958694025
+      },
+      "reference_position_mm": {
+        "n": 84,
+        "mean": 2.6217123168946426,
+        "rmse": 3.206004655424038,
+        "p50": 2.3027878429246567,
+        "p95": 5.993207178445493,
+        "max": 8.004623247930793
+      },
+      "reference_orientation_deg": {
+        "n": 84,
+        "mean": 0.5538959111813279,
+        "rmse": 0.6827956894407332,
+        "p50": 0.4962254653502566,
+        "p95": 1.235610751762386,
+        "max": 2.1658608195440863
+      },
+      "command_joint_step_deg": {
+        "n": 26,
+        "mean": 1.4809740145856638,
+        "rmse": 1.6214228234867696,
+        "p50": 1.3123467969846994,
+        "p95": 2.4314413932196275,
+        "max": 2.6968162919004612
+      }
+    },
+    "controller_source_sha256": "e892c533e3b8463ae9b4b0b60fa0c20bc88a892062d5d4947904104ac0662c73"
+  },
+  {
+    "record_id": "2026-11-04-21-26-14-left",
+    "date": "2026-11-04",
+    "side": "left",
+    "algorithm": "ik_qp",
+    "algorithm_label": "Local DLS IK + QP",
+    "solver": "LOCAL_BOUNDED_DLS_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "FILTERED_VELOCITY_ACCELERATION_BOX_QP",
+    "profile_id": null,
+    "profile_sha256": null,
+    "position_target_policy": "MEASURED_INCREMENTAL",
+    "orientation_target_policy": "MEASURED_INCREMENTAL",
+    "recorded_parameters": {
+      "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+      "control_mode": "INCREMENTAL_MEASURED_BASE",
+      "joint_step_limit_deg": 30.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": 25.0,
+      "reference_max_acceleration_deg_s2": 50.0,
+      "reference_max_tracking_error_deg": 30.0,
+      "reference_goal_filter_tau_s": 0.2,
+      "reference_tracking_tau_s": 0.2,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 404,
+      "non_preroll_rows": 3111,
+      "feedback_rows": 424,
+      "session_end_rows": 1,
+      "source_sha256": "15d4e4b76fbf91c1814ee488ceadc92b77f3eaa7910aba6dee06af268dbcb4fc",
+      "source_bytes": 8342126,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 22.152154850005232
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 101,
+    "grip_duration_s": 16.01600000000326,
+    "valid_speed_duration_s": 15.952999999994063,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "REFERENCE_DT_OUT_OF_RANGE": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 16.01600000000326,
+        "valid_feedback_count": 339,
+        "accepted_target_count": 101,
+        "requested_goal_count": 102,
+        "valid_speed_duration_s": 15.952999999994063,
+        "end_reason": "REFERENCE_DT_OUT_OF_RANGE",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 338,
+        "mean": 37.21522510962383,
+        "rmse": 43.76984924192938,
+        "p50": 34.76251579688808,
+        "p95": 74.49947402445221,
+        "max": 163.51150693264526
+      },
+      "requested_position_mm": {
+        "n": 336,
+        "mean": 15.998448032544719,
+        "rmse": 18.665991477332202,
+        "p50": 14.473863343744375,
+        "p95": 35.40279626646178,
+        "max": 47.68437937013739
+      },
+      "requested_orientation_deg": {
+        "n": 336,
+        "mean": 5.450634167721406,
+        "rmse": 7.151204192267213,
+        "p50": 3.958219416123379,
+        "p95": 16.04536204449316,
+        "max": 25.19065333437924
+      },
+      "reference_position_mm": {
+        "n": 335,
+        "mean": 4.4167904681957,
+        "rmse": 5.307058660664406,
+        "p50": 3.981965956994943,
+        "p95": 9.792617871437209,
+        "max": 18.762019938144313
+      },
+      "reference_orientation_deg": {
+        "n": 335,
+        "mean": 1.2310497741648028,
+        "rmse": 1.4766002471127198,
+        "p50": 0.994409040185574,
+        "p95": 2.82845924718851,
+        "max": 4.267538492124117
+      },
+      "command_joint_step_deg": {
+        "n": 100,
+        "mean": 2.1707184303786464,
+        "rmse": 2.395648587718748,
+        "p50": 2.1195744997514936,
+        "p95": 3.5250000000814907,
+        "max": 3.9250000001629815
+      }
+    },
+    "controller_source_sha256": "e892c533e3b8463ae9b4b0b60fa0c20bc88a892062d5d4947904104ac0662c73"
+  },
+  {
+    "record_id": "2026-11-17-17-54-25-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 338,
+      "non_preroll_rows": 2226,
+      "feedback_rows": 484,
+      "session_end_rows": 1,
+      "source_sha256": "194e30170cd24ee12beb156b372bafb6ea79f0b21893331acc84e4eef5f27740",
+      "source_bytes": 12092539,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.02526834999959101
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 51,
+    "grip_duration_s": 7.360000000000582,
+    "valid_speed_duration_s": 7.296999999998661,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "DIRECT_TRACKING_ERROR_BEFORE_SEND": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 7.360000000000582,
+        "valid_feedback_count": 155,
+        "accepted_target_count": 51,
+        "requested_goal_count": 52,
+        "valid_speed_duration_s": 7.296999999998661,
+        "end_reason": "DIRECT_TRACKING_ERROR_BEFORE_SEND",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 154,
+        "mean": 99.63282076201642,
+        "rmse": 125.18566230204073,
+        "p50": 77.80651923529858,
+        "p95": 272.8508595925032,
+        "max": 371.99248113723763
+      },
+      "requested_position_mm": {
+        "n": 152,
+        "mean": 15.959152584864482,
+        "rmse": 19.757689222422304,
+        "p50": 12.503981688715463,
+        "p95": 37.086948378290096,
+        "max": 68.77608270244757
+      },
+      "requested_orientation_deg": {
+        "n": 152,
+        "mean": 4.189217671884127,
+        "rmse": 6.2140564969703895,
+        "p50": 2.758745830260189,
+        "p95": 16.87663856621155,
+        "max": 22.965001416694847
+      },
+      "reference_position_mm": {
+        "n": 151,
+        "mean": 12.987849967708561,
+        "rmse": 16.158799796455686,
+        "p50": 10.141145805569105,
+        "p95": 32.97245177938187,
+        "max": 57.409808084458106
+      },
+      "reference_orientation_deg": {
+        "n": 151,
+        "mean": 2.9728222495263776,
+        "rmse": 3.9354628873289705,
+        "p50": 2.363436738966854,
+        "p95": 7.683271462460183,
+        "max": 17.780973982487545
+      },
+      "command_joint_step_deg": {
+        "n": 50,
+        "mean": 5.650825939177759,
+        "rmse": 7.319246476003077,
+        "p50": 4.702312723869959,
+        "p95": 13.485689789088093,
+        "max": 25.78703420703913
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-17-55-05-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 348,
+      "non_preroll_rows": 3628,
+      "feedback_rows": 584,
+      "invalid_feedback_rows_excluded": 40,
+      "session_end_rows": 1,
+      "source_sha256": "eec478357fd5615994452d7a246d46779433315795a3bb241f9b533939b87065",
+      "source_bytes": 17475730,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.02489035000106378
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 135,
+    "grip_duration_s": 18.75,
+    "valid_speed_duration_s": 18.67199999999866,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ROBOT_MODE_NOT_USABLE_FOR_POSE_INPUT": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 18.75,
+        "valid_feedback_count": 395,
+        "accepted_target_count": 135,
+        "requested_goal_count": 135,
+        "valid_speed_duration_s": 18.67199999999866,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ROBOT_MODE_NOT_USABLE_FOR_POSE_INPUT",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 394,
+        "mean": 93.90526115719501,
+        "rmse": 118.42440898052438,
+        "p50": 87.93515929629632,
+        "p95": 183.04998498961453,
+        "max": 919.8520033325605
+      },
+      "requested_position_mm": {
+        "n": 393,
+        "mean": 14.86825982720171,
+        "rmse": 18.562758144735582,
+        "p50": 13.468274182872705,
+        "p95": 29.91026153964348,
+        "max": 113.62764909626011
+      },
+      "requested_orientation_deg": {
+        "n": 393,
+        "mean": 2.4762983522724715,
+        "rmse": 3.059961020500659,
+        "p50": 2.096280144400861,
+        "p95": 5.022990263030518,
+        "max": 23.600827991074542
+      },
+      "reference_position_mm": {
+        "n": 392,
+        "mean": 12.475352498159467,
+        "rmse": 16.24302293462102,
+        "p50": 10.759386788340276,
+        "p95": 24.871522136280745,
+        "max": 113.6378210032025
+      },
+      "reference_orientation_deg": {
+        "n": 392,
+        "mean": 2.1780970091981597,
+        "rmse": 2.8576478419499027,
+        "p50": 1.7652012469649936,
+        "p95": 4.724023070213503,
+        "max": 24.031745810099128
+      },
+      "command_joint_step_deg": {
+        "n": 134,
+        "mean": 4.5160565371963,
+        "rmse": 6.201873448328982,
+        "p50": 3.6318190098657936,
+        "p95": 8.895416421503704,
+        "max": 37.36391796728374
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-18-00-03-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 339,
+      "non_preroll_rows": 3049,
+      "feedback_rows": 550,
+      "invalid_feedback_rows_excluded": 1,
+      "session_end_rows": 1,
+      "source_sha256": "d7915e3dfaa947603e08b1908901112bd2277fbd3d69ba9b2e2504299274db6b",
+      "source_bytes": 14655535,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026599699998187135
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 95,
+    "grip_duration_s": 12.937000000001717,
+    "valid_speed_duration_s": 12.875,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 12.937000000001717,
+        "valid_feedback_count": 267,
+        "accepted_target_count": 95,
+        "requested_goal_count": 95,
+        "valid_speed_duration_s": 12.875,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 266,
+        "mean": 69.89564382877712,
+        "rmse": 82.45025521044181,
+        "p50": 66.32465081856694,
+        "p95": 143.49425844675557,
+        "max": 267.47306218621213
+      },
+      "reference_position_mm": {
+        "n": 264,
+        "mean": 9.134581497827218,
+        "rmse": 10.943014060094882,
+        "p50": 8.159177444446662,
+        "p95": 21.18466769264013,
+        "max": 29.32639102824688
+      },
+      "reference_orientation_deg": {
+        "n": 264,
+        "mean": 1.2411299038133956,
+        "rmse": 1.419636996895399,
+        "p50": 1.0705750776363439,
+        "p95": 2.4601120212637424,
+        "max": 4.613830623370812
+      },
+      "requested_position_mm": {
+        "n": 264,
+        "mean": 10.93975444733362,
+        "rmse": 12.870193366204308,
+        "p50": 9.992137283990537,
+        "p95": 24.534859263081085,
+        "max": 33.76120488281614
+      },
+      "requested_orientation_deg": {
+        "n": 264,
+        "mean": 1.3783054634624259,
+        "rmse": 1.5317091368813802,
+        "p50": 1.2667759695024583,
+        "p95": 2.551463421837454,
+        "max": 4.67638331405644
+      },
+      "command_joint_step_deg": {
+        "n": 94,
+        "mean": 2.729543135895756,
+        "rmse": 3.425122897964186,
+        "p50": 2.187601484485924,
+        "p95": 7.008167634450599,
+        "max": 9.962478634137028
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-18-00-43-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 345,
+      "non_preroll_rows": 468,
+      "feedback_rows": 113,
+      "session_end_rows": 1,
+      "source_sha256": "6a92e09b96a57ca67e1846a30b9737a55beb09526ec655e5115a1536222de6c9",
+      "source_bytes": 3989030,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026674499999848195
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 7,
+    "grip_duration_s": 1.0,
+    "valid_speed_duration_s": 0.9840000000003783,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "LOCAL_FK_MEASURED_MISMATCH": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 1.0,
+        "valid_feedback_count": 22,
+        "accepted_target_count": 7,
+        "requested_goal_count": 7,
+        "valid_speed_duration_s": 0.9840000000003783,
+        "end_reason": "LOCAL_FK_MEASURED_MISMATCH",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 21,
+        "mean": 11.277190572993124,
+        "rmse": 16.559360200557474,
+        "p50": 7.242562581486878,
+        "p95": 34.16626353210861,
+        "max": 48.92847810953282
+      },
+      "reference_position_mm": {
+        "n": 19,
+        "mean": 2.503882391639933,
+        "rmse": 3.3787944922676774,
+        "p50": 1.69492451678619,
+        "p95": 6.3949256473050555,
+        "max": 9.04443940465277
+      },
+      "reference_orientation_deg": {
+        "n": 19,
+        "mean": 0.8915948374628498,
+        "rmse": 0.9770249278710164,
+        "p50": 0.8939278075295317,
+        "p95": 1.495235704894027,
+        "max": 1.8685758874409881
+      },
+      "requested_position_mm": {
+        "n": 19,
+        "mean": 2.892186929451279,
+        "rmse": 3.9856528172884946,
+        "p50": 1.5775064447753153,
+        "p95": 8.989955540895846,
+        "max": 9.949608096638753
+      },
+      "requested_orientation_deg": {
+        "n": 19,
+        "mean": 1.197326446717202,
+        "rmse": 1.3116121485121892,
+        "p50": 1.284036401587153,
+        "p95": 1.8062964281513614,
+        "max": 1.8784017104584618
+      },
+      "command_joint_step_deg": {
+        "n": 6,
+        "mean": 1.2773870790578863,
+        "rmse": 1.5351021073786308,
+        "p50": 1.100896723276517,
+        "p95": 2.501913114801507,
+        "max": 2.682819793892847
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-18-00-53-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 380,
+      "non_preroll_rows": 2000,
+      "feedback_rows": 301,
+      "session_end_rows": 1,
+      "source_sha256": "727433dd1d45cd968e954bb36471c96e17fbe6126326af81133d0f36113ea41f",
+      "source_bytes": 10523085,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026599199998221593
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 79,
+    "grip_duration_s": 10.84400000000096,
+    "valid_speed_duration_s": 10.812999999998283,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "LOCAL_FK_MEASURED_MISMATCH": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 10.84400000000096,
+        "valid_feedback_count": 219,
+        "accepted_target_count": 79,
+        "requested_goal_count": 79,
+        "valid_speed_duration_s": 10.812999999998283,
+        "end_reason": "LOCAL_FK_MEASURED_MISMATCH",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 218,
+        "mean": 35.73526633011236,
+        "rmse": 40.08771745903886,
+        "p50": 35.1034609728883,
+        "p95": 62.73145690553401,
+        "max": 106.39240266221039
+      },
+      "reference_position_mm": {
+        "n": 216,
+        "mean": 4.7939633294926285,
+        "rmse": 5.4167220735590496,
+        "p50": 4.514752766699182,
+        "p95": 9.35125986251347,
+        "max": 11.27806871359494
+      },
+      "reference_orientation_deg": {
+        "n": 216,
+        "mean": 0.8711254665351591,
+        "rmse": 0.9901865680250892,
+        "p50": 0.7992926321982572,
+        "p95": 1.5821497816829646,
+        "max": 3.344896011606444
+      },
+      "requested_position_mm": {
+        "n": 216,
+        "mean": 5.472081042793987,
+        "rmse": 6.127431571374988,
+        "p50": 5.236921032594946,
+        "p95": 10.1245651556855,
+        "max": 14.000688064552502
+      },
+      "requested_orientation_deg": {
+        "n": 216,
+        "mean": 1.0549421999973847,
+        "rmse": 1.123454730716139,
+        "p50": 1.0381310145941054,
+        "p95": 1.7439927351119096,
+        "max": 2.158574261535272
+      },
+      "command_joint_step_deg": {
+        "n": 78,
+        "mean": 1.6133247799993453,
+        "rmse": 1.836836574242161,
+        "p50": 1.5114094866722674,
+        "p95": 3.2063258895564397,
+        "max": 3.9482501505591614
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-18-01-21-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 375,
+      "non_preroll_rows": 88,
+      "feedback_rows": 9,
+      "invalid_feedback_rows_excluded": 1,
+      "session_end_rows": 1,
+      "source_sha256": "6aa4dff53e6fa92ec0101617ff1a20651676464fc68ee85c9c5ed3f985ea31a5",
+      "source_bytes": 2635525,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.03014295000101265
+    },
+    "recorded_grip_segments": 0,
+    "closed_grip_segments_used": 0,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0,
+    "valid_speed_duration_s": 0,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {},
+    "segments": [],
+    "metrics": {},
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-18-01-26-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 351,
+      "non_preroll_rows": 6687,
+      "feedback_rows": 954,
+      "session_end_rows": 1,
+      "source_sha256": "dd514c012daff53f96e150b566162d7303d5097fdeb7b17d8064e49546923de7",
+      "source_bytes": 28454760,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.02634815000007802
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 278,
+    "grip_duration_s": 38.60900000000038,
+    "valid_speed_duration_s": 38.57800000000134,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "LOCAL_FK_MEASURED_MISMATCH": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 38.60900000000038,
+        "valid_feedback_count": 782,
+        "accepted_target_count": 278,
+        "requested_goal_count": 278,
+        "valid_speed_duration_s": 38.57800000000134,
+        "end_reason": "LOCAL_FK_MEASURED_MISMATCH",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 781,
+        "mean": 63.532798199201316,
+        "rmse": 73.12489021997624,
+        "p50": 60.24549123002504,
+        "p95": 127.94726240167942,
+        "max": 249.13818853542708
+      },
+      "requested_position_mm": {
+        "n": 779,
+        "mean": 9.706382449474491,
+        "rmse": 11.162734034118554,
+        "p50": 8.976940435466519,
+        "p95": 19.933896817647216,
+        "max": 28.693803311937128
+      },
+      "requested_orientation_deg": {
+        "n": 779,
+        "mean": 1.3258211476882125,
+        "rmse": 1.4655887165497548,
+        "p50": 1.2581540441866341,
+        "p95": 2.40665012235745,
+        "max": 4.993286113404429
+      },
+      "reference_position_mm": {
+        "n": 778,
+        "mean": 8.29987390305892,
+        "rmse": 9.748306701124093,
+        "p50": 7.682769982519515,
+        "p95": 17.719665009824062,
+        "max": 28.424512220708273
+      },
+      "reference_orientation_deg": {
+        "n": 778,
+        "mean": 1.1879493154849368,
+        "rmse": 1.3514708011403176,
+        "p50": 1.0945379334290233,
+        "p95": 2.405379624182046,
+        "max": 3.6652822658844113
+      },
+      "command_joint_step_deg": {
+        "n": 277,
+        "mean": 2.400784843365687,
+        "rmse": 2.8030486820482325,
+        "p50": 2.1056536687408673,
+        "p95": 4.652753635616066,
+        "max": 10.78124600835509
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-18-07-08-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 338,
+      "non_preroll_rows": 8407,
+      "feedback_rows": 1185,
+      "invalid_feedback_rows_excluded": 40,
+      "session_end_rows": 1,
+      "source_sha256": "8032b1b19ec2a4d8557fdf020dbd007a3717e4c5118c93ca6e70b366061d6992",
+      "source_bytes": 36385432,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026285099999717204
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 357,
+    "grip_duration_s": 49.18799999999828,
+    "valid_speed_duration_s": 49.09400000000096,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ROBOT_MODE_NOT_USABLE_FOR_POSE_INPUT": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 49.18799999999828,
+        "valid_feedback_count": 1010,
+        "accepted_target_count": 357,
+        "requested_goal_count": 357,
+        "valid_speed_duration_s": 49.09400000000096,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ROBOT_MODE_NOT_USABLE_FOR_POSE_INPUT",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 1009,
+        "mean": 71.42291279492113,
+        "rmse": 103.84440004587329,
+        "p50": 45.2413936679032,
+        "p95": 218.23304941068906,
+        "max": 762.2569821712422
+      },
+      "reference_position_mm": {
+        "n": 1007,
+        "mean": 9.266874020181397,
+        "rmse": 13.606083443475496,
+        "p50": 6.01995243131928,
+        "p95": 28.825439653174158,
+        "max": 81.04158548967783
+      },
+      "reference_orientation_deg": {
+        "n": 1007,
+        "mean": 1.1520794619383004,
+        "rmse": 1.51595123582702,
+        "p50": 0.8893745358686531,
+        "p95": 2.950168221787122,
+        "max": 10.770977923342622
+      },
+      "requested_position_mm": {
+        "n": 1007,
+        "mean": 11.023112160553872,
+        "rmse": 16.022668784129113,
+        "p50": 7.0962954624804535,
+        "p95": 36.71195859672104,
+        "max": 81.34623076787398
+      },
+      "requested_orientation_deg": {
+        "n": 1007,
+        "mean": 1.3295514412993668,
+        "rmse": 1.6719210069754562,
+        "p50": 1.073408552403325,
+        "p95": 3.302847425346054,
+        "max": 9.660898458864645
+      },
+      "command_joint_step_deg": {
+        "n": 356,
+        "mean": 2.935674958576013,
+        "rmse": 4.546106878827796,
+        "p50": 1.8103411684611874,
+        "p95": 8.907806161721009,
+        "max": 36.15066394852893
+      }
+    },
+    "controller_source_sha256": "a6641f1c52f92766a76a15b7ed7b784ed12f02e55094797f79239a45404aad35"
+  },
+  {
+    "record_id": "2026-11-17-19-06-46-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 403,
+      "non_preroll_rows": 2801,
+      "feedback_rows": 486,
+      "session_end_rows": 1,
+      "source_sha256": "1512eee8610e880d73a9c3b60866400ea0ec742f700448f2020c9eab203ce211",
+      "source_bytes": 13456636,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.024736399999950663
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 95,
+    "grip_duration_s": 13.312999999998283,
+    "valid_speed_duration_s": 13.281999999999243,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "PARTICIPANT_FAULT_OR_DISARMED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 13.312999999998283,
+        "valid_feedback_count": 277,
+        "accepted_target_count": 95,
+        "requested_goal_count": 95,
+        "valid_speed_duration_s": 13.281999999999243,
+        "end_reason": "PARTICIPANT_FAULT_OR_DISARMED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 276,
+        "mean": 9.61124607186942,
+        "rmse": 12.420870946186332,
+        "p50": 7.784506187296806,
+        "p95": 23.30806028529785,
+        "max": 50.727952823603374
+      },
+      "requested_position_mm": {
+        "n": 274,
+        "mean": 1.5192607695587343,
+        "rmse": 1.9724682798604818,
+        "p50": 1.1751721368843915,
+        "p95": 4.134424531145184,
+        "max": 9.281944085215523
+      },
+      "requested_orientation_deg": {
+        "n": 274,
+        "mean": 0.671437306798467,
+        "rmse": 0.8096352083012776,
+        "p50": 0.5504848799872597,
+        "p95": 1.4660849354421612,
+        "max": 2.6373614865887998
+      },
+      "reference_position_mm": {
+        "n": 273,
+        "mean": 1.2546227599816173,
+        "rmse": 1.6468810829543679,
+        "p50": 0.9698026394598033,
+        "p95": 3.4969838305446634,
+        "max": 6.8403639056091325
+      },
+      "reference_orientation_deg": {
+        "n": 273,
+        "mean": 0.4559566726502884,
+        "rmse": 0.5905714744366264,
+        "p50": 0.3267198370757894,
+        "p95": 1.1797722129225678,
+        "max": 2.4746985523185097
+      },
+      "command_joint_step_deg": {
+        "n": 94,
+        "mean": 0.6255769145720288,
+        "rmse": 0.7381426741219577,
+        "p50": 0.526338086931101,
+        "p95": 1.3649071364125849,
+        "max": 1.9225197020870155
+      }
+    },
+    "controller_source_sha256": "5db2706ba73eb1a7671a3eb1c0cb549bcad6a11b8fe2d811c113955889ee4e87"
+  },
+  {
+    "record_id": "2026-11-17-19-06-46-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 399,
+      "non_preroll_rows": 2779,
+      "feedback_rows": 488,
+      "invalid_feedback_rows_excluded": 39,
+      "session_end_rows": 1,
+      "source_sha256": "22d22e5e2cdfb2dc3d860b3d3f4482a01e5da7a2b600574311d2c858a6a6bb32",
+      "source_bytes": 13464430,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.024918900001997826
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 93,
+    "grip_duration_s": 13.296999999998661,
+    "valid_speed_duration_s": 13.218000000000757,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ROBOT_MODE_NOT_USABLE_FOR_POSE_INPUT": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 13.296999999998661,
+        "valid_feedback_count": 277,
+        "accepted_target_count": 93,
+        "requested_goal_count": 93,
+        "valid_speed_duration_s": 13.218000000000757,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ROBOT_MODE_NOT_USABLE_FOR_POSE_INPUT",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 276,
+        "mean": 37.601068306925995,
+        "rmse": 49.170280193614964,
+        "p50": 27.911938854212934,
+        "p95": 98.57615431306111,
+        "max": 250.81336936583753
+      },
+      "reference_position_mm": {
+        "n": 274,
+        "mean": 5.299328346519789,
+        "rmse": 6.656342850103702,
+        "p50": 4.487589015317202,
+        "p95": 13.93129137459128,
+        "max": 21.321777157299568
+      },
+      "reference_orientation_deg": {
+        "n": 274,
+        "mean": 1.204984222170831,
+        "rmse": 1.6931222102691497,
+        "p50": 0.9451756204422884,
+        "p95": 2.9497663853392804,
+        "max": 8.865567833468987
+      },
+      "requested_position_mm": {
+        "n": 274,
+        "mean": 6.310727135094354,
+        "rmse": 7.788362136559539,
+        "p50": 5.200057255723264,
+        "p95": 16.239212654454974,
+        "max": 23.700859695779425
+      },
+      "requested_orientation_deg": {
+        "n": 274,
+        "mean": 1.3778285182698409,
+        "rmse": 1.8337187203447511,
+        "p50": 1.1497527310579685,
+        "p95": 2.73547401338366,
+        "max": 9.44327065278616
+      },
+      "command_joint_step_deg": {
+        "n": 92,
+        "mean": 2.629642626657717,
+        "rmse": 3.0387590443051495,
+        "p50": 2.6111751232349647,
+        "p95": 5.63508304747834,
+        "max": 8.37305789630392
+      }
+    },
+    "controller_source_sha256": "5db2706ba73eb1a7671a3eb1c0cb549bcad6a11b8fe2d811c113955889ee4e87"
+  },
+  {
+    "record_id": "2026-11-17-19-49-58-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 336,
+      "non_preroll_rows": 2378,
+      "feedback_rows": 382,
+      "session_end_rows": 1,
+      "source_sha256": "dcf61b57488fc2d894533906d73290379b1314df15f5f675f40d97ea9a3b50ac",
+      "source_bytes": 11443357,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025273100001199054
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 88,
+    "grip_duration_s": 12.187000000001717,
+    "valid_speed_duration_s": 12.109000000000378,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "TARGET_GENERATION_REVOKED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 12.187000000001717,
+        "valid_feedback_count": 248,
+        "accepted_target_count": 88,
+        "requested_goal_count": 88,
+        "valid_speed_duration_s": 12.109000000000378,
+        "end_reason": "TARGET_GENERATION_REVOKED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 247,
+        "mean": 10.461495021902227,
+        "rmse": 12.336313072163877,
+        "p50": 10.062020878830568,
+        "p95": 23.827467773841946,
+        "max": 35.15351221659297
+      },
+      "requested_position_mm": {
+        "n": 245,
+        "mean": 1.7191192666734734,
+        "rmse": 1.9652582279425328,
+        "p50": 1.5818953290590505,
+        "p95": 3.646224093415346,
+        "max": 5.299485574901546
+      },
+      "requested_orientation_deg": {
+        "n": 245,
+        "mean": 0.6905131935217464,
+        "rmse": 0.7861762742290389,
+        "p50": 0.672291944214769,
+        "p95": 1.3731757223846615,
+        "max": 1.7129020170561318
+      },
+      "reference_position_mm": {
+        "n": 244,
+        "mean": 1.443344793870951,
+        "rmse": 1.6987952118502128,
+        "p50": 1.325262679699097,
+        "p95": 3.2193889134533458,
+        "max": 4.4384567495874645
+      },
+      "reference_orientation_deg": {
+        "n": 244,
+        "mean": 0.5074387170900753,
+        "rmse": 0.6222508577006223,
+        "p50": 0.40380999072879786,
+        "p95": 1.2168685907485999,
+        "max": 2.1660551771244805
+      },
+      "command_joint_step_deg": {
+        "n": 87,
+        "mean": 0.7029727979555821,
+        "rmse": 0.8462802678857664,
+        "p50": 0.5064335976638197,
+        "p95": 1.5413504540650589,
+        "max": 2.611964370764725
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-49-58-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 335,
+      "non_preroll_rows": 2318,
+      "feedback_rows": 353,
+      "invalid_feedback_rows_excluded": 1,
+      "session_end_rows": 1,
+      "source_sha256": "919b7764eb6c0f28abe6e4fe3a290b27dddbfffcce92d72dab78dc308187b224",
+      "source_bytes": 11234743,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025359000000345987
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 88,
+    "grip_duration_s": 12.203000000001339,
+    "valid_speed_duration_s": 12.109000000000378,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 12.203000000001339,
+        "valid_feedback_count": 246,
+        "accepted_target_count": 88,
+        "requested_goal_count": 88,
+        "valid_speed_duration_s": 12.109000000000378,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 245,
+        "mean": 58.550019494967955,
+        "rmse": 73.53470594842683,
+        "p50": 51.66478260610346,
+        "p95": 137.24269902582088,
+        "max": 194.8762774965954
+      },
+      "reference_position_mm": {
+        "n": 243,
+        "mean": 7.590376508626924,
+        "rmse": 9.815644529192538,
+        "p50": 5.931696686578699,
+        "p95": 19.211056642381752,
+        "max": 29.504328889371834
+      },
+      "reference_orientation_deg": {
+        "n": 243,
+        "mean": 1.0159043997966704,
+        "rmse": 1.1980105219494086,
+        "p50": 0.9855758082815393,
+        "p95": 2.0745323538759854,
+        "max": 3.4510810614493614
+      },
+      "requested_position_mm": {
+        "n": 243,
+        "mean": 9.18379067394893,
+        "rmse": 11.533661575911035,
+        "p50": 8.009470437189167,
+        "p95": 21.7375901660145,
+        "max": 33.53498989045587
+      },
+      "requested_orientation_deg": {
+        "n": 243,
+        "mean": 1.1783498030561876,
+        "rmse": 1.3100543845715409,
+        "p50": 1.159561004927799,
+        "p95": 2.2435499537993753,
+        "max": 2.7454746541700126
+      },
+      "command_joint_step_deg": {
+        "n": 87,
+        "mean": 2.7992766667623377,
+        "rmse": 3.261324850679324,
+        "p50": 2.8371188128129745,
+        "p95": 5.311743740972813,
+        "max": 7.582000507223178
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-50-36-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 378,
+      "non_preroll_rows": 608,
+      "feedback_rows": 185,
+      "session_end_rows": 1,
+      "source_sha256": "02353b3d709ea7cfad084e047070afd30ddc7dbd28d49a5fa90372e8ed2a6ffd",
+      "source_bytes": 5001396,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025534199997840915
+    },
+    "recorded_grip_segments": 0,
+    "closed_grip_segments_used": 0,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0,
+    "valid_speed_duration_s": 0,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "PARTICIPANT_FAULT_OR_DISARMED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {},
+    "segments": [],
+    "metrics": {},
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-50-36-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 378,
+      "non_preroll_rows": 1121,
+      "feedback_rows": 193,
+      "session_end_rows": 1,
+      "source_sha256": "428966fd7134e3c643c8dd71cc3c2c950d820dccb99c80e87e84c368840f6bf6",
+      "source_bytes": 7108029,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025071800000936492
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 37,
+    "grip_duration_s": 5.34400000000096,
+    "valid_speed_duration_s": 5.235000000000582,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "LOCAL_FK_MEASURED_MISMATCH": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 5.34400000000096,
+        "valid_feedback_count": 109,
+        "accepted_target_count": 37,
+        "requested_goal_count": 37,
+        "valid_speed_duration_s": 5.235000000000582,
+        "end_reason": "LOCAL_FK_MEASURED_MISMATCH",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 108,
+        "mean": 48.75689111010841,
+        "rmse": 58.87736214130143,
+        "p50": 47.95013320664265,
+        "p95": 107.47472048304176,
+        "max": 150.32124222425284
+      },
+      "reference_position_mm": {
+        "n": 106,
+        "mean": 6.239748383026365,
+        "rmse": 7.39030867373967,
+        "p50": 5.349475517699281,
+        "p95": 13.148822101503486,
+        "max": 17.54488848220144
+      },
+      "reference_orientation_deg": {
+        "n": 106,
+        "mean": 0.8313981133220673,
+        "rmse": 0.9538418778044642,
+        "p50": 0.7476908867906537,
+        "p95": 1.6390668188843085,
+        "max": 1.9505690051973332
+      },
+      "requested_position_mm": {
+        "n": 106,
+        "mean": 7.722881229042658,
+        "rmse": 9.09553314226923,
+        "p50": 6.741455406193089,
+        "p95": 16.185031279903388,
+        "max": 20.57305012366012
+      },
+      "requested_orientation_deg": {
+        "n": 106,
+        "mean": 1.0222450880175828,
+        "rmse": 1.0944439330912856,
+        "p50": 0.977325843472319,
+        "p95": 1.6936421142011195,
+        "max": 1.9244484416240744
+      },
+      "command_joint_step_deg": {
+        "n": 36,
+        "mean": 1.9410350841353663,
+        "rmse": 2.2458036764691336,
+        "p50": 1.738780222628714,
+        "p95": 3.648167843942119,
+        "max": 4.223614119503637
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-51-08-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 386,
+      "non_preroll_rows": 7278,
+      "feedback_rows": 1398,
+      "invalid_feedback_rows_excluded": 1,
+      "session_end_rows": 1,
+      "source_sha256": "c4a3aeb11d83162d4f31cd6c7edb25ff9c512ff010ba08ce1af6e4ca13d67fb8",
+      "source_bytes": 39680741,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.0254770999996108
+    },
+    "recorded_grip_segments": 4,
+    "closed_grip_segments_used": 4,
+    "accepted_target_events": 210,
+    "grip_duration_s": 29.001000000000204,
+    "valid_speed_duration_s": 28.780000000002474,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "GRIP_RELEASED": 3,
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 9.515999999999622,
+        "valid_feedback_count": 198,
+        "accepted_target_count": 72,
+        "requested_goal_count": 72,
+        "valid_speed_duration_s": 9.453000000001339,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      },
+      {
+        "grip_segment": 2,
+        "duration_s": 1.6719999999986612,
+        "valid_feedback_count": 35,
+        "accepted_target_count": 11,
+        "requested_goal_count": 11,
+        "valid_speed_duration_s": 1.6090000000003783,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      },
+      {
+        "grip_segment": 3,
+        "duration_s": 10.84400000000096,
+        "valid_feedback_count": 222,
+        "accepted_target_count": 77,
+        "requested_goal_count": 77,
+        "valid_speed_duration_s": 10.812000000001717,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      },
+      {
+        "grip_segment": 4,
+        "duration_s": 6.96900000000096,
+        "valid_feedback_count": 143,
+        "accepted_target_count": 49,
+        "requested_goal_count": 50,
+        "valid_speed_duration_s": 6.90599999999904,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 594,
+        "mean": 52.069453178123915,
+        "rmse": 62.82004500557651,
+        "p50": 45.61957390121279,
+        "p95": 117.07287447967265,
+        "max": 221.1089303541235
+      },
+      "requested_position_mm": {
+        "n": 588,
+        "mean": 7.96415323390831,
+        "rmse": 9.44742319589692,
+        "p50": 6.967415072283562,
+        "p95": 17.929295562994426,
+        "max": 29.286467342923032
+      },
+      "requested_orientation_deg": {
+        "n": 588,
+        "mean": 1.1371753490866525,
+        "rmse": 1.2471319041414968,
+        "p50": 1.0766842821422111,
+        "p95": 2.080835991841714,
+        "max": 3.1345195114551623
+      },
+      "reference_position_mm": {
+        "n": 585,
+        "mean": 6.814415525143061,
+        "rmse": 8.268368788599384,
+        "p50": 5.830535633506378,
+        "p95": 15.940078013930714,
+        "max": 25.22196371059509
+      },
+      "reference_orientation_deg": {
+        "n": 585,
+        "mean": 0.9991980001928559,
+        "rmse": 1.1464058382197528,
+        "p50": 0.8946730640788907,
+        "p95": 2.1043781988171184,
+        "max": 3.0678481293216873
+      },
+      "command_joint_step_deg": {
+        "n": 205,
+        "mean": 2.1495786005706363,
+        "rmse": 2.5030248890704363,
+        "p50": 1.7714072804793943,
+        "p95": 4.5943750499242055,
+        "max": 7.725253490362586
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-51-08-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 355,
+      "non_preroll_rows": 7390,
+      "feedback_rows": 1419,
+      "session_end_rows": 1,
+      "source_sha256": "1b174f77dec4936ac70be7d782af6009c11a5fcb09b00caf98aed6ed13d46972",
+      "source_bytes": 38499983,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.02573160000151256
+    },
+    "recorded_grip_segments": 2,
+    "closed_grip_segments_used": 2,
+    "accepted_target_events": 217,
+    "grip_duration_s": 30.828999999997905,
+    "valid_speed_duration_s": 30.71900000000096,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "GRIP_RELEASED": 1,
+      "PARTICIPANT_FAULT_OR_DISARMED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 13.031999999999243,
+        "valid_feedback_count": 269,
+        "accepted_target_count": 92,
+        "requested_goal_count": 92,
+        "valid_speed_duration_s": 12.96900000000096,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      },
+      {
+        "grip_segment": 2,
+        "duration_s": 17.79699999999866,
+        "valid_feedback_count": 368,
+        "accepted_target_count": 125,
+        "requested_goal_count": 125,
+        "valid_speed_duration_s": 17.75,
+        "end_reason": "PARTICIPANT_FAULT_OR_DISARMED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 635,
+        "mean": 47.29932713409872,
+        "rmse": 60.70310496262152,
+        "p50": 40.00719953920546,
+        "p95": 121.02703101386261,
+        "max": 211.72191964531189
+      },
+      "reference_position_mm": {
+        "n": 631,
+        "mean": 6.079797744477735,
+        "rmse": 7.881081028795428,
+        "p50": 4.879080928708676,
+        "p95": 15.553160352060862,
+        "max": 28.350778427561387
+      },
+      "reference_orientation_deg": {
+        "n": 631,
+        "mean": 0.9969778309001249,
+        "rmse": 1.1645682582591357,
+        "p50": 0.9467124913542069,
+        "p95": 2.0869205569572697,
+        "max": 3.7398422402272375
+      },
+      "requested_position_mm": {
+        "n": 632,
+        "mean": 7.305931243051715,
+        "rmse": 9.409813045516453,
+        "p50": 6.029622725081278,
+        "p95": 19.632569561490833,
+        "max": 37.49108040210674
+      },
+      "requested_orientation_deg": {
+        "n": 632,
+        "mean": 1.2624558979800171,
+        "rmse": 1.4276396894722931,
+        "p50": 1.157708680788109,
+        "p95": 2.5521459498539367,
+        "max": 5.198225324416642
+      },
+      "command_joint_step_deg": {
+        "n": 215,
+        "mean": 2.3430155986704064,
+        "rmse": 2.852826975795327,
+        "p50": 2.0529611587366006,
+        "p95": 5.097282489046073,
+        "max": 9.362709601119512
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-52-40-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 385,
+      "non_preroll_rows": 1604,
+      "feedback_rows": 266,
+      "session_end_rows": 1,
+      "source_sha256": "9b86dfe8c6dfb889ab2d5193babd5a49caaf8a4581731669997eac0253d00f52",
+      "source_bytes": 8994268,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025446599999806495
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 57,
+    "grip_duration_s": 7.890999999999622,
+    "valid_speed_duration_s": 7.827999999997701,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "PARTICIPANT_FAULT_OR_DISARMED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 7.890999999999622,
+        "valid_feedback_count": 163,
+        "accepted_target_count": 57,
+        "requested_goal_count": 57,
+        "valid_speed_duration_s": 7.827999999997701,
+        "end_reason": "PARTICIPANT_FAULT_OR_DISARMED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 162,
+        "mean": 40.9684853997922,
+        "rmse": 47.78526030417795,
+        "p50": 39.59367212678251,
+        "p95": 84.3450886078706,
+        "max": 105.06212415547522
+      },
+      "reference_position_mm": {
+        "n": 160,
+        "mean": 5.308358462753425,
+        "rmse": 6.327757520625447,
+        "p50": 5.089452487445627,
+        "p95": 11.246581096405837,
+        "max": 15.75791714082717
+      },
+      "reference_orientation_deg": {
+        "n": 160,
+        "mean": 0.7837647638584644,
+        "rmse": 0.8901751234074843,
+        "p50": 0.6812535644107698,
+        "p95": 1.5802196144601417,
+        "max": 2.201578924070438
+      },
+      "requested_position_mm": {
+        "n": 160,
+        "mean": 6.440754339259046,
+        "rmse": 7.512900103496764,
+        "p50": 5.967411830777012,
+        "p95": 13.474532351388971,
+        "max": 16.599126381928787
+      },
+      "requested_orientation_deg": {
+        "n": 160,
+        "mean": 1.0590930495371338,
+        "rmse": 1.149694735219773,
+        "p50": 1.0807659285100983,
+        "p95": 1.7365347625202865,
+        "max": 2.092751456255989
+      },
+      "command_joint_step_deg": {
+        "n": 56,
+        "mean": 2.179850510064056,
+        "rmse": 2.458157169938841,
+        "p50": 2.1254852303841254,
+        "p95": 4.245678838919354,
+        "max": 5.248419748878408
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-52-40-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 381,
+      "non_preroll_rows": 1556,
+      "feedback_rows": 248,
+      "invalid_feedback_rows_excluded": 1,
+      "session_end_rows": 1,
+      "source_sha256": "dc8085ed85f7a58e9fe7ec28012c2d5245ac8e6c72a8d0181b0622150c02b237",
+      "source_bytes": 8799982,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025896700000128475
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 55,
+    "grip_duration_s": 7.890999999999622,
+    "valid_speed_duration_s": 7.812999999998283,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 7.890999999999622,
+        "valid_feedback_count": 164,
+        "accepted_target_count": 55,
+        "requested_goal_count": 55,
+        "valid_speed_duration_s": 7.812999999998283,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 163,
+        "mean": 46.44629346198541,
+        "rmse": 56.9381389312225,
+        "p50": 41.5236970744883,
+        "p95": 107.60467829474479,
+        "max": 175.08830737271285
+      },
+      "requested_position_mm": {
+        "n": 162,
+        "mean": 7.338435793609494,
+        "rmse": 8.876476753216355,
+        "p50": 6.734462756432645,
+        "p95": 17.26804503165739,
+        "max": 23.445391803297273
+      },
+      "requested_orientation_deg": {
+        "n": 162,
+        "mean": 1.1747326686474575,
+        "rmse": 1.2496703198551995,
+        "p50": 1.1860835226688522,
+        "p95": 1.8277321212013862,
+        "max": 2.763678700918454
+      },
+      "reference_position_mm": {
+        "n": 161,
+        "mean": 5.922717937757254,
+        "rmse": 7.341413815811155,
+        "p50": 4.888304447605228,
+        "p95": 15.327125563687396,
+        "max": 20.255030243645177
+      },
+      "reference_orientation_deg": {
+        "n": 161,
+        "mean": 0.8872818318366638,
+        "rmse": 1.0136496873073466,
+        "p50": 0.8024552183004816,
+        "p95": 1.7883007299696931,
+        "max": 2.570712131820139
+      },
+      "command_joint_step_deg": {
+        "n": 54,
+        "mean": 2.1088704201413484,
+        "rmse": 2.4662777356028505,
+        "p50": 1.8595467070937843,
+        "p95": 4.48065824724523,
+        "max": 6.786914675428044
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-53-46-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 339,
+      "non_preroll_rows": 5603,
+      "feedback_rows": 796,
+      "session_end_rows": 1,
+      "source_sha256": "62ef5ad008284115c3ab4f243ae2133287b1ff38555285cdb61e593d4be6a863",
+      "source_bytes": 24124999,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025059850000136066
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 237,
+    "grip_duration_s": 33.17199999999866,
+    "valid_speed_duration_s": 33.14099999999962,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "INPUT_OR_ROBOT_CONTEXT_CHANGED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 33.17199999999866,
+        "valid_feedback_count": 687,
+        "accepted_target_count": 237,
+        "requested_goal_count": 237,
+        "valid_speed_duration_s": 33.14099999999962,
+        "end_reason": "INPUT_OR_ROBOT_CONTEXT_CHANGED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 686,
+        "mean": 58.93564030876617,
+        "rmse": 79.31891672335198,
+        "p50": 40.287978945545134,
+        "p95": 168.3938864466221,
+        "max": 286.5565944775714
+      },
+      "reference_position_mm": {
+        "n": 684,
+        "mean": 7.587356252256307,
+        "rmse": 10.36265805481977,
+        "p50": 5.013662322084307,
+        "p95": 22.03367107456756,
+        "max": 36.211901963763545
+      },
+      "reference_orientation_deg": {
+        "n": 684,
+        "mean": 0.8638639086921137,
+        "rmse": 1.0219694066309417,
+        "p50": 0.7531043572713599,
+        "p95": 1.8862555713627178,
+        "max": 3.39045121543582
+      },
+      "requested_position_mm": {
+        "n": 684,
+        "mean": 9.147524747872204,
+        "rmse": 12.246791672424132,
+        "p50": 6.345894161152044,
+        "p95": 26.08015519120103,
+        "max": 43.834204947446885
+      },
+      "requested_orientation_deg": {
+        "n": 684,
+        "mean": 1.0612710710338535,
+        "rmse": 1.1966577801681189,
+        "p50": 1.008084912368244,
+        "p95": 2.011777095220345,
+        "max": 3.49390188510345
+      },
+      "command_joint_step_deg": {
+        "n": 236,
+        "mean": 2.5539502297259014,
+        "rmse": 3.339703318404512,
+        "p50": 1.9506177657749841,
+        "p95": 7.077060388464307,
+        "max": 12.720057771006253
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-19-53-47-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 341,
+      "non_preroll_rows": 5555,
+      "feedback_rows": 792,
+      "session_end_rows": 1,
+      "source_sha256": "eb77b19034d8d5fc345c7c87f520e36ff9e1e50929d03e4358df899c3ab41d35",
+      "source_bytes": 24002333,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.0256235999999044
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 232,
+    "grip_duration_s": 33.15599999999904,
+    "valid_speed_duration_s": 33.06299999999828,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "GRIP_RELEASED": 1
+    },
+    "non_normal_stop_events": 0,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 33.15599999999904,
+        "valid_feedback_count": 681,
+        "accepted_target_count": 232,
+        "requested_goal_count": 232,
+        "valid_speed_duration_s": 33.06299999999828,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 680,
+        "mean": 62.30205794623719,
+        "rmse": 84.54590163614547,
+        "p50": 43.00867565092482,
+        "p95": 178.95742080288966,
+        "max": 286.970414164071
+      },
+      "reference_position_mm": {
+        "n": 678,
+        "mean": 8.038747249379066,
+        "rmse": 11.144181548920308,
+        "p50": 5.372153380091211,
+        "p95": 24.83703552302045,
+        "max": 40.07082842925849
+      },
+      "reference_orientation_deg": {
+        "n": 678,
+        "mean": 0.9426990839867071,
+        "rmse": 1.117979181368642,
+        "p50": 0.8293973539779191,
+        "p95": 2.0470038753670585,
+        "max": 4.720254924227871
+      },
+      "requested_position_mm": {
+        "n": 678,
+        "mean": 9.530710934277142,
+        "rmse": 12.878949565428847,
+        "p50": 6.365530348010726,
+        "p95": 27.469494961562575,
+        "max": 39.889253624102025
+      },
+      "requested_orientation_deg": {
+        "n": 678,
+        "mean": 1.1724352617191287,
+        "rmse": 1.3064491572494548,
+        "p50": 1.163724488487147,
+        "p95": 2.177230952596565,
+        "max": 4.225454131060765
+      },
+      "command_joint_step_deg": {
+        "n": 231,
+        "mean": 2.5437177686097656,
+        "rmse": 3.1627806022419973,
+        "p50": 2.067231887657144,
+        "p95": 6.111393324119966,
+        "max": 8.906403856367177
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-20-03-39-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 336,
+      "non_preroll_rows": 2997,
+      "feedback_rows": 435,
+      "session_end_rows": 1,
+      "source_sha256": "bdd6d64dbe933826f99f77ca2b28c0b8c9b3a8b564e4e11c99e2c06361d40159",
+      "source_bytes": 14025336,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025824700001598103
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 123,
+    "grip_duration_s": 17.360000000000582,
+    "valid_speed_duration_s": 17.329000000001543,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "GRIP_RELEASED": 1
+    },
+    "non_normal_stop_events": 0,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 17.360000000000582,
+        "valid_feedback_count": 357,
+        "accepted_target_count": 123,
+        "requested_goal_count": 123,
+        "valid_speed_duration_s": 17.329000000001543,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 356,
+        "mean": 65.89910193159504,
+        "rmse": 98.47749261635072,
+        "p50": 48.64952832568002,
+        "p95": 191.07576798250244,
+        "max": 747.8988182027189
+      },
+      "reference_position_mm": {
+        "n": 354,
+        "mean": 9.927077394843389,
+        "rmse": 15.317046783736227,
+        "p50": 6.375104108265019,
+        "p95": 30.258013389593106,
+        "max": 77.75888201337574
+      },
+      "reference_orientation_deg": {
+        "n": 354,
+        "mean": 1.6338770648414396,
+        "rmse": 2.8921956431404876,
+        "p50": 1.0002364231572025,
+        "p95": 5.34747867537008,
+        "max": 16.621199709331936
+      },
+      "requested_position_mm": {
+        "n": 354,
+        "mean": 11.126424870001427,
+        "rmse": 16.647998455991548,
+        "p50": 7.527247048892766,
+        "p95": 32.25859547197311,
+        "max": 82.45627228842665
+      },
+      "requested_orientation_deg": {
+        "n": 354,
+        "mean": 1.6799496091854575,
+        "rmse": 2.8442266834318355,
+        "p50": 1.0810226352642103,
+        "p95": 4.487620110152995,
+        "max": 16.530570105350186
+      },
+      "command_joint_step_deg": {
+        "n": 122,
+        "mean": 4.294708793702944,
+        "rmse": 6.923249450797114,
+        "p50": 2.514381529430135,
+        "p95": 14.933879863398113,
+        "max": 32.531680456212875
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-20-03-39-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 335,
+      "non_preroll_rows": 1412,
+      "feedback_rows": 434,
+      "session_end_rows": 1,
+      "source_sha256": "59c783d4b5672fc9b167e13035924f052af9338ec8a371876b56622be618692c",
+      "source_bytes": 7997125,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026159400001182803
+    },
+    "recorded_grip_segments": 0,
+    "closed_grip_segments_used": 0,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0,
+    "valid_speed_duration_s": 0,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "INPUT_OR_ROBOT_CONTEXT_CHANGED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {},
+    "segments": [],
+    "metrics": {},
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-20-05-33-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 397,
+      "non_preroll_rows": 4337,
+      "feedback_rows": 605,
+      "session_end_rows": 1,
+      "source_sha256": "913559148afad16f05f5631e0418300e810c1f7ea0e14221e0db5994959fb7b1",
+      "source_bytes": 19475358,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.025045599999051774
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 187,
+    "grip_duration_s": 25.125,
+    "valid_speed_duration_s": 25.0779999999977,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "GRIP_RELEASED": 1,
+      "PARTICIPANT_FAULT_OR_DISARMED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 25.125,
+        "valid_feedback_count": 524,
+        "accepted_target_count": 187,
+        "requested_goal_count": 187,
+        "valid_speed_duration_s": 25.0779999999977,
+        "end_reason": "GRIP_RELEASED",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 523,
+        "mean": 45.07252638822733,
+        "rmse": 59.19576149139241,
+        "p50": 33.91412510866583,
+        "p95": 128.00727780212847,
+        "max": 257.68021475349747
+      },
+      "reference_position_mm": {
+        "n": 522,
+        "mean": 5.944293187519768,
+        "rmse": 7.7736076468072195,
+        "p50": 4.403071333598188,
+        "p95": 16.158070396513256,
+        "max": 30.6381066962768
+      },
+      "reference_orientation_deg": {
+        "n": 522,
+        "mean": 1.1384654982855247,
+        "rmse": 1.355008527127747,
+        "p50": 0.9550609752292669,
+        "p95": 2.5864280802645396,
+        "max": 4.3366698633982494
+      },
+      "requested_position_mm": {
+        "n": 522,
+        "mean": 6.860476481329823,
+        "rmse": 8.935126217018095,
+        "p50": 5.175624011897687,
+        "p95": 19.056323148652158,
+        "max": 32.57010116005693
+      },
+      "requested_orientation_deg": {
+        "n": 522,
+        "mean": 1.2992945062588377,
+        "rmse": 1.4973980356547922,
+        "p50": 1.1156610985587743,
+        "p95": 2.779245571756826,
+        "max": 4.500328959274828
+      },
+      "command_joint_step_deg": {
+        "n": 186,
+        "mean": 2.191425256721229,
+        "rmse": 2.7036860799954576,
+        "p50": 1.7809834318554332,
+        "p95": 5.265974102054235,
+        "max": 9.320078599404795
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-20-05-33-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 394,
+      "non_preroll_rows": 1994,
+      "feedback_rows": 600,
+      "invalid_feedback_rows_excluded": 1,
+      "session_end_rows": 1,
+      "source_sha256": "f25193c81d4f70a9389bb12a7ab2a0f42ca3a05e0fb2e82648b4639605d7ad9f",
+      "source_bytes": 11030443,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026151400000497232
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 1,
+    "grip_duration_s": 0.17199999999866122,
+    "valid_speed_duration_s": 0.09400000000096043,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 0.17199999999866122,
+        "valid_feedback_count": 3,
+        "accepted_target_count": 1,
+        "requested_goal_count": 1,
+        "valid_speed_duration_s": 0.09400000000096043,
+        "end_reason": "ROBOT_FEEDBACK_INVALID: ValueError: Controller timestamp did not advance within this connection",
+        "stop_feedback_confirmed": false
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 2,
+        "mean": 0.13928285108695548,
+        "rmse": 0.15120496619352355,
+        "p50": 0.13928285108695548,
+        "p95": 0.19224713761746207,
+        "max": 0.1981320583430739
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-20-06-31-left",
+    "date": "2026-11-17",
+    "side": "left",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 387,
+      "non_preroll_rows": 1683,
+      "feedback_rows": 519,
+      "session_end_rows": 1,
+      "source_sha256": "f4689c9e133cfaf510adddfab288c0f91e9d98ffdcf5a0901dad7499b96c17b6",
+      "source_bytes": 9957655,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.026217699999833713
+    },
+    "recorded_grip_segments": 0,
+    "closed_grip_segments_used": 0,
+    "accepted_target_events": 0,
+    "grip_duration_s": 0,
+    "valid_speed_duration_s": 0,
+    "requested_goal_source": "UNAVAILABLE",
+    "stop_reason_counts": {
+      "PARTICIPANT_FAULT_OR_DISARMED": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {},
+    "segments": [],
+    "metrics": {},
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  },
+  {
+    "record_id": "2026-11-17-20-06-31-right",
+    "date": "2026-11-17",
+    "side": "right",
+    "algorithm": "ranged_v7",
+    "algorithm_label": "RangedIK v7 direct",
+    "solver": "OFFICIAL_RANGEDIK_PANOC_CONTROLLER_FK_VERIFIED",
+    "motion_reference": "RANGEDIK_DIRECT",
+    "profile_id": "e6_world_pose_geodesic_warm_v7",
+    "profile_sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+    "position_target_policy": "GRIP_ANCHORED_WORLD",
+    "orientation_target_policy": "GRIP_ANCHORED_WORLD",
+    "recorded_parameters": {
+      "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+      "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+      "joint_step_limit_deg": 50.0,
+      "tracking_window_deg": 30.0,
+      "reference_max_velocity_deg_s": null,
+      "reference_max_acceleration_deg_s2": null,
+      "reference_max_tracking_error_deg": 50.0,
+      "reference_goal_filter_tau_s": null,
+      "reference_tracking_tau_s": null,
+      "servo_target_duration_s": 0.15,
+      "quest_motion_max_age_ms": 200
+    },
+    "audit": {
+      "pre_roll_rows_excluded": 381,
+      "non_preroll_rows": 3711,
+      "feedback_rows": 518,
+      "session_end_rows": 1,
+      "source_sha256": "6a668fa3e27e58dcf3ec2044c16885f7baa1aed2a2d888b76d4f87b2c818de3c",
+      "source_bytes": 17358526,
+      "dropped_records": 0,
+      "writer_error": null,
+      "perf_counter_minus_monotonic_offset_s_median": 0.02560745000022871
+    },
+    "recorded_grip_segments": 1,
+    "closed_grip_segments_used": 1,
+    "accepted_target_events": 157,
+    "grip_duration_s": 22.14099999999962,
+    "valid_speed_duration_s": 22.07800000000134,
+    "requested_goal_source": "PLANNED_INCREMENT_WINDOW_POST_CONSTRAINT_TARGET",
+    "stop_reason_counts": {
+      "LOCAL_FK_MEASURED_MISMATCH": 1
+    },
+    "non_normal_stop_events": 1,
+    "exclusions": {
+      "connection_or_frame_mismatch_feedback": 0
+    },
+    "segments": [
+      {
+        "grip_segment": 1,
+        "duration_s": 22.14099999999962,
+        "valid_feedback_count": 449,
+        "accepted_target_count": 157,
+        "requested_goal_count": 157,
+        "valid_speed_duration_s": 22.07800000000134,
+        "end_reason": "LOCAL_FK_MEASURED_MISMATCH",
+        "stop_feedback_confirmed": true
+      }
+    ],
+    "metrics": {
+      "tcp_speed_mm_s": {
+        "n": 448,
+        "mean": 65.06002730988847,
+        "rmse": 81.95012409697469,
+        "p50": 50.76467005684396,
+        "p95": 149.2505447789844,
+        "max": 395.3883087297057
+      },
+      "requested_position_mm": {
+        "n": 447,
+        "mean": 9.999920561597438,
+        "rmse": 12.420633283366929,
+        "p50": 8.134415253554769,
+        "p95": 24.8538335091502,
+        "max": 48.462111656595496
+      },
+      "requested_orientation_deg": {
+        "n": 447,
+        "mean": 1.467201828074655,
+        "rmse": 1.729866248282046,
+        "p50": 1.2669109763320976,
+        "p95": 3.091260804453962,
+        "max": 6.967369386570549
+      },
+      "reference_position_mm": {
+        "n": 446,
+        "mean": 8.52054523785844,
+        "rmse": 10.776988837485206,
+        "p50": 6.5630610277912025,
+        "p95": 20.87901550446447,
+        "max": 42.947017345491744
+      },
+      "reference_orientation_deg": {
+        "n": 446,
+        "mean": 1.3239171961288947,
+        "rmse": 1.5985635932059923,
+        "p50": 1.1141798447274815,
+        "p95": 2.897197799772804,
+        "max": 6.9551863321159795
+      },
+      "command_joint_step_deg": {
+        "n": 156,
+        "mean": 2.8201733949373304,
+        "rmse": 3.472963442806567,
+        "p50": 2.3136872514973703,
+        "p95": 5.843747151480546,
+        "max": 15.24188547234283
+      }
+    },
+    "controller_source_sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6"
+  }
+]

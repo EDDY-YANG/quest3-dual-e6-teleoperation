@@ -1,0 +1,753 @@
+{
+  "schema": 2,
+  "generated_at_utc": "2026-11-17T17:49:08.335019+00:00",
+  "scope": "OBSERVATIONAL_HARDWARE_LOG_ANALYSIS_NOT_MATCHED_TRAJECTORY_BENCHMARK",
+  "video_alignment": "STAGE_LEVEL_ONLY_NOT_EXACT_VIDEO_SYNCHRONIZATION",
+  "hybrid_dls_hardware_evidence": false,
+  "self_checks": {
+    "checks_passed": 11,
+    "scope": "MATHEMATICAL_SELF_CHECKS_ONLY_NOT_HARDWARE_DATA"
+  },
+  "primary_comparison_scope": "LEFT_ARM_RECORDS_ONLY",
+  "groups": [
+    {
+      "algorithm": "ik",
+      "label": "Local DLS IK (no QP)",
+      "headset_arm_record_files": 7,
+      "record_files_with_accepted_target": 4,
+      "record_files_with_tracking_samples": 4,
+      "dates": [
+        "2026-11-04"
+      ],
+      "sides": [
+        "left"
+      ],
+      "accepted_target_events": 87,
+      "closed_grip_segments_used": 5,
+      "grip_duration_s": 12.827999999979511,
+      "valid_speed_duration_s": 12.548000000009779,
+      "non_normal_stop_events": 7,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 10.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": null,
+            "reference_max_acceleration_deg_s2": null,
+            "reference_max_tracking_error_deg": null,
+            "reference_max_velocity_deg_s": null,
+            "reference_tracking_tau_s": null,
+            "servo_target_duration_s": null,
+            "tracking_window_deg": 10.0
+          },
+          "arm_record_count": 7
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 265,
+          "mean": 57.90584796615579,
+          "rmse": 82.52583064544268,
+          "p50": 34.82414753961172,
+          "p95": 181.13072085952635,
+          "max": 306.70042629923233
+        },
+        "requested_position_mm": {
+          "n": 258,
+          "mean": 6.522405138087375,
+          "rmse": 8.086153921606384,
+          "p50": 5.136736805979277,
+          "p95": 16.330459869816327,
+          "max": 21.471389346935545
+        },
+        "requested_orientation_deg": {
+          "n": 258,
+          "mean": 2.4563490890346222,
+          "rmse": 3.012090256614824,
+          "p50": 1.9372178824204604,
+          "p95": 6.077421960795512,
+          "max": 9.118316240911694
+        },
+        "reference_position_mm": {
+          "n": 253,
+          "mean": 6.392234594717369,
+          "rmse": 8.068895015954352,
+          "p50": 4.905081818935619,
+          "p95": 16.332218688483216,
+          "max": 21.471389346935545
+        },
+        "reference_orientation_deg": {
+          "n": 253,
+          "mean": 2.429362622466241,
+          "rmse": 3.0018177295168003,
+          "p50": 1.9313274484959357,
+          "p95": 6.077529710914503,
+          "max": 9.118316240911694
+        },
+        "command_joint_step_deg": {
+          "n": 83,
+          "mean": 3.776203614457831,
+          "rmse": 4.3269016811052925,
+          "p50": 3.063600000000001,
+          "p95": 7.542449999999998,
+          "max": 11.7483
+        }
+      }
+    },
+    {
+      "algorithm": "ik_qp",
+      "label": "Local DLS IK + QP",
+      "headset_arm_record_files": 12,
+      "record_files_with_accepted_target": 11,
+      "record_files_with_tracking_samples": 11,
+      "dates": [
+        "2026-11-04"
+      ],
+      "sides": [
+        "left"
+      ],
+      "accepted_target_events": 421,
+      "closed_grip_segments_used": 12,
+      "grip_duration_s": 67.60900000001129,
+      "valid_speed_duration_s": 67.01299999997718,
+      "non_normal_stop_events": 12,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 10.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": 0.2,
+            "reference_max_acceleration_deg_s2": 50.0,
+            "reference_max_tracking_error_deg": 30.0,
+            "reference_max_velocity_deg_s": 25.0,
+            "reference_tracking_tau_s": 0.2,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 10.0
+          },
+          "arm_record_count": 5
+        },
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 30.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": 0.2,
+            "reference_max_acceleration_deg_s2": 50.0,
+            "reference_max_tracking_error_deg": 30.0,
+            "reference_max_velocity_deg_s": 25.0,
+            "reference_tracking_tau_s": 0.2,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 10.0
+          },
+          "arm_record_count": 2
+        },
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 30.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": 0.2,
+            "reference_max_acceleration_deg_s2": 50.0,
+            "reference_max_tracking_error_deg": 30.0,
+            "reference_max_velocity_deg_s": 25.0,
+            "reference_tracking_tau_s": 0.2,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 30.0
+          },
+          "arm_record_count": 5
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 1420,
+          "mean": 29.99156347324765,
+          "rmse": 37.030135018249226,
+          "p50": 26.18672764048128,
+          "p95": 67.81907927167254,
+          "max": 163.51150693264526
+        },
+        "requested_position_mm": {
+          "n": 1396,
+          "mean": 13.694405859077131,
+          "rmse": 16.580820703432465,
+          "p50": 11.590815684160468,
+          "p95": 33.153401298812526,
+          "max": 52.48054191772445
+        },
+        "requested_orientation_deg": {
+          "n": 1396,
+          "mean": 3.7066616026941483,
+          "rmse": 5.545516313381192,
+          "p50": 2.1526352725533116,
+          "p95": 11.375759657903739,
+          "max": 25.90675163314748
+        },
+        "reference_position_mm": {
+          "n": 1383,
+          "mean": 3.671316951257001,
+          "rmse": 4.577291210151365,
+          "p50": 3.0709897222481515,
+          "p95": 8.93337067380052,
+          "max": 18.762019938144313
+        },
+        "reference_orientation_deg": {
+          "n": 1383,
+          "mean": 0.917474791535653,
+          "rmse": 1.2485106195909021,
+          "p50": 0.6269684269382713,
+          "p95": 2.686373798118192,
+          "max": 5.651137747334361
+        },
+        "command_joint_step_deg": {
+          "n": 410,
+          "mean": 1.6999651393507134,
+          "rmse": 1.9874972655275518,
+          "p50": 1.4952694735184906,
+          "p95": 3.5250000000814907,
+          "max": 3.9250000001629815
+        }
+      }
+    },
+    {
+      "algorithm": "ranged_v7",
+      "label": "RangedIK v7 direct",
+      "headset_arm_record_files": 17,
+      "record_files_with_accepted_target": 14,
+      "record_files_with_tracking_samples": 14,
+      "dates": [
+        "2026-11-17"
+      ],
+      "sides": [
+        "left"
+      ],
+      "accepted_target_events": 1999,
+      "closed_grip_segments_used": 17,
+      "grip_duration_s": 276.737000000001,
+      "valid_speed_duration_s": 275.85999999999694,
+      "non_normal_stop_events": 16,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+            "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+            "joint_step_limit_deg": 50.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": null,
+            "reference_max_acceleration_deg_s2": null,
+            "reference_max_tracking_error_deg": 50.0,
+            "reference_max_velocity_deg_s": null,
+            "reference_tracking_tau_s": null,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 30.0
+          },
+          "arm_record_count": 17
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 5687,
+          "mean": 58.18744784011097,
+          "rmse": 81.26348603101317,
+          "p50": 44.18812924948837,
+          "p95": 157.08306336744823,
+          "max": 919.8520033325605
+        },
+        "requested_position_mm": {
+          "n": 5657,
+          "mean": 9.083138400494978,
+          "rmse": 12.671925339481021,
+          "p50": 6.8307349947244544,
+          "p95": 24.939149215919976,
+          "max": 113.62764909626011
+        },
+        "requested_orientation_deg": {
+          "n": 5657,
+          "mean": 1.3763859869575064,
+          "rmse": 1.9464610551175585,
+          "p50": 1.10935945972908,
+          "p95": 3.1120172098391987,
+          "max": 23.600827991074542
+        },
+        "reference_position_mm": {
+          "n": 5649,
+          "mean": 7.695603401836588,
+          "rmse": 10.949491501901468,
+          "p50": 5.638039447797188,
+          "p95": 21.651377515873406,
+          "max": 113.6378210032025
+        },
+        "reference_orientation_deg": {
+          "n": 5649,
+          "mean": 1.1757159259570609,
+          "rmse": 1.6700911926479125,
+          "p50": 0.9172250517977782,
+          "p95": 2.8581060212781044,
+          "max": 24.031745810099128
+        },
+        "command_joint_step_deg": {
+          "n": 1981,
+          "mean": 2.6274009085142556,
+          "rmse": 3.912366021508287,
+          "p50": 1.870932018556985,
+          "p95": 7.435775834258791,
+          "max": 37.36391796728374
+        }
+      }
+    }
+  ],
+  "all_arm_groups": [
+    {
+      "algorithm": "ik",
+      "label": "Local DLS IK (no QP)",
+      "headset_arm_record_files": 7,
+      "record_files_with_accepted_target": 4,
+      "record_files_with_tracking_samples": 4,
+      "dates": [
+        "2026-11-04"
+      ],
+      "sides": [
+        "left"
+      ],
+      "accepted_target_events": 87,
+      "closed_grip_segments_used": 5,
+      "grip_duration_s": 12.827999999979511,
+      "valid_speed_duration_s": 12.548000000009779,
+      "non_normal_stop_events": 7,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 10.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": null,
+            "reference_max_acceleration_deg_s2": null,
+            "reference_max_tracking_error_deg": null,
+            "reference_max_velocity_deg_s": null,
+            "reference_tracking_tau_s": null,
+            "servo_target_duration_s": null,
+            "tracking_window_deg": 10.0
+          },
+          "arm_record_count": 7
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 265,
+          "mean": 57.90584796615579,
+          "rmse": 82.52583064544268,
+          "p50": 34.82414753961172,
+          "p95": 181.13072085952635,
+          "max": 306.70042629923233
+        },
+        "requested_position_mm": {
+          "n": 258,
+          "mean": 6.522405138087375,
+          "rmse": 8.086153921606384,
+          "p50": 5.136736805979277,
+          "p95": 16.330459869816327,
+          "max": 21.471389346935545
+        },
+        "requested_orientation_deg": {
+          "n": 258,
+          "mean": 2.4563490890346222,
+          "rmse": 3.012090256614824,
+          "p50": 1.9372178824204604,
+          "p95": 6.077421960795512,
+          "max": 9.118316240911694
+        },
+        "reference_position_mm": {
+          "n": 253,
+          "mean": 6.392234594717369,
+          "rmse": 8.068895015954352,
+          "p50": 4.905081818935619,
+          "p95": 16.332218688483216,
+          "max": 21.471389346935545
+        },
+        "reference_orientation_deg": {
+          "n": 253,
+          "mean": 2.429362622466241,
+          "rmse": 3.0018177295168003,
+          "p50": 1.9313274484959357,
+          "p95": 6.077529710914503,
+          "max": 9.118316240911694
+        },
+        "command_joint_step_deg": {
+          "n": 83,
+          "mean": 3.776203614457831,
+          "rmse": 4.3269016811052925,
+          "p50": 3.063600000000001,
+          "p95": 7.542449999999998,
+          "max": 11.7483
+        }
+      }
+    },
+    {
+      "algorithm": "ik_qp",
+      "label": "Local DLS IK + QP",
+      "headset_arm_record_files": 12,
+      "record_files_with_accepted_target": 11,
+      "record_files_with_tracking_samples": 11,
+      "dates": [
+        "2026-11-04"
+      ],
+      "sides": [
+        "left"
+      ],
+      "accepted_target_events": 421,
+      "closed_grip_segments_used": 12,
+      "grip_duration_s": 67.60900000001129,
+      "valid_speed_duration_s": 67.01299999997718,
+      "non_normal_stop_events": 12,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 10.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": 0.2,
+            "reference_max_acceleration_deg_s2": 50.0,
+            "reference_max_tracking_error_deg": 30.0,
+            "reference_max_velocity_deg_s": 25.0,
+            "reference_tracking_tau_s": 0.2,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 10.0
+          },
+          "arm_record_count": 5
+        },
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 30.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": 0.2,
+            "reference_max_acceleration_deg_s2": 50.0,
+            "reference_max_tracking_error_deg": 30.0,
+            "reference_max_velocity_deg_s": 25.0,
+            "reference_tracking_tau_s": 0.2,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 10.0
+          },
+          "arm_record_count": 2
+        },
+        {
+          "parameters": {
+            "control_mode": "INCREMENTAL_MEASURED_BASE",
+            "coordinate_mapping": "GRIP_DIRECTION_FIXED_INCREMENTAL_MEASURED_TCP_NOT_WORLD_CALIBRATED",
+            "joint_step_limit_deg": 30.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": 0.2,
+            "reference_max_acceleration_deg_s2": 50.0,
+            "reference_max_tracking_error_deg": 30.0,
+            "reference_max_velocity_deg_s": 25.0,
+            "reference_tracking_tau_s": 0.2,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 30.0
+          },
+          "arm_record_count": 5
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 1420,
+          "mean": 29.99156347324765,
+          "rmse": 37.030135018249226,
+          "p50": 26.18672764048128,
+          "p95": 67.81907927167254,
+          "max": 163.51150693264526
+        },
+        "requested_position_mm": {
+          "n": 1396,
+          "mean": 13.694405859077131,
+          "rmse": 16.580820703432465,
+          "p50": 11.590815684160468,
+          "p95": 33.153401298812526,
+          "max": 52.48054191772445
+        },
+        "requested_orientation_deg": {
+          "n": 1396,
+          "mean": 3.7066616026941483,
+          "rmse": 5.545516313381192,
+          "p50": 2.1526352725533116,
+          "p95": 11.375759657903739,
+          "max": 25.90675163314748
+        },
+        "reference_position_mm": {
+          "n": 1383,
+          "mean": 3.671316951257001,
+          "rmse": 4.577291210151365,
+          "p50": 3.0709897222481515,
+          "p95": 8.93337067380052,
+          "max": 18.762019938144313
+        },
+        "reference_orientation_deg": {
+          "n": 1383,
+          "mean": 0.917474791535653,
+          "rmse": 1.2485106195909021,
+          "p50": 0.6269684269382713,
+          "p95": 2.686373798118192,
+          "max": 5.651137747334361
+        },
+        "command_joint_step_deg": {
+          "n": 410,
+          "mean": 1.6999651393507134,
+          "rmse": 1.9874972655275518,
+          "p50": 1.4952694735184906,
+          "p95": 3.5250000000814907,
+          "max": 3.9250000001629815
+        }
+      }
+    },
+    {
+      "algorithm": "ranged_v7",
+      "label": "RangedIK v7 direct",
+      "headset_arm_record_files": 26,
+      "record_files_with_accepted_target": 22,
+      "record_files_with_tracking_samples": 21,
+      "dates": [
+        "2026-11-17"
+      ],
+      "sides": [
+        "left",
+        "right"
+      ],
+      "accepted_target_events": 2879,
+      "closed_grip_segments_used": 26,
+      "grip_duration_s": 401.7699999999968,
+      "valid_speed_duration_s": 400.1889999999985,
+      "non_normal_stop_events": 24,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+            "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+            "joint_step_limit_deg": 50.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": null,
+            "reference_max_acceleration_deg_s2": null,
+            "reference_max_tracking_error_deg": 50.0,
+            "reference_max_velocity_deg_s": null,
+            "reference_tracking_tau_s": null,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 30.0
+          },
+          "arm_record_count": 26
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 8244,
+          "mean": 57.013439896168286,
+          "rmse": 78.3902914960087,
+          "p50": 43.69740137247994,
+          "p95": 154.27573317957496,
+          "max": 919.8520033325605
+        },
+        "requested_position_mm": {
+          "n": 8199,
+          "mean": 8.891413752812712,
+          "rmse": 12.179517762393694,
+          "p50": 6.716428969760663,
+          "p95": 24.29939308828192,
+          "max": 113.62764909626011
+        },
+        "requested_orientation_deg": {
+          "n": 8199,
+          "mean": 1.3413058504861894,
+          "rmse": 1.8124672930357963,
+          "p50": 1.1281817403279113,
+          "p95": 2.8776633201455684,
+          "max": 23.600827991074542
+        },
+        "reference_position_mm": {
+          "n": 8188,
+          "mean": 7.5074130654649105,
+          "rmse": 10.498565732385085,
+          "p50": 5.536569719261065,
+          "p95": 21.1372221782038,
+          "max": 113.6378210032025
+        },
+        "reference_orientation_deg": {
+          "n": 8188,
+          "mean": 1.1368271063030204,
+          "rmse": 1.5626944701072627,
+          "p50": 0.9194131655831872,
+          "p95": 2.6782978970570595,
+          "max": 24.031745810099128
+        },
+        "command_joint_step_deg": {
+          "n": 2852,
+          "mean": 2.596562365013077,
+          "rmse": 3.676497135317369,
+          "p50": 1.9686096310789516,
+          "p95": 6.8165932188685,
+          "max": 37.36391796728374
+        }
+      }
+    }
+  ],
+  "right_only_groups": [
+    {
+      "algorithm": "ik",
+      "label": "Local DLS IK (no QP)",
+      "headset_arm_record_files": 0,
+      "record_files_with_accepted_target": 0,
+      "record_files_with_tracking_samples": 0,
+      "dates": [],
+      "sides": [],
+      "accepted_target_events": 0,
+      "closed_grip_segments_used": 0,
+      "grip_duration_s": 0,
+      "valid_speed_duration_s": 0,
+      "non_normal_stop_events": 0,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [],
+      "metrics": {}
+    },
+    {
+      "algorithm": "ik_qp",
+      "label": "Local DLS IK + QP",
+      "headset_arm_record_files": 0,
+      "record_files_with_accepted_target": 0,
+      "record_files_with_tracking_samples": 0,
+      "dates": [],
+      "sides": [],
+      "accepted_target_events": 0,
+      "closed_grip_segments_used": 0,
+      "grip_duration_s": 0,
+      "valid_speed_duration_s": 0,
+      "non_normal_stop_events": 0,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [],
+      "metrics": {}
+    },
+    {
+      "algorithm": "ranged_v7",
+      "label": "RangedIK v7 direct",
+      "headset_arm_record_files": 9,
+      "record_files_with_accepted_target": 8,
+      "record_files_with_tracking_samples": 7,
+      "dates": [
+        "2026-11-17"
+      ],
+      "sides": [
+        "right"
+      ],
+      "accepted_target_events": 880,
+      "closed_grip_segments_used": 9,
+      "grip_duration_s": 125.03299999999581,
+      "valid_speed_duration_s": 124.32900000000154,
+      "non_normal_stop_events": 8,
+      "recorded_queue_drops": 0,
+      "records_with_unknown_drop_count": 0,
+      "records_with_writer_error": 0,
+      "action_rejected_events": 0,
+      "recorded_parameter_variants": [
+        {
+          "parameters": {
+            "control_mode": "GRIP_ANCHORED_WORLD_POSITION",
+            "coordinate_mapping": "XR_WORLD_FIXED_CALIBRATED_BASE",
+            "joint_step_limit_deg": 50.0,
+            "quest_motion_max_age_ms": 200,
+            "reference_goal_filter_tau_s": null,
+            "reference_max_acceleration_deg_s2": null,
+            "reference_max_tracking_error_deg": 50.0,
+            "reference_max_velocity_deg_s": null,
+            "reference_tracking_tau_s": null,
+            "servo_target_duration_s": 0.15,
+            "tracking_window_deg": 30.0
+          },
+          "arm_record_count": 9
+        }
+      ],
+      "metrics": {
+        "tcp_speed_mm_s": {
+          "n": 2557,
+          "mean": 54.402339709542524,
+          "rmse": 71.58778522790051,
+          "p50": 42.847952490317674,
+          "p95": 148.89943571460935,
+          "max": 395.3883087297057
+        },
+        "reference_position_mm": {
+          "n": 2539,
+          "mean": 7.08870995000071,
+          "rmse": 9.418167717100363,
+          "p50": 5.330877288942719,
+          "p95": 19.9854201949636,
+          "max": 42.947017345491744
+        },
+        "reference_orientation_deg": {
+          "n": 2539,
+          "mean": 1.050303694634775,
+          "rmse": 1.2921116669758903,
+          "p50": 0.9233364497322812,
+          "p95": 2.279345998233502,
+          "max": 8.865567833468987
+        },
+        "requested_position_mm": {
+          "n": 2542,
+          "mean": 8.464747217825076,
+          "rmse": 11.004916481605626,
+          "p50": 6.554898294735994,
+          "p95": 23.171303442391682,
+          "max": 48.462111656595496
+        },
+        "requested_orientation_deg": {
+          "n": 2542,
+          "mean": 1.2632380566159138,
+          "rmse": 1.471107516611353,
+          "p50": 1.1722797071135607,
+          "p95": 2.4558774978449107,
+          "max": 9.44327065278616
+        },
+        "command_joint_step_deg": {
+          "n": 871,
+          "mean": 2.526423266648169,
+          "rmse": 3.0733553506115565,
+          "p50": 2.1637417857152608,
+          "p95": 5.779085889830222,
+          "max": 15.24188547234283
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quest / E6 SDK：平台条件与五步代码导读 — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>Quest / E6 SDK：平台条件与五步代码导读</span><a href="CODE_TOUR.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="quest-e6-sdk-平台条件与五步代码导读">Quest / E6 SDK：平台条件与五步代码导读</h1>
+<blockquote>
+<p>本文保留自单独维护的完整 SDK，描述的是该 SDK 的源码与验证记录。本公开仓库只提供展示网页、文档和统计分析，不包含下文引用的机器人控制源码或 Windows DLL；下载本仓库不能直接运行遥操作。</p>
+</blockquote>
+<p>本导读针对当前交付目录的源码，核对于 2026-11-17。此次只阅读代码、运行无设备的软件检查，不连接 E6/Quest、不发送运动。</p>
+<h2 id="先回答-mac-windows-都只安装-vs-code-就能用吗">先回答：Mac / Windows 都只安装 VS Code 就能用吗？</h2>
+<p><strong>不能。当前交付是 Windows x64 源码 SDK。VS Code 用于阅读与编辑；程序仍需要 Python、第三方依赖和匹配平台的原生库。</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>使用层级</th>
+<th>Windows x64</th>
+<th>macOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查看本包源码、文档</td>
+<td>VS Code 即可</td>
+<td>VS Code 即可</td>
+</tr>
+<tr>
+<td>运行完整 SDK、网页与 RangedIK</td>
+<td>Python 3.10 x64 + setup 安装固定依赖 + 随包 Windows DLL</td>
+<td>当前包不能直接作为完整 SDK 运行</td>
+</tr>
+<tr>
+<td>纯 Python / NumPy 数学模块</td>
+<td>安装依赖后可离线运行</td>
+<td>有移植基础，但尚未在 Mac 实测</td>
+</tr>
+<tr>
+<td>离线混合原型及绘图</td>
+<td>另装 requirements-offline.txt；读取明确的历史输入</td>
+<td>原生库、启动与字体路径仍需适配</td>
+</tr>
+<tr>
+<td>真机遥操作</td>
+<td>还需真实网卡绑定、设备身份、Quest 配对/AR/标定</td>
+<td>尚未提供完整平台适配及验收</td>
+</tr>
+</tbody>
+</table></div>
+<p>本次重新核对的阻碍：</p>
+<ul>
+<li>RangedIK 构建清单 (<code>packages/05_ranged_ik/files/runtime/rangedik_native/build-manifest.json</code>) 第 28 行明确为 <code>x86_64-pc-windows-msvc</code>；二进制头也实际读到 Windows PE、AMD64（0x8664）。包里没有 macOS <code>.dylib</code>。</li>
+<li>启动器 (SDK source: <code>sdk.ps1</code>) 与 START_SDK.cmd (SDK source: <code>START_SDK.cmd</code>) 调用 PowerShell、<code>python</code>、Windows <code>.venv/Scripts/python.exe</code>；包里没有附带 Python 解释器。</li>
+<li>设备身份核对 (<code>packages/09_features/files/start_positions.py</code>) 第 58 行 <code>neighbor_identity()</code> 在非 Windows 系统明确报错，并调用 <code>Get-NetIPAddress / Get-NetNeighbor</code>。</li>
+<li>USB 路线使用 Windows <code>adb.exe</code>；离线绘图有 <code>C:/Windows/Fonts/msyh.ttc</code> 路径。</li>
+<li>当前这个交付目录还没有 <code>app/.venv/Scripts/python.exe</code>。此前安装验证用的是独立测试副本；在此目录使用一键启动时仍需首次 setup。</li>
+</ul>
+<p>本次无设备复查：使用本机<strong>已安装的 Python 与依赖</strong>，真实 DLL 加载、FK、名义小目标 RangedIK、传统 DLS 基本求解均通过；46 个隔离 HTTP/前端资源路径通过，没有创建机器人驱动。没有 Mac 电脑实测，不能把 Windows 检查外推为 Mac 通过。</p>
+<p>若以后要做到“发给别人即可运行”，应分别提供 Windows x64、macOS Apple Silicon（以及明确支持的 Intel Mac）构建产物，统一跨平台启动/身份核对，并选择自带运行时的使用版或自动安装依赖的开发版。VS Code 应当是可选编辑器，不是程序运行前提。以上跨平台工作尚未实施。</p>
+<h2 id="阅读规则-改-packages-运行统一入口">阅读规则：改 packages，运行统一入口</h2>
+<ul>
+<li><code>packages/&lt;包名&gt;/files/</code>：正式编辑位置。</li>
+<li><code>app/</code>：assemble 生成的运行目录，保留原 import 与资源路径。</li>
+<li>根目录 <code>sdk.ps1</code>：你的入口；不要逐个运行 <code>left_z_trial.py</code>、<code>ranged_ik_adapter.py</code> 或 <code>dobot_safe_sdk.py</code>。</li>
+<li>在 VS Code 中打开下方链接，再按 <strong>Ctrl+G</strong> 输入所写行号。行号对应本次 SDK 快照。</li>
+</ul>
+<pre><code class="language-text">sdk.ps1 start
+  → app/sdk.ps1
+  → start-rangedik.ps1 设置 E6_RANGEDIK_PROFILE
+  → 原启动脚本启动 server.py
+  → server.make_app() 装配前端、会话、每臂控制器与功能
+
+Quest 手柄 → quest.js → WebSocket → QuestState
+          → Grip 锚点与固定方向映射 → 目标位姿
+          → RangedIK 候选 → 控制检查 → ServoJ → ACK
+                                                   ↘ 实测反馈回到控制器
+</code></pre>
+<h2 id="1-连接设备">1. 连接设备</h2>
+<p>先打开 config.json (<code>packages/10_sdk_runtime/files/config.json</code>)。这里的目标 IP 与本机源 IP 决定每条链路的地址；两台同目标 IP 的 E6 必须使用分开的物理链路和正确源绑定。保存的地址/备注不能证明当下接线身份。</p>
+<p>接着看：</p>
+<ol>
+<li>SDK 启动分发 (<code>packages/10_sdk_runtime/files/sdk.ps1</code>)，44 行：<code>start</code> 进入 <code>start-rangedik.ps1</code>。</li>
+<li>server.py (<code>packages/02_backend/files/server.py</code>)，448 行 <code>make_app()</code>；1123 行 <code>prepare_one()</code> 构造对应侧驱动、反馈读取器及 <code>LeftZTrial</code>。</li>
+<li>quest_lan.py (<code>packages/02_backend/files/quest_lan.py</code>)：HTTPS/WSS、配对码、来源与会话校验。</li>
+<li>dobot_safe_sdk.py (<code>packages/08_robot_io/files/dobot_safe_sdk.py</code>)，171 行：29999 命令连接，192 行显式 <code>source_address</code>。</li>
+<li>e6_feedback.py (<code>packages/08_robot_io/files/e6_feedback.py</code>)，139 行 <code>FeedbackReader</code>：30004 反馈读取与有效性判断。</li>
+</ol>
+<p>以后实际运行时，在 SDK 根目录依次执行 <code>sdk.ps1 setup</code>（首次）、<code>doctor</code>、<code>start</code>。Wi-Fi 首次还要用 <code>lan-config -Ip &lt;实际PC地址&gt; -Prefix &lt;实际前缀&gt;</code> 生成证书，然后 <code>lan-enable</code>、<code>lan-info</code>。尖括号部分是需要替换的说明，不能原样执行。</p>
+<p>设备接好后，<code>sdk.ps1 connect-feedback -Side left/both</code> 显式连接反馈；<code>sdk.ps1 prepare -Side auto</code> 查询/准备当前在线臂。这里的 left/both 表示二选一参数，不是字面字符串。<strong>现在没接设备，不执行这些连接/准备动作也能继续阅读。</strong></p>
+<h2 id="2-读取-vr-输入">2. 读取 VR 输入</h2>
+<p>打开 web/quest.js (<code>packages/01_frontend/files/web/quest.js</code>)：</p>
+<ul>
+<li>93 行 <code>serialiseHand()</code>：从 <code>gripSpace</code> 读取真实控制器位置/朝向，从 <code>gamepad</code> 读取按钮和摇杆。</li>
+<li>139 行 <code>packet()</code>：打包左右手、序号、参考空间、可见性和时间戳。</li>
+<li>175 行 <code>send()</code>：通过 WebSocket 发送；积压时丢弃旧采样，避免排队重放。</li>
+<li>262 行 <code>frameLoop()</code>：XR 帧回调；常规发送约 30 Hz，Grip 状态改变可即时发送。</li>
+<li>后端 server.py (<code>packages/02_backend/files/server.py</code>) 的 57 行 <code>validate_frame()</code>、135 行 <code>QuestState</code>、861 行 <code>websocket()</code> 接收和保存最新有效输入。</li>
+</ul>
+<p>输入数据主要是位置 <strong>m</strong>、姿态四元数 <strong>xyzw</strong>、Grip/Trigger、<code>tracking_valid</code>、<code>visibility</code>。四元数（Quaternion）用四个数表达三维旋转，这里不能把其中三项直接当欧拉角。</p>
+<p>该 JS 在 <strong>Quest 自己的浏览器</strong>进入 AR 后运行，不在 PC 上用 Python 运行。PC 读取观察入口是 <code>sdk.ps1 quest</code>，或在 <code>app/</code> 执行 <code>.venv/Scripts/python.exe -m examples.watch_quest</code>。后者仅 2 Hz 打印十秒，是观察脚本，不是实际采集频率。</p>
+<h2 id="3-坐标映射">3. 坐标映射</h2>
+<p>打开 relative_pose.py (<code>packages/03_pose_mapping/files/relative_pose.py</code>)，193 行 <code>anchored_pose_target()</code>；由 left_z_trial.py (<code>packages/07_motion_control/files/left_z_trial.py</code>) 1102 行调用。</p>
+<p>末端控制点（Tool Center Point，TCP）是机器人控制器用于描述末端目标的位置/姿态点。这里将手柄相对本次握持起点的变化，映射到机器人在握持瞬间的实测 TCP：</p>
+<pre><code class="language-text">p_goal_mm = p_robot_grip_mm + 1000 × C × (p_hand_now_m - p_hand_grip_m)
+R_goal    = C × (R_hand_now × R_hand_gripᵀ) × Cᵀ × R_robot_grip
+</code></pre>
+<p><code>C</code> 是固定的 XR 世界方向到该机器人基座的方向映射；<code>1000</code> 是 m→mm 换算，不是灵敏度旋钮。当前平移/旋转采用 1:1 映射；松开再握持会重新取锚点，旧手柄位移不重放。</p>
+<p>方向标定在 direction_calibration.py (<code>packages/03_pose_mapping/files/direction_calibration.py</code>)：63 行开始处理，98 行构造矩阵，116 行提供当前有效映射；共享操作者前方在 operator_frame.py (<code>packages/03_pose_mapping/files/operator_frame.py</code>)。当前只采该臂基座 +X，固定重力竖直，要求基座水平。</p>
+<p>映射后还会经过 tool_orientation_cone.py (<code>packages/07_motion_control/files/tool_orientation_cone.py</code>) 的朝下锥约束，然后进入求解。因此要区分“手柄原始旋转意图”和“经过约束后的机器人目标”。</p>
+<p>这一阶段由后端自动调用，无独立启动命令。要修改方向、平移比例或旋转跟随规则，应改这里的映射逻辑并明确新增参数，不应靠改 IP、IK 权重或单位换算实现。</p>
+<h2 id="4-算法求解">4. 算法求解</h2>
+<p>逆运动学（Inverse Kinematics，IK）将末端目标位姿和当前关节状态变成候选关节角；正运动学（Forward Kinematics，FK）把候选关节角算回末端位姿，用来核对误差。</p>
+<p>先看 left_z_trial.py (<code>packages/07_motion_control/files/left_z_trial.py</code>) 717 行 <code>_produce_target()</code>：739 行有 RangedIK 时调用 <code>ranged.propose()</code>；745 行否则调用传统 DLS 的 <code>PoseModel.solve()</code>。<strong>这是分支，不是默认串联。</strong></p>
+<p>当前在线 v7 路径：</p>
+<pre><code class="language-text">ranged_ik_profile.py 读取配置
+  → ranged_ik_adapter.py:propose() / _propose_multistart()
+  → ranged_ik_backend.py:NativeRangedIK
+  → native_bridge.rs / Rust 原生库
+  → 候选 q、误差、是否在范围内、preview ID
+</code></pre>
+<h3 id="rangedik-参数优先改这个-json">RangedIK 参数优先改这个 JSON</h3>
+<p>profiles/rangedik_world_anchor.json (<code>packages/05_ranged_ik/files/profiles/rangedik_world_anchor.json</code>)：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>参数与当前值</th>
+<th>工程含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8 行</td>
+<td><code>position_tolerance_mm = [1,1,1]</code></td>
+<td>目标坐标系三个位置分量范围，不等于位置误差范数 ≤1 mm</td>
+</tr>
+<tr>
+<td>13–14 行</td>
+<td><code>GEODESIC_ANGLE</code>、<code>orientation_tolerance_deg = 2</code></td>
+<td>整体旋转角误差范围，不是三个欧拉角各 ±2°</td>
+</tr>
+<tr>
+<td>15 行</td>
+<td><code>joint_search_radius_deg = [60,…]</code></td>
+<td>以实测关节角为中心的搜索范围，不是速度上限</td>
+</tr>
+<tr>
+<td>51 行</td>
+<td><code>objective_weights</code></td>
+<td>各项优化代价的权重</td>
+</tr>
+<tr>
+<td>62–64 行</td>
+<td>velocity 0.7 / acceleration 0.5 / jerk 0.3</td>
+<td>软平滑偏好，不是硬性 deg/s 或 deg/s² 限速</td>
+</tr>
+<tr>
+<td>67 行</td>
+<td><code>orientation_center = 5</code></td>
+<td>靠近姿态中心的偏好；与范围权重分开</td>
+</tr>
+<tr>
+<td>4、6 行</td>
+<td>多初值 / direct</td>
+<td>求解策略和输出路径，应按对应代码理解后修改</td>
+</tr>
+</tbody>
+</table></div>
+<p>求解流程在 ranged_ik_adapter.py (<code>packages/05_ranged_ik/files/ranged_ik_adapter.py</code>)：184 行 <code>propose()</code>、250 行多初值策略、20–21 行中间姿态比例与 0.08 s 总预算。修改数学目标或原生优化实现才进入 native_bridge.rs (<code>packages/05_ranged_ik/files/tools/rangedik_native/native_bridge.rs</code>) 及 Rust objective.rs (<code>packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/groove/objective.rs</code>)，并按构建文档更新源码/桥接、重编 DLL 与 manifest；不能只改旁观用源码快照就认为 DLL 已变化。</p>
+<h3 id="dls-分清两个实现">DLS 分清两个实现</h3>
+<p>阻尼最小二乘法（Damped Least Squares，DLS）是局部 IK 方法，通过阻尼抑制接近奇异位置时过大的数值增量；不会自动保证脱离奇异或避碰。</p>
+<p>**传统 DLS：**controller_kinematics.py (<code>packages/04_kinematics_dls/files/controller_kinematics.py</code>)。165 行 <code>PoseModel.solve()</code>；20–24 行位置/角度容差、旋转权重、单次数值迭代步长；222 行阻尼候选 <code>(0.01, 0.1, 1.0, 10.0)</code>；默认最多 40 次迭代。这里的 2° 是求解器一次迭代步长，不是实机命令限制。位置/姿态容差也用于 <code>identify()</code> 的模型检查，不能随意当成单纯响应速度参数。</p>
+<p>**离线混合 DLS：**experiments/ranged_dls/controllers.py (<code>packages/11_offline_algorithms/files/experiments/ranged_dls/controllers.py</code>)，51 行 <code>Settings</code>：</p>
+<ul>
+<li>53–56 行：名义执行 50 Hz、参考规划 10 Hz、关节速度 60 deg/s、加速度 120 deg/s²。</li>
+<li>60–62 行：位置/姿态/构型增益。</li>
+<li>66–68 行：<code>damping_floor=.002</code>、<code>damping_max=.05</code>、<code>damping_sigma_width=.05</code>。</li>
+<li>80 行 <code>ReferencePlanner</code>、114 行 <code>ConstrainedDLS</code>；它使用包 11 的 offline_hybrid_v4.json (<code>packages/11_offline_algorithms/files/profiles/offline_hybrid_v4.json</code>)。</li>
+</ul>
+<p>离线原型的历史位置跟踪与实时性未通过，仍不能接入默认在线控制。正常运行 SDK 会自动运行在线求解模块；离线原型应单独按 <code>SDK_ALGORITHMS.md</code> 运行，不能把它放进真机路径试验。</p>
+<h2 id="5-下发控制与反馈">5. 下发控制与反馈</h2>
+<p>打开 left_z_trial.py (<code>packages/07_motion_control/files/left_z_trial.py</code>)：</p>
+<ul>
+<li>819 行：direct 路径保留已检查的 RangedIK 候选；旧 QP 路径在 else 分支。</li>
+<li>849 行 <code>before_send()</code>：再次检查真实反馈、输入年龄、命令跨度、工具姿态与路径。</li>
+<li>882 行：<code>self._call(&quot;ServoJ&quot;, *target_q, t=0.15, aheadtime=50, gain=200, guard=before_send)</code>。</li>
+<li>895 行：收到控制器 ACK 并通过队列检查后，才 <code>ranged.commit(result)</code> 更新求解历史。</li>
+</ul>
+<p>关节伺服目标指令（ServoJ）把六个关节目标交给 E6 控制器；它不是 PC 直接输出电机力矩。通过 dobot_safe_sdk.py (<code>packages/08_robot_io/files/dobot_safe_sdk.py</code>) 225 行 <code>_transaction()</code> 传输；格式化来自随包官方 <code>dobot_api.py</code>。<code>t=0.15</code> 是点位运行时间，源代码说明 aheadtime/gain 是控制器参数，不能把 aheadtime 数字直接当网络毫秒。</p>
+<p>随后 e6_feedback.py (<code>packages/08_robot_io/files/e6_feedback.py</code>) 250 行持续解析真实反馈。teleop_group.py (<code>packages/07_motion_control/files/teleop_group.py</code>) 管理参与集合、统一启动与组停止。确认回执（Acknowledgement，ACK）说明控制器回复了命令；真实到达/静止必须看后续反馈。</p>
+<p>运行入口是 <code>sdk.ps1 arm -Side auto</code> 或 VR 中“开始遥操作”；这可能使能机器人，之后真实 Grip 可以触发运动。<code>sdk.ps1 stop</code> 请求停止。<strong>本次没有执行这些命令。</strong></p>
+<p>时间参数不要混淆：<code>left_z_trial.py</code> 1157 行约 20 ms 是状态检查等待；1081–1084 行有 0.1 s 下发/窗口间隔；求解、队列、反馈检查还会延后发送。VR 约 30 Hz、状态循环约 50 Hz、实际命令更新率是不同量。</p>
+<h2 id="常用功能修改索引">常用功能修改索引</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>想修改</th>
+<th>源码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VR 按钮、HUD</td>
+<td>quest_hud.mjs (<code>packages/01_frontend/files/web/quest_hud.mjs</code>)、quest.js；新增动作还要改后端协议/路由</td>
+</tr>
+<tr>
+<td>PC 监控页面</td>
+<td>pc_monitor.mjs (<code>packages/01_frontend/files/web/pc_monitor.mjs</code>)、对应 HTML/CSS</td>
+</tr>
+<tr>
+<td>新增功能 API</td>
+<td>server.py (<code>packages/02_backend/files/server.py</code>) + Python SDK client.py (<code>packages/10_sdk_runtime/files/quest_e6_sdk/client.py</code>)</td>
+</tr>
+<tr>
+<td>方向/Grip 映射</td>
+<td>包 03；不要修改底层命令字符串代替坐标变换</td>
+</tr>
+<tr>
+<td>RangedIK 容差、权重</td>
+<td>包 05 的 rangedik_world_anchor.json</td>
+</tr>
+<tr>
+<td>RangedIK 多初值/候选策略</td>
+<td>包 05 的 ranged_ik_adapter.py</td>
+</tr>
+<tr>
+<td>传统 DLS 参数</td>
+<td>包 04 的 controller_kinematics.py</td>
+</tr>
+<tr>
+<td>离线混合 DLS 参数</td>
+<td>包 11 的 controllers.py:Settings</td>
+</tr>
+<tr>
+<td>工具朝下锥 / 初始角条件</td>
+<td>tool_orientation_cone.py (<code>packages/07_motion_control/files/tool_orientation_cone.py</code>) 10–11 行，当前 45°/5°</td>
+</tr>
+<tr>
+<td>输入过期判断</td>
+<td>headset_bridge.py (<code>packages/02_backend/files/headset_bridge.py</code>) 11–12 行，准入 400 ms / 运动 200 ms</td>
+</tr>
+<tr>
+<td>ServoJ 参数、队列、停止</td>
+<td>包 07 的 left_z_trial.py、teleop_group.py</td>
+</tr>
+<tr>
+<td>回位 / 起点</td>
+<td>start_positions.py (<code>packages/09_features/files/start_positions.py</code>)、start_position_presets.json</td>
+</tr>
+<tr>
+<td>数据记录</td>
+<td>teleop_recording.py (<code>packages/09_features/files/teleop_recording.py</code>)</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="修改后如何运行">修改后如何运行</h2>
+<p>只改 <code>packages/.../files/</code>，保存后在根目录运行 <code>sdk.ps1 assemble</code>；程序已经运行时先通过所属实例正常 Stop / shutdown。然后 <code>doctor</code>、相关离线检查、<code>start</code>，刷新 PC/Quest。改纯 Python/JSON 不需要重编 DLL；改 Rust 才需要原生构建。</p>
+<p>开发检查只选择本次改动相关的一项或一组。无设备基础检查可在 <code>app/</code> 用已安装依赖的 Python 执行 <code>tools/verify_sdk_delivery.py</code>；它只允许隔离回环 HTTP 和离线真实求解，不会连接机器人。测试通过仍不证明实体控制表现。</p>
+<p>当前是源码导读与平台核查，没有调整任何运动或算法参数，也没有把本包改造成 macOS 发行版。</p>
+</main></body></html>
