@@ -1,4 +1,4 @@
-> Operational manual retained from the separately maintained SDK. Source paths below refer to that SDK; its robot-control source, native libraries and launchers are not included in this showcase repository.
+> Windows x64 v0.1.0 · [下载 SDK](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip) · [完整环境安装命令](SDK_INSTALL.md) · [01–06 终端示例](SDK_EXAMPLES.md)。下文源码路径对应发行 ZIP。
 
 # Quest 3 / DOBOT E6 Teleoperation SDK
 
@@ -127,22 +127,19 @@ PC 本地管理／诊断：127.0.0.1:8765
 E6 命令端口：29999    E6 实测反馈：30004
 ```
 
-编辑 机器人网络配置 (`packages/10_sdk_runtime/files/config.json`)。下面仅是两条隔离链路的地址示例，不是自动检测结果：
+首次 setup 后，在 SDK 根目录创建仅供本机使用的配置：
 
-```json
-{
-  "left_e6_ip": "192.168.5.1",
-  "left_e6_local_ip": "192.168.5.10",
-  "right_e6_ip": "192.168.5.1",
-  "right_e6_local_ip": "192.168.5.100"
-}
+```powershell
+.\app\.venv\Scripts\python.exe -X utf8 .\app\device_settings.py --init
 ```
 
-- `*_e6_ip` 是机械臂控制器地址；`*_e6_local_ip` 是该物理链路的 **PC 网卡地址**。
-- 两台 E6 的目标 IP 相同时，必须使用两条物理隔离链路。不能把同 IP 两台控制器接到同一交换网络。
-- 首次在 Windows 网络设置中配置并识别实际网卡，在厂商控制工具中确认 E6 允许 SDK 的 TCP 控制模式。SDK 不会替你自动改网卡、控制模式或固件。
-- 原配置中的说明、MAC 与回位目标只适用于其对应设备。换电脑、网卡或机械臂后必须重新核对；回位预设 (`packages/09_features/files/start_position_presets.json`) 也包含设备绑定。
-- 修改配置后，在所属服务正常停止的情况下执行 `sdk.ps1 assemble`，再启动该副本。这里及后文的简写命令也可使用第 1 节完整 PowerShell 前缀。
+打开 `app/runtime/devices.local.json`。对使用的侧别填写控制器地址 `left_e6_ip` / `right_e6_ip` 和 PC 对应以太网口的源地址 `left_e6_local_ip` / `right_e6_local_ip`。不用的一侧保留两个 `null`。两台控制器 IP 相同时，使用两条物理隔离链路和不同的 PC 源地址。先在现场确认网卡、接线、控制器身份与 TCP 控制模式。保存文件后在根目录检查：
+
+```powershell
+.\app\.venv\Scripts\python.exe -X utf8 .\app\device_settings.py --check
+```
+
+公开版初始没有回位目标。连接后在 PC 保存相应机械臂的实测起点，头显才可请求回到这个位置。修改本地网络绑定前应停止该副本的服务。
 
 ### 2.2 E6 首次只读检查：电脑诊断可选，头显重检是主流程
 
@@ -255,7 +252,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
 
 回位不要求先完成方向标定，但必须有该侧有效连接、身份与已核对的起点配置。按需执行一次对应侧回位，保持 AR 可见并松开该侧 Grip；等待实测到位，必要时再重检。
 
-**回位会实际移动机械臂。** 当前实现的显式回位请求可能先清除该臂一次符合条件的碰撞保护，再按需使能并执行 MovJ 回位；它不会无条件清除其它报警。换设备前应核对回位预设中的目标、MAC、源地址与工具／用户坐标。保护清除或软件到位状态不能证明原来的物理问题已经解决。
+**回位会实际移动机械臂。** 当前实现的显式回位请求可能先清除该臂一次符合条件的碰撞保护，再按需使能并执行 MovJ 回位；它不会无条件清除其它报警。换设备前应重新核对身份、工具和工区并保存该设备自己的实测起点。保护清除或软件到位状态不能证明原来的物理问题已经解决。
 
 ### 4.4 标定：只采基座 X，再记录共享操作者前方
 
@@ -442,9 +439,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
 
 `app/` 是生成结果，组装器发现手工修改的生成文件会拒绝覆盖。初始文件哈希用于追溯；组装状态记录实际组装内容。不要为了改参数直接绕过状态机发送原始机器人命令。
 
-纯 Python／JSON 修改不要求重编 DLL。修改 Rust 时按 算法与构建说明 (`packages/10_sdk_runtime/files/docs/SDK_ALGORITHMS.md`) 更新补丁／桥接、重编并更新 manifest。`vendor/rangedik-source-snapshot/` 是源码快照；单改快照不改变当前 DLL。
+纯 Python／JSON 修改不要求重编 DLL。修改 Rust 时按 算法与构建说明 (`CODE_TOUR.md`) 更新补丁／桥接、重编并更新 manifest。`vendor/rangedik-source-snapshot/` 是源码快照；单改快照不改变当前 DLL。
 
-详细顺序导读见 [CODE_TOUR.md](CODE_TOUR.md)，各包职责见 SDK_CODE_MAP.md (`packages/10_sdk_runtime/files/docs/SDK_CODE_MAP.md`)。
+详细顺序导读见 [CODE_TOUR.md](CODE_TOUR.md)，各包职责见 SDK_CODE_MAP.md (`CODE_TOUR.md`)。
 
 ### 7.4 无设备时运行什么？
 
@@ -454,9 +451,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
 .\app\.venv\Scripts\python.exe -X utf8 .\app\tools\verify_sdk_delivery.py
 ```
 
-它测试实际原生库、纯数学求解与随机回环端口的页面／资源，拒绝非回环网络连接，不创建机器人驱动。SDK 接口和组装检查可在 `app/` 使用 `python -m unittest discover -s tests -p 'test_sdk*.py' -v`，确保该 python 指向本项目 `.venv`。
+它加载随包 DLL，在公开 URDF 的名义模型上求解并检查隔离的本地网页资源。在 `app/` 可运行 `.\.venv\Scripts\python.exe -X utf8 -m unittest discover -s tests -p 'test_*.py'` 做随包单元检查。
 
-离线研究另需 `requirements-offline.txt` 及对应历史数据；公开源码版若不带研究数据，不能把缺数据时的跳过／失败称为复现通过。
+离线研究另装 `requirements-offline.txt` 并提供自己的模型和录制，参数见发行包根目录的 `OFFLINE.md`。
 
 <a id="troubleshooting"></a>
 ## 8. 常见问题与验证范围
@@ -477,13 +474,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
 | REC 有错误／缺样 | 查看各侧 `writer_error`、`dropped_records` 与实际保存目录 |
 | 修改文件没有生效 | 是否改了 packages、完成 assemble、重启所属实例并刷新头显 |
 
-已有软件证据包括 Windows 上的独立环境安装、SDK／组装检查、离线原生库与数学接口检查、隔离 HTTP/前端资源检查；范围见 交付验证记录 (`packages/10_sdk_runtime/files/docs/2026-11-17-20-03-SDK-Validation.md`)。
+已有软件证据包括 Windows 上的独立环境安装、SDK／组装检查、离线原生库与数学接口检查、隔离 HTTP/前端资源检查；本版证据见[发行说明](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.1.0)。
 
 真实双臂曾产生运动并出现保护／停止事件；这不是稳定性通过证据。已有抖动根因、实体停止距离、相互避碰和完整任务成功率仍未解决／验收。历史日志、离线原型、模型参考和真机实测始终分开。macOS 与另一台干净电脑未因本机检查而自动获得兼容性保证。
 
 <a id="github"></a>
 ## 9. GitHub 发布边界
 
-本 README 使用仓库相对链接和通用操作说明，可作为 GitHub 首页。**现有完整 SDK 仍是个人工作包，包含工作站配置、设备身份和历史研究数据；它不等于已脱敏的公开发布包。** 上传整个目录前，按 [GITHUB_PREPARATION.md](GITHUB_PREPARATION.md) 处理数据与文件清单，不能只靠忽略文件就宣称完成公开发布准备。
+公开 SDK 从 [v0.1.0 Release](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.1.0) 获取。下载带有 `windows-x64` 的具名 ZIP 并解压，按[环境安装](SDK_INSTALL.md)启动，再按[01–06 示例](SDK_EXAMPLES.md)运行。
 
 代码许可证：[MIT](../LICENSE)。第三方模型、库、工具和原生源码保留原许可与归属，见 THIRD_PARTY_NOTICES.md (`packages/10_sdk_runtime/files/THIRD_PARTY_NOTICES.md`)。不要发布本机 TLS 私钥、会话码／cookie、用户采集记录或声称这些实验代码已经取得官方机器人安全认证。

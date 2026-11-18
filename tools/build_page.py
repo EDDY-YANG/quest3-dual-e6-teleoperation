@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).resolve().parents[1]
 RESULTS=ROOT/'analysis/results_v4'
+SDK_DOWNLOAD_URL='https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip'
 COLORS=['#2563eb','#d97706','#7c3aed']
 LABELS=['IK\n(no QP)','IK + QP','RangedIK v7\ndirect']
 
@@ -66,9 +67,10 @@ def main():
     findings='In these selected left-arm records, v7 has lower processed-goal position RMSE and higher median TCP speed than IK + QP. QP nevertheless has smaller accepted-reference error and substantially smaller command steps; the v7 maximum step remains visible in the figure. These are observational trade-offs, not proof of overall superiority or of a deployed hybrid DLS advantage.'
     page=(ROOT/'page.template.html').read_text(encoding='utf-8').replace('{{METRICS_TABLE}}',table).replace('{{FINDINGS}}',findings)
     page=page.replace('{{INTERFACES_SECTION}}',(ROOT/'sections/interfaces.html').read_text(encoding='utf-8')).replace('{{REFERENCES_SECTION}}',(ROOT/'sections/references.html').read_text(encoding='utf-8'))
+    page = page.replace('{{SDK_DOWNLOAD_URL}}', SDK_DOWNLOAD_URL)
     (ROOT/'index.html').write_text(page,encoding='utf-8')
     md='# Quest 3–Based Bimanual Teleoperation of DOBOT E6 Robots\n\n**Yang Taige · The University of Hong Kong · ME capstone project**\n\nAn inspectable VR-to-robot control stack, from first motion to a calibrated bimanual workflow.\n\n![System setup](assets/system_setup.png)\n\n*Data links, power relationships and independent hardware E-stops. E6 appearance uses the official visual meshes; the illustrated pose is not a live measurement.*\n\n![Data flow and control architecture](assets/data_flow.png)\n\n*Current online path: RangedIK v7 direct. No deployed RangedIK-to-DLS cascade is established by these logs.*\n\n![Three-method performance comparison](assets/performance.png)\n\n'
-    md=md.replace('![System setup]', '[View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)\n\nThis repository contains the project showcase, documentation and historical-log analysis. The complete robot-control SDK is maintained separately.\n\n![System setup]', 1)
+    md=md.replace('![System setup]', f'[![Download SDK · Windows x64](assets/download-sdk.svg)]({SDK_DOWNLOAD_URL})\n\n[Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)\n\nThis repository contains the project showcase, documentation and historical-log analysis. The Release ZIP includes all eleven editable SDK packages and the Windows native solver. Extract it and double-click **OPEN_IN_VSCODE.cmd** on a Windows x64 PC with Python 3.10 and desktop VS Code.\n\n![System setup]', 1)
     md+='| Metric | 🔵 IK (no QP) | 🟠 IK + QP | 🟣 RangedIK v7 direct |\n|---|---:|---:|---:|\n'
     md+='\n'.join('| '+label+' | '+' | '.join(values)+' |' for label,values in rows)+'\n\n'+findings+'\n\n'
     md+='Processed goals, accepted references and raw hand intent are distinct. Command step size measures output continuity, not physical vibration. [Definitions and exclusions](analysis/methods.md) · [Summary CSV](analysis/results_v4/stage_metrics.csv) · [Per-record CSV](analysis/results_v4/per_record_metrics.csv).\n\n'

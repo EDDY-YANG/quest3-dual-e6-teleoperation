@@ -1,6 +1,6 @@
 # Quest / E6 SDK：平台条件与五步代码导读
 
-> 本文保留自单独维护的完整 SDK，描述的是该 SDK 的源码与验证记录。本公开仓库只提供展示网页、文档和统计分析，不包含下文引用的机器人控制源码或 Windows DLL；下载本仓库不能直接运行遥操作。
+> 从 [Windows SDK Release](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip) 下载实际源码与 DLL。新用户可先看[环境安装](SDK_INSTALL.md)和[六个示例](SDK_EXAMPLES.md)。
 
 本导读针对当前交付目录的源码，核对于 2026-11-17。此次只阅读代码、运行无设备的软件检查，不连接 E6/Quest、不发送运动。
 
@@ -22,11 +22,11 @@
 - 启动器 (SDK source: `sdk.ps1`) 与 START_SDK.cmd (SDK source: `START_SDK.cmd`) 调用 PowerShell、`python`、Windows `.venv/Scripts/python.exe`；包里没有附带 Python 解释器。
 - 设备身份核对 (`packages/09_features/files/start_positions.py`) 第 58 行 `neighbor_identity()` 在非 Windows 系统明确报错，并调用 `Get-NetIPAddress / Get-NetNeighbor`。
 - USB 路线使用 Windows `adb.exe`；离线绘图有 `C:/Windows/Fonts/msyh.ttc` 路径。
-- 当前这个交付目录还没有 `app/.venv/Scripts/python.exe`。此前安装验证用的是独立测试副本；在此目录使用一键启动时仍需首次 setup。
+- 刚解压时尚无虚拟环境。双击 `OPEN_IN_VSCODE.cmd` 会组装源码，创建 `app/.venv` 并打开 VS Code。
 
 本次无设备复查：使用本机**已安装的 Python 与依赖**，真实 DLL 加载、FK、名义小目标 RangedIK、传统 DLS 基本求解均通过；46 个隔离 HTTP/前端资源路径通过，没有创建机器人驱动。没有 Mac 电脑实测，不能把 Windows 检查外推为 Mac 通过。
 
-若以后要做到“发给别人即可运行”，应分别提供 Windows x64、macOS Apple Silicon（以及明确支持的 Intel Mac）构建产物，统一跨平台启动/身份核对，并选择自带运行时的使用版或自动安装依赖的开发版。VS Code 应当是可选编辑器，不是程序运行前提。以上跨平台工作尚未实施。
+Windows x64 发布包随附工作区与原生库。macOS 可用于阅读源码，尚未提供用于完整运行的 macOS 原生库。
 
 ## 阅读规则：改 packages，运行统一入口
 
@@ -50,7 +50,7 @@ Quest 手柄 → quest.js → WebSocket → QuestState
 
 ## 1. 连接设备
 
-先打开 config.json (`packages/10_sdk_runtime/files/config.json`)。这里的目标 IP 与本机源 IP 决定每条链路的地址；两台同目标 IP 的 E6 必须使用分开的物理链路和正确源绑定。保存的地址/备注不能证明当下接线身份。
+先用发行包的 device_settings.py --init 生成并打开本机的 app/runtime/devices.local.json。这里的目标 IP 与本机源 IP 决定每条链路的地址；两台同目标 IP 的 E6 必须使用分开的物理链路和正确源绑定。保存的地址/备注不能证明当下接线身份。
 
 接着看：
 
@@ -127,7 +127,7 @@ profiles/rangedik_world_anchor.json (`packages/05_ranged_ik/files/profiles/range
 | 67 行 | `orientation_center = 5` | 靠近姿态中心的偏好；与范围权重分开 |
 | 4、6 行 | 多初值 / direct | 求解策略和输出路径，应按对应代码理解后修改 |
 
-求解流程在 ranged_ik_adapter.py (`packages/05_ranged_ik/files/ranged_ik_adapter.py`)：184 行 `propose()`、250 行多初值策略、20–21 行中间姿态比例与 0.08 s 总预算。修改数学目标或原生优化实现才进入 native_bridge.rs (`packages/05_ranged_ik/files/tools/rangedik_native/native_bridge.rs`) 及 Rust objective.rs (`packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/groove/objective.rs`)，并按构建文档更新源码/桥接、重编 DLL 与 manifest；不能只改旁观用源码快照就认为 DLL 已变化。
+求解流程在 ranged_ik_adapter.py (`packages/05_ranged_ik/files/ranged_ik_adapter.py`)：184 行 `propose()`、250 行多初值策略、20–21 行中间姿态比例与 0.08 s 总预算。修改数学目标或原生优化实现才进入 native_bridge.rs (`packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/native_bridge.rs`) 及 Rust objective.rs (`packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/groove/objective.rs`)，并按构建文档更新源码/桥接、重编 DLL 与 manifest；不能只改旁观用源码快照就认为 DLL 已变化。
 
 ### DLS 分清两个实现
 
@@ -176,7 +176,7 @@ profiles/rangedik_world_anchor.json (`packages/05_ranged_ik/files/profiles/range
 | 工具朝下锥 / 初始角条件 | tool_orientation_cone.py (`packages/07_motion_control/files/tool_orientation_cone.py`) 10–11 行，当前 45°/5° |
 | 输入过期判断 | headset_bridge.py (`packages/02_backend/files/headset_bridge.py`) 11–12 行，准入 400 ms / 运动 200 ms |
 | ServoJ 参数、队列、停止 | 包 07 的 left_z_trial.py、teleop_group.py |
-| 回位 / 起点 | start_positions.py (`packages/09_features/files/start_positions.py`)、start_position_presets.json |
+| 回位 / 起点 | start_positions.py (`packages/09_features/files/start_positions.py`)、使用者自己的实测起点 app/runtime/start_positions.json |
 | 数据记录 | teleop_recording.py (`packages/09_features/files/teleop_recording.py`) |
 
 ## 修改后如何运行

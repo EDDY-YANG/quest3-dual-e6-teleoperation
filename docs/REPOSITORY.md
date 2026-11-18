@@ -2,7 +2,7 @@
 
 This repository contains the Quest 3 / dual DOBOT E6 project website, five development videos, editable figures, documentation and historical-log statistics. It is a static publication: it has no connection to a robot and sends no motion commands.
 
-The complete robot-control SDK is maintained separately. The operation manual and code walkthrough describe that SDK; its control source, native libraries, device configuration and raw recordings are not included here.
+[Download the Windows x64 SDK](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip) for the editable control source, VS Code workspace and prebuilt native solver. [Install and check the SDK](SDK_INSTALL.md), then follow [examples 01–06](SDK_EXAMPLES.md). The website sources and the downloadable SDK are distributed separately.
 
 ## View locally
 

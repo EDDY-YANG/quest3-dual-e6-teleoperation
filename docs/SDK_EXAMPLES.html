@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>01–06 · 在 VS Code 的 PowerShell 终端运行示例 — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>01–06 · 在 VS Code 的 PowerShell 终端运行示例</span><a href="SDK_EXAMPLES.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="01-06-在-vs-code-的-powershell-终端运行示例">01–06 · 在 VS Code 的 PowerShell 终端运行示例</h1>
+<p><strong>运行方式是 <code>python -m</code>，使用本项目的 <code>app/.venv</code>。</strong> 先双击 SDK 根目录的 <code>OPEN_IN_VSCODE.cmd</code>。需要装环境请看<a href="SDK_INSTALL.html">安装命令与权限说明</a>。在 VS Code 选 <strong>终端 → 新建终端 → PowerShell</strong>。以下块按目录和用途分开，05 的 Arm 只在准备进行实机操作时手动执行。</p>
+<p><strong>只在终端起始时做一次。</strong> 新终端应位于含有 <code>sdk.ps1</code> 的工作区根目录。先启动本机 SDK 服务，再进入 <code>app</code>。如果终端已经在 <code>app</code> 且该服务已由你启动，可直接从 01 开始。<code>Test-Path</code> 应为 <code>True</code>，服务地址为 <code>127.0.0.1:8765</code>。</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 start -NoBrowser
+Set-Location .\app
+Test-Path .\.venv\Scripts\python.exe
+</code></pre>
+<p><strong>下面 01–06 的每段命令，都从上一步的 <code>app</code> 目录运行。</strong> 同一台 PC 的服务必须保持运行。没有 E6 / Quest 时可以先看 01–03 的未连接状态，或运行安装指南中的离线 DLL 自检。</p>
+<h2 id="01-读取服务状态">01 读取服务状态</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.read_status
+</code></pre>
+<p>只读本机 HTTP 状态，输出 <code>mode</code>、<code>teleop</code> 和 <code>profile_id</code>。硬件未接也可运行。若提示无法连接，先核对上面的服务是否已在本机启动。</p>
+<h2 id="02-观察-quest-手柄输入">02 观察 Quest 手柄输入</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.watch_quest
+</code></pre>
+<p>每秒读取两次，共读约 10 秒，输出 <code>status</code>、<code>age_ms</code>、<code>valid</code> 和 <code>hands</code>。看到真实手柄位姿需要头显已配对、进入 XR 且追踪有效。未连接时显示空值或等待状态。</p>
+<h2 id="03-查看左右机械臂反馈">03 查看左右机械臂反馈</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.read_feedback
+</code></pre>
+<p>只读后端缓存。想看实测关节角和工具中心点（TCP）位姿，要先填好本人设备地址并接好硬件。例如<strong>只连接左臂反馈</strong>时，显式执行下一行后再运行本节第一条。右臂或两臂按实际接线把 <code>left</code> 改成 <code>right</code> 或 <code>both</code>。</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m quest_e6_sdk connect-feedback --side left
+</code></pre>
+<h2 id="04-准备已连接的机械臂">04 准备已连接的机械臂</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.prepare_robot --side auto
+</code></pre>
+<p>这会对自己配置的真实机械臂建立或重检连接，查询状态并准备模型。检查 <code>participants</code> 和每臂的预检结果。单臂可明确传 <code>--side left</code> 或 <code>--side right</code>。此步骤不会 Arm；尚未接设备时可先运行 <code>.\.venv\Scripts\python.exe -X utf8 -m examples.prepare_robot --help</code> 查看参数。</p>
+<h2 id="05-允许跟随与停止">05 允许跟随与停止</h2>
+<p><strong>05a · Arm（允许遥操作）</strong>。只有在 04 预检通过、头显内相应标定完成、手柄 Grip 已释放并确认现场可进行实机操作后执行。该命令可能使能机械臂，之后有效 Grip 可以触发实际运动。日常也可在头显完成这一步。</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.teleop_control arm --side auto
+</code></pre>
+<p><strong>05b · Stop（请求停止）</strong>。需要停止时单独执行。应看到 <code>stop_evidence.feedback_confirmed</code> 为 <code>true</code>；若命令报停止未确认，应查看现场、程序状态与反馈。</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.teleop_control stop
+</code></pre>
+<h2 id="06-保存短时诊断记录">06 保存短时诊断记录</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m examples.capture_diagnostic
+</code></pre>
+<p>会写入一段约 2 秒的本地状态记录。正常遥操作已在记录时后端会拒绝重复占用。稍后运行下面一行，在返回结果的 <code>recording</code> 中核对 <code>SAVED</code> 与 <code>directory</code>。没有硬件时保存的是未连接状态。默认目录是当前用户 <code>Documents/E6_Teleop_Recordings</code>。</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -X utf8 -m quest_e6_sdk status
+</code></pre>
+<p>完成上机操作、已确认停止并准备关闭自己的本地服务时，在当前 <code>app</code> 终端执行以下命令。各例子的编辑源在 <code>packages/10_sdk_runtime/files/examples/</code>，修改后使用根目录的 <code>sdk.ps1 assemble</code>。</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File ..\sdk.ps1 shutdown
+</code></pre>
+</main></body></html>

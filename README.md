@@ -4,9 +4,11 @@
 
 An inspectable VR-to-robot control stack, from first motion to a calibrated bimanual workflow.
 
-[View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)
+[![Download SDK · Windows x64](assets/download-sdk.svg)](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip)
 
-This repository contains the project showcase, documentation and historical-log analysis. The complete robot-control SDK is maintained separately.
+[Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)
+
+This repository contains the project showcase, documentation and historical-log analysis. The Release ZIP includes all eleven editable SDK packages and the Windows native solver. Extract it and double-click **OPEN_IN_VSCODE.cmd** on a Windows x64 PC with Python 3.10 and desktop VS Code.
 
 ![System setup](assets/system_setup.png)
 

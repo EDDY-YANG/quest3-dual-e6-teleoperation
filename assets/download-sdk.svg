@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="38" viewBox="0 0 240 38" role="img" aria-labelledby="title"><title id="title">Download SDK · Windows x64</title>
+  <rect x=".5" y=".5" width="239" height="37" rx="5" fill="#f4f7fb" stroke="#a5bbd3"/>
+  <g fill="none" stroke="#1c5aa6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10v12m-4-4 4 4 4-4M15 24v3h14v-3"/>
+  </g>
+  <text x="41" y="24" fill="#1c5aa6" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Download SDK · Windows x64</text>
+</svg>

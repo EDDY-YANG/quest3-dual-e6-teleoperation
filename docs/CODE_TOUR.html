@@ -8,7 +8,7 @@ main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height
 @media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
 </style></head><body><header><nav><a href="../index.html">← Project home</a><span>Quest / E6 SDK：平台条件与五步代码导读</span><a href="CODE_TOUR.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="quest-e6-sdk-平台条件与五步代码导读">Quest / E6 SDK：平台条件与五步代码导读</h1>
 <blockquote>
-<p>本文保留自单独维护的完整 SDK，描述的是该 SDK 的源码与验证记录。本公开仓库只提供展示网页、文档和统计分析，不包含下文引用的机器人控制源码或 Windows DLL；下载本仓库不能直接运行遥操作。</p>
+<p>从 <a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip">Windows SDK Release</a> 下载实际源码与 DLL。新用户可先看<a href="SDK_INSTALL.html">环境安装</a>和<a href="SDK_EXAMPLES.html">六个示例</a>。</p>
 </blockquote>
 <p>本导读针对当前交付目录的源码，核对于 2026-11-17。此次只阅读代码、运行无设备的软件检查，不连接 E6/Quest、不发送运动。</p>
 <h2 id="先回答-mac-windows-都只安装-vs-code-就能用吗">先回答：Mac / Windows 都只安装 VS Code 就能用吗？</h2>
@@ -55,10 +55,10 @@ main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height
 <li>启动器 (SDK source: <code>sdk.ps1</code>) 与 START_SDK.cmd (SDK source: <code>START_SDK.cmd</code>) 调用 PowerShell、<code>python</code>、Windows <code>.venv/Scripts/python.exe</code>；包里没有附带 Python 解释器。</li>
 <li>设备身份核对 (<code>packages/09_features/files/start_positions.py</code>) 第 58 行 <code>neighbor_identity()</code> 在非 Windows 系统明确报错，并调用 <code>Get-NetIPAddress / Get-NetNeighbor</code>。</li>
 <li>USB 路线使用 Windows <code>adb.exe</code>；离线绘图有 <code>C:/Windows/Fonts/msyh.ttc</code> 路径。</li>
-<li>当前这个交付目录还没有 <code>app/.venv/Scripts/python.exe</code>。此前安装验证用的是独立测试副本；在此目录使用一键启动时仍需首次 setup。</li>
+<li>刚解压时尚无虚拟环境。双击 <code>OPEN_IN_VSCODE.cmd</code> 会组装源码，创建 <code>app/.venv</code> 并打开 VS Code。</li>
 </ul>
 <p>本次无设备复查：使用本机<strong>已安装的 Python 与依赖</strong>，真实 DLL 加载、FK、名义小目标 RangedIK、传统 DLS 基本求解均通过；46 个隔离 HTTP/前端资源路径通过，没有创建机器人驱动。没有 Mac 电脑实测，不能把 Windows 检查外推为 Mac 通过。</p>
-<p>若以后要做到“发给别人即可运行”，应分别提供 Windows x64、macOS Apple Silicon（以及明确支持的 Intel Mac）构建产物，统一跨平台启动/身份核对，并选择自带运行时的使用版或自动安装依赖的开发版。VS Code 应当是可选编辑器，不是程序运行前提。以上跨平台工作尚未实施。</p>
+<p>Windows x64 发布包随附工作区与原生库。macOS 可用于阅读源码，尚未提供用于完整运行的 macOS 原生库。</p>
 <h2 id="阅读规则-改-packages-运行统一入口">阅读规则：改 packages，运行统一入口</h2>
 <ul>
 <li><code>packages/&lt;包名&gt;/files/</code>：正式编辑位置。</li>
@@ -78,7 +78,7 @@ Quest 手柄 → quest.js → WebSocket → QuestState
                                                    ↘ 实测反馈回到控制器
 </code></pre>
 <h2 id="1-连接设备">1. 连接设备</h2>
-<p>先打开 config.json (<code>packages/10_sdk_runtime/files/config.json</code>)。这里的目标 IP 与本机源 IP 决定每条链路的地址；两台同目标 IP 的 E6 必须使用分开的物理链路和正确源绑定。保存的地址/备注不能证明当下接线身份。</p>
+<p>先用发行包的 device_settings.py --init 生成并打开本机的 app/runtime/devices.local.json。这里的目标 IP 与本机源 IP 决定每条链路的地址；两台同目标 IP 的 E6 必须使用分开的物理链路和正确源绑定。保存的地址/备注不能证明当下接线身份。</p>
 <p>接着看：</p>
 <ol>
 <li>SDK 启动分发 (<code>packages/10_sdk_runtime/files/sdk.ps1</code>)，44 行：<code>start</code> 进入 <code>start-rangedik.ps1</code>。</li>
@@ -168,7 +168,7 @@ R_goal    = C × (R_hand_now × R_hand_gripᵀ) × Cᵀ × R_robot_grip
 </tr>
 </tbody>
 </table></div>
-<p>求解流程在 ranged_ik_adapter.py (<code>packages/05_ranged_ik/files/ranged_ik_adapter.py</code>)：184 行 <code>propose()</code>、250 行多初值策略、20–21 行中间姿态比例与 0.08 s 总预算。修改数学目标或原生优化实现才进入 native_bridge.rs (<code>packages/05_ranged_ik/files/tools/rangedik_native/native_bridge.rs</code>) 及 Rust objective.rs (<code>packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/groove/objective.rs</code>)，并按构建文档更新源码/桥接、重编 DLL 与 manifest；不能只改旁观用源码快照就认为 DLL 已变化。</p>
+<p>求解流程在 ranged_ik_adapter.py (<code>packages/05_ranged_ik/files/ranged_ik_adapter.py</code>)：184 行 <code>propose()</code>、250 行多初值策略、20–21 行中间姿态比例与 0.08 s 总预算。修改数学目标或原生优化实现才进入 native_bridge.rs (<code>packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/native_bridge.rs</code>) 及 Rust objective.rs (<code>packages/05_ranged_ik/files/vendor/rangedik-source-snapshot/src/groove/objective.rs</code>)，并按构建文档更新源码/桥接、重编 DLL 与 manifest；不能只改旁观用源码快照就认为 DLL 已变化。</p>
 <h3 id="dls-分清两个实现">DLS 分清两个实现</h3>
 <p>阻尼最小二乘法（Damped Least Squares，DLS）是局部 IK 方法，通过阻尼抑制接近奇异位置时过大的数值增量；不会自动保证脱离奇异或避碰。</p>
 <p>**传统 DLS：**controller_kinematics.py (<code>packages/04_kinematics_dls/files/controller_kinematics.py</code>)。165 行 <code>PoseModel.solve()</code>；20–24 行位置/角度容差、旋转权重、单次数值迭代步长；222 行阻尼候选 <code>(0.01, 0.1, 1.0, 10.0)</code>；默认最多 40 次迭代。这里的 2° 是求解器一次迭代步长，不是实机命令限制。位置/姿态容差也用于 <code>identify()</code> 的模型检查，不能随意当成单纯响应速度参数。</p>
@@ -247,7 +247,7 @@ R_goal    = C × (R_hand_now × R_hand_gripᵀ) × Cᵀ × R_robot_grip
 </tr>
 <tr>
 <td>回位 / 起点</td>
-<td>start_positions.py (<code>packages/09_features/files/start_positions.py</code>)、start_position_presets.json</td>
+<td>start_positions.py (<code>packages/09_features/files/start_positions.py</code>)、使用者自己的实测起点 app/runtime/start_positions.json</td>
 </tr>
 <tr>
 <td>数据记录</td>

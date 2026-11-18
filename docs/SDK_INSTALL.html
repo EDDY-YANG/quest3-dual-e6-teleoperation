@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Windows 安装与 VS Code 终端 — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>Windows 安装与 VS Code 终端</span><a href="SDK_INSTALL.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="windows-安装与-vs-code-终端">Windows 安装与 VS Code 终端</h1>
+<p>本发行包面向 Windows x64，已验证 Python 3.10.11 x64。双击入口使用 Python 自带的 <code>venv</code>、<code>pip</code> 和锁定的依赖文件。日常在 VS Code 的 <strong>PowerShell</strong> 终端使用随包环境，命令无需 <code>uv run</code> 或 Linux <code>sudo</code>。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>使用场景</th>
+<th>需要什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阅读并运行 Windows SDK</td>
+<td>Windows x64、Python 3.10 x64、Windows PowerShell（系统自带）。桌面 VS Code 和 Microsoft Python 扩展提供本指南使用的编辑体验。首次 setup 要能取得 Python 包。</td>
+</tr>
+<tr>
+<td>本地服务、Quest Wi-Fi、在线求解</td>
+<td><code>setup</code> 自动安装 aiohttp、NumPy、Requests、cryptography 及其锁定依赖。WebXR 前端、Three.js 资源与 RangedIK Windows DLL 已装入 ZIP。</td>
+</tr>
+<tr>
+<td>额外的离线研究回放 / 开发检查</td>
+<td>离线研究按需安装 SciPy 和 Matplotlib。Ruff 为可选开发依赖。普通使用无需 Rust、VS C++、ROS、CUDA、Node 或 uv。</td>
+</tr>
+<tr>
+<td>真机运行</td>
+<td>需要自己的 E6 控制器、匹配的网卡和地址、Quest 3 与控制器。局域网模式需要 PC WLAN 地址和本站证书，USB 方式才需要 ADB。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="1-安装系统工具-新-windows-电脑">1. 安装系统工具（新 Windows 电脑）</h2>
+<p>已装好 VS Code 与 Python 3.10 x64 的读者直接跳到第 2 步。其余读者在 <strong>普通 PowerShell</strong> 中执行下面两条 WinGet 命令。若系统没有 <code>winget</code>，可用 <a href="https://code.visualstudio.com/download">微软 VS Code 安装程序</a> 和 <a href="https://www.python.org/downloads/release/python-31011/">Python 官方 Windows x64 安装程序</a>；安装 Python 时选中添加到 PATH 或安装 Python Launcher。</p>
+<pre><code class="language-powershell">winget install --exact --id Microsoft.VisualStudioCode --scope user --source winget
+winget install --exact --id Python.Python.3.10 --version 3.10.11 --architecture x64 --scope user --source winget
+</code></pre>
+<p>安装完成后重新打开终端，让 PATH 生效。下面的检查应显示 <code>3.10.x</code> 和 <code>win-amd64</code>。若安装时只启用了 <code>python</code> 命令，可把第一行的 <code>py -3.10</code> 换成 <code>python</code>。</p>
+<pre><code class="language-powershell">py -3.10 -c &quot;import sys, sysconfig; print(sys.version.split()[0], sysconfig.get_platform())&quot;
+code --version
+code --install-extension ms-python.python
+</code></pre>
+<h2 id="2-解压-组装并自检">2. 解压、组装并自检</h2>
+<p>完整解压到自己的新目录，打开里面含有 <code>OPEN_IN_VSCODE.cmd</code> 和 <code>sdk.ps1</code> 的文件夹。双击 <code>OPEN_IN_VSCODE.cmd</code> 即可。也可以在该目录的 PowerShell 输入同一入口：</p>
+<pre><code class="language-powershell">.\OPEN_IN_VSCODE.cmd
+</code></pre>
+<p>如只想在终端安装而暂不打开编辑器，在同一根目录运行下列命令。第一行已包含首次组装、建立 <code>app/.venv</code>、按锁安装、<code>doctor</code> 检查；第二行查询依赖一致性。无需手动激活虚拟环境。</p>
+<pre><code class="language-powershell">powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\tools\setup_vscode.ps1
+.\app\.venv\Scripts\python.exe -m pip check
+</code></pre>
+<p><code>-ExecutionPolicy Bypass</code> 只作用于本次启动的 PowerShell 进程。打开工作区后，如果顶端显示“受限模式”，请先核对 ZIP 来源和校验值；确认信任后在横幅的“管理”中信任此工作区以使用任务。工作区推荐 <code>ms-python.python</code>。若状态栏选错 Python，用 <code>Python: Select Interpreter</code> 指向 <code>app/.venv/Scripts/python.exe</code>。</p>
+<h2 id="3-没有硬件时能运行哪些检查">3. 没有硬件时能运行哪些检查</h2>
+<p>在<strong>工作区根目录</strong>运行。第一条检查环境与文件，第二条会在本机加载真实 DLL，测试公开 URDF 的名义求解和隔离的回环页面。首次安装时设备地址、ADB 和 WLAN 证书未配置会出现提示。</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 doctor
+.\app\.venv\Scripts\python.exe -X utf8 .\app\tools\verify_sdk_delivery.py
+</code></pre>
+<p>启动本地服务后即可运行例 01–03，未连接设备时应如实显示等待、无有效手柄或无反馈。六个例子的逐条命令在<a href="SDK_EXAMPLES.html">示例运行指南</a>。</p>
+<h2 id="4-按使用方式补装">4. 按使用方式补装</h2>
+<p>以下命令均从 SDK <strong>根目录</strong>执行。常规 Wi-Fi 遥操作只用第 2 步的依赖。研究回放需要使用者自己的离线模型与记录。</p>
+<pre><code class="language-powershell"># 仅做约束 DLS / RangedIK 离线实验时
+.\app\.venv\Scripts\python.exe -m pip install -r .\app\requirements-offline.txt
+
+# 仅安装开发检查工具时
+.\app\.venv\Scripts\python.exe -m pip install -r .\app\requirements-dev.txt
+
+# 仅需 USB / ADB 方式时，验证官方 Platform Tools 归档后才解压
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 setup -IncludeUsb
+</code></pre>
+<p>Qt、Visual Studio C++ 与 Rust 都不是运行预编译 DLL 的前提。需要自行<strong>重新编译</strong> RangedIK 时，使用带 MSVC、Windows SDK 和兼容 Rust 工具链的 x64 开发者终端，见 <code>packages/05_ranged_ik/files/tools/rangedik_native/build_native.ps1</code>。</p>
+<h2 id="5-windows-的管理员命令与-ubuntu-的-sudo">5. Windows 的管理员命令与 Ubuntu 的 sudo</h2>
+<p>Windows 的普通安装与自检用当前用户权限。给自己的 Quest 配置 WLAN 证书和监听时，先确认 PC 的实际 WLAN IPv4 和子网前缀，然后在 SDK 根目录运行：</p>
+<pre><code class="language-powershell">$wlanAddress = Read-Host 'This PC WLAN IPv4'
+$wlanPrefix = [int](Read-Host 'WLAN subnet prefix length')
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-config -Ip $wlanAddress -Prefix $wlanPrefix
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 start -NoBrowser
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-enable
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
+</code></pre>
+<p>仅在 Windows 防火墙阻断本人已配置的 Quest 监听时，才在<strong>管理员 PowerShell</strong> 回到同一 SDK 根目录运行下面一条。脚本按 <code>lan-config</code> 生成的地址、子网、端口和程序路径设置规则。配对码需要更新时，用普通终端按操作手册运行 <code>sdk.ps1 lan-renew</code>，当前会话可能需要重新配对。</p>
+<pre><code class="language-powershell">powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\app\2026-10-29-enable-lan-firewall.ps1
+</code></pre>
+<p>如果你坐在 <strong>Ubuntu</strong> 电脑上，只想解压、阅读源码或编辑文档，可在 Ubuntu 终端安装下列工具。这是 Ubuntu 的 <code>sudo</code> 安装命令。Windows DLL 和 PowerShell 设备功能仍要在 Windows x64 上运行；未在 Ubuntu 验收该 SDK 的实机功能。</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install -y unzip snapd
+sudo snap install --classic code
+code --install-extension ms-python.python
+</code></pre>
+<p><a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/install">WinGet 安装选项</a> · <a href="https://github.com/microsoft/winget-pkgs/blob/master/manifests/p/Python/Python/3/10/3.10.11/Python.Python.3.10.installer.yaml">Python 3.10.11 的 WinGet 清单</a> · <a href="https://code.visualstudio.com/docs/setup/linux">VS Code 的 Linux 安装说明</a></p>
+</main></body></html>
