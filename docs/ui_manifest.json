@@ -1,0 +1,58 @@
+{
+  "pc": {
+    "capture_date": "2026-11-17",
+    "presentation": "CSS-selected functional regions from historical interface screenshots; offline/reference labels retained"
+  },
+  "vr": {
+    "renderer": "actual unchanged SDK HeadsetHUD.paint(), native @napi-rs/canvas 0.1.100",
+    "source": "quest_hud.mjs",
+    "source_sha256": "197ce052b397323105e7e5a48b29acef3b51d5b8850f9425387b918d8f40dfc7",
+    "state": {
+      "remote": null,
+      "linkState": "DISCONNECTED",
+      "telemetry_supplied": false
+    },
+    "not_headset_recording": true
+  },
+  "assets": [
+    {
+      "file": "assets/ui/calibration_panel.png",
+      "sha256": "8be92053a36871da8b336597bd09f3fe64faf6c04e17a636526ac56fc83da82e",
+      "bytes": 171165
+    },
+    {
+      "file": "assets/ui/pc_controls_source.jpg",
+      "sha256": "1e2eb0afa61a60c927b2f019dde79629925245bf49ffcf126f395b6ae47b01bc",
+      "bytes": 87211
+    },
+    {
+      "file": "assets/ui/pc_monitor_source.jpg",
+      "sha256": "cae8e8a662d42c4bf5deb961510371ab14acfae1d668dae98bbb8b74fcb8d504",
+      "bytes": 201457
+    },
+    {
+      "file": "assets/ui/vr_panel.png",
+      "sha256": "7e1bd7ee78aa6f8cbdec96cba12010bf476e85117740ff3078b7358f1b26c4a6",
+      "bytes": 164777
+    },
+    {
+      "file": "assets/ui/vr_workspace_source.jpg",
+      "sha256": "09c99ea08c10f9cac2aff659d70c878f10251b3477d4dc2dd7079d1134e1f891",
+      "bytes": 114587
+    }
+  ],
+  "workspace": {
+    "file": "assets/ui/vr_workspace_source.jpg",
+    "source": "SDK HUD read-only mirror capture",
+    "capture_date": "2026-11-17",
+    "source_file": "2026-11-17-19-04-Dual-HUD.jpg",
+    "crop_xywh": [
+      20,
+      112,
+      1466,
+      486
+    ],
+    "state": "Measured joint labels on both side models; Quest waiting, tracking missing, recheck required. Historical capture, not current telemetry.",
+    "not_headset_recording": true
+  }
+}

@@ -4,7 +4,7 @@
 
 An inspectable VR-to-robot control stack, from first motion to a calibrated bimanual workflow.
 
-[View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [Repository guide](docs/REPOSITORY.md)
+[View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)
 
 This repository contains the project showcase, documentation and historical-log analysis. The complete robot-control SDK is maintained separately.
 
@@ -45,3 +45,11 @@ Processed goals, accepted references and raw hand intent are distinct. Command s
 The first recordings established robot motion and exposed stalls and control faults. Later work investigated reference smoothing and tracking limitations. The latest VR interface integrates frame calibration, per-arm start return, reconnection, explicit recovery and recording.
 
 [Operation manual](docs/OPERATIONS.md) · [Code walkthrough](docs/CODE_TOUR.md) · [Media provenance](docs/media_manifest.json) · [Publication boundaries](docs/GITHUB_PREPARATION.md)
+
+**PC & VR interface** — [Explore selected functional panels](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#interfaces). The complete workspace shows left/right E6 feedback views around the central controls in an authentic SDK mirror capture. Expand the function panels for current source-rendered details; no headset-video screenshots are used.
+
+The headset-first workflow supports a single operator: recheck, calibrate, Grip control, Stop and guarded return-to-start. Recovery clears only eligible collision protection; other alarms and hardware stops still require inspection. [Workflow and recovery](docs/HEADSET_WORKFLOW.md).
+
+**Teleoperation frame calibration** — Record each arm’s base +X direction; fixed WebXR up supplies the vertical constraint, and cross products complete a right-handed frame. Fresh Grip anchors map relative hand motion to TCP targets. [Full procedure and equations](docs/CALIBRATION.md).
+
+**Acknowledgments** — We thank the RangedIK authors and the researchers behind damped least-squares IK (DLS). [IEEE references](docs/REFERENCES.md) · [BibTeX](docs/references.bib).

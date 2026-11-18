@@ -1,0 +1,3 @@
+# Only needed to generate or validate browser video derivatives.
+av==17.1.0
+imageio-ffmpeg==0.6.0

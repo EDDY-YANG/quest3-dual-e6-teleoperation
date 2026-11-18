@@ -1,0 +1,74 @@
+<section class="interface-section" id="interfaces">
+  <h2>PC &amp; VR interface</h2>
+  <p class="context">A headset-first workspace for one operator: the left E6 view, central control panel and right E6 view stay together. After host setup, connection rechecks, calibration, Grip control and guarded return-to-start are available without repeatedly removing the headset.</p>
+  <figure class="full-workspace">
+    <div class="workspace-crop"><img src="assets/ui/vr_workspace_source.jpg" alt="Actual SDK VR workspace: left and right E6 models with measured joint feedback around the central dual-arm control panel"></div>
+    <figcaption><b>Left E6 · shared controls · right E6.</b> Actual SDK UI mirror captured on 17 Nov 2026, using the same drawing module as the headset. Both models are labelled measured joint poses. The captured session is waiting for Quest input and requires a recheck; this is a historical interface view, not a live robot connection.</figcaption>
+  </figure>
+  <div class="headset-journey" aria-label="Headset operating workflow"><span>Connect / recheck</span><span>Calibrate</span><span>Grip to follow</span><span>Stop / return</span><span>Recheck &amp; resume</span></div>
+  <p class="context">The side views update from each arm's feedback and expose joint/TCP state alongside the control status. A return request first stops following and confirms stationary feedback, handles eligible collision protection, then checks and executes the saved start target. Arrival is confirmed from measurements. <a href="docs/HEADSET_WORKFLOW.html">Headset operation and recovery →</a></p>
+  <details class="interface-details"><summary>Explore PC controls and VR panel details</summary>
+  <div class="interface-grid">
+    <article class="interface-card">
+      <div class="interface-title"><h3>PC console</h3><span>RECORDED INTERFACE</span></div>
+      <div class="panel-tabs" role="tablist" aria-label="PC interface views">
+        <button id="tab-pc-feedback" role="tab" aria-selected="true" aria-controls="pc-feedback">Feedback</button>
+        <button id="tab-pc-connect" role="tab" aria-selected="false" aria-controls="pc-connect" tabindex="-1">Connection</button>
+        <button id="tab-pc-start" role="tab" aria-selected="false" aria-controls="pc-start" tabindex="-1">Start positions</button>
+      </div>
+      <div id="pc-feedback" role="tabpanel" aria-labelledby="tab-pc-feedback">
+        <div class="interface-stage"><div class="ui-crop feedback-crop"><img src="assets/ui/pc_monitor_source.jpg" alt="Selected left-arm monitoring card, labelled offline reference pose" style="width:213.5135%;left:-5.0676%;top:-120.1195%"></div></div>
+        <div class="interface-copy"><strong>Independent joint and TCP monitoring</strong><p>Inspect the model, joint readouts, accepted command and measured TCP pose for each arm. The right arm uses the same independently monitored layout.</p></div>
+      </div>
+      <div id="pc-connect" role="tabpanel" aria-labelledby="tab-pc-connect" hidden>
+        <div class="interface-stage"><div class="ui-crop" style="aspect-ratio:1448/143"><img src="assets/ui/pc_controls_source.jpg" alt="Connection status and host supervision controls" style="width:105.0414%;left:-2.0718%;top:-79.7203%"></div></div>
+        <div class="interface-copy"><strong>Connection and supervision</strong><p>Check headset and robot feedback status, reconnect the links and request a shared software Stop. Hardware emergency stops remain independent.</p></div>
+      </div>
+      <div id="pc-start" role="tabpanel" aria-labelledby="tab-pc-start" hidden>
+        <div class="interface-stage"><div class="ui-crop" style="aspect-ratio:1448/196"><img src="assets/ui/pc_controls_source.jpg" alt="Per-arm measured start-pose save and guarded return controls" style="width:105.0414%;left:-2.0718%;top:-180.1020%"></div></div>
+        <div class="interface-copy"><strong>Per-arm start positions</strong><p>Save a measured start pose and request a guarded return for either arm. Preparation and recovery states remain visible.</p></div>
+      </div>
+    </article>
+    <article class="interface-card">
+      <div class="interface-title"><h3>Quest 3 panel</h3><span>ACTUAL UI SOURCE</span></div>
+      <div class="panel-tabs" role="tablist" aria-label="VR interface views">
+        <button id="tab-vr-control" role="tab" aria-selected="true" aria-controls="vr-control">Control panel</button>
+        <button id="tab-vr-calibration" role="tab" aria-selected="false" aria-controls="vr-calibration" tabindex="-1">Calibration</button>
+      </div>
+      <div id="vr-control" role="tabpanel" aria-labelledby="tab-vr-control">
+        <div class="interface-stage"><img src="assets/ui/vr_panel.png" alt="Actual VR control canvas rendered from the SDK in its disconnected state"></div>
+        <div class="interface-copy"><strong>Operate within the headset</strong><p>Recheck connections, prepare the selected arm, return to its start pose, enter Grip-controlled teleoperation and stop through a shared control panel.</p></div>
+      </div>
+      <div id="vr-calibration" role="tabpanel" aria-labelledby="tab-vr-calibration" hidden>
+        <div class="interface-stage"><img src="assets/ui/calibration_panel.png" alt="Actual VR calibration canvas with X-direction capture and operator-forward actions"></div>
+        <div class="interface-copy"><strong>Capture X; complete the frame automatically</strong><p>Select an arm, record the start point, move along its base +X and finish. A separate action records the operator's forward direction.</p></div>
+      </div>
+    </article>
+  </div>
+  <p class="interface-note">PC: selected historical screenshot regions, with original state labels retained. VR detail panels: current source-rendered canvases, disconnected with no supplied telemetry. No headset-video screenshots are used. <a href="docs/INTERFACES.html">Design and artwork provenance →</a></p>
+  </details>
+</section>
+<section class="calibration-section" id="calibration">
+  <h2>Teleoperation frame calibration</h2>
+  <p class="context">Measure one direction for each arm, then use fixed WebXR up to construct the remaining orthogonal axes. The resulting map makes hand displacement consistent with that E6 base frame.</p>
+  <div class="calibration-overview">
+    <img src="assets/calibration.svg" alt="X-only yaw calibration using fixed WebXR up and a right-handed orthogonal frame">
+    <ol class="calibration-steps">
+      <li><strong>Connect, recheck and release Grip.</strong> Keep tracking and robot feedback valid; complete any start return before capture.</li>
+      <li><strong>Select an arm and begin X capture.</strong> Translate its controller at least 80 mm horizontally along that robot's physical base +X.</li>
+      <li><strong>Finish X capture.</strong> Y and Z are completed and applied automatically. Repeat independently for the other arm.</li>
+      <li><strong>Record operator forward.</strong> Point a tracked controller forward and capture its horizontal ray direction.</li>
+      <li><strong>Arm, then re-engage Grip.</strong> Fresh hand/TCP anchors define relative motion. Check all movement directions with small displacements.</li>
+    </ol>
+  </div>
+  <details class="calibration-detail"><summary>Why one sampled axis works — and what it does not estimate</summary>
+    <p>A single X vector cannot uniquely determine a 3D frame. Here the second constraint is explicit: WebXR up maps to base +Z, so robot bases must be level. Only yaw is fitted. This does not estimate base tilt or XR-to-robot translation.</p>
+    <pre class="equation">u = [0, 1, 0]ᵀ                 d = p₁ − p₀
+x = normalize(d − u(uᵀd))       y = normalize(u × x)
+x = y × u                      C = [xᵀ; yᵀ; uᵀ]
+p*_TCP = p_TCP,0 + 1000 C(p_hand − p_hand,0)
+R*_TCP = C(R_hand R_hand,0ᵀ)CᵀR_TCP,0</pre>
+    <p>The axes are rows of C. Relative orientation removes the need to match the initial controller and TCP orientations. This defines a target; IK, limits, orientation constraints and feedback still determine the actual motion.</p>
+  </details>
+  <p class="interface-note"><a href="docs/CALIBRATION.html">Full procedure, equations and implementation trace →</a> · Recalibrate when the XR reference or robot coordinate context changes.</p>
+</section>

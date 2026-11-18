@@ -3,12 +3,12 @@
 <title>Quest 3 / Dual E6 — Yang Taige</title>
 <style>
 :root{--ink:#172331;--muted:#627183;--line:#dce2e9;--blue:#2563eb;--orange:#d97706;--purple:#7c3aed}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}main{max-width:1220px;margin:auto;padding:0 36px 70px}.review{font:11px/1.4 monospace;letter-spacing:.12em;text-align:right;padding:18px 0;color:var(--muted);border-bottom:1px solid var(--line)}header{text-align:center;padding:58px 15px 42px}h1{font-size:clamp(28px,4vw,46px);line-height:1.2;letter-spacing:-1.3px;max-width:1000px;margin:0 auto 20px;font-weight:650}.author{font-size:18px}.affiliation{color:var(--muted);font-size:15px}.lede{max-width:730px;margin:24px auto 0;color:var(--muted)}nav{display:flex;gap:23px;flex-wrap:wrap;justify-content:center;font-size:13px;margin-top:22px}a{color:#1c5aa6;text-decoration:none}a:hover{text-decoration:underline}figure{margin:10px 0 42px}figure>a{display:block}figure img{width:100%;display:block}figcaption{font-size:13px;color:var(--muted);padding:10px 3px 0;border-top:1px solid var(--line)}figcaption b{color:var(--ink);font-weight:600}.eval{padding-top:26px;border-top:1px solid var(--line)}h2{font-size:25px;letter-spacing:-.4px;margin:0 0 10px;font-weight:600}.context{font-size:14px;color:var(--muted);max-width:1000px;margin:0 0 24px}.legend{display:flex;flex-wrap:wrap;gap:24px;margin:17px 0;font-size:14px}.legend span{display:inline-flex;align-items:center;gap:8px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}.chart{margin-bottom:25px}.chart img{width:100%}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}thead th{font-weight:600;min-width:170px}thead th:first-child{min-width:260px}thead .ik{border-top:3px solid var(--blue);background:#f1f6ff;color:var(--blue)}thead .ik_qp{border-top:3px solid var(--orange);background:#fffaed;color:#a15a07}thead .ranged_v7{border-top:3px solid var(--purple);background:#f6f2ff;color:var(--purple)}th small{display:block;color:var(--muted);font-size:11px;font-weight:400}td{font-variant-numeric:tabular-nums}tbody tr:nth-child(even){background:#fafbfc}.notes{font-size:13px;color:var(--muted);margin:18px 0 35px}.finding{font-size:15px;border-left:3px solid var(--purple);padding:5px 18px;margin:25px 0;max-width:1050px}.films{margin-top:50px}.video-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}.video-three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:25px}.film{margin:0}video{display:block;width:100%;background:#0e1724;border-radius:3px}.wide{aspect-ratio:848/478}.portrait{height:340px;object-fit:contain}.film figcaption{padding:9px 0;border:0;font-size:12px}.film b{display:block;color:var(--ink);font-size:14px;font-weight:500}.film em{font-style:normal;color:var(--muted)}footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.download{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;margin-top:16px}@media(max-width:700px){main{padding:0 16px 35px}header{padding:35px 0}h1{letter-spacing:-.6px}.video-pair{grid-template-columns:1fr}.video-three{gap:10px}.portrait{height:240px}th,td{padding:10px;font-size:12px}.author{font-size:17px}}@media(max-width:440px){.video-three{grid-template-columns:1fr}.portrait{height:360px}}
-</style></head><body><main>
+</style><link rel="stylesheet" href="assets/project.css"></head><body><main>
 <div class="review">ME CAPSTONE PROJECT · SYSTEM DESIGN &amp; EXPERIMENTAL RECORDS</div>
 <header><h1>Quest 3–Based Bimanual Teleoperation<br>of DOBOT E6 Robots</h1>
 <div class="author">Yang Taige</div><div class="affiliation">The University of Hong Kong · ME capstone project</div>
 <p class="lede">An inspectable VR-to-robot control stack, developed from first motion to a calibrated bimanual workflow.</p>
-<nav><a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation">GitHub repository</a><a href="docs/OPERATIONS.html">Operation manual</a><a href="analysis/methods.html">Statistical methods</a><a href="#evaluation">Measured results</a></nav></header>
+<nav><a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation">GitHub repository</a><a href="docs/OPERATIONS.html">Operation manual</a><a href="analysis/methods.html">Statistical methods</a><a href="#evaluation">Measured results</a><a class="watch-link" href="#development">Watch videos</a><a href="#interfaces">PC &amp; VR design</a></nav></header>
 <figure><a href="assets/system_setup.svg" target="_blank"><img src="assets/system_setup.svg" alt="Quest 3, Wi-Fi access point, Windows host, two independent E6 Ethernet connections, power supplies and hardware E-stops"></a>
 <figcaption><b>Figure 1.</b> Physical topology. Blue links carry data; dashed gray lines show power relationships; red paths identify independent hardware emergency stops. Device symbols and pose are illustrative, not a terminal wiring or safety certification drawing.</figcaption></figure>
 <figure><a href="assets/data_flow.svg" target="_blank"><img src="assets/data_flow.svg" alt="WebXR input validation, frame calibration, per-arm target generation, solver, command validation, E6 feedback, supervision and recording"></a>
@@ -23,13 +23,100 @@
 <div class="download"><a href="analysis/results_v4/stage_metrics.csv">Summary CSV</a><a href="analysis/results_v4/per_record_metrics.csv">Per-record CSV</a><a href="analysis/methods.html">Definitions & exclusions</a><a href="analysis/analyze_real_logs.py">Analysis source</a></div>
 </section>
 <section class="films" id="development"><h2>Development footage</h2><p class="context">From first motion to an integrated VR workflow. Dates were supplied by the author. Exact video-to-log alignment is not established; the metric table is grouped by recorded software configuration.</p>
+<p class="video-guide">Click Play on a video to watch here. Use the progress bar or fullscreen control; a WebM alternative is available if your browser cannot play MP4.</p>
 <div class="video-pair">
-<figure class="film"><video class="wide" controls preload="metadata" poster="assets/videos/poster_04.jpg" src="assets/videos/demo_04.mp4"></video><figcaption><b>04 · Bimanual VR workflow</b><em>17 Nov 2026 · 78.3 s · original recording</em></figcaption></figure>
-<figure class="film"><video class="wide" controls preload="metadata" poster="assets/videos/poster_05.jpg" src="assets/videos/demo_05.mp4"></video><figcaption><b>05 · Controller interaction and feedback</b><em>17 Nov 2026 · 47.0 s · original recording</em></figcaption></figure>
+<figure class="film"><div class="video-shell"><video id="video-04" class="wide" controls playsinline preload="metadata" poster="assets/videos/poster_04.jpg" data-webm="assets/videos/demo_04.webm"><source src="assets/videos/demo_04.mp4" type="video/mp4"><source src="assets/videos/demo_04.webm" type="video/webm"><a href="assets/videos/demo_04.mp4">Open video 04</a></video><button class="play-video" aria-controls="video-04" hidden>▶ Play video 04</button></div><p class="video-status" role="status" hidden></p><div class="video-links"><a href="assets/videos/demo_04.mp4" target="_blank" rel="noopener">Open MP4</a><a href="assets/videos/demo_04.webm" target="_blank" rel="noopener">Open WebM</a><button class="use-webm" hidden>Try WebM here</button></div><figcaption><b>04 · Bimanual VR workflow</b><em>17 Nov 2026 · 78.3 s · original recording</em></figcaption></figure>
+<figure class="film"><div class="video-shell"><video id="video-05" class="wide" controls playsinline preload="metadata" poster="assets/videos/poster_05.jpg" data-webm="assets/videos/demo_05.webm"><source src="assets/videos/demo_05.mp4" type="video/mp4"><source src="assets/videos/demo_05.webm" type="video/webm"><a href="assets/videos/demo_05.mp4">Open video 05</a></video><button class="play-video" aria-controls="video-05" hidden>▶ Play video 05</button></div><p class="video-status" role="status" hidden></p><div class="video-links"><a href="assets/videos/demo_05.mp4" target="_blank" rel="noopener">Open MP4</a><a href="assets/videos/demo_05.webm" target="_blank" rel="noopener">Open WebM</a><button class="use-webm" hidden>Try WebM here</button></div><figcaption><b>05 · Controller interaction and feedback</b><em>17 Nov 2026 · 47.0 s · original recording</em></figcaption></figure>
 </div><div class="video-three">
-<figure class="film"><video class="portrait" controls preload="metadata" poster="assets/videos/poster_01.jpg" src="assets/videos/demo_01.mp4"></video><figcaption><b>01 · First robot motion</b><em>4 Nov 2026 · 35.9 s</em></figcaption></figure>
-<figure class="film"><video class="portrait" controls preload="metadata" poster="assets/videos/poster_02.jpg" src="assets/videos/demo_02.mp4"></video><figcaption><b>02 · Following experiments</b><em>11 Nov 2026 · 15.0 s</em></figcaption></figure>
-<figure class="film"><video class="portrait" controls preload="metadata" poster="assets/videos/poster_03.jpg" src="assets/videos/demo_03.mp4"></video><figcaption><b>03 · Motion-control iteration</b><em>11 Nov 2026 · 25.3 s</em></figcaption></figure>
+<figure class="film"><div class="video-shell"><video id="video-01" class="portrait" controls playsinline preload="metadata" poster="assets/videos/poster_01.jpg" data-webm="assets/videos/demo_01.webm"><source src="assets/videos/demo_01.mp4" type="video/mp4"><source src="assets/videos/demo_01.webm" type="video/webm"><a href="assets/videos/demo_01.mp4">Open video 01</a></video><button class="play-video" aria-controls="video-01" hidden>▶ Play video 01</button></div><p class="video-status" role="status" hidden></p><div class="video-links"><a href="assets/videos/demo_01.mp4" target="_blank" rel="noopener">Open MP4</a><a href="assets/videos/demo_01.webm" target="_blank" rel="noopener">Open WebM</a><button class="use-webm" hidden>Try WebM here</button></div><figcaption><b>01 · First robot motion</b><em>4 Nov 2026 · 35.9 s</em></figcaption></figure>
+<figure class="film"><div class="video-shell"><video id="video-02" class="portrait" controls playsinline preload="metadata" poster="assets/videos/poster_02.jpg" data-webm="assets/videos/demo_02.webm"><source src="assets/videos/demo_02.mp4" type="video/mp4"><source src="assets/videos/demo_02.webm" type="video/webm"><a href="assets/videos/demo_02.mp4">Open video 02</a></video><button class="play-video" aria-controls="video-02" hidden>▶ Play video 02</button></div><p class="video-status" role="status" hidden></p><div class="video-links"><a href="assets/videos/demo_02.mp4" target="_blank" rel="noopener">Open MP4</a><a href="assets/videos/demo_02.webm" target="_blank" rel="noopener">Open WebM</a><button class="use-webm" hidden>Try WebM here</button></div><figcaption><b>02 · Following experiments</b><em>11 Nov 2026 · 15.0 s</em></figcaption></figure>
+<figure class="film"><div class="video-shell"><video id="video-03" class="portrait" controls playsinline preload="metadata" poster="assets/videos/poster_03.jpg" data-webm="assets/videos/demo_03.webm"><source src="assets/videos/demo_03.mp4" type="video/mp4"><source src="assets/videos/demo_03.webm" type="video/webm"><a href="assets/videos/demo_03.mp4">Open video 03</a></video><button class="play-video" aria-controls="video-03" hidden>▶ Play video 03</button></div><p class="video-status" role="status" hidden></p><div class="video-links"><a href="assets/videos/demo_03.mp4" target="_blank" rel="noopener">Open MP4</a><a href="assets/videos/demo_03.webm" target="_blank" rel="noopener">Open WebM</a><button class="use-webm" hidden>Try WebM here</button></div><figcaption><b>03 · Motion-control iteration</b><em>11 Nov 2026 · 25.3 s</em></figcaption></figure>
 </div></section>
+<section class="interface-section" id="interfaces">
+  <h2>PC &amp; VR interface</h2>
+  <p class="context">A headset-first workspace for one operator: the left E6 view, central control panel and right E6 view stay together. After host setup, connection rechecks, calibration, Grip control and guarded return-to-start are available without repeatedly removing the headset.</p>
+  <figure class="full-workspace">
+    <div class="workspace-crop"><img src="assets/ui/vr_workspace_source.jpg" alt="Actual SDK VR workspace: left and right E6 models with measured joint feedback around the central dual-arm control panel"></div>
+    <figcaption><b>Left E6 · shared controls · right E6.</b> Actual SDK UI mirror captured on 17 Nov 2026, using the same drawing module as the headset. Both models are labelled measured joint poses. The captured session is waiting for Quest input and requires a recheck; this is a historical interface view, not a live robot connection.</figcaption>
+  </figure>
+  <div class="headset-journey" aria-label="Headset operating workflow"><span>Connect / recheck</span><span>Calibrate</span><span>Grip to follow</span><span>Stop / return</span><span>Recheck &amp; resume</span></div>
+  <p class="context">The side views update from each arm's feedback and expose joint/TCP state alongside the control status. A return request first stops following and confirms stationary feedback, handles eligible collision protection, then checks and executes the saved start target. Arrival is confirmed from measurements. <a href="docs/HEADSET_WORKFLOW.html">Headset operation and recovery →</a></p>
+  <details class="interface-details"><summary>Explore PC controls and VR panel details</summary>
+  <div class="interface-grid">
+    <article class="interface-card">
+      <div class="interface-title"><h3>PC console</h3><span>RECORDED INTERFACE</span></div>
+      <div class="panel-tabs" role="tablist" aria-label="PC interface views">
+        <button id="tab-pc-feedback" role="tab" aria-selected="true" aria-controls="pc-feedback">Feedback</button>
+        <button id="tab-pc-connect" role="tab" aria-selected="false" aria-controls="pc-connect" tabindex="-1">Connection</button>
+        <button id="tab-pc-start" role="tab" aria-selected="false" aria-controls="pc-start" tabindex="-1">Start positions</button>
+      </div>
+      <div id="pc-feedback" role="tabpanel" aria-labelledby="tab-pc-feedback">
+        <div class="interface-stage"><div class="ui-crop feedback-crop"><img src="assets/ui/pc_monitor_source.jpg" alt="Selected left-arm monitoring card, labelled offline reference pose" style="width:213.5135%;left:-5.0676%;top:-120.1195%"></div></div>
+        <div class="interface-copy"><strong>Independent joint and TCP monitoring</strong><p>Inspect the model, joint readouts, accepted command and measured TCP pose for each arm. The right arm uses the same independently monitored layout.</p></div>
+      </div>
+      <div id="pc-connect" role="tabpanel" aria-labelledby="tab-pc-connect" hidden>
+        <div class="interface-stage"><div class="ui-crop" style="aspect-ratio:1448/143"><img src="assets/ui/pc_controls_source.jpg" alt="Connection status and host supervision controls" style="width:105.0414%;left:-2.0718%;top:-79.7203%"></div></div>
+        <div class="interface-copy"><strong>Connection and supervision</strong><p>Check headset and robot feedback status, reconnect the links and request a shared software Stop. Hardware emergency stops remain independent.</p></div>
+      </div>
+      <div id="pc-start" role="tabpanel" aria-labelledby="tab-pc-start" hidden>
+        <div class="interface-stage"><div class="ui-crop" style="aspect-ratio:1448/196"><img src="assets/ui/pc_controls_source.jpg" alt="Per-arm measured start-pose save and guarded return controls" style="width:105.0414%;left:-2.0718%;top:-180.1020%"></div></div>
+        <div class="interface-copy"><strong>Per-arm start positions</strong><p>Save a measured start pose and request a guarded return for either arm. Preparation and recovery states remain visible.</p></div>
+      </div>
+    </article>
+    <article class="interface-card">
+      <div class="interface-title"><h3>Quest 3 panel</h3><span>ACTUAL UI SOURCE</span></div>
+      <div class="panel-tabs" role="tablist" aria-label="VR interface views">
+        <button id="tab-vr-control" role="tab" aria-selected="true" aria-controls="vr-control">Control panel</button>
+        <button id="tab-vr-calibration" role="tab" aria-selected="false" aria-controls="vr-calibration" tabindex="-1">Calibration</button>
+      </div>
+      <div id="vr-control" role="tabpanel" aria-labelledby="tab-vr-control">
+        <div class="interface-stage"><img src="assets/ui/vr_panel.png" alt="Actual VR control canvas rendered from the SDK in its disconnected state"></div>
+        <div class="interface-copy"><strong>Operate within the headset</strong><p>Recheck connections, prepare the selected arm, return to its start pose, enter Grip-controlled teleoperation and stop through a shared control panel.</p></div>
+      </div>
+      <div id="vr-calibration" role="tabpanel" aria-labelledby="tab-vr-calibration" hidden>
+        <div class="interface-stage"><img src="assets/ui/calibration_panel.png" alt="Actual VR calibration canvas with X-direction capture and operator-forward actions"></div>
+        <div class="interface-copy"><strong>Capture X; complete the frame automatically</strong><p>Select an arm, record the start point, move along its base +X and finish. A separate action records the operator's forward direction.</p></div>
+      </div>
+    </article>
+  </div>
+  <p class="interface-note">PC: selected historical screenshot regions, with original state labels retained. VR detail panels: current source-rendered canvases, disconnected with no supplied telemetry. No headset-video screenshots are used. <a href="docs/INTERFACES.html">Design and artwork provenance →</a></p>
+  </details>
+</section>
+<section class="calibration-section" id="calibration">
+  <h2>Teleoperation frame calibration</h2>
+  <p class="context">Measure one direction for each arm, then use fixed WebXR up to construct the remaining orthogonal axes. The resulting map makes hand displacement consistent with that E6 base frame.</p>
+  <div class="calibration-overview">
+    <img src="assets/calibration.svg" alt="X-only yaw calibration using fixed WebXR up and a right-handed orthogonal frame">
+    <ol class="calibration-steps">
+      <li><strong>Connect, recheck and release Grip.</strong> Keep tracking and robot feedback valid; complete any start return before capture.</li>
+      <li><strong>Select an arm and begin X capture.</strong> Translate its controller at least 80 mm horizontally along that robot's physical base +X.</li>
+      <li><strong>Finish X capture.</strong> Y and Z are completed and applied automatically. Repeat independently for the other arm.</li>
+      <li><strong>Record operator forward.</strong> Point a tracked controller forward and capture its horizontal ray direction.</li>
+      <li><strong>Arm, then re-engage Grip.</strong> Fresh hand/TCP anchors define relative motion. Check all movement directions with small displacements.</li>
+    </ol>
+  </div>
+  <details class="calibration-detail"><summary>Why one sampled axis works — and what it does not estimate</summary>
+    <p>A single X vector cannot uniquely determine a 3D frame. Here the second constraint is explicit: WebXR up maps to base +Z, so robot bases must be level. Only yaw is fitted. This does not estimate base tilt or XR-to-robot translation.</p>
+    <pre class="equation">u = [0, 1, 0]ᵀ                 d = p₁ − p₀
+x = normalize(d − u(uᵀd))       y = normalize(u × x)
+x = y × u                      C = [xᵀ; yᵀ; uᵀ]
+p*_TCP = p_TCP,0 + 1000 C(p_hand − p_hand,0)
+R*_TCP = C(R_hand R_hand,0ᵀ)CᵀR_TCP,0</pre>
+    <p>The axes are rows of C. Relative orientation removes the need to match the initial controller and TCP orientations. This defines a target; IK, limits, orientation constraints and feedback still determine the actual motion.</p>
+  </details>
+  <p class="interface-note"><a href="docs/CALIBRATION.html">Full procedure, equations and implementation trace →</a> · Recalibrate when the XR reference or robot coordinate context changes.</p>
+</section>
+
+<section class="references-section" id="references">
+  <h2>Acknowledgments &amp; references</h2>
+  <p class="context">We thank the RangedIK authors and open-source contributors, and the researchers behind damped least-squares inverse kinematics (DLS), for the foundations used in this project's development.</p>
+  <ol class="references-list">
+    <li>Y. Wang, P. Praveena, D. Rakita, and M. Gleicher, “RangedIK: An Optimization-based Robot Motion Generation Method for Ranged-Goal Tasks,” in <i>Proc. 2023 IEEE International Conference on Robotics and Automation (ICRA)</i>, London, United Kingdom, 2023, pp. 9700–9706, doi: <a href="https://doi.org/10.1109/ICRA48891.2023.10161311">10.1109/ICRA48891.2023.10161311</a>.</li>
+    <li>C. W. Wampler II, “Manipulator Inverse Kinematic Solutions Based on Vector Formulations and Damped Least-Squares Methods,” <i>IEEE Transactions on Systems, Man, and Cybernetics</i>, vol. SMC-16, no. 1, pp. 93–101, Jan. 1986, doi: <a href="https://doi.org/10.1109/TSMC.1986.289285">10.1109/TSMC.1986.289285</a>.</li>
+    <li>Y. Nakamura and H. Hanafusa, “Inverse Kinematic Solutions With Singularity Robustness for Robot Manipulator Control,” <i>Journal of Dynamic Systems, Measurement, and Control</i>, vol. 108, no. 3, pp. 163–171, Sep. 1986, doi: <a href="https://doi.org/10.1115/1.3143764">10.1115/1.3143764</a>.</li>
+  </ol>
+  <p class="interface-note"><a href="docs/REFERENCES.html">References and attribution</a> · <a href="docs/references.bib" download>BibTeX</a> · DLS is the standard abbreviation; a deployed RangedIK-to-DLS cascade is not established by the recorded hardware logs.</p>
+</section>
+
 <footer>Project showcase, documentation and historical-log analysis. The complete robot-control SDK is maintained separately and is not included in this repository. E6 render derived from DOBOT's official visual meshes (<a href="assets/E6_MODEL_LICENSE">license</a>); device symbols and chart labels are editable in the supplied source. <a href="docs/media_manifest.json">Media provenance</a> · <a href="docs/GITHUB_PREPARATION.html">Repository scope</a></footer>
-</main></body></html>
+</main><script src="assets/video-player.js" defer></script><script src="assets/interface-tabs.js" defer></script></body></html>

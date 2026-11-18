@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="561.6pt" height="360pt" viewBox="0 0 561.6 360" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-18T12:18:42.259742</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360 
+L 561.6 360 
+L 561.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 138.754138 190.385486 
+Q 196.198243 178.200373 251.454949 166.479253 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #2563eb; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 245.82862 165.014866 
+L 251.454949 166.479253 
+L 246.907642 170.101684 
+z
+" clip-path="url(#p51f8ca7705)" style="fill: #2563eb; stroke: #2563eb; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 135.145459 191.925088 
+Q 100.80031 215.279789 68.304226 237.377126 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #d97706; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 74.06625 236.603123 
+L 68.304226 237.377126 
+L 71.142238 232.303105 
+z
+" clip-path="url(#p51f8ca7705)" style="fill: #d97706; stroke: #d97706; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 136.8 188.800818 
+Q 136.8 134.998817 136.8 83.432885 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #7c3aed; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 134.2 88.632885 
+L 136.8 83.432885 
+L 139.4 88.632885 
+z
+" clip-path="url(#p51f8ca7705)" style="fill: #7c3aed; stroke: #7c3aed; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 415.999248 156.96 
+Q 429.480916 156.96 441.509141 156.96 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #2563eb; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 436.309141 154.36 
+L 441.509141 156.96 
+L 436.309141 159.56 
+z
+" clip-path="url(#p51f8ca7705)" style="fill: #2563eb; stroke: #2563eb; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 415.999248 190.8 
+Q 429.480916 190.8 441.509141 190.8 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #d97706; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 436.309141 188.2 
+L 441.509141 190.8 
+L 436.309141 193.4 
+z
+" clip-path="url(#p51f8ca7705)" style="fill: #d97706; stroke: #d97706; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 415.999248 224.64 
+Q 429.480916 224.64 441.509141 224.64 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #7c3aed; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 436.309141 222.04 
+L 441.509141 224.64 
+L 436.309141 227.24 
+z
+" clip-path="url(#p51f8ca7705)" style="fill: #7c3aed; stroke: #7c3aed; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 36 214.56 
+L 255.6 214.56 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #dce2e9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 295.2 316.8 
+L 295.2 68.4 
+" clip-path="url(#p51f8ca7705)" style="fill: none; stroke: #dce2e9; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #172331; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="18" y="21.6" transform="rotate(-0 18 21.6)">One sampled axis. One fixed vertical reference.</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #627183; font: 10px 'DejaVu Sans'; text-anchor: start" x="18" y="47.52" transform="rotate(-0 18 47.52)">A yaw calibration for level E6 bases</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #2563eb; font: 10px 'DejaVu Sans'; text-anchor: start" x="216" y="144" transform="rotate(-0 216 144)">x: sampled +X</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #d97706; font: 10px 'DejaVu Sans'; text-anchor: start" x="14.4" y="267.84" transform="rotate(-0 14.4 267.84)">y = normalize(u × x)</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #7c3aed; font: 10px 'DejaVu Sans'; text-anchor: start" x="146.16" y="86.4" transform="rotate(-0 146.16 86.4)">u: WebXR up</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #172331; font: 11px 'DejaVu Sans'; text-anchor: start" x="110.16" y="205.92" transform="rotate(-0 110.16 205.92)">p₀</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #172331; font: 11px 'DejaVu Sans'; text-anchor: start" x="255.6" y="181.44" transform="rotate(-0 255.6 181.44)">p₁</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #627183; font: 9px 'DejaVu Sans'; text-anchor: start" x="36" y="298.8" transform="rotate(-0 36 298.8)">Project the recorded motion onto the horizontal plane.</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #627183; font: 9px 'DejaVu Sans'; text-anchor: start" x="36" y="322.56" transform="rotate(-0 36 322.56)">Capture at least 80 mm; keep the robot stationary.</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #172331; font: 700 12px 'DejaVu Sans'; text-anchor: start" x="327.6" y="84.24" transform="rotate(-0 327.6 84.24)">Per-arm direction map</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #172331; font: 13px 'DejaVu Sans'; text-anchor: start" x="327.6" y="120.96" transform="rotate(-0 327.6 120.96)">C = [ xᵀ ; yᵀ ; uᵀ ]</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #2563eb; font: 10px 'DejaVu Sans'; text-anchor: start" x="327.6" y="159.84" transform="rotate(-0 327.6 159.84)">sampled x</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #2563eb; font: 10px 'DejaVu Sans'; text-anchor: start" x="455.04" y="159.84" transform="rotate(-0 455.04 159.84)">base +X</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #d97706; font: 10px 'DejaVu Sans'; text-anchor: start" x="327.6" y="193.68" transform="rotate(-0 327.6 193.68)">derived y</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #d97706; font: 10px 'DejaVu Sans'; text-anchor: start" x="455.04" y="193.68" transform="rotate(-0 455.04 193.68)">base +Y</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #7c3aed; font: 10px 'DejaVu Sans'; text-anchor: start" x="327.6" y="227.52" transform="rotate(-0 327.6 227.52)">fixed up u</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #7c3aed; font: 10px 'DejaVu Sans'; text-anchor: start" x="455.04" y="227.52" transform="rotate(-0 455.04 227.52)">base +Z</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #172331; font: 10px 'DejaVu Sans'; text-anchor: start" x="327.6" y="277.2" transform="rotate(-0 327.6 277.2)">At each Grip engagement:</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #172331; font: 11px 'DejaVu Sans'; text-anchor: start" x="327.6" y="305.28" transform="rotate(-0 327.6 305.28)">Δp_TCP = 1000 C Δp_hand</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #627183; font: 9px 'DejaVu Sans'; text-anchor: start" x="327.6" y="331.2" transform="rotate(-0 327.6 331.2)">metres → millimetres · anchored target</text>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="mbe06035fdd" d="M 0 2.236068 
+C 0.593012 2.236068 1.161816 2.000462 1.581139 1.581139 
+C 2.000462 1.161816 2.236068 0.593012 2.236068 0 
+C 2.236068 -0.593012 2.000462 -1.161816 1.581139 -1.581139 
+C 1.161816 -2.000462 0.593012 -2.236068 0 -2.236068 
+C -0.593012 -2.236068 -1.161816 -2.000462 -1.581139 -1.581139 
+C -2.000462 -1.161816 -2.236068 -0.593012 -2.236068 0 
+C -2.236068 0.593012 -2.000462 1.161816 -1.581139 1.581139 
+C -1.161816 2.000462 -0.593012 2.236068 0 2.236068 
+z
+" style="stroke: #172331"/>
+    </defs>
+    <g clip-path="url(#p51f8ca7705)">
+     <use xlink:href="#mbe06035fdd" x="136.8" y="190.8" style="fill: #172331; stroke: #172331"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p51f8ca7705">
+   <rect x="0" y="0" width="561.6" height="360"/>
+  </clipPath>
+ </defs>
+</svg>

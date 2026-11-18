@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Headset-first operation and recovery — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>Headset-first operation and recovery</span><a href="HEADSET_WORKFLOW.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="headset-first-operation-and-recovery">Headset-first operation and recovery</h1>
+<p>The interface is designed so that one operator can carry out routine preparation, direction calibration, Grip-controlled teleoperation and guarded return-to-start from inside the Quest headset. Two E6 model views flank the central controls, keeping each arm's feedback and the shared operating state visible together.</p>
+<p>The PC still hosts the backend. Initial installation, network/certificate setup and launching the service remain host tasks. Once the session is connected and the work area is prepared, the headset provides the subsequent workflow; the website itself has no robot connection.</p>
+<h2 id="operating-sequence">Operating sequence</h2>
+<ol>
+<li><strong>Connect / recheck.</strong> Confirm the intended arm(s), fresh robot feedback and valid controller tracking. The side models follow measured joint state; their presence alone is not proof of fresh feedback.</li>
+<li><strong>Return to the intended start pose when needed.</strong> Request the relevant arm's <strong>回到开始位</strong> action from the headset. The selected target may be a previously measured start or an explicitly configured joint target. Do not treat a saved target as proof that its path is unobstructed.</li>
+<li><strong>Calibrate the frames.</strong> Record each participating arm's base +X direction and the shared operator-forward direction. Follow the <a href="CALIBRATION.html">calibration guide</a>.</li>
+<li><strong>Start and engage Grip.</strong> Release the participating Grips, start teleoperation, then re-engage Grip as instructed. The backend takes fresh hand/TCP anchors. Release Grip to pause following.</li>
+<li><strong>Stop or recover in the headset.</strong> Use the shared Stop, recheck, or a permitted per-arm return request as appropriate. A completed return requires a recheck before teleoperation is started again.</li>
+</ol>
+<h2 id="what-the-return-button-actually-does">What the return button actually does</h2>
+<p>The return workflow first stops the teleoperation group and requires feedback-confirmed stationary state. It checks robot identity, prevents assigning the same robot to both sides, takes command ownership and stops the selected arm again before planning the return.</p>
+<p>For the explicitly identified collision-protection state, the backend permits <strong>one recovery-clear attempt</strong> only when TCP control is active, no emergency stop is asserted, the arm is stationary, collision protection is present and no other controller alarm is reported. After clearing, it sends another Stop and requires fresh feedback from the same robot and frame, stationary state and a cleared collision flag.</p>
+<p>It then cross-checks User/Tool settings, joint limits and controller forward kinematics for the saved target. The selected arm is enabled if necessary. The joint-space return is segmented and checked against real command/feedback progress; simultaneous return jobs are excluded.</p>
+<p>Final arrival requires stable measured feedback: joint error at most 0.5°, final TCP position error at most 1 mm and orientation error at most 1°, with at least three stable frames spanning 0.15 s or more. The final tool-down check is also applied. These are implementation acceptance thresholds, not benchmark results or a guarantee that every return succeeds.</p>
+<p>If an intermediate check fails, the workflow requests Stop. If stopping cannot be confirmed, a fault is latched. <code>AT_START</code> is reported only after the measured arrival checks; the UI then asks for a recheck before restarting teleoperation.</p>
+<h2 id="boundaries">Boundaries</h2>
+<ul>
+<li>The button does not clear arbitrary controller alarms, release a physical emergency stop, remove an obstruction or eliminate the need for inspection after a physical incident.</li>
+<li>Return-to-start follows a joint-space path. It provides no general collision avoidance and does not guarantee a downward-facing TCP throughout the path.</li>
+<li>During a headset-owned return, the Quest session/input must remain current and the AR session visible, with at least one valid real controller and the selected Grip released. Sustained session/input loss aborts the task.</li>
+<li>Direction calibration is not required merely to return to a verified start target; it is required for subsequent mapped teleoperation.</li>
+</ul>
+<p>Source trace in the separately maintained SDK: <code>server.py</code> (<code>begin_home_return</code>, <code>quiesce_for_home</code>), <code>start_positions.py</code> (<code>_run</code>, <code>_clear_collision</code>), <code>headset_bridge.py</code>, <code>start_positions.mjs</code>, <code>quest_hud.mjs</code>, and <code>e6_urdf_view.mjs</code>.</p>
+</main></body></html>

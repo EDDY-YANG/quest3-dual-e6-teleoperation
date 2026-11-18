@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PC and VR interface design — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>PC and VR interface design</span><a href="INTERFACES.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="pc-and-vr-interface-design">PC and VR interface design</h1>
+<p>The host console exposes connection, configuration and diagnostics. The headset workspace places <strong>two E6 side views around one central control panel</strong>. Preparation, calibration, Grip control and guarded recovery remain in the operator's view. The project page shows the complete three-panel workspace, then selected functional regions in expandable tabbed cards rather than a long application screenshot.</p>
+<h2 id="complete-headset-workspace">Complete headset workspace</h2>
+<p>The main workspace figure comes from the actual SDK's read-only HUD mirror captured on <strong>17 November 2026</strong>. <code>hud_preview.html</code> instantiates the same <code>HeadsetHUD</code> drawing module used in WebXR, with its left model, central panel and right model canvases. This is an authentic interface capture, not a frame extracted from a headset recording.</p>
+<p>Both side models in that capture are labelled measured joint poses and show TCP/tool/base-axis information. The central panel shows waiting Quest input, missing controller tracking and an expired precheck. These state labels are retained: the image documents a historical interface with robot feedback, not successful active teleoperation or a current connection.</p>
+<p>The deployed application updates each side's model from that arm's measured joint feedback. The display distinguishes measured state, accepted target and unavailable/offline state. The public website is only a project showcase and receives no robot telemetry. See <a href="HEADSET_WORKFLOW.html">headset operation and recovery</a> for the intended single-operator workflow and implemented limits.</p>
+<h2 id="host-console">Host console</h2>
+<ul>
+<li><strong>Joint and TCP monitoring:</strong> independent per-arm models, joint readouts, accepted commands and measured TCP pose.</li>
+<li><strong>Connection and supervision:</strong> headset/link state, read-only robot feedback connection and shared software Stop.</li>
+<li><strong>Start positions:</strong> save a measured per-arm start pose and request a guarded return. The software Stop does not replace the physical emergency stop.</li>
+</ul>
+<p>The website uses selected CSS viewports into actual historical PC screenshots captured on 17 November 2026. The source images were checked for visible credentials/network identifiers before publication. Their offline/reference-state labels are retained; these figures are not evidence of a currently connected system. The right arm uses the same independently monitored layout.</p>
+<h2 id="headset-interface">Headset interface</h2>
+<p>The expandable VR status and calibration detail panels are <strong>new renders from the actual SDK <code>HeadsetHUD.paint()</code> drawing code</strong>. They are not photographs, headset-video frames or redesigned mockups. Chinese labels are retained from the implemented interface; the accompanying explanation is in English.</p>
+<p>The drawing uses the source constructor's disconnected state: <code>remote=null</code>, <code>linkState=&quot;DISCONNECTED&quot;</code>, no supplied telemetry. The calibration view only opens the existing local panel. Consequently unavailable measurements stay as dashes and unavailable actions remain disabled. The default single-arm title is the source's disconnected fallback, not a claim about the capability of the dual-arm workflow.</p>
+<p>The export contains the central 1280 × 800 control canvas. It does not include the separate WebGL robot models or reproduce the surrounding passthrough world. Native font rasterization may differ slightly from Quest Browser.</p>
+<p>To reproduce it, provide the separately maintained SDK frontend and an installed <code>@napi-rs/canvas</code> version 0.1.100:</p>
+<pre><code class="language-bash">node tools/render_vr_interface.mjs --sdk-web &quot;PATH_TO_SDK_WEB&quot; --canvas-module &quot;PATH_TO_INSTALLED_CANVAS&quot;
+</code></pre>
+<p>The script blocks network access, imports the source modules unchanged and prints their hashes. The published artwork provenance is retained in <a href="ui_manifest.json">ui_manifest.json</a>.</p>
+<h2 id="calibration">Calibration</h2>
+<p>The headset provides two-point +X capture, automatic completion of the orthogonal frame using fixed WebXR up, and a separate operator-forward capture. See the <a href="CALIBRATION.html">calibration procedure and equations</a>. These controls define coordinate mappings; solver accuracy and physical tracking remain separate concerns.</p>
+</main></body></html>

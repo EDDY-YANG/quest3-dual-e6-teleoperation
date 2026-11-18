@@ -6,7 +6,14 @@
     "sha256": "dd63eb47aa5cd0fec53cb34fb27178c023f2e34d752f262bb5b7c00034cc4070",
     "capture_date_provided_by_author": "2026-11-04",
     "exact_log_alignment": "not established",
-    "modified_video": false
+    "modified_video": false,
+    "browser_alternative": {
+      "file": "assets/videos/demo_01.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "cb37214f612dec6dc81bd582f27d6f651de737c971209470a926d656d461923b",
+      "bytes": 1609358,
+      "processing": "Full-length transcoding; portrait playback copy downscaled to 480px width; original MP4 retained unchanged."
+    }
   },
   {
     "video": 2,
@@ -15,7 +22,14 @@
     "sha256": "274edb312b0900359aaaa425b981dc0dd92e9814342ecdebec54774203baf8ea",
     "capture_date_provided_by_author": "2026-11-11",
     "exact_log_alignment": "not established",
-    "modified_video": false
+    "modified_video": false,
+    "browser_alternative": {
+      "file": "assets/videos/demo_02.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "c4dd4eb8f7a3e6421acd3cc282b633ba05846f5d0cd15f0940a5c85e75ee0438",
+      "bytes": 878998,
+      "processing": "Full-length transcoding; portrait playback copy downscaled to 480px width; original MP4 retained unchanged."
+    }
   },
   {
     "video": 3,
@@ -24,7 +38,14 @@
     "sha256": "0e52cc8c74930877ecfe89c7b0f65d011faa89c0cc6e5770b2884f1e9fc40b4d",
     "capture_date_provided_by_author": "2026-11-11",
     "exact_log_alignment": "not established",
-    "modified_video": false
+    "modified_video": false,
+    "browser_alternative": {
+      "file": "assets/videos/demo_03.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "6b7fe5b06155f4cb33c4e1cb902368ae39c4c2441c0939936c84711711ac030a",
+      "bytes": 1774489,
+      "processing": "Full-length transcoding; portrait playback copy downscaled to 480px width; original MP4 retained unchanged."
+    }
   },
   {
     "video": 4,
@@ -33,7 +54,14 @@
     "sha256": "cddc66c7ce7996b59a491c9c8cd7762062bb602b4b07ce59ceeb62bb36c85f32",
     "capture_date_provided_by_author": "2026-11-17",
     "exact_log_alignment": "not established",
-    "modified_video": false
+    "modified_video": false,
+    "browser_alternative": {
+      "file": "assets/videos/demo_04.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "c175bd1ffe25329a924bd58719d641b5c94989736ee7003570fe1faf2fe2cb7e",
+      "bytes": 9855596,
+      "processing": "Full-length transcoding; portrait playback copy downscaled to 480px width; original MP4 retained unchanged."
+    }
   },
   {
     "video": 5,
@@ -42,6 +70,13 @@
     "sha256": "6ce059e80d14427972801abed8657e8264e1b01f08fb2b80605ffc9dad2dd82a",
     "capture_date_provided_by_author": "2026-11-17",
     "exact_log_alignment": "not established",
-    "modified_video": false
+    "modified_video": false,
+    "browser_alternative": {
+      "file": "assets/videos/demo_05.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "db322d4bd1b2b119903314b2720ec78c2df2c8e6d557f34d07711706e99b0742",
+      "bytes": 5740650,
+      "processing": "Full-length transcoding; portrait playback copy downscaled to 480px width; original MP4 retained unchanged."
+    }
   }
 ]
