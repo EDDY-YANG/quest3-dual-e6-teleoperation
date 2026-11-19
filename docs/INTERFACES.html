@@ -24,7 +24,7 @@ main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height
 <p>The expandable VR status and calibration detail panels are <strong>new renders from the actual SDK <code>HeadsetHUD.paint()</code> drawing code</strong>. They are not photographs, headset-video frames or redesigned mockups. Chinese labels are retained from the implemented interface; the accompanying explanation is in English.</p>
 <p>The drawing uses the source constructor's disconnected state: <code>remote=null</code>, <code>linkState=&quot;DISCONNECTED&quot;</code>, no supplied telemetry. The calibration view only opens the existing local panel. Consequently unavailable measurements stay as dashes and unavailable actions remain disabled. The default single-arm title is the source's disconnected fallback, not a claim about the capability of the dual-arm workflow.</p>
 <p>The export contains the central 1280 × 800 control canvas. It does not include the separate WebGL robot models or reproduce the surrounding passthrough world. Native font rasterization may differ slightly from Quest Browser.</p>
-<p>To reproduce it, provide the separately maintained SDK frontend and an installed <code>@napi-rs/canvas</code> version 0.1.100:</p>
+<p>To reproduce it, provide the assembled <code>app/web</code> directory from the Windows SDK and an installed <code>@napi-rs/canvas</code> version 0.1.100:</p>
 <pre><code class="language-bash">node tools/render_vr_interface.mjs --sdk-web &quot;PATH_TO_SDK_WEB&quot; --canvas-module &quot;PATH_TO_INSTALLED_CANVAS&quot;
 </code></pre>
 <p>The script blocks network access, imports the source modules unchanged and prints their hashes. The published artwork provenance is retained in <a href="ui_manifest.json">ui_manifest.json</a>.</p>

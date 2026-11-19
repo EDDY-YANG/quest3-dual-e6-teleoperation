@@ -28,7 +28,7 @@ The drawing uses the source constructor's disconnected state: `remote=null`, `li
 
 The export contains the central 1280 × 800 control canvas. It does not include the separate WebGL robot models or reproduce the surrounding passthrough world. Native font rasterization may differ slightly from Quest Browser.
 
-To reproduce it, provide the separately maintained SDK frontend and an installed `@napi-rs/canvas` version 0.1.100:
+To reproduce it, provide the assembled `app/web` directory from the Windows SDK and an installed `@napi-rs/canvas` version 0.1.100:
 
 ```bash
 node tools/render_vr_interface.mjs --sdk-web "PATH_TO_SDK_WEB" --canvas-module "PATH_TO_INSTALLED_CANVAS"

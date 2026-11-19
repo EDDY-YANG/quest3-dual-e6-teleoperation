@@ -8,7 +8,7 @@ main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height
 @media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
 </style></head><body><header><nav><a href="../index.html">← Project home</a><span>Teleoperation frame calibration</span><a href="CALIBRATION.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="teleoperation-frame-calibration">Teleoperation frame calibration</h1>
 <p>The current implementation uses <strong>X-only yaw calibration with a fixed up direction</strong>. The operator measures one horizontal direction for each arm; WebXR's existing up direction supplies the second constraint. This aligns hand displacement with each E6 base frame without requiring the hand controller to begin with the same orientation as the TCP.</p>
-<p>This page describes the separately maintained SDK snapshot reviewed on 17 November 2026. It explains the implemented mapping; publishing this website does not connect to a robot.</p>
+<p>This page describes the calibration implementation reviewed on 17 November 2026. It explains the implemented mapping; publishing this website does not connect to a robot.</p>
 <h2 id="what-is-being-calibrated">What is being calibrated?</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -77,7 +77,7 @@ R*_TCP = C (R_h R_h,0ᵀ) Cᵀ R_TCP,0
 <p>Calibration requires real controller tracking with non-emulated position, released Grip and input age no greater than 200 ms. The backend checks current valid robot feedback, acceptable stopped-state context and User/Tool = 0. Calibration is rejected while control or a start-return action is active.</p>
 <p>Changing the Quest session, reference space, reference epoch, robot identity, frame or User/Tool context invalidates the applicable calibration. <code>control_ready</code> requires both a current per-arm base map and a current shared operator-forward frame. Follow the status message and repeat the required capture steps after invalidation.</p>
 <h2 id="implementation-trace">Implementation trace</h2>
-<p>Paths below refer to the separately maintained SDK, not files bundled in this showcase.</p>
+<p>Paths below are relative to the <a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/tree/main/sdk">SDK source directory</a>.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>

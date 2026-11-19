@@ -31,4 +31,4 @@ If an intermediate check fails, the workflow requests Stop. If stopping cannot b
 - During a headset-owned return, the Quest session/input must remain current and the AR session visible, with at least one valid real controller and the selected Grip released. Sustained session/input loss aborts the task.
 - Direction calibration is not required merely to return to a verified start target; it is required for subsequent mapped teleoperation.
 
-Source trace in the separately maintained SDK: `server.py` (`begin_home_return`, `quiesce_for_home`), `start_positions.py` (`_run`, `_clear_collision`), `headset_bridge.py`, `start_positions.mjs`, `quest_hud.mjs`, and `e6_urdf_view.mjs`.
+Source trace in the Windows SDK under `sdk/` includes `server.py` (`begin_home_return`, `quiesce_for_home`), `start_positions.py` (`_run`, `_clear_collision`), `headset_bridge.py`, `start_positions.mjs`, `quest_hud.mjs`, and `e6_urdf_view.mjs`.
