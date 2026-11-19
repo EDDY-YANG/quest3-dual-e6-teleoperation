@@ -1,0 +1,48 @@
+{
+  "id": "11_offline_algorithms",
+  "title": "RangedIK+DLS 离线实验",
+  "depends_on": [
+    "03_pose_mapping",
+    "04_kinematics_dls",
+    "05_ranged_ik"
+  ],
+  "contract": "历史输入 → 名义参考/误差/耗时；禁止机器人联网，未通过部署验收",
+  "scope": "OFFLINE_ONLY",
+  "files": [
+    {
+      "path": "experiments/dls_study/e6_dls_study.py",
+      "sha256": "643efb8abf1ab49b73a9c9323a19f3247a6f9e0672b69bc7c3ffcda695b357e2",
+      "bytes": 20562
+    },
+    {
+      "path": "experiments/ranged_dls/controllers.py",
+      "sha256": "7b13510f1c0a7a5fa5de0f5e0bbde7fe1fe4fabc676702fadf6e7a681ca54374",
+      "bytes": 11671
+    },
+    {
+      "path": "experiments/ranged_dls/data_replay.py",
+      "sha256": "e0ad1f655cd8c424f5ed1a458751b7d4d499e62d744ce23ffee893c49eb89927",
+      "bytes": 5685
+    },
+    {
+      "path": "experiments/ranged_dls/offline_runtime.py",
+      "sha256": "5561f68223ca3ce247fbccd2941c8cb3555559ccf0e3f9fdbf510b872a7918f5",
+      "bytes": 931
+    },
+    {
+      "path": "experiments/ranged_dls/run_comparison.py",
+      "sha256": "aa5fc89f8467ae6a84d407fec98eeababe3fbb1740d7e159aa70b40275d7467f",
+      "bytes": 23657
+    },
+    {
+      "path": "experiments/ranged_dls/verify_outputs.py",
+      "sha256": "4c29b9943247c60b612129f7b16707f488527611ccd21a43a72e0eb2547030cc",
+      "bytes": 5665
+    },
+    {
+      "path": "profiles/offline_hybrid_v4.json",
+      "sha256": "8630abdaa2fdba65e152aa8073b35594b48edb3415344c8928f1b81d829eaeef",
+      "bytes": 1725
+    }
+  ]
+}

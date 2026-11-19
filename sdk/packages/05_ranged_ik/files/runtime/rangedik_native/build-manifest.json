@@ -1,0 +1,30 @@
+{
+  "built_at": "2026-11-18T09:05:08.497918+00:00",
+  "scope": "PUBLIC_OFFLINE_BUILD_WITH_PATH_REMAP",
+  "source": {
+    "repository": "https://github.com/uwgraphics/relaxed_ik_core.git",
+    "commit": "1c48d2ae408b4e024ee037641aac1e728267984e",
+    "modified_files_sha256": {
+      "src/lib.rs": "032e89470aacfe943d77cbd4da64c5c6737dfe7da94c69227c539295fed8fe07",
+      "src/groove/vars.rs": "8331a500068fbc4c5f832bff8a7fb2afc0081b017148cb742498e47fa5b7f27b",
+      "src/groove/objective.rs": "d7136e4875a020e741affb5c1a721c8241647e2cc2f8a1884362816e43763a91",
+      "src/native_bridge.rs": "ee78eefeafd3255916ed24a8be2d8a14ca97ef7388ca884df4491ab72f65d643"
+    },
+    "patches": [
+      "caller_owned_FFI_outputs_and_errors",
+      "preview_then_commit_history",
+      "per_solve_joint_bounds",
+      "absolute_URDF_path",
+      "small_positive_tolerances",
+      "unvalidated_collision_objectives_removed",
+      "normalized_preferred_position_center_bias",
+      "optional_normalized_preferred_orientation_center_bias",
+      "geodesic_orientation_range",
+      "preview_batch_selection_and_solver_time_budget"
+    ]
+  },
+  "cargo_lock_sha256": "55567df49e8ef5d6fff67d0bf00fe9dd08135da4dab18b1e012922a82e669652",
+  "dll_sha256": "9c9859ae7d4cefb8d06238443485d69244566f521e47020f19c8c8c20a91417b",
+  "target": "x86_64-pc-windows-msvc",
+  "toolchain": "Rust 1.90.0 + existing MSVC + task-local Microsoft SDK libraries"
+}

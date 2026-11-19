@@ -2,7 +2,7 @@
 
 The current implementation uses **X-only yaw calibration with a fixed up direction**. The operator measures one horizontal direction for each arm; WebXR's existing up direction supplies the second constraint. This aligns hand displacement with each E6 base frame without requiring the hand controller to begin with the same orientation as the TCP.
 
-This page describes the separately maintained SDK snapshot reviewed on 17 November 2026. It explains the implemented mapping; publishing this website does not connect to a robot.
+This page describes the calibration implementation reviewed on 17 November 2026. It explains the implemented mapping; publishing this website does not connect to a robot.
 
 ## What is being calibrated?
 
@@ -75,7 +75,7 @@ Changing the Quest session, reference space, reference epoch, robot identity, fr
 
 ## Implementation trace
 
-Paths below refer to the separately maintained SDK, not files bundled in this showcase.
+Paths below are relative to the [SDK source directory](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/tree/main/sdk).
 
 | SDK source | Relevant implementation |
 |---|---|

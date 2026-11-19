@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/Dobot-Arm/TCP-IP-Python-V4",
+  "commit": "82bce656c6e1a1c71599901baa93ed45bb50963d",
+  "license": "MIT",
+  "files": {
+    "vendor/dobot-official/dobot_api.py": "0073bc804c3e8e0907f7713be7df372f1b6f98520f0041a7d6736b08e95e520f",
+    "vendor/dobot-official/LICENSE": "738e5dc34e0e1d2b8f55ac1a58bf84272146c15e82ecf20d4986cbaefb0fae0b"
+  },
+  "upstream_checks": {
+    "vendor/dobot-official/dobot_api.py": {
+      "verification": "BYTE_IDENTICAL",
+      "upstream_sha256": "0073bc804c3e8e0907f7713be7df372f1b6f98520f0041a7d6736b08e95e520f"
+    },
+    "vendor/dobot-official/LICENSE": {
+      "verification": "LICENSE_WHITESPACE_ONLY_DIFFERENCE",
+      "upstream_sha256": "c9d6a1346f605762868bd877f1403126c684e4a5f4091d8d43d21b31ade3136f"
+    }
+  }
+}

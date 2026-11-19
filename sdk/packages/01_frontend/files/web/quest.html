@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quest Grip input</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body class="quest-page">
+    <main>
+      <div id="overlay">
+        <p class="eyebrow">LIVE POSE · HOLD GRIP TO FOLLOW</p>
+        <h1>E6 遥操作 / 头显面板</h1>
+        <p>
+          手柄位置和朝向始终持续采集与传输。中指Grip只作为机械臂跟随许可：
+          按住才跟随，松开暂停跟随并保留会话，再次握持继续。
+        </p>
+        <button id="start-ar" disabled>进入 AR 遥操作面板</button
+        ><button id="start-vr" class="secondary" disabled>Start VR</button
+        ><button id="end" class="secondary" disabled>End input session</button>
+        <p id="xr-status">Checking WebXR support…</p>
+        <p class="muted">
+          进入AR后，连接、机器人反馈、追踪、Grip和实际/目标末端位姿会直接显示在画面中。
+          用手柄射线指向按钮，按食指扳机点击；中指Grip用于跟随。按下右摇杆可居中面板。
+        </p>
+        <p class="muted">
+          先点“连接 / 重检”，必要时回开始位。在“选择/标定”中选择参与侧，松开该侧Grip，
+          点“1 开始记录X”，沿该臂基座+X水平移动手柄至少80mm，再点“2 完成X标定 · 自动应用”。
+          双臂分别完成X标定，再用手柄指向正前方，点“一键记录操作者前方”。无需采集+Y。
+          当前默认从本次Grip起点1:1保持位置和旋转目标，平移方向固定；手停后仍可能继续追赶目标。
+          点击“开始遥操作”后按提示先松Grip再握持；松Grip暂停，重新握持取新起点。
+          STOP结束控制并收尾保存记录；网络恢复不会自动重新开始。
+        </p>
+        <p class="muted">侧面的E6关节链、实测TCP和工具Z箭头是运动学参考视图，未与透视中的实物位置配准。
+          基座XYZ用于方向标定；工具Z箭头只显示末端朝向，显示长度不改变物理TCP。
+          无夹爪时仍存在Tool 0所定义的TCP和工具坐标轴。</p>
+        <p class="muted">Input reconnects after a network interruption without automatically
+          re-arming the robot. Release Grip after reconnecting or putting the headset back on.
+          Screen wake lock is requested while this page is visible; headset sleep/proximity
+          behavior remains controlled by the headset. If AR ends, press Start AR again.</p>
+      </div>
+    </main>
+    <script type="module" src="/static/quest.js?v=20261111-world-tcp-view"></script>
+  </body>
+</html>

@@ -4,7 +4,9 @@ The host console exposes connection, configuration and diagnostics. The headset 
 
 ## Complete headset workspace
 
-The main workspace figure comes from the actual SDK's read-only HUD mirror captured on **17 November 2026**. `hud_preview.html` instantiates the same `HeadsetHUD` drawing module used in WebXR, with its left model, central panel and right model canvases. This is an authentic interface capture, not a frame extracted from a headset recording.
+The v0.2.0 main figure is a new export of the SDK HUD mirror, with the 28-occurrence gripper attached to both nominal flange frames. The service was running without physical devices. [Gripper setup and inspection](GRIPPER.md).
+
+The archived November 17 figure comes from the actual SDK's read-only HUD mirror captured on **17 November 2026**. `hud_preview.html` instantiates the same `HeadsetHUD` drawing module used in WebXR, with its left model, central panel and right model canvases. This is an authentic interface capture, not a frame extracted from a headset recording.
 
 Both side models in that capture are labelled measured joint poses and show TCP/tool/base-axis information. The central panel shows waiting Quest input, missing controller tracking and an expired precheck. These state labels are retained: the image documents a historical interface with robot feedback, not successful active teleoperation or a current connection.
 
@@ -26,7 +28,7 @@ The drawing uses the source constructor's disconnected state: `remote=null`, `li
 
 The export contains the central 1280 × 800 control canvas. It does not include the separate WebGL robot models or reproduce the surrounding passthrough world. Native font rasterization may differ slightly from Quest Browser.
 
-To reproduce it, provide the separately maintained SDK frontend and an installed `@napi-rs/canvas` version 0.1.100:
+To reproduce it, provide the assembled `app/web` directory from the Windows SDK and an installed `@napi-rs/canvas` version 0.1.100:
 
 ```bash
 node tools/render_vr_interface.mjs --sdk-web "PATH_TO_SDK_WEB" --canvas-module "PATH_TO_INSTALLED_CANVAS"

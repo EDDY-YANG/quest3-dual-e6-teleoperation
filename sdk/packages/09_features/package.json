@@ -1,0 +1,33 @@
+{
+  "id": "09_features",
+  "title": "回位、记录与诊断",
+  "depends_on": [
+    "04_kinematics_dls",
+    "07_motion_control",
+    "08_robot_io"
+  ],
+  "contract": "显式功能请求与状态 → 回位任务/真实记录/诊断",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "analyze_ik_jumps.py",
+      "sha256": "bf68372d6a0368ea1607db39f768f0e4ee04763ad2a4bddbff339157c1505bf9",
+      "bytes": 9141
+    },
+    {
+      "path": "communication_probe.py",
+      "sha256": "9ec603222f596333ac4f4b2d495c756bc8e7a72a833d22a8e62ad0f98bc8f8b3",
+      "bytes": 7787
+    },
+    {
+      "path": "start_positions.py",
+      "sha256": "3bc79958600225b2954525ea88b9b86423303f4ed2beaf22c53ce39d55342f91",
+      "bytes": 31554
+    },
+    {
+      "path": "teleop_recording.py",
+      "sha256": "8cac4e5bf0b9afaaa361fdb4aaa7433d3fd96f688efffee99b0fec73790a73e6",
+      "bytes": 22778
+    }
+  ]
+}

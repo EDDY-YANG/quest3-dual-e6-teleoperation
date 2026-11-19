@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "profile_id": "e6_unloaded_wide_direct_v2",
+  "backend": "official_rangedik_panoc",
+  "output_mode": "direct",
+  "native_library": "../runtime/rangedik_native/relaxed_ik_lib.dll",
+  "position_tolerance_mm": [
+    20,
+    20,
+    20
+  ],
+  "rotation_tolerance_deg": [
+    30,
+    30,
+    30
+  ],
+  "joint_search_radius_deg": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "joint_limits_rad": [
+    [
+      -6.27,
+      6.27
+    ],
+    [
+      -2.356,
+      2.356
+    ],
+    [
+      -2.6878,
+      2.6878
+    ],
+    [
+      -2.7925,
+      2.7925
+    ],
+    [
+      -3.0194,
+      3.0194
+    ],
+    [
+      -6.27,
+      6.27
+    ]
+  ],
+  "joint_limit_source": "https://github.com/Dobot-Arm/DOBOT_6Axis_ROS2_V4/blob/main/dobot_rviz/urdf/me6_robot.urdf",
+  "joint_limit_status": "Nominal model bounds, not permission to exceed controller limits; verify each physical arm before motion.",
+  "objective_weights": {
+    "position": [
+      50,
+      50,
+      50
+    ],
+    "rotation": [
+      10,
+      10,
+      10
+    ],
+    "velocity": 0.7,
+    "acceleration": 0.5,
+    "jerk": 0.3,
+    "manipulability": 1.0,
+    "joint_limits": 0.1
+  },
+  "collision_geometry": "unvalidated_disabled",
+  "purpose": "Unloaded continuous VR commissioning; no gripper. Enlarged TASK/CANDIDATE ranges, not enlarged actuator speed or physical travel. Each arm needs its own identified model and native solver instance."
+}

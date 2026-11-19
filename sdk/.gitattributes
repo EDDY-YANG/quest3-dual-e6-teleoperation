@@ -1,0 +1,2 @@
+# Release integrity manifests hash exact bytes. Keep those bytes on every checkout.
+* -text

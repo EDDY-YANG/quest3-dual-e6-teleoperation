@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>明日空载验收 · 左右各一块 Uno — Quest / E6</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#172331;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{max-width:1080px;margin:auto;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:14px}nav span{color:#617082;margin-right:auto}
+main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
+@media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
+</style></head><body><header><nav><a href="../index.html">← Project home</a><span>明日空载验收 · 左右各一块 Uno</span><a href="BENCH_TEST.md?raw=1" download>Download Markdown</a></nav></header><main><h1 id="明日空载验收-左右各一块-uno">明日空载验收 · 左右各一块 Uno</h1>
+<p>按左板、右板、双侧、最后才是 E6 跟随的顺序做。运行时将真实 COM 口和测量结果保存在自己的工作区；本表不预填任何实物测量数值。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>现场记录</th>
+<th>左夹爪</th>
+<th>右夹爪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实物板型 / 端口 / 固件侧别</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+<tr>
+<td>选定供电电压 / 电流限制</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+<tr>
+<td>安全张开 PWM / 实测指距</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+<tr>
+<td>安全闭合 PWM / 实测指距</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+<tr>
+<td>中间 PWM / 实测指距</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+<tr>
+<td>法兰绕轴装向 / 装夹间隙</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+<tr>
+<td>失联响应 / 独立断电验证</td>
+<td>待填</td>
+<td>待填</td>
+</tr>
+</tbody>
+</table></div>
+<ol>
+<li><strong>断电查装配。</strong> 核对 CAD 四孔方向、固定与防松、滑轨顺畅、两指不与腕部碰撞。模型假定 +Z 从法兰向指尖、沿 X 开合。四孔不能唯一确定实物偏航；若相差 90°，在资产目录中修改相应实例的 <code>mount.rpy_rad</code> 后重建。TCP、质量/质心与实物避碰属于另外的实机核对项。</li>
+<li><strong>单板逻辑验收。</strong> E6 保持停止，退出占用同一 Uno 端口的 SDK 和串口监视器。每个 Uno 只接它自己的 D9 信号和信号地。先断开舵机功率，确认独立供电、板型、线序、极性和急停/断电手段。把左/右固件上传到相应板，再运行以下命令。<code>identify</code> 打开串口会使典型 Uno 复位，验证侧别并使脉冲输出关闭。</li>
+</ol>
+<pre><code class="language-powershell">Set-Location .\app
+.\.venv\Scripts\python.exe -m gripper_bench ports
+$leftPort = Read-Host '左板实际 COM 口'
+$rightPort = Read-Host '右板实际 COM 口'
+.\.venv\Scripts\python.exe -m gripper_bench identify --side left --port $leftPort
+.\.venv\Scripts\python.exe -m gripper_bench identify --side right --port $rightPort
+</code></pre>
+<ol start="3">
+<li><strong>单只舵机卸载试动。</strong> 初次确定方向建议先卸下舵盘或脱开连杆。有条件时用示波器先确认 D9 脉冲。从实物说明或已确认的空载位置取得一个安全起始脉宽，设置小范围单向边界。以下示例只在输入 <code>JOG LEFT</code> 后使能；<code>+</code> 每次只朝边界迈一步，<code>-</code> 向起始值退一步，空格/<code>q</code> 停止。4 秒无人操作会停脉冲。这是独立台架模式，不要求先 Arm E6，也不应与运行中遥操作并用。</li>
+</ol>
+<pre><code class="language-powershell">$startUs = [int](Read-Host '已验证的空载起始脉宽，微秒')
+$limitUs = [int](Read-Host '本次确认的单向小范围边界，微秒')
+.\.venv\Scripts\python.exe -m gripper_bench jog --side left --port $leftPort --start-us $startUs --limit-us $limitUs --step-us 5
+</code></pre>
+<p>右侧同理改成 <code>--side right --port $rightPort</code>，按右侧实际端点重新输入起始值与边界。安装舵盘后先用空载小步观察齿向和机械余量，用卡尺逐侧记录三个位置。若卡住、发热、欠压复位或碰到硬限位，立即切断舵机电源。</p>
+<ol start="4">
+<li><strong>保存两侧标定。</strong> 创建模板后填入各自的 <code>port</code>、<code>open_us</code>、<code>closed_us</code>、<code>slew_us_s</code> 并按需设 <code>enabled: true</code>。开闭数值允许正向或反向排列。接线记录与校准值只在本机保存。</li>
+</ol>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m gripper_bench init
+code .\runtime\grippers.local.json
+.\.venv\Scripts\python.exe -m gripper_bench check
+</code></pre>
+<ol start="5">
+<li>
+<p><strong>先虚拟，再双侧空载。</strong> 正常运行 SDK，在预览页确认左右扳机独立。Quest 中指向面板做 UI 点击、释放、移出面板，核对没有把 UI 点击当成夹取。用现场确认过的 E6 反馈、校准与 Arm 流程使能对应侧，先松开 Trigger。打印或观察 <code>drive.ack_us</code>，用卡尺对照真实间距。做断开 USB、追踪丢失、显式 Stop 和重新 Arm 试验时确保无负载。若 PWM 停止后夹爪松脱，属于当前舵机断脉冲模式的可能结果。USB 断电、机械臂急停与舵机功率切断的关系应单独实测。</p>
+</li>
+<li>
+<p><strong>最后再测真实移动。</strong> 用低风险小位移验证 Grip 只管手臂、Trigger 只管同侧手爪。检查新增夹爪质量、末端长度、TCP 与两臂工作空间。机构卡死、电流、实际夹持力、夹持物保持和实体停止距离均以实测为准。</p>
+</li>
+</ol>
+<p>软件参考验收见 <a href="GRIPPER.html">GRIPPER.md</a>。实际源码和 <a href="../CHANGELOG.html">版本变更记录</a> 随 ZIP 提供。</p>
+</main></body></html>

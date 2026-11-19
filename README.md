@@ -6,9 +6,9 @@ An inspectable VR-to-robot control stack, from first motion to a calibrated bima
 
 [![Download SDK · Windows x64](assets/download-sdk.svg)](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip)
 
-[Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)
+[SDK source](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/tree/main/sdk) · [Grippers](docs/GRIPPER.md) · [Changelog](CHANGELOG.md) · [Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)
 
-This repository contains the project showcase, documentation and historical-log analysis. The Release ZIP includes all eleven editable SDK packages and the Windows native solver. Extract it and double-click **OPEN_IN_VSCODE.cmd** on a Windows x64 PC with Python 3.10 and desktop VS Code.
+This repository contains the project showcase, documentation and historical-log analysis. The Release ZIP includes all thirteen editable SDK packages and the Windows native solver. Extract it and double-click **OPEN_IN_VSCODE.cmd** on a Windows x64 PC with Python 3.10 and desktop VS Code.
 
 ![System setup](assets/system_setup.png)
 
@@ -48,7 +48,7 @@ The first recordings established robot motion and exposed stalls and control fau
 
 [Operation manual](docs/OPERATIONS.md) · [Code walkthrough](docs/CODE_TOUR.md) · [Media provenance](docs/media_manifest.json) · [Publication boundaries](docs/GITHUB_PREPARATION.md)
 
-**PC & VR interface** — [Explore selected functional panels](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#interfaces). The complete workspace shows left/right E6 feedback views around the central controls in an authentic SDK mirror capture. Expand the function panels for current source-rendered details; no headset-video screenshots are used.
+**PC & VR interface** — [Explore selected functional panels](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#interfaces). The v0.2.0 workspace shows both mounted grippers around the central controls in an authentic SDK mirror export. The 17 Nov hardware feedback view is retained separately. Expand the function panels for current source-rendered details; no headset-video screenshots are used.
 
 The headset-first workflow supports a single operator: recheck, calibrate, Grip control, Stop and guarded return-to-start. Recovery clears only eligible collision protection; other alarms and hardware stops still require inspection. [Workflow and recovery](docs/HEADSET_WORKFLOW.md).
 

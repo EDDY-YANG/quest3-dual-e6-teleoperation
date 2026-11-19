@@ -1,0 +1,65 @@
+name: Windows SDK and Uno firmware
+on:
+  pull_request:
+    paths:
+      - 'sdk/**'
+      - '.github/workflows/sdk-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10.11'
+          architecture: x64
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check distributed source bytes
+        shell: python
+        run: |
+          from pathlib import Path
+          import json, hashlib
+          root = Path('sdk')
+          hashes = json.loads((root/'RELEASE_FILES.json').read_text(encoding='utf-8'))['files']
+          for name, expected in hashes.items():
+              assert hashlib.sha256((root/name).read_bytes()).hexdigest() == expected, name
+      - name: Install SDK and run offline tests
+        shell: pwsh
+        run: |
+          & .\sdk\tools\setup_vscode.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Set-Location sdk/app
+          & .\.venv\Scripts\python.exe -m pip check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .\.venv\Scripts\python.exe -X utf8 -m unittest discover -s tests -p 'test_*.py'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .\.venv\Scripts\python.exe -X utf8 tools/verify_sdk_delivery.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          node tests/test_gripper_assets.mjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          node tests/test_grip_gate.mjs
+      - uses: arduino/setup-arduino-cli@v2
+        with:
+          version: '1.2.0'
+      - name: Compile one Uno firmware per side and exercise their UART and D9
+        shell: pwsh
+        run: |
+          arduino-cli core update-index
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          arduino-cli core install arduino:avr@1.8.6
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          arduino-cli lib install Servo@1.2.2
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($side in 1,2) {
+            arduino-cli compile --fqbn arduino:avr:uno --build-property "compiler.cpp.extra_flags=-DGRIPPER_SIDE=$side" --output-dir "$env:RUNNER_TEMP/uno-$side" sdk/app/firmware/quest_gripper
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          npm install --prefix "$env:RUNNER_TEMP/avr-test" --ignore-scripts --no-audit --no-fund avr8js@0.21.1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & .\sdk\app\.venv\Scripts\python.exe -X utf8 sdk/app/tools/verify_gripper_firmware.py --left "$env:RUNNER_TEMP/uno-1/quest_gripper.ino.hex" --right "$env:RUNNER_TEMP/uno-2/quest_gripper.ino.hex" --avr8js-path "$env:RUNNER_TEMP/avr-test/node_modules/avr8js"

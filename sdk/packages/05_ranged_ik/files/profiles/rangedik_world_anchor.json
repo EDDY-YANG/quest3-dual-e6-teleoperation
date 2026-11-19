@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "profile_id": "e6_world_pose_geodesic_warm_v7",
+  "seed_strategy": "VALIDATED_MULTI_START",
+  "backend": "official_rangedik_panoc",
+  "output_mode": "direct",
+  "native_library": "../runtime/rangedik_native/relaxed_ik_lib.dll",
+  "position_tolerance_mm": [
+    1,
+    1,
+    1
+  ],
+  "orientation_error_metric": "GEODESIC_ANGLE",
+  "orientation_tolerance_deg": 2.0,
+  "joint_search_radius_deg": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "joint_limits_rad": [
+    [
+      -6.27,
+      6.27
+    ],
+    [
+      -2.356,
+      2.356
+    ],
+    [
+      -2.6878,
+      2.6878
+    ],
+    [
+      -2.7925,
+      2.7925
+    ],
+    [
+      -3.0194,
+      3.0194
+    ],
+    [
+      -6.27,
+      6.27
+    ]
+  ],
+  "joint_limit_source": "https://github.com/Dobot-Arm/DOBOT_6Axis_ROS2_V4/blob/main/dobot_rviz/urdf/me6_robot.urdf",
+  "joint_limit_status": "Nominal model bounds, not permission to exceed controller limits; verify each physical arm before motion.",
+  "objective_weights": {
+    "position": [
+      50,
+      50,
+      50
+    ],
+    "rotation": [
+      50,
+      50,
+      50
+    ],
+    "velocity": 0.7,
+    "acceleration": 0.5,
+    "jerk": 0.3,
+    "manipulability": 1.0,
+    "joint_limits": 0.1,
+    "orientation_center": 5.0
+  },
+  "collision_geometry": "unvalidated_disabled",
+  "purpose": "Retain B world-position and persistent 1:1 orientation targets. A single geodesic orientation error <=2deg defines orientation within range; native range loss is isotropic. Rotation weight50 and center weight5 retained. Intermediate APPROACHING proposals are not reported as within range. 45deg downward cone, first-start5deg, 50deg send guard and +/-60deg search unchanged. No QP. Local deployment only; physical acceptance required.",
+  "position_target_policy": "GRIP_ANCHORED_WORLD",
+  "orientation_target_policy": "GRIP_ANCHORED_WORLD"
+}

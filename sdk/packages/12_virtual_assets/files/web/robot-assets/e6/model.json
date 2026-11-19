@@ -1,0 +1,330 @@
+{
+  "schema": 1,
+  "source_commit": "7807ef8fb31e8f86a76cd474a4a9cddffef6eca9",
+  "units": "m",
+  "root_link": "dummy_link",
+  "controller_joint_offsets_deg": [
+    90,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "links": [
+    {
+      "name": "dummy_link",
+      "visuals": []
+    },
+    {
+      "name": "base_link",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "base_link.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Link1",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "Link1.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Link2",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "Link2.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Link3",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "Link3.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Link4",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "Link4.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Link5",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "Link5.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Link6",
+      "visuals": [
+        {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mesh": "Link6.STL",
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    }
+  ],
+  "joints": [
+    {
+      "xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "dummy_joint",
+      "type": "fixed",
+      "parent": "dummy_link",
+      "child": "base_link",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "xyz": [
+        0.0,
+        0.0,
+        0.1268
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "joint1",
+      "type": "revolute",
+      "parent": "base_link",
+      "child": "Link1",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "xyz": [
+        -0.046,
+        0.0,
+        0.04
+      ],
+      "rpy": [
+        1.5708,
+        0.0,
+        -1.5708
+      ],
+      "name": "joint2",
+      "type": "revolute",
+      "parent": "Link1",
+      "child": "Link2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "xyz": [
+        0.0,
+        0.18906,
+        0.003
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "joint3",
+      "type": "revolute",
+      "parent": "Link2",
+      "child": "Link3",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "xyz": [
+        0.0,
+        0.16,
+        0.005
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "joint4",
+      "type": "revolute",
+      "parent": "Link3",
+      "child": "Link4",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "xyz": [
+        0.0,
+        0.067,
+        0.032
+      ],
+      "rpy": [
+        -1.5708,
+        1.5708,
+        0.0
+      ],
+      "name": "joint5",
+      "type": "revolute",
+      "parent": "Link4",
+      "child": "Link5",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "xyz": [
+        -0.047,
+        0.0,
+        0.034
+      ],
+      "rpy": [
+        1.5708,
+        0.0,
+        -1.5708
+      ],
+      "name": "joint6",
+      "type": "revolute",
+      "parent": "Link5",
+      "child": "Link6",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}

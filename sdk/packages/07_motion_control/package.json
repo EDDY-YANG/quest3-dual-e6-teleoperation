@@ -1,0 +1,35 @@
+{
+  "id": "07_motion_control",
+  "title": "运动控制、双臂协调与停止",
+  "depends_on": [
+    "03_pose_mapping",
+    "04_kinematics_dls",
+    "05_ranged_ik",
+    "06_reference_qp",
+    "08_robot_io"
+  ],
+  "contract": "目标/状态 → 许可、候选校验、ServoJ、逐臂 Stop 证据",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "left_z_trial.py",
+      "sha256": "13a11c7ea6bdc58208a4a2e142ff9605bf7d56eff93a3830a97da1d831ab04b6",
+      "bytes": 69593
+    },
+    {
+      "path": "robot_stop_state.py",
+      "sha256": "45baa1b4db7cd703cba8e3dfd4924083f06c617dde03bd5e8cfcdde718650e29",
+      "bytes": 1096
+    },
+    {
+      "path": "teleop_group.py",
+      "sha256": "859534a66d87a65b8dc220996814ecfb7074e3eb0ee2a875f8ce6f5e9ef08aa3",
+      "bytes": 6818
+    },
+    {
+      "path": "tool_orientation_cone.py",
+      "sha256": "62f7ca04b5f48d9707e0283a226f202b4981e98e0539656ec0d8435c858f9e34",
+      "bytes": 4932
+    }
+  ]
+}

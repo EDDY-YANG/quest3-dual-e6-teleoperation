@@ -1,0 +1,191 @@
+{
+  "id": "05_ranged_ik",
+  "title": "RangedIK 原生求解",
+  "depends_on": [
+    "04_kinematics_dls"
+  ],
+  "contract": "目标/范围/实测种子 → 候选关节角与误差；只在真实命令 ACK 后提交在线历史",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "profiles/rangedik_unloaded_wide.json",
+      "sha256": "1ac68b5af74ab7a666665a37e8f4fca1f8d723f4092fa72e4c8cfa64a5f17853",
+      "bytes": 1498
+    },
+    {
+      "path": "profiles/rangedik_world_anchor.json",
+      "sha256": "df9b625d3c14d7c5d0e3abf74d1ab372cac6bb92cc3806e5239255bac69c9107",
+      "bytes": 1943
+    },
+    {
+      "path": "profiles/rangedik_world_translation.json",
+      "sha256": "329b4ab4bba440ea7f84ab916e34c7763e6ca0a42226de4ac12d2e0e4edfc240",
+      "bytes": 1746
+    },
+    {
+      "path": "ranged_ik_adapter.py",
+      "sha256": "2abeca24a41d6329c659984d47b2bb1e6e8672fdf21a686de9935d5717e2b69c",
+      "bytes": 22534
+    },
+    {
+      "path": "ranged_ik_backend.py",
+      "sha256": "ff27c9e8a878f706c66b2b9539ffbbaed38bb754df074645cee4b0d644c71cda",
+      "bytes": 10530
+    },
+    {
+      "path": "ranged_ik_model.py",
+      "sha256": "211f2cca880d63a32d2ec7a1acfe806c500bbb557f1368193d458edb12d2dcda",
+      "bytes": 9788
+    },
+    {
+      "path": "ranged_ik_offline_check.py",
+      "sha256": "d7a74a279eb0ff79ab1f903e64fa254401b2695a77de4d3fb10fbbee4c811609",
+      "bytes": 5686
+    },
+    {
+      "path": "ranged_ik_profile.py",
+      "sha256": "dd544e07d3f6b83162a330d7835a602c4266ca171daae2eb66cb6614ad8cec0d",
+      "bytes": 8346
+    },
+    {
+      "path": "runtime/rangedik_native/build-manifest.json",
+      "sha256": "a7d9a721b174d4ded4df163d8fab99935e81043c0b65c75b8ceb77416f4f4f27",
+      "bytes": 1423
+    },
+    {
+      "path": "runtime/rangedik_native/relaxed_ik_lib.dll",
+      "sha256": "9c9859ae7d4cefb8d06238443485d69244566f521e47020f19c8c8c20a91417b",
+      "bytes": 1326080
+    },
+    {
+      "path": "tools/rangedik_native/build_native.ps1",
+      "sha256": "920fd58157e16526395f1d2f4bf153bb12a417f7d86e2a435efc6ea5b93ecef6",
+      "bytes": 1628
+    },
+    {
+      "path": "tools/rangedik_native/LICENSE.upstream",
+      "sha256": "481283bf76e845f073401705b22c10bb75b480c6423b8e71d1f25a5bbeae5444",
+      "bytes": 1095
+    },
+    {
+      "path": "tools/rangedik_native/source-patch-receipt.json",
+      "sha256": "4d50ea6dd086f5a7725abb3c77b582221d4d83167aca92a82298f4a916a8b47d",
+      "bytes": 988
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/Cargo.lock",
+      "sha256": "55567df49e8ef5d6fff67d0bf00fe9dd08135da4dab18b1e012922a82e669652",
+      "bytes": 31063
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/Cargo.toml",
+      "sha256": "a2731bca5eeaebbe2088a8e0b3157f52e700d3f3b07b2f7f19d3f2eddfbf6686",
+      "bytes": 1176
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/LICENSE",
+      "sha256": "481283bf76e845f073401705b22c10bb75b480c6423b8e71d1f25a5bbeae5444",
+      "bytes": 1095
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/README.md",
+      "sha256": "fd989651e86c636084e728a68fd61699b0bb38751a986a628f63af446dcfa2ff",
+      "bytes": 6612
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/bin/relaxed_ik_bin.rs",
+      "sha256": "de43c5a5fceb7bf2c365b27fd8aae28784bac409496513665a245160fb5c98da",
+      "bytes": 777
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/env_collision.rs",
+      "sha256": "a2038333c49a18c174da7aa2d1a222d3b1798086247d0bd45dc0766edc6ca79b",
+      "bytes": 8487
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/gradient.rs",
+      "sha256": "ff50c646943fd0e1c0dd3a9fdaefe07589dc13c26f78133c721278768b2ac090",
+      "bytes": 13174
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/groove.rs",
+      "sha256": "cd7755703109b4e9bbf373b9461ba4c64dfe36660f4e7d3feb02cda0b9179cf8",
+      "bytes": 1752
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/mod.rs",
+      "sha256": "8fc5444c0f553ca2e0e7ae35fcef02ce7667e2cdb1500fd75fa7dc34d0bba29b",
+      "bytes": 123
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/objective.rs",
+      "sha256": "d7136e4875a020e741affb5c1a721c8241647e2cc2f8a1884362816e43763a91",
+      "bytes": 17738
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/objective_master.rs",
+      "sha256": "7b03d760e8a558f0f82ff58488c24f7235d358f79b594bdbd9932ac73d3a0eec",
+      "bytes": 8561
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/groove/vars.rs",
+      "sha256": "8331a500068fbc4c5f832bff8a7fb2afc0081b017148cb742498e47fa5b7f27b",
+      "bytes": 6102
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/lib.rs",
+      "sha256": "032e89470aacfe943d77cbd4da64c5c6737dfe7da94c69227c539295fed8fe07",
+      "bytes": 150
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/native_bridge.rs",
+      "sha256": "ee78eefeafd3255916ed24a8be2d8a14ca97ef7388ca884df4491ab72f65d643",
+      "bytes": 14627
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/relaxed_ik.rs",
+      "sha256": "825b8a2fc0a2c98d98e1b4fc02633b42532bbec8be2b1dfbe3cb8267e764780d",
+      "bytes": 1702
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/relaxed_ik_web.rs",
+      "sha256": "3e1eb5c08fc209564b293597770b5bee98b8aaaf626b34999ce9db1f72ebaaac",
+      "bytes": 4226
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/relaxed_ik_wrapper.rs",
+      "sha256": "bff9c3653a67ead32b9f81f3ec73245f591fe866c027e06f84d60475db64faa7",
+      "bytes": 8708
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/spacetime/arm.rs",
+      "sha256": "3fa5f3558b0df6ec4e1947f6584b17357d5b7d6f7cbb4e63b9d75b39292b72c5",
+      "bytes": 16001
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/spacetime/mod.rs",
+      "sha256": "d881c185c5bc1bb36f55d1e65c216324984524c50e339f3599e1f94db4b7b9f4",
+      "bytes": 28
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/spacetime/robot.rs",
+      "sha256": "73baeecc2b997f328f1f53d9a11a5ca98abb24a203a08efafb933109a550281b",
+      "bytes": 6401
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/utils_rust/file_utils.rs",
+      "sha256": "bbc12433ed4cea6f7365d18a16155c4ae5dad6a32dc7c15af12628bf37dd93ee",
+      "bytes": 320
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/utils_rust/mod.rs",
+      "sha256": "f98f64177347da92e09982e316e08ed2d1eb90f5fe2d14a5820a3c9f003d0c21",
+      "bytes": 45
+    },
+    {
+      "path": "vendor/rangedik-source-snapshot/src/utils_rust/transformations.rs",
+      "sha256": "007b430bebad238697adc8f0081288fc7a1c369f5a02f69a227ed710265f1b21",
+      "bytes": 1384
+    }
+  ]
+}

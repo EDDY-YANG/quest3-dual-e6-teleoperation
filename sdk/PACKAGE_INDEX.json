@@ -1,0 +1,134 @@
+{
+  "sdk_version": "0.2.0",
+  "created_at_cst": "2026-11-19T19:54:26.931103+08:00",
+  "packages": [
+    {
+      "id": "01_frontend",
+      "title": "Quest/PC 前端",
+      "depends_on": [
+        "02_backend",
+        "12_virtual_assets"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 21
+    },
+    {
+      "id": "02_backend",
+      "title": "会话、连接与服务编排",
+      "depends_on": [
+        "03_pose_mapping",
+        "07_motion_control",
+        "08_robot_io",
+        "09_features",
+        "12_virtual_assets",
+        "13_gripper"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 5
+    },
+    {
+      "id": "03_pose_mapping",
+      "title": "Grip、坐标映射与标定",
+      "depends_on": [],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 4
+    },
+    {
+      "id": "04_kinematics_dls",
+      "title": "运动学模型与 DLS",
+      "depends_on": [
+        "03_pose_mapping"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 2
+    },
+    {
+      "id": "05_ranged_ik",
+      "title": "RangedIK 原生求解",
+      "depends_on": [
+        "04_kinematics_dls"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 36
+    },
+    {
+      "id": "06_reference_qp",
+      "title": "旧版关节参考 QP",
+      "depends_on": [],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 1
+    },
+    {
+      "id": "07_motion_control",
+      "title": "运动控制、双臂协调与停止",
+      "depends_on": [
+        "03_pose_mapping",
+        "04_kinematics_dls",
+        "05_ranged_ik",
+        "06_reference_qp",
+        "08_robot_io"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 4
+    },
+    {
+      "id": "08_robot_io",
+      "title": "E6 命令与反馈传输",
+      "depends_on": [],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 7
+    },
+    {
+      "id": "09_features",
+      "title": "回位、记录与诊断",
+      "depends_on": [
+        "04_kinematics_dls",
+        "07_motion_control",
+        "08_robot_io"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 4
+    },
+    {
+      "id": "10_sdk_runtime",
+      "title": "统一入口、配置、示例与验证",
+      "depends_on": [
+        "01_frontend",
+        "02_backend",
+        "09_features"
+      ],
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "files": 44
+    },
+    {
+      "id": "11_offline_algorithms",
+      "title": "RangedIK+DLS 离线实验",
+      "depends_on": [
+        "03_pose_mapping",
+        "04_kinematics_dls",
+        "05_ranged_ik"
+      ],
+      "scope": "OFFLINE_ONLY",
+      "files": 7
+    },
+    {
+      "id": "12_virtual_assets",
+      "title": "统一虚拟资产",
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "depends_on": [],
+      "files": 34
+    },
+    {
+      "id": "13_gripper",
+      "title": "夹爪与 Uno 驱动",
+      "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+      "depends_on": [
+        "12_virtual_assets"
+      ],
+      "files": 12
+    }
+  ],
+  "policy": "Edit packages; assemble app. No public upload. No hardware acceptance inferred.",
+  "validation": "packages/10_sdk_runtime/files/docs/2026-11-17-20-03-SDK-Validation.md",
+  "distribution": "public-windows-x64"
+}

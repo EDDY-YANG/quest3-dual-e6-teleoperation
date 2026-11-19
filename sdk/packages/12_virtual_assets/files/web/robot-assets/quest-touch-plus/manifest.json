@@ -1,0 +1,44 @@
+{
+  "repository": "https://github.com/immersive-web/webxr-input-profiles",
+  "commit": "f4992299601614adbfefd398dc8e281556bb7444",
+  "profile_id": "meta-quest-touch-plus",
+  "asset_type": "Maintained WebXR device visualization meshes, not manufacturing CAD",
+  "files": [
+    {
+      "file": "left.glb",
+      "upstream_path": "packages/assets/profiles/meta-quest-touch-plus/left.glb",
+      "bytes": 217984,
+      "sha256": "41a35b80221398d37029cbfaa9e39084ccd43e0206be72a5e8460f52e7882cb4"
+    },
+    {
+      "file": "right.glb",
+      "upstream_path": "packages/assets/profiles/meta-quest-touch-plus/right.glb",
+      "bytes": 213868,
+      "sha256": "5126d638fb1d03e05d16d8eec3b31b9588df88eaa8b42cc21b857fac3bd44916"
+    },
+    {
+      "file": "profile.json",
+      "upstream_path": "packages/assets/profiles/meta-quest-touch-plus/profile.json",
+      "bytes": 62,
+      "sha256": "51813881124cfe860cbea8816da374824619046463dccadc159df3119043a328"
+    },
+    {
+      "file": "LICENSE.md",
+      "upstream_path": "LICENSE.md",
+      "bytes": 216,
+      "sha256": "cc07f925e00fbccf304facfeb8bf94943539e252fc14b0588488f293d877c849"
+    },
+    {
+      "file": "registry.json",
+      "upstream_path": "packages/registry/profiles/meta/meta-quest-touch-plus.json",
+      "bytes": 1990,
+      "sha256": "55dc1c6235b0c1b1b007b9c532f4c10ddef96907c2bc560f2cb39d1c1898ed9a"
+    },
+    {
+      "file": "ASSETS-LICENSE.md",
+      "upstream_path": "packages/assets/LICENSE.md",
+      "bytes": 1094,
+      "sha256": "0ef0c87e8ffdd0681f332dc3b39f284dee2166d1f853fabc3853884fe81a6f30"
+    }
+  ]
+}

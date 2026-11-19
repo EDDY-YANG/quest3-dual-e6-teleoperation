@@ -1,0 +1,29 @@
+{
+  "id": "03_pose_mapping",
+  "title": "Grip、坐标映射与标定",
+  "depends_on": [],
+  "contract": "真实手柄姿态、握持锚点、标定 → 机器人目标位姿；本包不发命令",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "clutch_mapping.py",
+      "sha256": "1683d219c7968fd8ff09b7ca50616d855bd8bd79ad9ec5eb9130bd0cf123d563",
+      "bytes": 18982
+    },
+    {
+      "path": "direction_calibration.py",
+      "sha256": "dbdda9f925be25499b8b2c2cf8516b8cf0e01f7e3abe3e49eb38f1bec1e6d9c3",
+      "bytes": 8818
+    },
+    {
+      "path": "operator_frame.py",
+      "sha256": "8a91e68680d542b26297cd67e912b9e351f5500cdd0097d836d5f896ed856fc6",
+      "bytes": 4988
+    },
+    {
+      "path": "relative_pose.py",
+      "sha256": "8eea7e7ac520432ad763dd843db71243f93a38caa9423cc27a1c15d9d5483bd9",
+      "bytes": 8885
+    }
+  ]
+}

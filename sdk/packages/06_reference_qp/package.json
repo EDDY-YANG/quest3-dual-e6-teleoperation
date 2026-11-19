@@ -1,0 +1,14 @@
+{
+  "id": "06_reference_qp",
+  "title": "旧版关节参考 QP",
+  "depends_on": [],
+  "contract": "候选、实测、dt → 受约束参考；当前 RangedIK direct 路径旁路此包",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "joint_reference_qp.py",
+      "sha256": "64d17fef1bba80f1ad2123c981d592c476e38965598984657966b60515fa2245",
+      "bytes": 10463
+    }
+  ]
+}

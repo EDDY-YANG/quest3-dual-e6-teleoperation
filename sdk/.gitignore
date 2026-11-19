@@ -1,0 +1,17 @@
+/app/
+/assembly-state.json
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.jsonl
+*.key
+*.pem
+*.pfx
+*.p12
+*.zip
+*.local.json
+/packages/12_virtual_assets/cad/
+*.step
+*.STEP
+*.stp

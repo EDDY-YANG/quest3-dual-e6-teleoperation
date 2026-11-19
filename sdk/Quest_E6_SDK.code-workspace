@@ -1,0 +1,77 @@
+{
+  "folders": [
+    {
+      "name": "Quest E6 SDK",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "window.title": "Quest E6 SDK v0.2.0${separator}${activeEditorShort}${separator}${appName}",
+    "python.defaultInterpreterPath": "${workspaceFolder}/app/.venv",
+    "python.analysis.extraPaths": [
+      "${workspaceFolder}/app"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "SDK: Set up Python and check (Windows x64)",
+        "type": "process",
+        "command": "powershell.exe",
+        "args": [
+          "-NoLogo",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "${workspaceFolder:Quest E6 SDK}/tools/setup_vscode.ps1"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Quest E6 SDK}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "SDK: Check environment (doctor, Windows x64)",
+        "type": "process",
+        "command": "powershell.exe",
+        "args": [
+          "-NoLogo",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "${workspaceFolder:Quest E6 SDK}/sdk.ps1",
+          "doctor"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Quest E6 SDK}",
+          "env": {
+            "PATH": "${workspaceFolder:Quest E6 SDK}/app/.venv/Scripts;${env:PATH}"
+          }
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "SDK: Verify native solver offline (Windows x64)",
+        "type": "process",
+        "command": "${workspaceFolder:Quest E6 SDK}/app/.venv/Scripts/python.exe",
+        "args": [
+          "-X",
+          "utf8",
+          "tools/verify_sdk_delivery.py"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Quest E6 SDK}/app"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}

@@ -8,10 +8,10 @@
 <header><h1>Quest 3–Based Bimanual Teleoperation<br>of DOBOT E6 Robots</h1>
 <div class="author">Yang Taige</div><div class="affiliation">The University of Hong Kong · ME capstone project</div>
 <p class="lede">An inspectable VR-to-robot control stack, developed from first motion to a calibrated bimanual workflow.</p>
-<p class="sdk-entry"><a class="sdk-download" href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip"><img src="assets/download-sdk.svg" width="240" height="38" alt="Download SDK · Windows x64"></a><a href="docs/SDK_INSTALL.html">Installation</a><a href="docs/SDK_EXAMPLES.html">Terminal examples 01–06</a></p>
+<p class="sdk-entry"><a class="sdk-download" href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip"><img src="assets/download-sdk.svg" width="240" height="38" alt="Download SDK · Windows x64"></a><a href="docs/SDK_INSTALL.html">Installation</a><a href="docs/SDK_EXAMPLES.html">Terminal examples 01–06</a><a href="CHANGELOG.html">Changelog</a></p>
 <nav><a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation">GitHub repository</a><a href="docs/OPERATIONS.html">Operation manual</a><a href="analysis/methods.html">Statistical methods</a><a href="#evaluation">Measured results</a><a class="watch-link" href="#development">Watch videos</a><a href="#interfaces">PC &amp; VR design</a></nav></header>
 <figure><a href="assets/system_setup.svg" target="_blank"><img src="assets/system_setup.svg" alt="Quest 3, Wi-Fi access point, Windows host, two independent E6 Ethernet connections, power supplies and hardware E-stops"></a>
-<figcaption><b>Figure 1.</b> Physical topology. Blue links carry data; dashed gray lines show power relationships; red paths identify independent hardware emergency stops. Device symbols and pose are illustrative, not a terminal wiring or safety certification drawing.</figcaption></figure>
+<figcaption><b>Figure 1.</b> 17 Nov hardware topology. Blue links carry data; dashed gray lines show power relationships; red paths identify independent hardware emergency stops. Device symbols and pose are illustrative, not a terminal wiring or safety certification drawing.</figcaption></figure>
 <figure><a href="assets/data_flow.svg" target="_blank"><img src="assets/data_flow.svg" alt="WebXR input validation, frame calibration, per-arm target generation, solver, command validation, E6 feedback, supervision and recording"></a>
 <figcaption><b>Figure 2.</b> Data flow and online control. The verified v7 path sends validated RangedIK candidates directly. DLS is used by the legacy IK path and a separate offline hybrid study; these records do not demonstrate a deployed RangedIK-to-DLS cascade.</figcaption></figure>
 <section class="eval" id="evaluation"><h2>Measured performance</h2>
@@ -37,9 +37,15 @@
   <h2>PC &amp; VR interface</h2>
   <p class="context">A headset-first workspace for one operator: the left E6 view, central control panel and right E6 view stay together. After host setup, connection rechecks, calibration, Grip control and guarded return-to-start are available without repeatedly removing the headset.</p>
   <figure class="full-workspace">
+    <img class="workspace-export" src="assets/ui/dual-gripper-hud-v020.png" alt="Actual v0.2.0 SDK headset canvas: independently mounted grippers on both E6 arms around the central controls">
+    <figcaption><b>v0.2.0 · Dual grippers in the headset workspace.</b> Actual read-only HUD export with offline reference arm postures. Analog Trigger sets each gripper's target opening. The left and right Uno boards are optional physical outputs. <a href="docs/GRIPPER.html">Gripper design &amp; setup</a> · <a href="CHANGELOG.html">Changelog</a></figcaption>
+  </figure>
+  <details class="interface-details"><summary>17 Nov hardware feedback capture</summary>
+  <figure class="full-workspace">
     <div class="workspace-crop"><img src="assets/ui/vr_workspace_source.jpg" alt="Actual SDK VR workspace: left and right E6 models with measured joint feedback around the central dual-arm control panel"></div>
     <figcaption><b>Left E6 · shared controls · right E6.</b> Actual SDK UI mirror captured on 17 Nov 2026, using the same drawing module as the headset. Both models are labelled measured joint poses. The captured session is waiting for Quest input and requires a recheck; this is a historical interface view, not a live robot connection.</figcaption>
   </figure>
+  </details>
   <div class="headset-journey" aria-label="Headset operating workflow"><span>Connect / recheck</span><span>Calibrate</span><span>Grip to follow</span><span>Stop / return</span><span>Recheck &amp; resume</span></div>
   <p class="context">The side views update from each arm's feedback and expose joint/TCP state alongside the control status. A return request first stops following and confirms stationary feedback, handles eligible collision protection, then checks and executes the saved start target. Arrival is confirmed from measurements. <a href="docs/HEADSET_WORKFLOW.html">Headset operation and recovery →</a></p>
   <details class="interface-details"><summary>Explore PC controls and VR panel details</summary>
