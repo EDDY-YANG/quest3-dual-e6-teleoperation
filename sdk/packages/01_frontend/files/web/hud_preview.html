@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E6 头显面板 · PC只读镜像</title>
+<style>body{margin:0;background:#ededed;font-family:system-ui,sans-serif;color:#242424}main{max-width:2240px;margin:24px auto;padding:0 20px}h1{font-size:24px}p{line-height:1.7}.panels{display:grid;grid-template-columns:4fr 9fr 4fr;gap:0;align-items:center;min-width:1320px}canvas{display:block;width:100%;height:auto;border-radius:24px;box-shadow:0 16px 50px #0002}#status{font-size:14px;color:#555}#left-model,#right-model{border-radius:0;box-shadow:none}</style></head>
+<body><main><h1>头显 AR 面板 · PC 只读镜像</h1>
+<p>与头显共用同一个绘制模块。以下内容来自当前服务与真实设备状态；此页不连接头显输入会话，所有操作按钮禁用。</p>
+<div class="panels"><canvas id="left-model" aria-label="左E6固定侧视"></canvas><canvas id="panel" aria-label="控制状态只读镜像"></canvas><canvas id="right-model" aria-label="右E6固定侧视"></canvas></div><p id="status">等待当前服务状态…</p>
+<p id="shader-check">检查PC WebGL着色器…</p>
+<button id="save-panel" type="button">导出当前面板 PNG</button>
+<button id="preview-calibration" type="button">查看水平航向面板</button>
+<button id="preview-left" type="button">查看左臂标定</button>
+<button id="preview-right" type="button">查看右臂标定</button>
+<p id="capture-label"></p><a id="download-panel" style="display:none">下载面板 PNG</a>
+<img id="captured-panel" alt="当前面板PNG导出" style="max-width:100%;display:none"></main>
+<script type="module">
+import {HeadsetHUD} from "/static/quest_hud.mjs";
+const hud = new HeadsetHUD({canvas:document.querySelector("#panel"),leftModelCanvas:document.querySelector("#left-model"),rightModelCanvas:document.querySelector("#right-model"),readOnly:true});
+document.querySelector('#preview-calibration').onclick=()=>{hud.calibrationOpen=!hud.calibrationOpen;hud.lastPaint=-Infinity;};
+for(const side of ['left','right'])document.querySelector('#preview-'+side).onclick=()=>{hud.calibrationOpen=true;hud.setClient({calibrationSide:side});hud.lastPaint=-Infinity;};
+try {
+ const gl=document.createElement("canvas").getContext("webgl");
+ if(!gl)throw Error("PC WebGL unavailable");
+ const check=new HeadsetHUD({readOnly:true});check.initGL(gl);check.upload(performance.now());
+ window.hudShaderCheck={compiled:true,glError:gl.getError()};
+ document.querySelector("#shader-check").textContent=`PC WebGL着色器已编译，错误码${window.hudShaderCheck.glError}；Quest实际显示仍需头显确认。`;
+}catch(error){window.hudShaderCheck={compiled:false,error:error.message};document.querySelector("#shader-check").textContent=`着色器检查失败：${error.message}`;}
+document.querySelector("#save-panel").addEventListener("click",async()=>{
+ const combined=document.createElement("canvas");combined.width=2418;combined.height=800;
+ const context=combined.getContext("2d");context.drawImage(hud.robotModels.leftCanvas,0,0,569,800);context.drawImage(hud.canvas,569,0);context.drawImage(hud.robotModels.rightCanvas,1849,0,569,800);
+ const blob=await new Promise(resolve=>combined.toBlob(resolve,"image/png"));
+ const url=URL.createObjectURL(blob);
+ const image=document.querySelector("#captured-panel");image.src=url;image.style.display="block";
+ const link=document.querySelector("#download-panel");link.href=url;link.download="headset-hud-mirror.png";link.style.display="inline-block";
+ document.querySelector("#capture-label").textContent=`${new Date().toLocaleString()} 导出的只读面板；可另存为PNG`;
+});
+let polling=false;
+async function poll(){
+ if(polling)return;polling=true;
+ try{
+  const response=await fetch("/api/headset/status",{cache:"no-store",signal:AbortSignal.timeout(1200)});
+  if(!response.ok)throw Error(`HTTP ${response.status}`);
+  const data=await response.json();hud.acceptState(data);
+  hud.setClient({linkState:"CONNECTED",visibility:data.quest.visibility,
+   leftTracking:data.quest.left_tracking,gripHeld:data.quest.left_grip_held,
+   rightTracking:data.quest.right_tracking,rightGripHeld:data.quest.right_grip_held,rtt:data.quest.http_rtt_ms});
+  document.querySelector("#status").textContent=`实时只读 · ${new Date().toLocaleTimeString()} · 头显输入 ${data.quest.status} · ${data.control.state} · 未从镜像页发出控制请求`;
+ }catch(error){hud.setClient({linkState:"DISCONNECTED"});document.querySelector("#status").textContent=`状态不可读：${error.message}`;}
+ finally{hud.paint(performance.now(),true);polling=false;}
+}
+setInterval(poll,250);poll();
+window.headsetHudPreview=hud;
+</script></body></html>

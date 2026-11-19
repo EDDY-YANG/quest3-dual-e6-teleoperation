@@ -1,0 +1,41 @@
+{
+  "id": "02_backend",
+  "title": "会话、连接与服务编排",
+  "depends_on": [
+    "03_pose_mapping",
+    "07_motion_control",
+    "08_robot_io",
+    "09_features",
+    "12_virtual_assets",
+    "13_gripper"
+  ],
+  "contract": "HTTP/WSS 请求 → 会话验证、控制组、状态响应",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "headset_bridge.py",
+      "sha256": "f2904271089031182b9771162036a70a812487d535ab260f7b2abda79bf8f0e9",
+      "bytes": 9789
+    },
+    {
+      "path": "quest_lan.py",
+      "sha256": "69df7e03a36d1060668a07f2befd9497c03201ea1e2f59527c146ba091d1f604",
+      "bytes": 8982
+    },
+    {
+      "path": "robot_monitor.py",
+      "sha256": "c4455665764f9d2371d125b65a9b24a7675a934b1eeef40ab7066be47854a7fa",
+      "bytes": 1520
+    },
+    {
+      "path": "server.py",
+      "sha256": "38f2c09e13af31744ea6b03ce3eb6ca1ba398c39b8c1ea6ae354d3914d028833",
+      "bytes": 63810
+    },
+    {
+      "path": "web_assets.py",
+      "sha256": "137b39a49cd7e5d1d3a0f197986115bbf8c16d3ec21fe14745c737a9496edc78",
+      "bytes": 501
+    }
+  ]
+}

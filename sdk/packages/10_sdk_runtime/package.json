@@ -1,0 +1,233 @@
+{
+  "id": "10_sdk_runtime",
+  "title": "统一入口、配置、示例与验证",
+  "depends_on": [
+    "01_frontend",
+    "02_backend",
+    "09_features"
+  ],
+  "contract": "用户命令 → 现有后端接口；提供固定依赖与文档",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "2026-10-29-14-35-platform-tools-receipt.json",
+      "sha256": "3f6d958790d1041b886cc56a78a486d84a8ed13637520e4c155b342b5cc7cc90",
+      "bytes": 436
+    },
+    {
+      "path": "2026-10-29-14-35-setup.ps1",
+      "sha256": "edca4ada149bf5d17d59b9dbec95df733816465c2f7a94e8e72f3804a8d440b0",
+      "bytes": 2092
+    },
+    {
+      "path": "2026-10-29-14-35-start-readonly.ps1",
+      "sha256": "1037cc6065a385ed676dc779e319b5fcbf612b13b53331422822b349e17c0b3a",
+      "bytes": 2351
+    },
+    {
+      "path": "2026-10-29-14-35-stop-readonly.ps1",
+      "sha256": "cc9870380d7f3c3ff079a46529de0e3e38e19602dcad1a9e0be603b98e554b44",
+      "bytes": 2025
+    },
+    {
+      "path": "2026-10-29-enable-lan-firewall.ps1",
+      "sha256": "5e0e86e55e9089df2adcbc1c915d498259127caf969a1c86c50bbc284841778b",
+      "bytes": 1264
+    },
+    {
+      "path": "2026-10-29-prepare-lan.py",
+      "sha256": "3e879a700dbe0ff85327c803168d5509bc3e14d9a0f6c1dd30c53e84ba30262d",
+      "bytes": 2113
+    },
+    {
+      "path": "config.example.json",
+      "sha256": "e8c0930e873013c652d01c91959a14a67c1c7ba0e7dab2dbeb819f2cc782ab9a",
+      "bytes": 105
+    },
+    {
+      "path": "device_settings.py",
+      "sha256": "8da6c9ad2f4398b8a4a317fe4042eae7288121478de741a46de20f506f2b9796",
+      "bytes": 2967
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "sha256": "612e1b3bd9368941d8a0733894375e3a634bc13b3669e370f845102e6b118f16",
+      "bytes": 6746
+    },
+    {
+      "path": "examples/__init__.py",
+      "sha256": "09a2b6f440c38370fb527fadea8e6fa77df052f65a5db17baa7d22609d879310",
+      "bytes": 83
+    },
+    {
+      "path": "examples/capture_diagnostic.py",
+      "sha256": "2c7bdeb77ca0c8bccc702a172d571cc220fae6de462c9d53c661fff35572cc5a",
+      "bytes": 252
+    },
+    {
+      "path": "examples/prepare_robot.py",
+      "sha256": "c930a8008eac5fe81a4a76e6f7cafdbd92a1617d566768a551436b7256f456ae",
+      "bytes": 444
+    },
+    {
+      "path": "examples/read_feedback.py",
+      "sha256": "71c178ce2ab55d446fc0184ebf5a39bfc8967bd0013cf5287e717aee8b5827bb",
+      "bytes": 241
+    },
+    {
+      "path": "examples/read_status.py",
+      "sha256": "32aafe21c8777a87785dfbaa46a1016e2224ac895c177fb516a9ad9623f133a1",
+      "bytes": 524
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "88f36afc2740a24e8a6cd59064d311776541cd81d4712de40eb83b5c783b03c6",
+      "bytes": 4190
+    },
+    {
+      "path": "examples/teleop_control.py",
+      "sha256": "30b34fbfc56abd9ff251c2a2934409b8f75a3b355ccc380b6ec7b1b681a3236f",
+      "bytes": 780
+    },
+    {
+      "path": "examples/watch_quest.py",
+      "sha256": "9262c533e9f1fa4ffaffdf85839edfea8885a25544d17376e26cc426d072d7ce",
+      "bytes": 527
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "196cb29581a8104dbb7cec20e55d6d838868198de452a36b289218acb01d122d",
+      "bytes": 1083
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "6948def7d1ef4b448ee2551a56867cfd6c2f542df52ac58cc51d6c1fc76e1441",
+      "bytes": 171
+    },
+    {
+      "path": "quest_e6_sdk/__init__.py",
+      "sha256": "244b15780f64f57320848b5f2b196e01e5039f0ec9e02215f98ec03535bc3654",
+      "bytes": 350
+    },
+    {
+      "path": "quest_e6_sdk/__main__.py",
+      "sha256": "aa40d913a1543b99cbbb0ddb3240dc4db8494b60ffa8607793441084729e42fe",
+      "bytes": 3179
+    },
+    {
+      "path": "quest_e6_sdk/client.py",
+      "sha256": "ba7f66f64d722ed410deaa663b1dfc4dcb56ac4c142c25a7209a7d7649299dcc",
+      "bytes": 7383
+    },
+    {
+      "path": "quest_e6_sdk/doctor.py",
+      "sha256": "9dc98e20122254d3d3058676586e816de728a70ab3577774cae5905507c2ddbc",
+      "bytes": 4684
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "9a65de556b0795ab8222957b85c3eacc87e483a583fa0779d8a15c03c0382b27",
+      "bytes": 38
+    },
+    {
+      "path": "requirements-lan.txt",
+      "sha256": "1dfaaed826ca8ab3784c2fab2f8c6daa55395931da6bc91dda54d63b0b7001c2",
+      "bytes": 21
+    },
+    {
+      "path": "requirements-offline.txt",
+      "sha256": "b022dc75667333a438a956f5bcc363ca4d18c460987ef4b44564c11ff600119e",
+      "bytes": 57
+    },
+    {
+      "path": "requirements-sdk.lock.txt",
+      "sha256": "6bd85db37bd250ae97504980c8922b05963415950ba0474a3323872614e208ad",
+      "bytes": 105
+    },
+    {
+      "path": "requirements.lock.txt",
+      "sha256": "ca35badf12461e9ed127f90953a94fc61c5b1317392f9a798de8f7585144f046",
+      "bytes": 301
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "d742fe35f10d5bada5ce772c56c93780dde4971fa959aa305dac56730b625fc8",
+      "bytes": 26
+    },
+    {
+      "path": "sdk.ps1",
+      "sha256": "97428049b247aceb4f2572ba868137b0fec91b2b772113f427509e57a04c8fda",
+      "bytes": 3463
+    },
+    {
+      "path": "start-rangedik.ps1",
+      "sha256": "01b19e32580bb0d2e260d5a3f4ecc0851c7eb79ad797f9b3d5fe58401f15ec57",
+      "bytes": 1930
+    },
+    {
+      "path": "START_HERE.md",
+      "sha256": "f15f3e83f79affd3688ac6b55ad4c8f7708a034caf0a17bab8f0fa5a9f4ebaa9",
+      "bytes": 158
+    },
+    {
+      "path": "tests/test_clutch_mapping.py",
+      "sha256": "514dd091f126bf41ff2da5f662002a0cc07bd3110dbfcc499178911089245325",
+      "bytes": 12959
+    },
+    {
+      "path": "tests/test_direction_calibration.py",
+      "sha256": "d690d6fad8bc0705ea0a6d4b84472448bafc636d8201d323f5f7a188ef92443e",
+      "bytes": 10075
+    },
+    {
+      "path": "tests/test_grip_gate.mjs",
+      "sha256": "4b82ad06803c65c79042e140ade162be770d7c20b7a1a467994ac406039259e5",
+      "bytes": 1664
+    },
+    {
+      "path": "tests/test_joint_reference_qp.py",
+      "sha256": "aa784b268a4018e375308c97cce644cd242c47d46db58ad9d291eb00ab6bbf4a",
+      "bytes": 7782
+    },
+    {
+      "path": "tests/test_pairing.py",
+      "sha256": "e22e669e9866f91926abcfe31f17bc7194c6efa12ba1625c5155f93d1f415ae3",
+      "bytes": 1894
+    },
+    {
+      "path": "tests/test_public_defaults.py",
+      "sha256": "54b535e9c46f2f86f91f9da254809850a00bb1a34e9506b81bb7a67e2484ad64",
+      "bytes": 1877
+    },
+    {
+      "path": "tests/test_relative_pose.py",
+      "sha256": "eae845c4ee61fd8a897e95e85893436e795840f98ce25f382527cb34d4b8b6d7",
+      "bytes": 10027
+    },
+    {
+      "path": "tests/test_robot_stop_state.py",
+      "sha256": "6f4c9bda8b936e16f4c058f166bcc9a5965b04257de28a4e20933ad42f432f48",
+      "bytes": 785
+    },
+    {
+      "path": "tests/test_web_assets.py",
+      "sha256": "6573f7fb941e275973538bf8c31c68c9a6748dcc744a20facd0b7119a0382593",
+      "bytes": 1122
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "b4b668cd77bd0b57dbb8c0e7d20c0c8487a5e07daee2e854cd761207146ac71b",
+      "bytes": 5203
+    },
+    {
+      "path": "tools/nominal_model.py",
+      "sha256": "157ec36d60fb6dc9042cc7d76d9ef4c09efd25cf9ceff3ec9c851c21025742b5",
+      "bytes": 1504
+    },
+    {
+      "path": "tools/verify_sdk_delivery.py",
+      "sha256": "4e8215d9760801bcd6b3ccb616ccee224143a99910d8726de87f0c6829076ede",
+      "bytes": 4833
+    }
+  ]
+}

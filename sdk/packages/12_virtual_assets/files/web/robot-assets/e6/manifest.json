@@ -1,0 +1,88 @@
+{
+  "repository": "https://github.com/Dobot-Arm/DOBOT_6Axis_ROS2_V4",
+  "commit": "7807ef8fb31e8f86a76cd474a4a9cddffef6eca9",
+  "purpose": "Official E6 URDF visual meshes only; no IK or robot control",
+  "package_license_declarations": [
+    "TODO: License declaration"
+  ],
+  "root_license_downloaded": true,
+  "files": [
+    {
+      "file": "me6_robot.urdf",
+      "upstream_path": "dobot_rviz/urdf/me6_robot.urdf",
+      "bytes": 9105,
+      "sha256": "a8a30b81479fd48c51a20bf51437114ec3d59a56eaa85ad94d8d1ce11fecc1d7"
+    },
+    {
+      "file": "upstream-package.xml",
+      "upstream_path": "dobot_rviz/package.xml",
+      "bytes": 809,
+      "sha256": "e1725fc71135c5ae492f1b9762ae225710446cd94ba1b129d68a52c181b0773f"
+    },
+    {
+      "file": "base_link.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/base_link.STL",
+      "bytes": 7153684,
+      "sha256": "0f08154e7a7423536bb2457da772be222d687f1f553943bc7e85652a8a52059d"
+    },
+    {
+      "file": "Link1.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/Link1.STL",
+      "bytes": 1448084,
+      "sha256": "9778d3fdcd58b9fba2753c441e6ea9787db3f1af48e5d0d4c39776a655372a36"
+    },
+    {
+      "file": "Link2.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/Link2.STL",
+      "bytes": 2434584,
+      "sha256": "647e98aad0d533c13ac7d0bc9bfd1fca2b131fa4e8959b8d1af4efc63b1939e9"
+    },
+    {
+      "file": "Link3.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/Link3.STL",
+      "bytes": 2209784,
+      "sha256": "a50c83cf4bfcefe91cda0391e1840866348ce4960d98293b3f0e1fe978d00ac0"
+    },
+    {
+      "file": "Link4.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/Link4.STL",
+      "bytes": 1442684,
+      "sha256": "0115d78951a9e887265da27ac7d7d4b6c570f11ed6afd080ed08ae28ca16f2f9"
+    },
+    {
+      "file": "Link5.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/Link5.STL",
+      "bytes": 1876484,
+      "sha256": "21b0d7fe1f8da62144cfec7b185241d8cd96ab75d0f9fa5d3e77846d5713ca63"
+    },
+    {
+      "file": "Link6.STL",
+      "upstream_path": "dobot_rviz/meshes/me6/Link6.STL",
+      "bytes": 1841884,
+      "sha256": "318b57a9cfc1f86099c98f836bda099dfd13026aeac193e7158173e9cf4a0626"
+    },
+    {
+      "file": "UPSTREAM-LICENSE",
+      "upstream_path": "LICENSE",
+      "bytes": 1061,
+      "sha256": "a55351a1634b6cd46d2ca5555459a245761e11ac9956e3771faf343187cf2132"
+    },
+    {
+      "file": "model.json",
+      "derived_from": "Upstream E6 URDF and nominal joint display convention.",
+      "bytes": 4987,
+      "sha256": "38f1419190ad84c9356c5256a76b6233554f35284d47efe66ae6b02008fede6d"
+    }
+  ],
+  "display_coordinate_mapping": {
+    "controller_joint_offsets_deg": [
+      90,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "tool_overlay": "Actual TCP comes from current feedback; nominal display ends at the URDF flange."
+  }
+}

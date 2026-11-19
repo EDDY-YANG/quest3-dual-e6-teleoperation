@@ -7,7 +7,7 @@ header{border-bottom:1px solid #dce2e9;padding:16px 24px;background:#f7f9fb}nav{
 main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height:1.35;color:#172331;scroll-margin-top:20px}h1{font-size:30px;border-bottom:1px solid #dce2e9;padding-bottom:18px;margin:0 0 24px}h2{font-size:23px;margin-top:36px}h3{font-size:19px;margin-top:26px}p,ul,ol,pre,table,blockquote{margin:15px 0}a{color:#175ca7;text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto}code{font:14px/1.6 Consolas,"Cascadia Code","Microsoft YaHei",monospace;background:#eef2f6;padding:2px 5px;border-radius:3px}pre{padding:17px 20px;overflow:auto;background:#f5f7fa;border:1px solid #e0e6ed;border-radius:5px}pre code{background:transparent;padding:0}blockquote{border-left:3px solid #9db3cc;padding:3px 18px;color:#536477;background:#f8fafc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:10px 12px;text-align:left;vertical-align:top;border:1px solid #dce2e9}th{background:#f3f6fa;font-weight:600}.table-wrap{overflow-x:auto}hr{border:0;border-top:1px solid #dce2e9;margin:30px 0}li+li{margin-top:5px}
 @media(max-width:600px){main{padding:24px 16px 50px}header{padding:12px 16px}h1{font-size:24px}h2{font-size:21px}nav{gap:12px}}
 </style></head><body><header><nav><a href="../index.html">← Project home</a><span>Quest 3 / DOBOT E6 Teleoperation SDK</span><a href="OPERATIONS.md?raw=1" download>Download Markdown</a></nav></header><main><blockquote>
-<p>Windows x64 v0.1.0 · <a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip">下载 SDK</a> · <a href="SDK_INSTALL.html">完整环境安装命令</a> · <a href="SDK_EXAMPLES.html">01–06 终端示例</a>。下文源码路径对应发行 ZIP。</p>
+<p>Windows x64 v0.2.0 · <a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip">下载 SDK</a> · <a href="SDK_INSTALL.html">完整环境安装命令</a> · <a href="SDK_EXAMPLES.html">01–06 终端示例</a>。下文源码路径对应发行 ZIP。</p>
 </blockquote>
 <h1 id="quest-3-dobot-e6-teleoperation-sdk">Quest 3 / DOBOT E6 Teleoperation SDK</h1>
 <p>面向代码阅读、修改和实验复现的 Quest 3 单臂／双臂遥操作 SDK。前端、连接、通信、标定、逆运动学、执行控制和记录代码均按链路分包，使用同一个启动入口。</p>
@@ -498,10 +498,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
 </tr>
 </tbody>
 </table></div>
-<p>已有软件证据包括 Windows 上的独立环境安装、SDK／组装检查、离线原生库与数学接口检查、隔离 HTTP/前端资源检查；本版证据见<a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.1.0">发行说明</a>。</p>
+<p>已有软件证据包括 Windows 上的独立环境安装、SDK／组装检查、离线原生库与数学接口检查、隔离 HTTP/前端资源检查；本版证据见<a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.2.0">发行说明</a>。</p>
 <p>真实双臂曾产生运动并出现保护／停止事件；这不是稳定性通过证据。已有抖动根因、实体停止距离、相互避碰和完整任务成功率仍未解决／验收。历史日志、离线原型、模型参考和真机实测始终分开。macOS 与另一台干净电脑未因本机检查而自动获得兼容性保证。</p>
 <p><a id="github"></a></p>
 <h2 id="9-github-发布边界">9. GitHub 发布边界</h2>
-<p>公开 SDK 从 <a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.1.0">v0.1.0 Release</a> 获取。下载带有 <code>windows-x64</code> 的具名 ZIP 并解压，按<a href="SDK_INSTALL.html">环境安装</a>启动，再按<a href="SDK_EXAMPLES.html">01–06 示例</a>运行。</p>
+<p>公开 SDK 从 <a href="https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.2.0">v0.2.0 Release</a> 获取。下载带有 <code>windows-x64</code> 的具名 ZIP 并解压，按<a href="SDK_INSTALL.html">环境安装</a>启动，再按<a href="SDK_EXAMPLES.html">01–06 示例</a>运行。</p>
 <p>代码许可证：<a href="../LICENSE">MIT</a>。第三方模型、库、工具和原生源码保留原许可与归属，见 THIRD_PARTY_NOTICES.md (<code>packages/10_sdk_runtime/files/THIRD_PARTY_NOTICES.md</code>)。不要发布本机 TLS 私钥、会话码／cookie、用户采集记录或声称这些实验代码已经取得官方机器人安全认证。</p>
 </main></body></html>

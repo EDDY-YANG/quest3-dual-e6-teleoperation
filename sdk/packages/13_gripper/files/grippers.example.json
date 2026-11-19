@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "arms": {
+    "left": {
+      "enabled": false,
+      "port": null,
+      "closed_us": null,
+      "open_us": null,
+      "slew_us_s": null
+    },
+    "right": {
+      "enabled": false,
+      "port": null,
+      "closed_us": null,
+      "open_us": null,
+      "slew_us_s": null
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E6 双臂实时监控</title><link rel="stylesheet" href="/static/pc_monitor.css"></head>
+<body><main>
+<header><div><p class="eyebrow">QUEST 3 · DOBOT MAGICIAN E6</p><h1>双臂实时监控</h1><p>官方 E6 三维模型 · 独立关节反馈 · 左右手柄状态</p></div>
+<nav><a href="/">连接与控制台</a><a href="/hud-preview">VR 面板镜像</a></nav></header>
+<section class="status-strip"><span id="pc-link" class="badge">等待 PC 服务</span><span id="quest-link" class="badge">等待 Quest</span><span id="recording-link" class="badge">记录状态 —</span><span id="updated">尚无实时数据</span></section>
+<section class="monitor-toolbar"><div><strong>双臂监控与开始位</strong><p>连接只读反馈不会运动；回位仅由下方独立按钮触发。已有左臂控制连接会被复用。</p></div>
+<div class="actions"><button id="connect-monitors">连接双臂只读监控</button><button id="disconnect-monitors" class="secondary">断开独立监控</button><button id="stop-left" class="stop" disabled>STOP 双臂</button></div></section>
+<p id="action-message" class="notice" role="status">各臂模型按有效反馈更新；无有效反馈时显示已标注的参考姿态。启动条件见运行状态。</p>
+<section class="start-section" aria-label="双臂开始位">
+<div class="section-heading"><h2>回到开始位</h2><p>速度 100% · 加速度 30% · 两臂互斥回位</p></div>
+<p class="notice">每次点击前确认工作区无接触或阻挡。回位会先停止并核对，按需清除对应臂碰撞保护一次、使能并回位；运行日志保留。无需方向标定，急停/通信异常/其他报警或清警失败时不会运动。回位使用下方目标，途中不保证 TCP 朝下；“保存当前开始位”会替换该臂预设。</p>
+<div class="home-grid"><article class="card"><h2>左臂开始位 <span id="home-left-state" class="badge">等待状态</span></h2><p id="home-left-detail" class="detail-line">尚未保存</p><div class="actions"><button id="home-left-capture" class="secondary" disabled>保存左臂当前开始位</button><button id="home-left-return" disabled>左臂回开始位</button></div><p id="home-left-reason" class="detail-line"></p></article>
+<article class="card"><h2>右臂开始位 <span id="home-right-state" class="badge">等待状态</span></h2><p id="home-right-detail" class="detail-line">尚未保存</p><div class="actions"><button id="home-right-capture" class="secondary" disabled>保存右臂当前开始位</button><button id="home-right-return" disabled>右臂回开始位</button></div><p id="home-right-reason" class="detail-line"></p></article></div>
+</section>
+<section id="arm-grid" class="arm-grid" aria-label="双臂独立反馈"></section>
+<section class="section-heading"><h2>左右手柄实时状态</h2><p>Grip 松开仍显示输入；手柄外观使用匹配的 Touch Plus 设备资产。</p></section>
+<section id="hand-grid" class="hand-grid" aria-label="左右手柄"></section>
+<section class="bottom-grid"><article class="card"><h2>运行状态与告警</h2><p id="control-status">控制链尚未准备</p><p id="runtime-limits">参数等待后端回读</p><p id="tracking-warning" role="status"></p><p id="calibration-status"></p><p id="lan-info"></p></article>
+<article class="card"><h2>最近状态变化</h2><ol id="events"><li>尚无实时事件</li></ol></article></section>
+<footer>模型显示各自实测反馈，未做实物 AR 配准。统一重检识别已连接单臂/双臂，各手柄独立跟随对应臂，故障统一停止；软件 STOP 不等同于物理急停。<br>
+<span id="asset-status">加载上一版官方 E6 模型与 Touch Plus 设备模型…</span></footer>
+<p><a href="/asset-preview">双臂夹爪与手柄资产预览（离线）</a></p></main><script type="module" src="/static/pc_monitor.mjs"></script></body></html>

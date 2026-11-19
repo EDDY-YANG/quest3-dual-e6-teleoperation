@@ -1,0 +1,179 @@
+{
+  "id": "12_virtual_assets",
+  "title": "统一虚拟资产",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "depends_on": [],
+  "contract": "型号/安装关系 → 同一资源目录、左右模型实例",
+  "files": [
+    {
+      "path": "asset_registry.py",
+      "sha256": "74a86b92486a14ad05a09aee86391f0f6948fcf3169ecd39a5f31af3602ccc2c",
+      "bytes": 1593
+    },
+    {
+      "path": "web/asset_catalog.json",
+      "sha256": "59c7e18460a9b7037a8a9f44562b4c334e0b1c413d6fb9a567e0be6d492edde1",
+      "bytes": 6586
+    },
+    {
+      "path": "web/asset_store.mjs",
+      "sha256": "4142e22d2c3503204fc13b7e235ed5f41b37e93c13cd1a259743b6691368d4b7",
+      "bytes": 2787
+    },
+    {
+      "path": "web/gripper_model.mjs",
+      "sha256": "c4d1bf4a192dd02b8f5fa35aebc558b05ea2a3936cfbc3087f85ef4011c46e08",
+      "bytes": 1424
+    },
+    {
+      "path": "web/robot-assets/e6/base_link.STL",
+      "sha256": "0f08154e7a7423536bb2457da772be222d687f1f553943bc7e85652a8a52059d",
+      "bytes": 7153684
+    },
+    {
+      "path": "web/robot-assets/e6/Link1.STL",
+      "sha256": "9778d3fdcd58b9fba2753c441e6ea9787db3f1af48e5d0d4c39776a655372a36",
+      "bytes": 1448084
+    },
+    {
+      "path": "web/robot-assets/e6/Link2.STL",
+      "sha256": "647e98aad0d533c13ac7d0bc9bfd1fca2b131fa4e8959b8d1af4efc63b1939e9",
+      "bytes": 2434584
+    },
+    {
+      "path": "web/robot-assets/e6/Link3.STL",
+      "sha256": "a50c83cf4bfcefe91cda0391e1840866348ce4960d98293b3f0e1fe978d00ac0",
+      "bytes": 2209784
+    },
+    {
+      "path": "web/robot-assets/e6/Link4.STL",
+      "sha256": "0115d78951a9e887265da27ac7d7d4b6c570f11ed6afd080ed08ae28ca16f2f9",
+      "bytes": 1442684
+    },
+    {
+      "path": "web/robot-assets/e6/Link5.STL",
+      "sha256": "21b0d7fe1f8da62144cfec7b185241d8cd96ab75d0f9fa5d3e77846d5713ca63",
+      "bytes": 1876484
+    },
+    {
+      "path": "web/robot-assets/e6/Link6.STL",
+      "sha256": "318b57a9cfc1f86099c98f836bda099dfd13026aeac193e7158173e9cf4a0626",
+      "bytes": 1841884
+    },
+    {
+      "path": "web/robot-assets/e6/manifest.json",
+      "sha256": "6e5fdad8957fa8a9a45cf7c800e2be21aa4168b7f210e9da90c28462a933f6ca",
+      "bytes": 2831
+    },
+    {
+      "path": "web/robot-assets/e6/me6_robot.urdf",
+      "sha256": "a8a30b81479fd48c51a20bf51437114ec3d59a56eaa85ad94d8d1ce11fecc1d7",
+      "bytes": 9105
+    },
+    {
+      "path": "web/robot-assets/e6/model.json",
+      "sha256": "38f1419190ad84c9356c5256a76b6233554f35284d47efe66ae6b02008fede6d",
+      "bytes": 4987
+    },
+    {
+      "path": "web/robot-assets/e6/UPSTREAM-LICENSE",
+      "sha256": "a55351a1634b6cd46d2ca5555459a245761e11ac9956e3771faf343187cf2132",
+      "bytes": 1061
+    },
+    {
+      "path": "web/robot-assets/e6/upstream-package.xml",
+      "sha256": "e1725fc71135c5ae492f1b9762ae225710446cd94ba1b129d68a52c181b0773f",
+      "bytes": 809
+    },
+    {
+      "path": "web/robot-assets/gripper-v1/gripper.glb",
+      "sha256": "4179750cda48e898f7e996e9b61d90c81754d35a2d22c5d0e9cce54b55ffd667",
+      "bytes": 2921188
+    },
+    {
+      "path": "web/robot-assets/gripper-v1/mechanism.json",
+      "sha256": "7136f8196aa127288fdfbd1da1566bbca8226f4404a894afad1ba97047eda82b",
+      "bytes": 6035
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/ASSETS-LICENSE.md",
+      "sha256": "0ef0c87e8ffdd0681f332dc3b39f284dee2166d1f853fabc3853884fe81a6f30",
+      "bytes": 1094
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/left.glb",
+      "sha256": "41a35b80221398d37029cbfaa9e39084ccd43e0206be72a5e8460f52e7882cb4",
+      "bytes": 217984
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/LICENSE.md",
+      "sha256": "cc07f925e00fbccf304facfeb8bf94943539e252fc14b0588488f293d877c849",
+      "bytes": 216
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/manifest.json",
+      "sha256": "765c08dbec3c8011254b68c7b9577fa68867b7575db3934518ff90d9ade0dda9",
+      "bytes": 1627
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/profile.json",
+      "sha256": "51813881124cfe860cbea8816da374824619046463dccadc159df3119043a328",
+      "bytes": 62
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/registry.json",
+      "sha256": "55dc1c6235b0c1b1b007b9c532f4c10ddef96907c2bc560f2cb39d1c1898ed9a",
+      "bytes": 1990
+    },
+    {
+      "path": "web/robot-assets/quest-touch-plus/right.glb",
+      "sha256": "5126d638fb1d03e05d16d8eec3b31b9588df88eaa8b42cc21b857fac3bd44916",
+      "bytes": 213868
+    },
+    {
+      "path": "web/robot-assets/three/BufferGeometryUtils.js",
+      "sha256": "319782169ed48af21fcaa251d839ecb8e58f14174aacbf68b74a437f3d6a3a98",
+      "bytes": 39165
+    },
+    {
+      "path": "web/robot-assets/three/GLTFLoader.js",
+      "sha256": "7bbda9f3af9b5acbd89a33cfc0aeb020f34d2d31a72829c79c0b354f9502c8e5",
+      "bytes": 119859
+    },
+    {
+      "path": "web/robot-assets/three/LICENSE",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    {
+      "path": "web/robot-assets/three/manifest.json",
+      "sha256": "4a368d41cb75ff13891151f7f25dc237701204dbfedfb5d7ed1e62fc16760f6c",
+      "bytes": 1419
+    },
+    {
+      "path": "web/robot-assets/three/package.json",
+      "sha256": "cdaa846ac83a68037e2f78e9d5cef0bbb82dd50fe29ef3cf650b31c3a2011c3b",
+      "bytes": 34
+    },
+    {
+      "path": "web/robot-assets/three/SkeletonUtils.js",
+      "sha256": "eedd768765d6553f8082953ab3882e2c86dacc2eb7d180a312d1d52e86bb35c5",
+      "bytes": 11547
+    },
+    {
+      "path": "web/robot-assets/three/STLLoader.js",
+      "sha256": "5dc2e3c6b77bb6199fa13c261234bede72508ae5c3dcdcad7cc5002e53d53319",
+      "bytes": 10800
+    },
+    {
+      "path": "web/robot-assets/three/three.core.js",
+      "sha256": "613e370f76638fdef83926642bf256dc9615684922de1ce1f63a8583e5d78578",
+      "bytes": 1474799
+    },
+    {
+      "path": "web/robot-assets/three/three.module.js",
+      "sha256": "104f56145899722094556490d787aae0617cc2fc3382f31df02d724ea1aee341",
+      "bytes": 658900
+    }
+  ]
+}

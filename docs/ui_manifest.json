@@ -39,6 +39,16 @@
       "file": "assets/ui/vr_workspace_source.jpg",
       "sha256": "09c99ea08c10f9cac2aff659d70c878f10251b3477d4dc2dd7079d1134e1f891",
       "bytes": 114587
+    },
+    {
+      "file": "assets/ui/dual-gripper-hud-v020.png",
+      "sha256": "f49e96433d6747e7f8db830a4d203da4f2685ce384fb7b02013279e035edf9b4",
+      "bytes": 412885
+    },
+    {
+      "file": "assets/ui/dual-gripper-preview-v020.jpg",
+      "sha256": "ccb4120224f8cc5dfc3d6d14402017daea826e610287c7945ec83c8fbbe334d9",
+      "bytes": 70118
     }
   ],
   "workspace": {
@@ -54,5 +64,13 @@
     ],
     "state": "Measured joint labels on both side models; Quest waiting, tracking missing, recheck required. Historical capture, not current telemetry.",
     "not_headset_recording": true
+  },
+  "current_workspace": {
+    "sdk": "v0.2.0",
+    "capture_date": "2026-11-19",
+    "state": "Offline SDK reference postures; no physical Quest, E6 or Uno",
+    "source": "Native side canvases and HeadsetHUD mirror export",
+    "file": "assets/ui/dual-gripper-hud-v020.png",
+    "preview": "assets/ui/dual-gripper-preview-v020.jpg"
   }
 }

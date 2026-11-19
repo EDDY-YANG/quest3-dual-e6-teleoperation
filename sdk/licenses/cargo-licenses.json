@@ -1,0 +1,737 @@
+[
+  {
+    "crate": "RustyXML",
+    "version": "0.3.0",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/Florob/RustyXML",
+    "directory": "licenses/cargo/RustyXML-0.3.0"
+  },
+  {
+    "crate": "aho-corasick",
+    "version": "1.1.5",
+    "license": "Unlicense OR MIT",
+    "source": "https://github.com/BurntSushi/aho-corasick",
+    "directory": "licenses/cargo/aho-corasick-1.1.5"
+  },
+  {
+    "crate": "approx",
+    "version": "0.5.1",
+    "license": "Apache-2.0",
+    "source": "https://github.com/brendanzab/approx",
+    "directory": "licenses/cargo/approx-0.5.1"
+  },
+  {
+    "crate": "autocfg",
+    "version": "1.5.1",
+    "license": "Apache-2.0 OR MIT",
+    "source": "https://github.com/cuviper/autocfg",
+    "directory": "licenses/cargo/autocfg-1.5.1"
+  },
+  {
+    "crate": "bitflags",
+    "version": "1.3.2",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/bitflags/bitflags",
+    "directory": "licenses/cargo/bitflags-1.3.2"
+  },
+  {
+    "crate": "bumpalo",
+    "version": "3.20.3",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/fitzgen/bumpalo",
+    "directory": "licenses/cargo/bumpalo-3.20.3"
+  },
+  {
+    "crate": "bytemuck",
+    "version": "1.25.2",
+    "license": "Zlib OR Apache-2.0 OR MIT",
+    "source": "https://github.com/Lokathor/bytemuck",
+    "directory": "licenses/cargo/bytemuck-1.25.2"
+  },
+  {
+    "crate": "cfg-if",
+    "version": "1.0.5",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/cfg-if",
+    "directory": "licenses/cargo/cfg-if-1.0.5"
+  },
+  {
+    "crate": "chrono",
+    "version": "0.4.45",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/chronotope/chrono",
+    "directory": "licenses/cargo/chrono-0.4.45"
+  },
+  {
+    "crate": "console_error_panic_hook",
+    "version": "0.1.7",
+    "license": "Apache-2.0/MIT",
+    "source": "https://github.com/rustwasm/console_error_panic_hook",
+    "directory": "licenses/cargo/console_error_panic_hook-0.1.7"
+  },
+  {
+    "crate": "csv-core",
+    "version": "0.1.13",
+    "license": "Unlicense/MIT",
+    "source": "https://github.com/BurntSushi/rust-csv",
+    "directory": "licenses/cargo/csv-core-0.1.13"
+  },
+  {
+    "crate": "csv",
+    "version": "1.4.0",
+    "license": "Unlicense/MIT",
+    "source": "https://github.com/BurntSushi/rust-csv",
+    "directory": "licenses/cargo/csv-1.4.0"
+  },
+  {
+    "crate": "dirs-sys",
+    "version": "0.3.7",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dirs-dev/dirs-sys-rs",
+    "directory": "licenses/cargo/dirs-sys-0.3.7"
+  },
+  {
+    "crate": "dirs",
+    "version": "4.0.0",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/soc/dirs-rs",
+    "directory": "licenses/cargo/dirs-4.0.0"
+  },
+  {
+    "crate": "downcast-rs",
+    "version": "1.2.1",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/marcianx/downcast-rs",
+    "directory": "licenses/cargo/downcast-rs-1.2.1"
+  },
+  {
+    "crate": "either",
+    "version": "1.19.0",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rayon-rs/either",
+    "directory": "licenses/cargo/either-1.19.0"
+  },
+  {
+    "crate": "futures-core",
+    "version": "0.3.34",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/futures-rs",
+    "directory": "licenses/cargo/futures-core-0.3.34"
+  },
+  {
+    "crate": "futures-task",
+    "version": "0.3.34",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/futures-rs",
+    "directory": "licenses/cargo/futures-task-0.3.34"
+  },
+  {
+    "crate": "futures-util",
+    "version": "0.3.34",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/futures-rs",
+    "directory": "licenses/cargo/futures-util-0.3.34"
+  },
+  {
+    "crate": "getrandom",
+    "version": "0.1.16",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-random/getrandom",
+    "directory": "licenses/cargo/getrandom-0.1.16"
+  },
+  {
+    "crate": "instant",
+    "version": "0.1.13",
+    "license": "BSD-3-Clause",
+    "source": "https://github.com/sebcrozet/instant",
+    "directory": "licenses/cargo/instant-0.1.13"
+  },
+  {
+    "crate": "itoa",
+    "version": "1.0.19",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/itoa",
+    "directory": "licenses/cargo/itoa-1.0.19"
+  },
+  {
+    "crate": "js-sys",
+    "version": "0.3.107",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys",
+    "directory": "licenses/cargo/js-sys-0.3.107"
+  },
+  {
+    "crate": "k",
+    "version": "0.29.1",
+    "license": "Apache-2.0",
+    "source": "https://github.com/openrr/k",
+    "directory": "licenses/cargo/k-0.29.1"
+  },
+  {
+    "crate": "lazy_static",
+    "version": "1.5.1",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang-nursery/lazy-static.rs",
+    "directory": "licenses/cargo/lazy_static-1.5.1"
+  },
+  {
+    "crate": "lbfgs",
+    "version": "0.2.2",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/korken89/lbfgs-rs",
+    "directory": "licenses/cargo/lbfgs-0.2.2"
+  },
+  {
+    "crate": "libc",
+    "version": "0.2.191",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/libc",
+    "directory": "licenses/cargo/libc-0.2.191"
+  },
+  {
+    "crate": "libm",
+    "version": "0.2.16",
+    "license": "MIT",
+    "source": "https://github.com/rust-lang/compiler-builtins",
+    "directory": "licenses/cargo/libm-0.2.16"
+  },
+  {
+    "crate": "linked-hash-map",
+    "version": "0.5.6",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/contain-rs/linked-hash-map",
+    "directory": "licenses/cargo/linked-hash-map-0.5.6"
+  },
+  {
+    "crate": "lock_api",
+    "version": "0.4.14",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/Amanieu/parking_lot",
+    "directory": "licenses/cargo/lock_api-0.4.14"
+  },
+  {
+    "crate": "log",
+    "version": "0.4.35",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/log",
+    "directory": "licenses/cargo/log-0.4.35"
+  },
+  {
+    "crate": "matrixmultiply",
+    "version": "0.2.4",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/bluss/matrixmultiply/",
+    "directory": "licenses/cargo/matrixmultiply-0.2.4"
+  },
+  {
+    "crate": "matrixmultiply",
+    "version": "0.3.11",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/bluss/matrixmultiply/",
+    "directory": "licenses/cargo/matrixmultiply-0.3.11"
+  },
+  {
+    "crate": "memchr",
+    "version": "2.8.3",
+    "license": "Unlicense OR MIT",
+    "source": "https://github.com/BurntSushi/memchr",
+    "directory": "licenses/cargo/memchr-2.8.3"
+  },
+  {
+    "crate": "nalgebra-macros",
+    "version": "0.1.0",
+    "license": "Apache-2.0",
+    "source": "https://github.com/dimforge/nalgebra",
+    "directory": "licenses/cargo/nalgebra-macros-0.1.0"
+  },
+  {
+    "crate": "nalgebra",
+    "version": "0.30.1",
+    "license": "BSD-3-Clause",
+    "source": "https://github.com/dimforge/nalgebra",
+    "directory": "licenses/cargo/nalgebra-0.30.1"
+  },
+  {
+    "crate": "ndarray",
+    "version": "0.13.1",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/rust-ndarray/ndarray",
+    "directory": "licenses/cargo/ndarray-0.13.1"
+  },
+  {
+    "crate": "num-bigint",
+    "version": "0.2.6",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/rust-num/num-bigint",
+    "directory": "licenses/cargo/num-bigint-0.2.6"
+  },
+  {
+    "crate": "num-bigint",
+    "version": "0.4.8",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-bigint",
+    "directory": "licenses/cargo/num-bigint-0.4.8"
+  },
+  {
+    "crate": "num-complex",
+    "version": "0.2.4",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/rust-num/num-complex",
+    "directory": "licenses/cargo/num-complex-0.2.4"
+  },
+  {
+    "crate": "num-complex",
+    "version": "0.4.6",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-complex",
+    "directory": "licenses/cargo/num-complex-0.4.6"
+  },
+  {
+    "crate": "num-derive",
+    "version": "0.3.3",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-derive",
+    "directory": "licenses/cargo/num-derive-0.3.3"
+  },
+  {
+    "crate": "num-integer",
+    "version": "0.1.47",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-integer",
+    "directory": "licenses/cargo/num-integer-0.1.47"
+  },
+  {
+    "crate": "num-iter",
+    "version": "0.1.46",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-iter",
+    "directory": "licenses/cargo/num-iter-0.1.46"
+  },
+  {
+    "crate": "num-rational",
+    "version": "0.2.4",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/rust-num/num-rational",
+    "directory": "licenses/cargo/num-rational-0.2.4"
+  },
+  {
+    "crate": "num-rational",
+    "version": "0.4.2",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-rational",
+    "directory": "licenses/cargo/num-rational-0.4.2"
+  },
+  {
+    "crate": "num-traits",
+    "version": "0.2.19",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num-traits",
+    "directory": "licenses/cargo/num-traits-0.2.19"
+  },
+  {
+    "crate": "num",
+    "version": "0.2.1",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/rust-num/num",
+    "directory": "licenses/cargo/num-0.2.1"
+  },
+  {
+    "crate": "num",
+    "version": "0.4.3",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-num/num",
+    "directory": "licenses/cargo/num-0.4.3"
+  },
+  {
+    "crate": "once_cell",
+    "version": "1.21.4",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/matklad/once_cell",
+    "directory": "licenses/cargo/once_cell-1.21.4"
+  },
+  {
+    "crate": "optimization_engine",
+    "version": "0.7.7",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/alphaville/optimization-engine",
+    "directory": "licenses/cargo/optimization_engine-0.7.7"
+  },
+  {
+    "crate": "parking_lot",
+    "version": "0.12.5",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/Amanieu/parking_lot",
+    "directory": "licenses/cargo/parking_lot-0.12.5"
+  },
+  {
+    "crate": "parking_lot_core",
+    "version": "0.9.12",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/Amanieu/parking_lot",
+    "directory": "licenses/cargo/parking_lot_core-0.9.12"
+  },
+  {
+    "crate": "parry3d-f64",
+    "version": "0.8.0",
+    "license": "Apache-2.0",
+    "source": "https://github.com/dimforge/parry",
+    "directory": "licenses/cargo/parry3d-f64-0.8.0"
+  },
+  {
+    "crate": "paste",
+    "version": "1.0.15",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/paste",
+    "directory": "licenses/cargo/paste-1.0.15"
+  },
+  {
+    "crate": "path-slash",
+    "version": "0.1.5",
+    "license": "MIT",
+    "source": "https://github.com/rhysd/path-slash",
+    "directory": "licenses/cargo/path-slash-0.1.5"
+  },
+  {
+    "crate": "pin-project-lite",
+    "version": "0.2.17",
+    "license": "Apache-2.0 OR MIT",
+    "source": "https://github.com/taiki-e/pin-project-lite",
+    "directory": "licenses/cargo/pin-project-lite-0.2.17"
+  },
+  {
+    "crate": "ppv-lite86",
+    "version": "0.2.21",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/cryptocorrosion/cryptocorrosion",
+    "directory": "licenses/cargo/ppv-lite86-0.2.21"
+  },
+  {
+    "crate": "proc-macro2",
+    "version": "1.0.107",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/proc-macro2",
+    "directory": "licenses/cargo/proc-macro2-1.0.107"
+  },
+  {
+    "crate": "quote",
+    "version": "1.0.47",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/quote",
+    "directory": "licenses/cargo/quote-1.0.47"
+  },
+  {
+    "crate": "rand",
+    "version": "0.7.3",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-random/rand",
+    "directory": "licenses/cargo/rand-0.7.3"
+  },
+  {
+    "crate": "rand_chacha",
+    "version": "0.2.2",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-random/rand",
+    "directory": "licenses/cargo/rand_chacha-0.2.2"
+  },
+  {
+    "crate": "rand_core",
+    "version": "0.5.1",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-random/rand",
+    "directory": "licenses/cargo/rand_core-0.5.1"
+  },
+  {
+    "crate": "rawpointer",
+    "version": "0.2.1",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/bluss/rawpointer/",
+    "directory": "licenses/cargo/rawpointer-0.2.1"
+  },
+  {
+    "crate": "regex-automata",
+    "version": "0.4.18",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/regex",
+    "directory": "licenses/cargo/regex-automata-0.4.18"
+  },
+  {
+    "crate": "regex-syntax",
+    "version": "0.8.11",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/regex",
+    "directory": "licenses/cargo/regex-syntax-0.8.11"
+  },
+  {
+    "crate": "regex",
+    "version": "1.13.1",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/rust-lang/regex",
+    "directory": "licenses/cargo/regex-1.13.1"
+  },
+  {
+    "crate": "rustc-hash",
+    "version": "1.1.0",
+    "license": "Apache-2.0/MIT",
+    "source": "https://github.com/rust-lang-nursery/rustc-hash",
+    "directory": "licenses/cargo/rustc-hash-1.1.0"
+  },
+  {
+    "crate": "rustversion",
+    "version": "1.0.23",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/rustversion",
+    "directory": "licenses/cargo/rustversion-1.0.23"
+  },
+  {
+    "crate": "ryu",
+    "version": "1.0.23",
+    "license": "Apache-2.0 OR BSL-1.0",
+    "source": "https://github.com/dtolnay/ryu",
+    "directory": "licenses/cargo/ryu-1.0.23"
+  },
+  {
+    "crate": "safe_arch",
+    "version": "0.7.4",
+    "license": "Zlib OR Apache-2.0 OR MIT",
+    "source": "https://github.com/Lokathor/safe_arch",
+    "directory": "licenses/cargo/safe_arch-0.7.4"
+  },
+  {
+    "crate": "scopeguard",
+    "version": "1.2.0",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/bluss/scopeguard",
+    "directory": "licenses/cargo/scopeguard-1.2.0"
+  },
+  {
+    "crate": "serde-wasm-bindgen",
+    "version": "0.4.5",
+    "license": "MIT",
+    "source": "https://github.com/cloudflare/serde-wasm-bindgen",
+    "directory": "licenses/cargo/serde-wasm-bindgen-0.4.5"
+  },
+  {
+    "crate": "serde-xml-rs",
+    "version": "0.6.0",
+    "license": "MIT",
+    "source": "https://github.com/RReverser/serde-xml-rs",
+    "directory": "licenses/cargo/serde-xml-rs-0.6.0"
+  },
+  {
+    "crate": "serde",
+    "version": "1.0.229",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/serde-rs/serde",
+    "directory": "licenses/cargo/serde-1.0.229"
+  },
+  {
+    "crate": "serde_core",
+    "version": "1.0.229",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/serde-rs/serde",
+    "directory": "licenses/cargo/serde_core-1.0.229"
+  },
+  {
+    "crate": "serde_derive",
+    "version": "1.0.229",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/serde-rs/serde",
+    "directory": "licenses/cargo/serde_derive-1.0.229"
+  },
+  {
+    "crate": "serde_json",
+    "version": "1.0.154",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/serde-rs/json",
+    "directory": "licenses/cargo/serde_json-1.0.154"
+  },
+  {
+    "crate": "simba",
+    "version": "0.7.3",
+    "license": "Apache-2.0",
+    "source": "https://github.com/dimforge/simba",
+    "directory": "licenses/cargo/simba-0.7.3"
+  },
+  {
+    "crate": "slab",
+    "version": "0.4.12",
+    "license": "MIT",
+    "source": "https://github.com/tokio-rs/slab",
+    "directory": "licenses/cargo/slab-0.4.12"
+  },
+  {
+    "crate": "smallvec",
+    "version": "1.16.5",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/servo/rust-smallvec",
+    "directory": "licenses/cargo/smallvec-1.16.5"
+  },
+  {
+    "crate": "syn",
+    "version": "1.0.109",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/syn",
+    "directory": "licenses/cargo/syn-1.0.109"
+  },
+  {
+    "crate": "syn",
+    "version": "2.0.119",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/syn",
+    "directory": "licenses/cargo/syn-2.0.119"
+  },
+  {
+    "crate": "syn",
+    "version": "3.0.10",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/syn",
+    "directory": "licenses/cargo/syn-3.0.10"
+  },
+  {
+    "crate": "thiserror-impl",
+    "version": "1.0.69",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/thiserror",
+    "directory": "licenses/cargo/thiserror-impl-1.0.69"
+  },
+  {
+    "crate": "thiserror",
+    "version": "1.0.69",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/dtolnay/thiserror",
+    "directory": "licenses/cargo/thiserror-1.0.69"
+  },
+  {
+    "crate": "time",
+    "version": "0.1.45",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/time-rs/time",
+    "directory": "licenses/cargo/time-0.1.45"
+  },
+  {
+    "crate": "tracing-attributes",
+    "version": "0.1.31",
+    "license": "MIT",
+    "source": "https://github.com/tokio-rs/tracing",
+    "directory": "licenses/cargo/tracing-attributes-0.1.31"
+  },
+  {
+    "crate": "tracing-core",
+    "version": "0.1.36",
+    "license": "MIT",
+    "source": "https://github.com/tokio-rs/tracing",
+    "directory": "licenses/cargo/tracing-core-0.1.36"
+  },
+  {
+    "crate": "tracing",
+    "version": "0.1.44",
+    "license": "MIT",
+    "source": "https://github.com/tokio-rs/tracing",
+    "directory": "licenses/cargo/tracing-0.1.44"
+  },
+  {
+    "crate": "typenum",
+    "version": "1.20.1",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/paholg/typenum",
+    "directory": "licenses/cargo/typenum-1.20.1"
+  },
+  {
+    "crate": "unicode-ident",
+    "version": "1.0.27",
+    "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+    "source": "https://github.com/dtolnay/unicode-ident",
+    "directory": "licenses/cargo/unicode-ident-1.0.27"
+  },
+  {
+    "crate": "urdf-rs",
+    "version": "0.6.9",
+    "license": "Apache-2.0",
+    "source": "https://github.com/openrr/urdf-rs",
+    "directory": "licenses/cargo/urdf-rs-0.6.9"
+  },
+  {
+    "crate": "wasm-bindgen-macro-support",
+    "version": "0.2.130",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/wasm-bindgen/wasm-bindgen/tree/main/crates/macro-support",
+    "directory": "licenses/cargo/wasm-bindgen-macro-support-0.2.130"
+  },
+  {
+    "crate": "wasm-bindgen-macro",
+    "version": "0.2.130",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro",
+    "directory": "licenses/cargo/wasm-bindgen-macro-0.2.130"
+  },
+  {
+    "crate": "wasm-bindgen-shared",
+    "version": "0.2.130",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared",
+    "directory": "licenses/cargo/wasm-bindgen-shared-0.2.130"
+  },
+  {
+    "crate": "wasm-bindgen",
+    "version": "0.2.130",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/wasm-bindgen/wasm-bindgen",
+    "directory": "licenses/cargo/wasm-bindgen-0.2.130"
+  },
+  {
+    "crate": "web-sys",
+    "version": "0.3.107",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/web-sys",
+    "directory": "licenses/cargo/web-sys-0.3.107"
+  },
+  {
+    "crate": "wide",
+    "version": "0.7.33",
+    "license": "Zlib OR Apache-2.0 OR MIT",
+    "source": "https://github.com/Lokathor/wide",
+    "directory": "licenses/cargo/wide-0.7.33"
+  },
+  {
+    "crate": "winapi",
+    "version": "0.3.9",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/retep998/winapi-rs",
+    "directory": "licenses/cargo/winapi-0.3.9"
+  },
+  {
+    "crate": "windows-link",
+    "version": "0.2.1",
+    "license": "MIT OR Apache-2.0",
+    "source": "https://github.com/microsoft/windows-rs",
+    "directory": "licenses/cargo/windows-link-0.2.1"
+  },
+  {
+    "crate": "xml-rs",
+    "version": "0.8.29",
+    "license": "MIT",
+    "source": "https://github.com/kornelski/xml-rs",
+    "directory": "licenses/cargo/xml-rs-0.8.29"
+  },
+  {
+    "crate": "yaml-rust",
+    "version": "0.4.5",
+    "license": "MIT/Apache-2.0",
+    "source": "https://github.com/chyh1990/yaml-rust",
+    "directory": "licenses/cargo/yaml-rust-0.4.5"
+  },
+  {
+    "crate": "zerocopy",
+    "version": "0.8.63",
+    "license": "BSD-2-Clause OR Apache-2.0 OR MIT",
+    "source": "https://github.com/google/zerocopy",
+    "directory": "licenses/cargo/zerocopy-0.8.63"
+  },
+  {
+    "crate": "zmij",
+    "version": "1.0.23",
+    "license": "MIT",
+    "source": "https://github.com/dtolnay/zmij",
+    "directory": "licenses/cargo/zmij-1.0.23"
+  }
+]

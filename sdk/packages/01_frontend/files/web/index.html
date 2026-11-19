@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quest 3 · E6 | Grip control</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">QUEST / E6 OBSERVER</p>
+          <h1>Quest 3 × Dual E6</h1>
+          <p class="subtitle">左右手柄输入与机械臂连接检查</p>
+        </div>
+        <span id="control-mode" class="badge safe">运动未授权启动</span>
+      </header>
+      <p class="notice"><a href="/monitor" style="font-size:20px;font-weight:700">打开双臂三维实时监控与左右手柄状态 →</a></p>
+      <section class="toolbar">
+        <div>
+          <span id="quest-status" class="badge">等待 Quest 连接</span
+          ><span id="timing" class="muted">尚未接收数据</span>
+        </div>
+        <div class="actions">
+          <button id="usb">连接 USB Quest</button
+          ><button id="lan-renew" class="secondary" hidden>更新配对码</button
+          ><button id="save" class="secondary" disabled>保存最近 10 秒</button>
+        </div>
+      </section>
+      <p id="network-diagnostics" class="notice">等待真实链路诊断</p>
+      <section class="toolbar" style="position: static; margin-top: 12px">
+        <div>
+          <strong>自动识别已连接单臂或双臂，统一重检与开始</strong>
+          <p class="muted">
+            本窗手柄增量 + 当前实测TCP · 1:1目标 · 30°跟随滞后仅提示 · 先松开再握持
+          </p>
+        </div>
+        <div class="actions">
+          <label>控制范围 <select id="teleop-side"><option value="auto">自动：已连接单臂/双臂</option><option value="both">明确双臂</option><option value="left">仅左臂 / 左手</option><option value="right">仅右臂 / 右手</option></select></label>
+          <button id="trial-prepare" class="secondary">准备所选臂</button
+          ><button id="trial-arm">开始所选臂遥操作</button>
+          ><button id="trial-stop">STOP 双臂</button>
+        </div>
+      </section>
+      <pre id="trial-status" class="notice">
+尚未准备运动接口。手柄位置与朝向持续接收；Grip只控制跟随许可。允许后须先松开Grip，再按住才跟随。</pre
+      >
+      <p id="message" class="notice">
+        插入 Quest 数据线并在头显允许 USB 调试，然后点击“连接 USB Quest”。
+      </p>
+      <aside id="lan-info" class="notice" hidden></aside>
+      <section class="hand-grid">
+        <article class="card" id="left">
+          <div class="card-head">
+            <h2><span class="dot left"></span>Left controller / 左手</h2>
+            <span class="tracking">未验证</span>
+          </div>
+          <div class="pose"></div>
+          <div class="buttons"></div>
+          <p class="axes muted">Axes: —</p>
+          <p class="profiles muted">Profile: —</p>
+          <p class="evidence muted">尚无采样</p>
+        </article>
+        <article class="card" id="right">
+          <div class="card-head">
+            <h2><span class="dot right"></span>Right controller / 右手</h2>
+            <span class="tracking">未验证</span>
+          </div>
+          <div class="pose"></div>
+          <div class="buttons"></div>
+          <p class="axes muted">Axes: —</p>
+          <p class="profiles muted">Profile: —</p>
+          <p class="evidence muted">尚无采样</p>
+        </article>
+      </section>
+      <p class="coordinate">
+        位置：米（m） · 姿态：四元数 [x, y, z, w] · WebXR：+X 向右，+Y 向上，−Z
+        向前。原点由头显会话定义，尚未映射到 E6。
+      </p>
+      <section class="card robot-panel">
+        <div class="card-head">
+          <div>
+            <h2>E6 connection / 机械臂连接</h2>
+            <p class="muted">
+              只发送固定状态查询；30004
+              被动读取一个反馈包并校验包头，不切换控制模式。
+            </p>
+          </div>
+          <div class="actions">
+            <button id="e6-left" class="secondary">只检查左臂</button>
+            <button id="e6-right" class="secondary">只检查右臂</button>
+            <button id="e6" class="secondary">检查两台 E6（只读）</button>
+          </div>
+        </div>
+        <div id="robots" class="robot-grid">
+          <p class="muted">
+            尚未检查。双网口直连需分别绑定本机网口；共用交换机时两台臂必须使用不同
+            IP。
+          </p>
+        </div>
+      </section>
+      <section class="card instructions">
+        <h2>接设备后，按这个顺序检查</h2>
+        <ol>
+          <li>
+            Quest 通过 USB 数据线接 PC，开启 Developer Mode，头显内允许 USB
+            debugging。
+          </li>
+          <li>
+            点击“连接 USB Quest”；头显 Browser 打开
+            <code>http://localhost:8765/quest</code>，在头显内点击 Start
+            AR。若不支持 AR，可选择 Start VR。
+          </li>
+          <li>
+            拿起左右手柄，分别前后、左右、上下移动，再转动手腕；核对左右卡片、位置和姿态是否一一对应。
+          </li>
+          <li>
+            依次按下并松开 Trigger、Grip、Thumbstick click、左 X/Y、右
+            A/B，并拨动两个摇杆。Meta / Menu 系统键通常不会由 WebXR 暴露。
+          </li>
+          <li>
+            退出 XR 或拔掉 Quest
+            数据线，卡片应变成失联/过期，数值停止显示为有效；重新接入后再保存短时记录。
+          </li>
+        </ol>
+        <p class="muted">
+          有效数据状态仅表示收到新鲜跟踪数据；“人手动作与读数一致”仍需现场逐项核对。未连接设备时不产生示例数据。
+        </p>
+      </section>
+      <footer>
+        本地 USB 采集 · 无云服务 · 默认只在内存保留约 20 秒 · 仅点击保存后写盘
+      </footer>
+    <p><a href="/asset-preview">查看双臂安装与连续开度（离线）</a></p></main>
+    <script type="module" src="/static/dashboard.js"></script>
+  </body>
+</html>

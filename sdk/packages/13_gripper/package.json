@@ -1,0 +1,71 @@
+{
+  "id": "13_gripper",
+  "title": "夹爪与 Uno 驱动",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "depends_on": [
+    "12_virtual_assets"
+  ],
+  "contract": "左右 Trigger → CAD 开度目标与可选独立板卡 PWM",
+  "files": [
+    {
+      "path": "firmware/quest_gripper/gripper_protocol.h",
+      "sha256": "12a03d843ae1f2566b9b79bda6e944b2aef4c2df1e9798172a17bd5e3057465a",
+      "bytes": 2774
+    },
+    {
+      "path": "firmware/quest_gripper/quest_gripper.ino",
+      "sha256": "8f33fc12ae72aa832dde6099e6350bbb96ce91ef42929104fa9f5b7e90c00e6e",
+      "bytes": 1433
+    },
+    {
+      "path": "gripper_bench.py",
+      "sha256": "89533e4a6334b7472b34ed8f23380e8e0d6631529b1cc98bca03aa3dc2860191",
+      "bytes": 3867
+    },
+    {
+      "path": "gripper_control.py",
+      "sha256": "3f1f732dce8e68fa2b8615d861ada6357fbfd6543be0e0e3ad4aa1b71ef956f0",
+      "bytes": 7126
+    },
+    {
+      "path": "gripper_kinematics.py",
+      "sha256": "fbc3990e8e2998995c636ef6bc24142968c185422140ed7216a105379cbffe08",
+      "bytes": 2002
+    },
+    {
+      "path": "gripper_uno.py",
+      "sha256": "7b5d40bdce98cf3a1fa4993454fc7677b46f92157ab1c8bdf3bc45e0c873ea61",
+      "bytes": 6568
+    },
+    {
+      "path": "grippers.example.json",
+      "sha256": "a3de0b14e780b5323e73d6dd81c2c69e3dbdb35d46183bf4d1ff029eb36c6e46",
+      "bytes": 309
+    },
+    {
+      "path": "requirements-gripper.txt",
+      "sha256": "0b81718d1cbe8a7696e45a9388c9205272b5e345cd79d0cf1ccfb7a9fd1925e9",
+      "bytes": 14
+    },
+    {
+      "path": "tests/test_gripper.py",
+      "sha256": "fdc2acc0f46a72521ad04a862419012e9f20fc630e0ab6984fe9283f7fcb39c9",
+      "bytes": 7416
+    },
+    {
+      "path": "tests/test_gripper_assets.mjs",
+      "sha256": "e6e7c2c4fe84e07f638ab83667cbbdd364cbf87cf84c27aa14559bdb71592205",
+      "bytes": 2725
+    },
+    {
+      "path": "tools/gripper_avr_uart.cjs",
+      "sha256": "514cc6e9e0be72786998a68a3f148c7750f957f0773a99a0e15c76d8ca579424",
+      "bytes": 2171
+    },
+    {
+      "path": "tools/verify_gripper_firmware.py",
+      "sha256": "4f3671e29351fc977e272f31fb48afd2da8a42a1091d61f138da6619b883c956",
+      "bytes": 5776
+    }
+  ]
+}

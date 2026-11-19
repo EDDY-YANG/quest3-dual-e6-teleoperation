@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "version": "e6-quest3-gripper-v1",
+  "assets": {
+    "e6": {
+      "kind": "urdf-stl",
+      "model": "model.json",
+      "units": "m",
+      "source": "Dobot-Arm/DOBOT_6Axis_ROS2_V4",
+      "display_reference_joints_deg": [
+        -30,
+        -22,
+        -68,
+        0,
+        90,
+        45
+      ],
+      "resource_manifest": "manifest.json"
+    },
+    "quest-touch-plus": {
+      "kind": "controller-pair",
+      "models": {
+        "left": "left.glb",
+        "right": "right.glb"
+      },
+      "units": "m",
+      "source": "immersive-web/webxr-input-profiles",
+      "resource_manifest": "manifest.json"
+    },
+    "gripper-v1": {
+      "kind": "parallel-gripper",
+      "model": "gripper.glb",
+      "mechanism": "mechanism.json",
+      "units": "m",
+      "source": "Project-supplied STEP Prototype V1 A",
+      "include": [
+        "gripper.glb",
+        "mechanism.json"
+      ]
+    },
+    "three": {
+      "kind": "renderer-library",
+      "source": "Three.js",
+      "units": null,
+      "resource_manifest": "manifest.json",
+      "include": [
+        "package.json"
+      ]
+    }
+  },
+  "instances": {
+    "left": {
+      "arm": "e6",
+      "controller": "quest-touch-plus",
+      "tool": "gripper-v1",
+      "mount": {
+        "parent": "Link6",
+        "xyz_m": [
+          0,
+          0,
+          0.019
+        ],
+        "rpy_rad": [
+          0,
+          0,
+          0
+        ],
+        "placement": "Nominal four-hole flange alignment; physical clocking unmeasured"
+      }
+    },
+    "right": {
+      "arm": "e6",
+      "controller": "quest-touch-plus",
+      "tool": "gripper-v1",
+      "mount": {
+        "parent": "Link6",
+        "xyz_m": [
+          0,
+          0,
+          0.019
+        ],
+        "rpy_rad": [
+          0,
+          0,
+          0
+        ],
+        "placement": "Nominal four-hole flange alignment; physical clocking unmeasured"
+      }
+    }
+  }
+}

@@ -2,9 +2,15 @@
   <h2>PC &amp; VR interface</h2>
   <p class="context">A headset-first workspace for one operator: the left E6 view, central control panel and right E6 view stay together. After host setup, connection rechecks, calibration, Grip control and guarded return-to-start are available without repeatedly removing the headset.</p>
   <figure class="full-workspace">
+    <img class="workspace-export" src="assets/ui/dual-gripper-hud-v020.png" alt="Actual v0.2.0 SDK headset canvas: independently mounted grippers on both E6 arms around the central controls">
+    <figcaption><b>v0.2.0 · Dual grippers in the headset workspace.</b> Actual read-only HUD export with offline reference arm postures. Analog Trigger sets each gripper's target opening. The left and right Uno boards are optional physical outputs. <a href="docs/GRIPPER.html">Gripper design &amp; setup</a> · <a href="CHANGELOG.html">Changelog</a></figcaption>
+  </figure>
+  <details class="interface-details"><summary>17 Nov hardware feedback capture</summary>
+  <figure class="full-workspace">
     <div class="workspace-crop"><img src="assets/ui/vr_workspace_source.jpg" alt="Actual SDK VR workspace: left and right E6 models with measured joint feedback around the central dual-arm control panel"></div>
     <figcaption><b>Left E6 · shared controls · right E6.</b> Actual SDK UI mirror captured on 17 Nov 2026, using the same drawing module as the headset. Both models are labelled measured joint poses. The captured session is waiting for Quest input and requires a recheck; this is a historical interface view, not a live robot connection.</figcaption>
   </figure>
+  </details>
   <div class="headset-journey" aria-label="Headset operating workflow"><span>Connect / recheck</span><span>Calibrate</span><span>Grip to follow</span><span>Stop / return</span><span>Recheck &amp; resume</span></div>
   <p class="context">The side views update from each arm's feedback and expose joint/TCP state alongside the control status. A return request first stops following and confirms stationary feedback, handles eligible collision protection, then checks and executes the saved start target. Arrival is confirmed from measurements. <a href="docs/HEADSET_WORKFLOW.html">Headset operation and recovery →</a></p>
   <details class="interface-details"><summary>Explore PC controls and VR panel details</summary>

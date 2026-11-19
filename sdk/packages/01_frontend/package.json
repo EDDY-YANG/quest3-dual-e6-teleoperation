@@ -1,0 +1,117 @@
+{
+  "id": "01_frontend",
+  "title": "Quest/PC 前端",
+  "depends_on": [
+    "02_backend",
+    "12_virtual_assets"
+  ],
+  "contract": "真实 WebXR 手柄 → 帧/显式按钮请求；状态 → HUD/实测模型",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "web/controller_model_view.mjs",
+      "sha256": "a50d8f3a50fbf76c80661082d934ce9b63dfff55db86a6ad51987d33dfda0406",
+      "bytes": 3885
+    },
+    {
+      "path": "web/dashboard.js",
+      "sha256": "11490c11f96b553e8a492defc1b13407e9ade88572e4461640f24bdb82c4a896",
+      "bytes": 9908
+    },
+    {
+      "path": "web/direction_calibration.mjs",
+      "sha256": "c9c43036a37f06512f234b3041d658613060f30cdffe1a9fddf21ff5cb77281d",
+      "bytes": 3873
+    },
+    {
+      "path": "web/e6_urdf_view.mjs",
+      "sha256": "de9aac47806ecd1853414dcdf6a3188ec0e2b958e291361d109049a89f89b41e",
+      "bytes": 12976
+    },
+    {
+      "path": "web/grip_gate.mjs",
+      "sha256": "b30e4ebe865442689098b64d244d685c99022c38174c7ee31bbe8fc75d83ddb8",
+      "bytes": 1416
+    },
+    {
+      "path": "web/gripper_preview.html",
+      "sha256": "8f2751926b47a87b5bed1259185045ed95fe3d0690da0c84f774904d90b14e7b",
+      "bytes": 1789
+    },
+    {
+      "path": "web/gripper_preview.mjs",
+      "sha256": "53b2bfd04a7682d653d5f4d08bb8e656033bf92222fa3c0e2c130adc7fe0531e",
+      "bytes": 3345
+    },
+    {
+      "path": "web/gripper_ui_input.mjs",
+      "sha256": "45ec1415d53b9f12577134de5e2c8b7c1bdb807d003c60082b595608132d6045",
+      "bytes": 470
+    },
+    {
+      "path": "web/hud_preview.html",
+      "sha256": "7bc52a342a6001ba8a067d3eb24d650f23bff71c5f367e9c54318d5a2f67dbc3",
+      "bytes": 4813
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "9fa9219c5a3a254a706a70baad4f979047e97c71da7cd0ac41e58d2243f8799c",
+      "bytes": 6303
+    },
+    {
+      "path": "web/pc_monitor.css",
+      "sha256": "4111b4d778a462bbb11e6fa1215310deddb2022015c2b8d89bf37ce288503bdc",
+      "bytes": 5628
+    },
+    {
+      "path": "web/pc_monitor.html",
+      "sha256": "5241c73191834311f40c78044ffc29d5ec1983e2d214447fcfb9289edb675d18",
+      "bytes": 4026
+    },
+    {
+      "path": "web/pc_monitor.mjs",
+      "sha256": "6f680c5f42dd1eff6badef6af405241ab380a92c9a87d6da226a3278f95522d1",
+      "bytes": 15961
+    },
+    {
+      "path": "web/pc_monitor_state.mjs",
+      "sha256": "8b25edf35e3987c554bcaaf15a8eab6be7864a3e6c75e7864e3917c7b12414cd",
+      "bytes": 3401
+    },
+    {
+      "path": "web/quest.html",
+      "sha256": "d471bc6044b35e458507673be52ba7a6a993ee4c2e7d62c96ac4a54e0e61fa81",
+      "bytes": 2796
+    },
+    {
+      "path": "web/quest.js",
+      "sha256": "f9e304e7ada760b7de41037b4eafcb84b6070cd8210a61e00fce7389f5b07f96",
+      "bytes": 21778
+    },
+    {
+      "path": "web/quest_hud.mjs",
+      "sha256": "c830a433fa763ee6437e74e9e8941a24e9506c70150ac42b0c3f276fbf9b587a",
+      "bytes": 37596
+    },
+    {
+      "path": "web/robot_view.mjs",
+      "sha256": "72345ebadac4e45037680ab3283099de13ce5024c6ecd7c544431c8364e2425c",
+      "bytes": 2259
+    },
+    {
+      "path": "web/start_positions.mjs",
+      "sha256": "52d7ee84ece4b3dd43ca64ab09471a811da8b9507aa36cc544814ae3891e2132",
+      "bytes": 1509
+    },
+    {
+      "path": "web/style.css",
+      "sha256": "ca01e778f9d5aeef991b4779207a0afa4e71246be74e49720c4292535157516c",
+      "bytes": 4909
+    },
+    {
+      "path": "web/tracking_warning.mjs",
+      "sha256": "4d6cafb4b4d35eae8c548403276f6eb76339dbaf12aeadc4217a589a26343f2c",
+      "bytes": 3091
+    }
+  ]
+}

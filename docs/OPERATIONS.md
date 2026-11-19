@@ -1,4 +1,4 @@
-> Windows x64 v0.1.0 · [下载 SDK](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip) · [完整环境安装命令](SDK_INSTALL.md) · [01–06 终端示例](SDK_EXAMPLES.md)。下文源码路径对应发行 ZIP。
+> Windows x64 v0.2.0 · [下载 SDK](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip) · [完整环境安装命令](SDK_INSTALL.md) · [01–06 终端示例](SDK_EXAMPLES.md)。下文源码路径对应发行 ZIP。
 
 # Quest 3 / DOBOT E6 Teleoperation SDK
 
@@ -474,13 +474,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 lan-info
 | REC 有错误／缺样 | 查看各侧 `writer_error`、`dropped_records` 与实际保存目录 |
 | 修改文件没有生效 | 是否改了 packages、完成 assemble、重启所属实例并刷新头显 |
 
-已有软件证据包括 Windows 上的独立环境安装、SDK／组装检查、离线原生库与数学接口检查、隔离 HTTP/前端资源检查；本版证据见[发行说明](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.1.0)。
+已有软件证据包括 Windows 上的独立环境安装、SDK／组装检查、离线原生库与数学接口检查、隔离 HTTP/前端资源检查；本版证据见[发行说明](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.2.0)。
 
 真实双臂曾产生运动并出现保护／停止事件；这不是稳定性通过证据。已有抖动根因、实体停止距离、相互避碰和完整任务成功率仍未解决／验收。历史日志、离线原型、模型参考和真机实测始终分开。macOS 与另一台干净电脑未因本机检查而自动获得兼容性保证。
 
 <a id="github"></a>
 ## 9. GitHub 发布边界
 
-公开 SDK 从 [v0.1.0 Release](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.1.0) 获取。下载带有 `windows-x64` 的具名 ZIP 并解压，按[环境安装](SDK_INSTALL.md)启动，再按[01–06 示例](SDK_EXAMPLES.md)运行。
+公开 SDK 从 [v0.2.0 Release](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/tag/v0.2.0) 获取。下载带有 `windows-x64` 的具名 ZIP 并解压，按[环境安装](SDK_INSTALL.md)启动，再按[01–06 示例](SDK_EXAMPLES.md)运行。
 
 代码许可证：[MIT](../LICENSE)。第三方模型、库、工具和原生源码保留原许可与归属，见 THIRD_PARTY_NOTICES.md (`packages/10_sdk_runtime/files/THIRD_PARTY_NOTICES.md`)。不要发布本机 TLS 私钥、会话码／cookie、用户采集记录或声称这些实验代码已经取得官方机器人安全认证。

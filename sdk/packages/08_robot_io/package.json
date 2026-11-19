@@ -1,0 +1,44 @@
+{
+  "id": "08_robot_io",
+  "title": "E6 命令与反馈传输",
+  "depends_on": [],
+  "contract": "绑定本机源地址的命令 → 控制器回执；30004 字节 → 有效实测反馈",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "dobot_safe_sdk.py",
+      "sha256": "f1c4b0892fd842304a230c11085a7522a5003f8e28e724a4d8e8a31f278c1c65",
+      "bytes": 13493
+    },
+    {
+      "path": "e6_feedback.py",
+      "sha256": "fce951ffdfb680124a6e6f7bb15fa0c63d480729c64db8bfc84e57f87c192131",
+      "bytes": 13901
+    },
+    {
+      "path": "vendor/dobot-official/dobot_api.py",
+      "sha256": "0073bc804c3e8e0907f7713be7df372f1b6f98520f0041a7d6736b08e95e520f",
+      "bytes": 175240
+    },
+    {
+      "path": "vendor/dobot-official/files/alarmController.json",
+      "sha256": "f7b369a64bf1f00ec8320d23ca8333a298e12867476bc1fe19cd3c47ce97a310",
+      "bytes": 772964
+    },
+    {
+      "path": "vendor/dobot-official/files/alarmServo.json",
+      "sha256": "19e577366d8568d5285ef8f7f1a6b262b3f8b53d302d5328916f5377d0bc01d8",
+      "bytes": 113260
+    },
+    {
+      "path": "vendor/dobot-official/LICENSE",
+      "sha256": "738e5dc34e0e1d2b8f55ac1a58bf84272146c15e82ecf20d4986cbaefb0fae0b",
+      "bytes": 1083
+    },
+    {
+      "path": "vendor_manifest.json",
+      "sha256": "2f04b26dafbc8b72812900d2bb48379a09d42407c6ec8af6c8ac533345c16bda",
+      "bytes": 801
+    }
+  ]
+}

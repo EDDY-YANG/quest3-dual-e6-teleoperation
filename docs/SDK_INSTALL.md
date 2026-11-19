@@ -5,7 +5,7 @@
 | 使用场景 | 需要什么 |
 |---|---|
 | 阅读并运行 Windows SDK | Windows x64、Python 3.10 x64、Windows PowerShell（系统自带）。桌面 VS Code 和 Microsoft Python 扩展提供本指南使用的编辑体验。首次 setup 要能取得 Python 包。 |
-| 本地服务、Quest Wi-Fi、在线求解 | `setup` 自动安装 aiohttp、NumPy、Requests、cryptography 及其锁定依赖。WebXR 前端、Three.js 资源与 RangedIK Windows DLL 已装入 ZIP。 |
+| 本地服务、Quest Wi-Fi、在线求解 | `setup` 自动安装 aiohttp、NumPy、Requests、cryptography、pySerial 3.5 及其锁定依赖。WebXR 前端、Three.js 资源与 RangedIK Windows DLL 已装入 ZIP。 |
 | 额外的离线研究回放 / 开发检查 | 离线研究按需安装 SciPy 和 Matplotlib。Ruff 为可选开发依赖。普通使用无需 Rust、VS C++、ROS、CUDA、Node 或 uv。 |
 | 真机运行 | 需要自己的 E6 控制器、匹配的网卡和地址、Quest 3 与控制器。局域网模式需要 PC WLAN 地址和本站证书，USB 方式才需要 ADB。 |
 

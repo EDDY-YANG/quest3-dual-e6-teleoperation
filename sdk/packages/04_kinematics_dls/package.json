@@ -1,0 +1,21 @@
+{
+  "id": "04_kinematics_dls",
+  "title": "运动学模型与 DLS",
+  "depends_on": [
+    "03_pose_mapping"
+  ],
+  "contract": "模型、目标位姿、实测种子 → FK/Jacobian/DLS 候选；success=false 禁止下发",
+  "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
+  "files": [
+    {
+      "path": "controller_kinematics.py",
+      "sha256": "6c82597dbdcef05da3b64d93b7a541e9f87784ec0ecc19670acf5f9f287b1980",
+      "bytes": 15023
+    },
+    {
+      "path": "kinematics_validation.py",
+      "sha256": "ca58913796633ae08cd91f193b6ea43c74d339536a32576b2ea47531b108356f",
+      "bytes": 2069
+    }
+  ]
+}

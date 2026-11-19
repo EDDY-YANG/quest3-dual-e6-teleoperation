@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "id": "gripper-v1",
+  "units": "m for scene, mm for mechanism",
+  "step_sha256": "050a882ae417527e4f796431a7ebdab7c7e5b60cab58c16f229ac58b22e70111",
+  "glb_sha256": "4179750cda48e898f7e996e9b61d90c81754d35a2d22c5d0e9cce54b55ffd667",
+  "cad_mount_center_mm": [
+    0.0,
+    0.0,
+    -67.6000001
+  ],
+  "mount_holes_xy_mm": [
+    [
+      -17.67767,
+      -17.67767
+    ],
+    [
+      -17.67767,
+      17.67767
+    ],
+    [
+      17.67767,
+      -17.67767
+    ],
+    [
+      17.67767,
+      17.67767
+    ]
+  ],
+  "crank_pin_rest_mm": [
+    17.6776695296632,
+    17.6776695296637
+  ],
+  "slide_pin_rest_mm": [
+    -11.250000000000453,
+    13.499999999999998
+  ],
+  "rod_length_mm": 29.22777766297861,
+  "crank_radius_mm": 24.999999999999662,
+  "closed_tip_clearance_mm": 0,
+  "open_crank_delta_deg": 75.0,
+  "stroke_basis": "Nominal CAD demonstration arc within rail travel; bench calibration required.",
+  "groups": [
+    "fixed",
+    "crank",
+    "slide_negative",
+    "slide_positive",
+    "rod_negative",
+    "rod_positive"
+  ],
+  "occurrences": [
+    {
+      "id": "part_00_Middle_Linkage",
+      "product": "Middle Linkage",
+      "occurrence": "NAUO1",
+      "group": "crank",
+      "triangles": 2976
+    },
+    {
+      "id": "part_01_Slide_rail",
+      "product": "Slide rail",
+      "occurrence": "NAUO2",
+      "group": "fixed",
+      "triangles": 3540
+    },
+    {
+      "id": "part_02_Slider",
+      "product": "Slider",
+      "occurrence": "NAUO3",
+      "group": "slide_negative",
+      "triangles": 980
+    },
+    {
+      "id": "part_03_Side_Linkage",
+      "product": "Side Linkage",
+      "occurrence": "NAUO4",
+      "group": "rod_negative",
+      "triangles": 1244
+    },
+    {
+      "id": "part_04_Flange",
+      "product": "Flange",
+      "occurrence": "NAUO5",
+      "group": "slide_negative",
+      "triangles": 2436
+    },
+    {
+      "id": "part_05_Slider",
+      "product": "Slider",
+      "occurrence": "NAUO6",
+      "group": "slide_positive",
+      "triangles": 980
+    },
+    {
+      "id": "part_06_Flange",
+      "product": "Flange",
+      "occurrence": "NAUO7",
+      "group": "slide_positive",
+      "triangles": 2436
+    },
+    {
+      "id": "part_07_Side_Linkage",
+      "product": "Side Linkage",
+      "occurrence": "NAUO8",
+      "group": "rod_positive",
+      "triangles": 1244
+    },
+    {
+      "id": "part_08_Claw",
+      "product": "Claw",
+      "occurrence": "NAUO9",
+      "group": "slide_negative",
+      "triangles": 2201
+    },
+    {
+      "id": "part_09_Claw",
+      "product": "Claw",
+      "occurrence": "NAUO10",
+      "group": "slide_positive",
+      "triangles": 2201
+    },
+    {
+      "id": "part_10_Thrust_Bearing_4",
+      "product": "Thrust Bearing 4_8_3.5",
+      "occurrence": "NAUO11",
+      "group": "crank",
+      "triangles": 4320
+    },
+    {
+      "id": "part_11_Thrust_Bearing_4",
+      "product": "Thrust Bearing 4_8_3.5",
+      "occurrence": "NAUO12",
+      "group": "crank",
+      "triangles": 4320
+    },
+    {
+      "id": "part_12_Thrust_Bearing_4",
+      "product": "Thrust Bearing 4_8_3.5",
+      "occurrence": "NAUO13",
+      "group": "slide_negative",
+      "triangles": 4320
+    },
+    {
+      "id": "part_13_Thrust_Bearing_4",
+      "product": "Thrust Bearing 4_8_3.5",
+      "occurrence": "NAUO14",
+      "group": "slide_positive",
+      "triangles": 4320
+    },
+    {
+      "id": "part_14_Servo_arm",
+      "product": "Servo arm",
+      "occurrence": "NAUO15",
+      "group": "crank",
+      "triangles": 7792
+    },
+    {
+      "id": "part_15_MG996RBody",
+      "product": "MG996RBody_Varsayılan",
+      "occurrence": "NAUO28",
+      "group": "fixed",
+      "triangles": 9028
+    },
+    {
+      "id": "part_16_Gear",
+      "product": "Gear_Varsayılan",
+      "occurrence": "NAUO29",
+      "group": "crank",
+      "triangles": 9958
+    },
+    {
+      "id": "part_17_Servo_flange",
+      "product": "Servo flange",
+      "occurrence": "NAUO17",
+      "group": "fixed",
+      "triangles": 2736
+    },
+    {
+      "id": "part_18_Rail_Linkage",
+      "product": "Rail Linkage",
+      "occurrence": "NAUO18",
+      "group": "fixed",
+      "triangles": 1044
+    },
+    {
+      "id": "part_19_Rail_Linkage",
+      "product": "Rail Linkage",
+      "occurrence": "NAUO19",
+      "group": "fixed",
+      "triangles": 1044
+    },
+    {
+      "id": "part_20_PCB_Lid",
+      "product": "PCB Lid",
+      "occurrence": "NAUO20",
+      "group": "fixed",
+      "triangles": 2880
+    },
+    {
+      "id": "part_21_PCB_Cover",
+      "product": "PCB Cover",
+      "occurrence": "NAUO21",
+      "group": "fixed",
+      "triangles": 5314
+    },
+    {
+      "id": "part_22_Gripper_PCB",
+      "product": "Gripper PCB",
+      "occurrence": "NAUO22",
+      "group": "fixed",
+      "triangles": 1150
+    },
+    {
+      "id": "part_23_PCB_Spacer",
+      "product": "PCB Spacer",
+      "occurrence": "NAUO23",
+      "group": "fixed",
+      "triangles": 432
+    },
+    {
+      "id": "part_24_PCB_Spacer",
+      "product": "PCB Spacer",
+      "occurrence": "NAUO24",
+      "group": "fixed",
+      "triangles": 432
+    },
+    {
+      "id": "part_25_PCB_Spacer",
+      "product": "PCB Spacer",
+      "occurrence": "NAUO25",
+      "group": "fixed",
+      "triangles": 432
+    },
+    {
+      "id": "part_26_PCB_Spacer",
+      "product": "PCB Spacer",
+      "occurrence": "NAUO26",
+      "group": "fixed",
+      "triangles": 432
+    },
+    {
+      "id": "part_27_PCB_Linkage",
+      "product": "PCB Linkage",
+      "occurrence": "NAUO27",
+      "group": "fixed",
+      "triangles": 4448
+    }
+  ],
+  "servo_hardware": "XINHUI 20KG upgrade / 180-degree positional servo; user-supplied datasheet image",
+  "servo_geometry": "STEP contains MG996R body envelope; actual XINHUI spline, fit and clocking require bench check."
+}

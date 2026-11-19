@@ -4,7 +4,9 @@ The host console exposes connection, configuration and diagnostics. The headset 
 
 ## Complete headset workspace
 
-The main workspace figure comes from the actual SDK's read-only HUD mirror captured on **17 November 2026**. `hud_preview.html` instantiates the same `HeadsetHUD` drawing module used in WebXR, with its left model, central panel and right model canvases. This is an authentic interface capture, not a frame extracted from a headset recording.
+The v0.2.0 main figure is a new export of the SDK HUD mirror, with the 28-occurrence gripper attached to both nominal flange frames. The service was running without physical devices. [Gripper setup and inspection](GRIPPER.md).
+
+The archived November 17 figure comes from the actual SDK's read-only HUD mirror captured on **17 November 2026**. `hud_preview.html` instantiates the same `HeadsetHUD` drawing module used in WebXR, with its left model, central panel and right model canvases. This is an authentic interface capture, not a frame extracted from a headset recording.
 
 Both side models in that capture are labelled measured joint poses and show TCP/tool/base-axis information. The central panel shows waiting Quest input, missing controller tracking and an expired precheck. These state labels are retained: the image documents a historical interface with robot feedback, not successful active teleoperation or a current connection.
 
