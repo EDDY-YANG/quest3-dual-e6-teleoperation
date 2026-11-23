@@ -2,7 +2,7 @@
 No robot/network I/O. All illustrated poses are graphics, not measurements.
 """
 from pathlib import Path
-import json, struct, math, shutil, os
+import json, struct, math, shutil, os, subprocess
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -12,7 +12,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'assets'
-MODEL=Path(os.environ.get('E6_MODEL_DIR', str(ROOT/'external'/'e6')))
+MODEL=Path(os.environ.get('E6_MODEL_DIR', str(ROOT/'sdk/app/web/robot-assets/e6')))
 INK='#172331'; MUTED='#586779'; BORDER='#b7c5d4'; BLUE='#2563eb'; ORANGE='#d97706'; PURPLE='#7c3aed'; RED='#bc3344'; POWER='#7b8491'
 plt.rcParams.update({'font.family':'DejaVu Sans','svg.fonttype':'none','font.size':11,'axes.unicode_minus':False})
 
@@ -25,7 +25,6 @@ def transform(xyz,rpy):
 
 def render_e6():
     output=ASSETS/'e6_model.png'
-    if output.exists():return
     if not (MODEL/'model.json').is_file():
         raise FileNotFoundError('Keep the supplied assets/e6_model.png, or set E6_MODEL_DIR to the SDK visual-model directory containing model.json, meshes and UPSTREAM-LICENSE.')
     model=json.loads((MODEL/'model.json').read_text());matrices={model['root_link']:np.eye(4)}
@@ -50,6 +49,16 @@ def render_e6():
             colors=np.column_stack([shade*.91,shade*.94,shade,np.ones(len(shade))])
             mesh=Poly3DCollection(vertices,facecolors=colors,edgecolor='none',linewidth=0,rasterized=True)
             ax.add_collection3d(mesh)
+    # Preserve the original robot pose and use the catalog mount for the real tool.
+    subprocess.run(['node',str(ROOT/'tools/export_gripper_figure.mjs')],check=True)
+    tool=np.fromfile(ROOT/'runtime/gripper-figure-triangles.bin',dtype='<f4').reshape(-1,3,3).astype(float)
+    flange=matrices['Link6'];tool=tool@flange[:3,:3].T+flange[:3,3]
+    normals=np.cross(tool[:,1]-tool[:,0],tool[:,2]-tool[:,0])
+    normals/=np.maximum(np.linalg.norm(normals,axis=1)[:,None],1e-10)
+    shade=.5+.4*np.maximum(0,normals@light)
+    colors=np.column_stack([shade*.47,shade*.56,shade*.64,np.ones(len(shade))])
+    ax.add_collection3d(Poly3DCollection(tool,facecolors=colors,edgecolor='none',linewidth=0,rasterized=True))
+    all_points.append(tool.reshape(-1,3))
     points=np.concatenate(all_points);low=points.min(0);high=points.max(0);center=(low+high)/2;span=max(high-low)*.56
     ax.set(xlim=(center[0]-span,center[0]+span),ylim=(center[1]-span,center[1]+span),zlim=(center[2]-span,center[2]+span))
     ax.set_box_aspect((1,1,1));ax.view_init(elev=18,azim=-65);ax.set_axis_off();fig.subplots_adjust(0,0,1,1)
@@ -73,10 +82,12 @@ def arrow(ax,points,color=BLUE,dashed=False,both=False,lw=1.6):
     a,b=points[-2:];ax.add_patch(FancyArrowPatch(a,b,arrowstyle='<->' if both else '-|>',mutation_scale=12,color=color,lw=lw,linestyle='--' if dashed else '-'))
 
 def export(fig,name):
-    fig.savefig(ASSETS/(name+'.svg'),facecolor='white');fig.savefig(ASSETS/(name+'.png'),facecolor='white',dpi=190);plt.close(fig)
+    svg=ASSETS/(name+'.svg')
+    fig.savefig(svg,facecolor='white');fig.savefig(ASSETS/(name+'.png'),facecolor='white',dpi=190);plt.close(fig)
+    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text(encoding='utf-8').splitlines())+'\n',encoding='utf-8')
 
 def hardware():
-    fig,ax=canvas(15,8.5)
+    fig,ax=canvas(15,10.7)
     txt(ax,.5,.38,'SYSTEM SETUP',12,MUTED,ha='left',weight='bold')
     txt(ax,.5,.8,'Quest 3, host computer and dual robot interfaces',17,ha='left',weight='bold')
     box(ax,.55,1.65,2.55,3.65,'Meta Quest 3','',BLUE)
@@ -92,13 +103,16 @@ def hardware():
     box(ax,6.25,1.65,3.1,4.35,'Windows PC','',BLUE)
     ax.add_patch(Rectangle((6.94,2.42),1.72,.94,ec=INK,fc='#f3f6fa',lw=1.5));ax.plot([7.8,7.8],[3.36,3.62],color=INK,lw=1.5);ax.plot([7.35,8.25],[3.62,3.62],color=INK,lw=1.5)
     txt(ax,7.8,4.08,'Python control service\nLocal recording + monitoring',10)
-    txt(ax,7.8,5.5,'Two source-bound Ethernet NICs',9.7)
+    txt(ax,7.8,5.3,'Source-bound Ethernet NICs\nUSB serial to each gripper Uno',9.2)
     arrow(ax,[(5.51,3.2),(6.23,3.2)],both=True);txt(ax,5.87,2.98,'LAN',9)
     txt(ax,4.67,4.72,'HTTPS / WSS :8443\nInput to PC; status to Quest',9.5,MUTED)
     for y,label,nic in [(1.65,'Left DOBOT E6','NIC L'),(4.48,'Right DOBOT E6','NIC R')]:
         box(ax,11.25,y,2.45,2.3,label)
-        im=plt.imread(ASSETS/'e6_model.png');ax.imshow(im,extent=(11.68,13.25,y+1.78,y+.55),aspect='auto',zorder=3)
-        txt(ax,12.48,y+2.05,'Integrated controller',9.5,MUTED)
+        im=plt.imread(ASSETS/'e6_model.png')
+        ys,xs=np.where(im[:,:,3]>.01)
+        im=im[max(0,ys.min()-10):ys.max()+11,max(0,xs.min()-10):xs.max()+11]
+        ax.imshow(im,extent=(11.55,13.4,y+1.82,y+.55),aspect='auto',zorder=3)
+        txt(ax,12.48,y+2.05,'E6 + prototype gripper',9.5,MUTED)
         yy=y+1.35
         arrow(ax,[(9.37,yy),(11.23,yy)],both=True)
         txt(ax,10.3,yy-.26,nic+'  /  Ethernet',9.5)
@@ -115,13 +129,21 @@ def hardware():
     arrow(ax,[(1.82,7.12),(1.82,7.43),(9.23,7.43)],POWER,True)
     arrow(ax,[(13.72,7.43),(14.9,7.43),(14.9,4.18),(12.5,4.18),(12.5,3.97)],POWER,True)
     arrow(ax,[(13.72,7.43),(14.9,7.43),(14.9,6.95),(12.5,6.95),(12.5,6.8)],POWER,True)
-    txt(ax,.55,5.72,'Robot networks remain physically separate when controller IP addresses match.',10,MUTED,ha='left')
+    txt(ax,.55,5.72,'Independent arm networks; one Uno per equipped gripper.',10,MUTED,ha='left')
+    box(ax,.55,8.65,3.0,1.05,'PC / USB','Gripper target + ACK')
+    box(ax,4.1,8.65,2.8,1.05,'Arduino Uno','USB powered · one per claw')
+    box(ax,8.05,8.65,2.9,1.05,'Gripper servo','PWM from Uno D2')
+    box(ax,11.65,8.65,2.8,1.05,'Servo supply','External power')
+    arrow(ax,[(3.57,9.25),(4.08,9.25)],both=True)
+    arrow(ax,[(6.92,9.25),(8.03,9.25)]);txt(ax,7.47,9.03,'PWM',8.5,BLUE)
+    arrow(ax,[(11.63,9.25),(10.97,9.25)],POWER,True)
+    txt(ax,7.5,10.05,'Common ground between Uno and servo supply. Robot E-stops act on the robot power path.',9.5,MUTED)
     for x,label,c,d in [(.65,'Data (bidirectional)',BLUE,False),(4.0,'Power (schematic)',POWER,True),(7.2,'Hardware E-stop',RED,False)]:
-        ax.plot([x,x+.4],[8.13,8.13],color=c,lw=1.7,ls='--' if d else '-');txt(ax,x+.5,8.13,label,9.4,MUTED,ha='left')
+        ax.plot([x,x+.4],[10.43,10.43],color=c,lw=1.7,ls='--' if d else '-');txt(ax,x+.5,10.43,label,9.4,MUTED,ha='left')
     export(fig,'system_setup')
 
 def architecture():
-    fig,ax=canvas(15,10)
+    fig,ax=canvas(15,12.0)
     txt(ax,.45,.35,'DATA FLOW & CONTROL ARCHITECTURE',12,MUTED,ha='left',weight='bold')
     txt(ax,.45,.8,'Online control pipeline and measured feedback',16,ha='left',weight='bold')
     box(ax,.5,1.55,2.5,1.3,'Quest WebXR client','gripSpace poses + buttons\nsequence / reference epoch')
@@ -155,7 +177,13 @@ def architecture():
     arrow(ax,[(9.47,8.58),(10.95,8.58),(10.95,5.48),(12.85,5.48),(12.85,5.17)],color=INK)
     box(ax,11.45,8.0,3.0,1.15,'Hardware E-stops','Independent of PC / Wi-Fi',RED)
     arrow(ax,[(12.95,7.98),(12.95,7.32)],color=RED)
-    txt(ax,.5,9.57,'Online RangedIK output is not followed by DLS or QP in the verified v7 path. Hybrid DLS remains offline research.',10,MUTED,ha='left')
+    txt(ax,.5,9.6,'INDEPENDENT GRIPPER CHANNEL',10,MUTED,ha='left',weight='bold')
+    box(ax,.5,9.9,3.0,1.15,'Index trigger','Continuous value 0–1\nMiddle Grip controls arm following')
+    box(ax,4.0,9.9,3.3,1.15,'PC gripper target','Calibrated open / closed pulses\nRelease overrides closing target')
+    box(ax,7.8,9.9,3.15,1.15,'USB serial + Uno','115200 baud / session + sequence\nTarget ACK / PWM on D2')
+    box(ax,11.45,9.9,3.0,1.15,'Gripper servo','Externally powered positional servo\nActual jaw gap unmeasured')
+    for a,b in [(3.52,3.98),(7.32,7.78),(10.97,11.43)]:arrow(ax,[(a,10.5),(b,10.5)])
+    txt(ax,.5,11.55,'RangedIK v7 direct drives the arm. Optional gripper PI requires an external position sensor; the demonstrations use direct PWM.',9.5,MUTED,ha='left')
     export(fig,'data_flow')
 
 if __name__=='__main__':

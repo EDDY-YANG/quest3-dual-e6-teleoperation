@@ -106,7 +106,7 @@
     },
     {
       "path": "quest_e6_sdk/__init__.py",
-      "sha256": "244b15780f64f57320848b5f2b196e01e5039f0ec9e02215f98ec03535bc3654",
+      "sha256": "9b4498c819b2fbf949fe9213829d93bad27ec3a005225da67a544c0ca6aa850f",
       "bytes": 350
     },
     {
@@ -196,8 +196,8 @@
     },
     {
       "path": "tests/test_public_defaults.py",
-      "sha256": "54b535e9c46f2f86f91f9da254809850a00bb1a34e9506b81bb7a67e2484ad64",
-      "bytes": 1877
+      "sha256": "010b93e5ae96ced7d698681d465de0a6a02062542b5525894f268f5d97674169",
+      "bytes": 5175
     },
     {
       "path": "tests/test_relative_pose.py",

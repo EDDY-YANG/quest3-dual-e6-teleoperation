@@ -2,7 +2,7 @@
 const STATES={NO_START:"未保存开始位",PRESET:"关节预设已保存",SAVED:"实测开始位已保存",CAPTURING:"正在记录实测姿态",
  COLLISION_PROTECTION:"碰撞保护 · 可恢复回位",RECOVERING:"正在清除本臂碰撞保护",
  PREPARING_RETURN:"准备回位",ENABLING:"正在使能本臂",RETURNING:"正在回位",AT_START:"已实测到位",STOPPING:"正在停止",
- STOPPED:"已停止",ERROR:"回位/保存未完成",FAULT:"停止未确认"};
+ STOPPED:"已停止",ERROR:"回位/保存未完成",FAULT:"停止未确认",ALARMS_CLEARED:"报警已清除，请确认后回位"};
 export function startPositionView(remote={},fresh=false){
  const arms={};
  for(const side of ["left","right"]){

@@ -1,5 +1,5 @@
 {
-  "sdk_version": "0.2.0",
+  "sdk_version": "0.3.0",
   "created_at_cst": "2026-11-19T19:54:26.931103+08:00",
   "packages": [
     {
@@ -87,7 +87,7 @@
         "08_robot_io"
       ],
       "scope": "SOURCE_COMPONENT_NOT_STANDALONE_SERVICE",
-      "files": 4
+      "files": 5
     },
     {
       "id": "10_sdk_runtime",
@@ -125,7 +125,7 @@
       "depends_on": [
         "12_virtual_assets"
       ],
-      "files": 12
+      "files": 14
     }
   ],
   "policy": "Edit packages; assemble app. No public upload. No hardware acceptance inferred.",

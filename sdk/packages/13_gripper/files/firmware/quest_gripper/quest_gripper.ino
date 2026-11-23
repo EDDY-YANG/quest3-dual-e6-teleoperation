@@ -4,14 +4,24 @@
 #ifndef GRIPPER_SIDE
 #define GRIPPER_SIDE 0  // 1 = left, 2 = right; 0 reports X and refuses to arm.
 #endif
-const byte signalPin = 9;
+#ifndef GRIPPER_PIN
+#define GRIPPER_PIN 9
+#endif
+const byte signalPin = GRIPPER_PIN;
 const char side = GRIPPER_SIDE == 1 ? 'L' : GRIPPER_SIDE == 2 ? 'R' : 'X';
 struct ServoOutput {
   Servo servo;
+#ifdef GRIPPER_FEEDBACK_PIN
+  static_assert(GRIPPER_FEEDBACK_PIN >= A0 && GRIPPER_FEEDBACK_PIN <= A5 &&
+                GRIPPER_FEEDBACK_PIN != GRIPPER_PIN,"Use a separate Uno analog input");
+  int positionAdc() { return analogRead(GRIPPER_FEEDBACK_PIN); }
+#endif
   void off() { if (servo.attached()) servo.detach(); digitalWrite(signalPin,LOW); }
   void start(int us) {
     noInterrupts();
-    servo.attach(signalPin,1000,2000);
+    // AVR Servo stores its attach endpoints in signed 4 us offsets.
+    // The protocol enforces the calibrated upper limit.
+    servo.attach(signalPin, GRIPPER_MIN_US, 2000);
     servo.writeMicroseconds(us);
     interrupts();
   }

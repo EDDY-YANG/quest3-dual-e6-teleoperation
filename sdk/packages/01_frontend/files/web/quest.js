@@ -1,7 +1,5 @@
 import { GripGate } from "/static/grip_gate.mjs";
 import { HeadsetHUD, hudView, preloadRobotVisual } from "/static/quest_hud.mjs";
-import { TriggerOwnership } from "/static/gripper_ui_input.mjs";
-const triggerOwnership = new TriggerOwnership();
 const gripGate = new GripGate();
 // Continuously streams measured poses; Grip is exclusively a motion permission gate.
 const status = document.querySelector("#xr-status");
@@ -72,8 +70,18 @@ function makeRenderer() {
 
 function requestHudAction(action) {
   if (action === "exit") { void stop("Operator exited AR"); return; }
-  if (ws?.readyState !== WebSocket.OPEN || !hud) return;
+  if (!hud) return;
   const view = hudView(hud.remote, hud.receivedAt, hud.client, performance.now());
+  if (action.startsWith("return_") && (!view.allowed[action] || hudAction || ws?.readyState!==WebSocket.OPEN)) {
+    const arm = view.homes.arms[action.split("_")[1]];
+    const notice = !view.fresh || ws?.readyState!==WebSocket.OPEN ? "请恢复头显与 PC 的连接，再点回位" :
+      hudAction || view.homes.busy ? "正在处理另一项操作，请等待结果" :
+      (!arm.canReturn && !arm.can_clear_alarms && arm.blocked_reason) ||
+      "请保持 AR 可见、保持手柄追踪并松开这一侧的中指 Grip，再点回位";
+    hud.setClient({homeNotice:notice,homeNoticeUntil:performance.now()+6000});
+    return;
+  }
+  if (ws?.readyState !== WebSocket.OPEN) return;
   if (!view.allowed[action] || (hudAction && action !== "stop")) return;
   if (ws.bufferedAmount > 4096 && action !== "stop") {
     hudNotice = "发送队列积压，暂不开始；请等待网络恢复";
@@ -84,6 +92,7 @@ function requestHudAction(action) {
   if (!message) return;
   hudAction = {id, action, at: performance.now()};
   hudNotice = action === "arm" ? "开始请求已发送：请松开Grip并保持AR可见" :
+    action === "gripper_power" ? "等待夹爪控制确认" :
     action === "stop" ? "正在请求停止并等待真实反馈" :
     action.startsWith("return_") ? "回位请求已发送；请保持AR可见并松开Grip，等待实测到位" :
     action.startsWith("calibration_") ? "标定请求已发送；等待后端采样与确认，不移动机械臂" :
@@ -183,7 +192,6 @@ function send(data) {
 }
 function clearInput() {
   gripGate.reset();
-  triggerOwnership.reset();
   hud?.resetInteraction();
   if (referenceType)
     send(packet({ left: null, right: null }, performance.now()));
@@ -276,19 +284,20 @@ function frameLoop(t, frame) {
     const hands = { left: null, right: null };
     if (session.visibilityState === "visible")
       for (const source of session.inputSources) {
-        if (source.handedness === "left" || source.handedness === "right")
+        if (source.handedness === "right" || source.handedness === "left")
           hands[source.handedness] = serialiseHand(source, frame);
       }
     const gated = gripGate.update(hands, session.visibilityState === "visible");
-    const sampled = sampleHud(frame, hands);
+    const sampled = sampleHud(frame, gated.hands);
     const rays = sampled.rays;
     if (!session || shuttingDown) return;
     let captureChanged = false;
     for (const side of ["left","right"]) {
-      const hand = gated.hands[side], before = triggerOwnership.captured[side];
-      const blocked = triggerOwnership.update(side,hand?.gamepad?.buttons?.[0]?.value,rays.find(r => r.side === side));
-      if (hand) hand.gripper_ui_blocked = blocked;
-      captureChanged ||= before !== blocked;
+      const hand = gated.hands[side];
+      const trigger = sampled.viewer && hand?.tracking_valid ? hand.gamepad?.buttons?.[0]?.value : undefined;
+      const claim = rays.find(r => r.side === side)?.claim ?? hud?.triggerOwnership.sample(side, trigger, null);
+      if (hand) hand.gripper_ui_blocked = claim?.blocked ?? true;
+      captureChanged ||= Boolean(claim?.sendNow);
     }
     if (captureChanged || gated.changed || t - sentAt >= 1000 / 30) {
       send(packet(gated.hands, t));
@@ -331,7 +340,6 @@ function cleanup() {
   }
   wakeLockState = "RELEASED";
   gripGate.reset();
-  triggerOwnership.reset();
   hud?.resetInteraction();
   if (hud) hud.panel = null;
   hudAction = null;
@@ -550,7 +558,7 @@ async function initialise() {
     starts[i].disabled = !supported;
   }
   status.textContent = support.some(Boolean)
-    ? `Ready. AR supported: ${support[0]}. VR supported: ${support[1]}. 位姿持续传输。进入AR后用射线/食指扳机操作面板；Grip仅允许跟随。`
+    ? `Ready. AR supported: ${support[0]}. VR supported: ${support[1]}. 两手射线都可用食指点击。单右臂：右食指控制夹爪，右中指 Grip 控制跟随；也可按右手 A 点击按钮。`
     : "No immersive XR device is available in this browser. Open this address in the Quest headset's own Browser app. A Windows browser or a mirrored PC desktop cannot read the Quest controllers here.";
 }
 initialise().catch((error) => {

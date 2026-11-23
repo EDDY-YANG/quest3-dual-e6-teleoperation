@@ -64,7 +64,9 @@ function paint(now){
   $(`#home-${side}-detail`).textContent=h.summary;
   $(`#home-${side}-reason`).textContent=fresh?(h.blocked_reason || h.reason || ""):"状态未更新，回位不可用";
   $(`#home-${side}-capture`).disabled=busy || !h.canCapture || control.armed===true;
-  $(`#home-${side}-return`).disabled=busy || !h.canReturn;
+  const homeButton=$(`#home-${side}-return`);
+  homeButton.disabled=false;
+  homeButton.textContent=h.clear_only ? `${names[side]}臂回开始位 · 仅清警` : `${names[side]}臂回开始位`;
  }
  if(ownHomeOperation && fresh && (!home.busy || home.operationId!==ownHomeOperation))ownHomeOperation=null;
  $("#control-status").textContent=fresh?(data.group?.participants?.length===2?
@@ -96,13 +98,22 @@ function paint(now){
  $("#stop-left").disabled=stopBusy || (sides.every(s=>!data?.controls?.[s]?.state || data.controls[s].state==="NOT_PREPARED") && !data?.start_positions?.busy && !data?.start_positions?.fault_latched);
 }
 async function homeAction(side,actionName){
+ if(actionName==="return"){
+  const fresh=performance.now()-lastReceived<1000;
+  const h=startPositionView(data?.start_positions,fresh).arms[side];
+  if(!fresh || busy || (!h.canReturn && !h.can_clear_alarms)){
+   $("#action-message").textContent=!fresh?"PC 状态已过期，请等待实时反馈":busy?"上一项操作正在进行":h.blocked_reason || "当前无法清警或回位，请检查控制器状态";
+   return;
+  }
+  if(h.clear_only)actionName="clear_alarms";
+ }
  if(busy)return;busy=true;$("#action-message").textContent=actionName==="capture"?"正在核对并保存静止实测姿态…":"回位请求已发送，请保持本页可见…";
  try{
   const response=await fetch('/api/start-positions/action',{method:'POST',headers:{'Content-Type':'application/json'},
    body:JSON.stringify({side,action:actionName,client_id:homeClient}),signal:AbortSignal.timeout(12000)});
   const body=await response.json();if(!response.ok)throw Error(body.error || `HTTP ${response.status}`);
-  if(actionName==='return')ownHomeOperation=body.operation_id;
-  $("#action-message").textContent=actionName==='capture'?"该臂开始位已保存为实测姿态。":"回位已受理，请查看进度与实测到位状态；STOP可随时停止。";
+  if(actionName!=='capture')ownHomeOperation=body.operation_id;
+  $("#action-message").textContent=actionName==='capture'?"该臂开始位已保存为实测姿态。":actionName==="clear_alarms"?"仅清警请求已受理，请等待复核后再点回位":"回位已受理，请查看进度与实测到位状态；STOP可随时停止。";
  }catch(error){$("#action-message").textContent=`操作未完成：${error.message}`;}finally{busy=false;poll();}
 }
 for(const side of sides){$(`#home-${side}-capture`).onclick=()=>homeAction(side,'capture');$(`#home-${side}-return`).onclick=()=>homeAction(side,'return');}

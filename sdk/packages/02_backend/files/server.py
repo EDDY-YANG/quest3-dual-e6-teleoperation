@@ -472,7 +472,7 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
     e6_lock = asyncio.Lock()
     usb_lock = asyncio.Lock()
     trial_boxes = {side: {"controller": None, "reader": None, "driver": None} for side in ("left", "right")}
-    group = TeleopGroup()
+    group = TeleopGroup(on_stop=grippers.stop_independent)
     app[TELEOP_GROUP_KEY] = group
     trial_lock = asyncio.Lock()
     monitors = RobotMonitor()
@@ -550,11 +550,11 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
                 await monitors.connect(side, ip, source_ip)
             for _ in range(40):
                 candidate = home_feedback(side)
-                if candidate.get("valid") or (candidate.get("packet_valid") and candidate.get("robot_mode") == 11):
+                if candidate.get("valid") or (candidate.get("packet_valid") and candidate.get("robot_mode") in (9,11)):
                     break
                 await asyncio.sleep(.05)
             p = home_feedback(side)
-            readable = p.get("valid") or (p.get("packet_valid") and p.get("robot_mode") == 11)
+            readable = p.get("valid") or (p.get("packet_valid") and p.get("robot_mode") in (9,11))
             if not readable or p.get("local_ip") != source_ip or p.get("ip") != ip:
                 raise ValueError("START_SOURCE_FEEDBACK_NOT_READY")
             identity = await neighbor_identity(ip, source_ip)
@@ -596,24 +596,28 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
                                                               if start_positions_path is None else None))
     app[START_POSITIONS_KEY] = homes
 
+    def gripper_feedback_ready(side, now):
+        feedback = home_feedback(side)
+        stamp = feedback.get("host_monotonic_s")
+        return (feedback.get("valid") is True and feedback.get("connected") is True and
+                type(stamp) in (int,float) and 0 <= now-stamp < .2 and
+                feedback.get("robot_mode") in ((4,5,7) if side in grippers.direct else (5,7)) and
+                feedback.get("error_status") == 0)
+
     async def drive_gripper_references():
         while True:
             now = time.monotonic()
             allowed = set()
             for side in grippers.channels:
                 trial = trial_boxes[side]["controller"]
-                if trial is None or not group.motion_allowed(side) or trial.state not in ("READY","FOLLOWING"):
+                if side not in grippers.direct and (trial is None or not group.motion_allowed(side) or trial.state not in ("READY","FOLLOWING")):
                     continue
-                feedback = trial.feedback.snapshot()
-                stamp = feedback.get("host_monotonic_s")
-                age = now - stamp if type(stamp) in (int, float) else math.inf
-                if (feedback.get("valid") is True and feedback.get("connected") is True and 0 <= age < .2
-                        and feedback.get("robot_mode") in (5,7) and feedback.get("error_status") == 0):
+                if gripper_feedback_ready(side,now):
                     allowed.add(side)
-            inhibited = homes.busy or homes.fault_latched or group.state in ("STOPPING","FAULT","ARMING")
+            inhibited = homes.busy or homes.fault_latched or group.state in ("STOPPING","FAULT")
             owners = group.participants if group.state == "ARMED" else ()
             grippers.tick(quest.snapshot(now), allowed, now, recorder.capture, inhibited, owners)
-            await asyncio.sleep(.033)
+            await asyncio.sleep(.01 if grippers.direct else .033)
 
     async def gripper_lifetime(app):
         grippers.task = asyncio.create_task(drive_gripper_references(), name="gripper-references")
@@ -637,12 +641,17 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
         if homes.busy or homes.fault_latched:
             raise web.HTTPConflict(text="回位正在进行或停止未确认；请先使用STOP")
 
-    async def begin_home_return(side, source, owner):
+    async def begin_home_return(side, source, owner, *, clear_only=False):
         if homes.busy:
             raise web.HTTPConflict(text="已有回位任务；等待完成或使用STOP")
-        if homes.fault_latched:
+        if clear_only:
+            group.require_stopped()
+            if not homes.snapshot()["arms"][side]["can_clear_alarms"]:
+                raise web.HTTPConflict(text="清警状态已改变；检查当前报警和停止状态")
+        elif homes.fault_latched:
             await homes.stop()
-        return homes.begin(side, source, owner, recover_collision=True)
+        grippers.stop_independent()
+        return homes.begin(side, source, owner, recover_collision=not clear_only, clear_only=clear_only)
 
     async def home_action(request):
         data = await request.json()
@@ -654,10 +663,10 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
         recorder.request("start_"+str(action), "pc_console")
         if action == "capture":
             return web.json_response(await homes.capture(side))
-        if action == "return":
+        if action in ("return","clear_alarms"):
             if group.state in ("ARMING", "STOPPING"):
                 raise web.HTTPConflict(text="等待统一启动/停止完成后再回位")
-            return web.json_response(await begin_home_return(side, "pc", owner))
+            return web.json_response(await begin_home_return(side, "pc", owner,clear_only=action=="clear_alarms"))
         raise ValueError("Unknown start-position action")
 
     async def home_heartbeat(request):
@@ -720,12 +729,27 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
             prepare=prepare_allowed and q.get("connected") is True,
             arm=bool(group.participants) and group.state == "PREPARED" and
                 all(heads[s]["capabilities"]["arm"] for s in group.participants),
-            stop=bool(group.controllers),
+            stop=bool(group.controllers or grippers.direct_sessions),
         )
         data["capabilities"].update({"calibration_"+action: permitted for action, permitted in allowed[primary].items()})
         data["start_positions"] = homes.snapshot()
         data["grippers"] = grippers.snapshot()
+        for side in grippers.direct:
+            active = side in grippers.direct_sessions
+            frame = q.get("frame") or {}
+            data["capabilities"][f"gripper_disable_{side}"] = active
+            data["capabilities"][f"gripper_enable_{side}"] = (
+                not active and not homes.busy and not homes.fault_latched and
+                group.state not in ("STOPPING","FAULT","ARMING") and
+                q.get("valid",{}).get(side) is True and q.get("connected") is True and
+                type(q.get("age_ms")) in (int,float) and 0 <= q["age_ms"] < 200 and
+                frame.get("visibility")=="visible" and frame.get("gripper_policy")=="analog-trigger-ui-v1" and
+                (frame.get("diagnostics") or {}).get("requested_mode")=="immersive-ar" and
+                gripper_feedback_ready(side,time.monotonic()))
         for arm in ("left", "right"):
+            data["capabilities"][f"clear_{arm}_alarms"] = (
+                not group.snapshot()["armed"] and group.state not in ("ARMING","STOPPING","FAULT") and
+                home_input_ready(q,arm) and data["start_positions"]["arms"][arm]["can_clear_alarms"])
             data["capabilities"][f"return_{arm}_start"] = (
                 group.state not in ("ARMING", "STOPPING") and
                 home_input_ready(q, arm) and data["start_positions"]["arms"][arm]["can_return"])
@@ -980,10 +1004,28 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
                     await prepare_trial(None, control_side)
                 elif action == "arm":
                     await arm_trial(None, control_side)
+                elif action.startswith("gripper_"):
+                    _, operation, side = action.split("_")
+                    if operation == "enable":
+                        frame = quest.snapshot()["frame"]
+                        grippers.set_independent(side, (owner_session,frame["reference_epoch"]))
+                        message = "夹爪已启用。先松开食指，再扣动；射线指向任意位置都可以。"
+                    else:
+                        grippers.set_independent(side)
+                        message = "夹爪输出已停用"
+                    result.update(ok=True,message=message)
+                    await send_hud(result)
+                    return
                 elif action in ("return_left_start", "return_right_start"):
                     side = "left" if action == "return_left_start" else "right"
                     result.update(ok=True, message="回位请求已接受；请保持AR可见并松开Grip，查看实测到位状态",
                                   start_positions=await begin_home_return(side, "vr", owner_session))
+                    await send_hud(result)
+                    return
+                elif action in ("clear_left_alarms","clear_right_alarms"):
+                    side = action.split("_")[1]
+                    result.update(ok=True,message="已受理仅清警请求；请查看控制器复核结果",
+                                  start_positions=await begin_home_return(side,"vr",owner_session,clear_only=True))
                     await send_hud(result)
                     return
                 else:
@@ -992,7 +1034,9 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
                     ok=True,
                     message={
                         "prepare": "机器人预检完成；点击开始遥操作",
-                        "arm": "已允许：先松开Grip，再握持进行小幅位移与转角操作",
+                        "arm": ("夹爪全开指令已收到 Uno 回执；松开食指后再次扣动，Grip 控制手臂" if
+                                any(side in grippers.direct for side in group.participants) else
+                                "已允许：先松开Grip，再握持进行小幅位移与转角操作"),
                         "stop": "停止请求已完成，请查看静止反馈确认",
                     }[action],
                 )
@@ -1054,6 +1098,7 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
                         break
         finally:
             if quest.session == owner_session:
+                grippers.stop_independent()
                 quest.connected = False
             publisher.cancel()
             with suppress(asyncio.CancelledError):
@@ -1171,6 +1216,12 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
     app.on_cleanup.append(lan.cleanup)
 
     async def prepare_one(side):
+        def reject_collision(packet):
+            if packet.get("connected") and packet.get("packet_valid") and packet.get("robot_mode") == 11:
+                arm_name = "右臂" if side == "right" else "左臂"
+                raise ValueError(f"{arm_name}处于碰撞保护（Mode 11）。检查现场并解除保护后再重检")
+
+        reject_collision(home_feedback(side))
         box = trial_boxes[side]
         current = box["controller"]
         if current:
@@ -1184,7 +1235,6 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
             box["driver"].close()
             group.controllers.pop(side, None)
             box.update(controller=None, reader=None, driver=None)
-        await monitors.disconnect(side)
         from dobot_safe_sdk import BoundDobotDashboard
         from e6_feedback import FeedbackReader
         from left_z_trial import LeftZTrial
@@ -1198,17 +1248,27 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
                           direction_calibration=direction_calibrations[side] if ranged_profile else None,
                           motion_permit=lambda: group.motion_allowed(side))
         try:
+            await monitors.disconnect(side)
             await reader.start()
             for _ in range(40):
-                if reader.snapshot().get("valid"):
+                packet = reader.snapshot()
+                reject_collision(packet)
+                if packet.get("valid"):
                     break
                 await asyncio.sleep(.05)
             await trial.prepare()
             await trial.start()
-        except Exception:
-            await trial.close()
-            await reader.stop()
-            driver.close()
+        except (Exception, asyncio.CancelledError):
+            try:
+                await trial.close()
+            finally:
+                try:
+                    await reader.stop()
+                finally:
+                    driver.close()
+                    # A failed handoff must leave read-only diagnostics available.
+                    with suppress(OSError, ValueError):
+                        await monitors.connect(side, ip, local_ip)
             raise
         box.update(controller=trial, reader=reader, driver=driver)
         group.controllers[side] = trial
@@ -1281,7 +1341,8 @@ def make_app(*, recording_enabled=True, recordings_root=None, ranged_profile_pat
             async with trial_lock:
                 require_home_idle()
                 require_prepared_request(side)
-                await group.arm()
+                await group.arm(before_follow=lambda: grippers.open_for_start(
+                    group.participants, quest.snapshot, lambda: group.state=="ARMING"))
                 return web.json_response(group_response())
         except Exception as exc:
             recorder.rejected("arm", exc)

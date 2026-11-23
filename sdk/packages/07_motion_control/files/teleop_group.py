@@ -6,12 +6,13 @@ from contextlib import suppress
 
 
 class TeleopGroup:
-    def __init__(self, event=None):
+    def __init__(self, event=None, on_stop=None):
         self.controllers = {}
         self.participants = ()
         self.state, self.reason = "NOT_PREPARED", None
         self.stop_evidence = None
         self.event = event or (lambda *args: None)
+        self.on_stop = on_stop
         self.events = deque(maxlen=24)
         self._gate = False
         self._epoch = 0
@@ -66,7 +67,7 @@ class TeleopGroup:
         if self._watch_task is None or self._watch_task.done():
             self._watch_task = asyncio.create_task(self._watch(), name="teleop-group-watchdog")
 
-    async def arm(self):
+    async def arm(self, before_follow=None):
         if self.state != "PREPARED" or not self.participants:
             raise ValueError("Prepare all selected arms first")
         self._gate = False
@@ -83,6 +84,18 @@ class TeleopGroup:
                     self.controllers[side].assert_group_ready()
                 except Exception as exc:
                     errors[side] = str(exc)
+        if before_follow and epoch==self._epoch and not errors and not self._problem():
+            try:
+                await before_follow()
+                if epoch==self._epoch:
+                    for side in self.participants:
+                        self.controllers[side].assert_group_ready()
+            except asyncio.CancelledError:
+                if epoch==self._epoch:
+                    await self.stop("GROUP_ARM_CANCELLED", explicit=False)
+                raise
+            except Exception as exc:
+                errors["start_open"] = str(exc)
         if epoch != self._epoch or errors or self._problem():
             if epoch == self._epoch:
                 await self.stop("GROUP_ARM_FAILED", details=errors, explicit=False)
@@ -95,6 +108,8 @@ class TeleopGroup:
     async def stop(self, reason="OPERATOR_DISARMED", details=None, *, explicit=True):
         self._gate = False
         self._epoch += 1
+        if self.on_stop:
+            self.on_stop()
         if self._stop_task is not None and not self._stop_task.done():
             return await self._stop_task
         self._stop_task = asyncio.create_task(self._stop_all(reason, details, explicit), name="teleop-group-stop")

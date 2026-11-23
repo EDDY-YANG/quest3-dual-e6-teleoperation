@@ -201,7 +201,13 @@ export class E6SideModels {
       const gap = typeof tool?.model_gap_mm === "number" ? tool.model_gap_mm.toFixed(1) + " mm" : "—";
       const drive = tool?.hardware_rearm_required ? "Uno · 待重新授权" : tool?.drive?.mode === "blocked" ? "串口配置错误" :
         tool?.drive?.mode === "uno" ? "Uno · "+tool.drive.status : "虚拟";
-      text(`${drive} · 夹爪目标 ${gap} · 无实测开度`, 116, 21, "#9ce5df");
+      const targetGap = Number.isFinite(tool?.target_gap_mm) ? tool.target_gap_mm.toFixed(1)+" mm" : gap;
+      const feedback = Number.isFinite(tool?.measured_gap_mm) ? "实测 "+tool.measured_gap_mm.toFixed(1)+" mm" : "无实测开度";
+      text(`${drive} · 夹爪目标 ${targetGap} · ${feedback}`, 116, 21, "#9ce5df");
+      if (tool?.independent_trigger) {
+        const t = Number.isFinite(tool.trigger) ? Math.round(100*tool.trigger)+"%" : "—";
+        text(`食指 ${t} · 目标 ${tool.target_pulse_us??"—"} / ACK ${tool.drive?.ack_us??"—"} µs`, 144, 20, "#9ce5df");
+      }
       if (!this.ready) { text(this.error ? "模型未能加载" : "正在加载官方 E6 外观…", 430); if (this.error) text("连接与控制状态请看中央面板", 470, 20); }
       if (this.ready && state.valid) {
         const project = vector => { const p = vector.project(this.sides[i].camera); return [

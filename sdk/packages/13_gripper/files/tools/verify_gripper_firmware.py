@@ -7,10 +7,10 @@ from gripper_uno import UnoWire,PortSettings,UnoChannel
 from gripper_control import Grippers
 
 class EmulatedUart:
-    def __init__(self,image,module):
+    def __init__(self,image,module,pin=9):
         env=dict(os.environ)
         if module:env["AVR8JS_PATH"]=str(module.resolve())
-        self.p=subprocess.Popen(["node",str(Path(__file__).with_name("gripper_avr_uart.cjs")),str(image.resolve())],
+        self.p=subprocess.Popen(["node",str(Path(__file__).with_name("gripper_avr_uart.cjs")),str(image.resolve()),str(pin)],
               stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True,env=env)
     def request(self,data):
         self.p.stdin.write(json.dumps(data)+"\n");self.p.stdin.flush()

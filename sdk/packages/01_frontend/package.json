@@ -25,8 +25,8 @@
     },
     {
       "path": "web/e6_urdf_view.mjs",
-      "sha256": "de9aac47806ecd1853414dcdf6a3188ec0e2b958e291361d109049a89f89b41e",
-      "bytes": 12976
+      "sha256": "02973aaab98982dee87e1b2bff30708e603e99936e162d7a52670e1f6c317891",
+      "bytes": 13485
     },
     {
       "path": "web/grip_gate.mjs",
@@ -45,8 +45,8 @@
     },
     {
       "path": "web/gripper_ui_input.mjs",
-      "sha256": "45ec1415d53b9f12577134de5e2c8b7c1bdb807d003c60082b595608132d6045",
-      "bytes": 470
+      "sha256": "a30cedc807bf2ff72164372a0a49d773be48b96382590988a96f74623c26e386",
+      "bytes": 2653
     },
     {
       "path": "web/hud_preview.html",
@@ -70,8 +70,8 @@
     },
     {
       "path": "web/pc_monitor.mjs",
-      "sha256": "6f680c5f42dd1eff6badef6af405241ab380a92c9a87d6da226a3278f95522d1",
-      "bytes": 15961
+      "sha256": "bbf3829e5b0a885f839cc3cdf1a7c8da2b42a409ca93e2e48985d895375caf46",
+      "bytes": 16533
     },
     {
       "path": "web/pc_monitor_state.mjs",
@@ -80,18 +80,18 @@
     },
     {
       "path": "web/quest.html",
-      "sha256": "d471bc6044b35e458507673be52ba7a6a993ee4c2e7d62c96ac4a54e0e61fa81",
-      "bytes": 2796
+      "sha256": "acd1d3487947135605977fc36e3d1cf656421593162e56088f1db0623f51aa0c",
+      "bytes": 2903
     },
     {
       "path": "web/quest.js",
-      "sha256": "f9e304e7ada760b7de41037b4eafcb84b6070cd8210a61e00fce7389f5b07f96",
-      "bytes": 21778
+      "sha256": "a583c65339ce16fda6abd9b01061ce2b82e95f53a7f4b3a0e8fceab35c912976",
+      "bytes": 22452
     },
     {
       "path": "web/quest_hud.mjs",
-      "sha256": "c830a433fa763ee6437e74e9e8941a24e9506c70150ac42b0c3f276fbf9b587a",
-      "bytes": 37596
+      "sha256": "161d9be937aaa1379261959ea178eeeeeb96e55fd6d6cb94c4725f21d8bac099",
+      "bytes": 40239
     },
     {
       "path": "web/robot_view.mjs",
@@ -100,8 +100,8 @@
     },
     {
       "path": "web/start_positions.mjs",
-      "sha256": "52d7ee84ece4b3dd43ca64ab09471a811da8b9507aa36cc544814ae3891e2132",
-      "bytes": 1509
+      "sha256": "375cbbd0eaf12cc06d9648e6b1f56d22221d4fdf9a1ed2704c8fa7033ca09cab",
+      "bytes": 1563
     },
     {
       "path": "web/style.css",
