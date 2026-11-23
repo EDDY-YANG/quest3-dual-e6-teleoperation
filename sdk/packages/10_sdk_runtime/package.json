@@ -96,8 +96,8 @@
     },
     {
       "path": "LICENSE",
-      "sha256": "196cb29581a8104dbb7cec20e55d6d838868198de452a36b289218acb01d122d",
-      "bytes": 1083
+      "sha256": "d5558f542533edbfdaafb58b68a89c16c67bf0e5c09fb32ac6156decef01f627",
+      "bytes": 1067
     },
     {
       "path": "pyproject.toml",

@@ -9,8 +9,8 @@ document.querySelectorAll('.film').forEach((film) => {
   const reportError = () => {
     const code = video.error?.code;
     status.textContent = code === 2
-      ? 'The video could not finish loading. Try the alternative format or open the video below.'
-      : 'Playback is unavailable in this browser. Try WebM or open the video below.';
+      ? 'The video could not finish loading. Try the WebM playback option below.'
+      : 'Playback is unavailable in this browser. Try WebM or use a browser that supports HTML video.';
     status.hidden = false;
     button.hidden = false;
   };
