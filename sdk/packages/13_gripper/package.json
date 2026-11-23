@@ -9,33 +9,33 @@
   "files": [
     {
       "path": "firmware/quest_gripper/gripper_protocol.h",
-      "sha256": "12a03d843ae1f2566b9b79bda6e944b2aef4c2df1e9798172a17bd5e3057465a",
-      "bytes": 2774
+      "sha256": "372fe3c4047066562aa307859f2204a68bb881fecc6772ee3beaaa0fe3fa6125",
+      "bytes": 5083
     },
     {
       "path": "firmware/quest_gripper/quest_gripper.ino",
-      "sha256": "8f33fc12ae72aa832dde6099e6350bbb96ce91ef42929104fa9f5b7e90c00e6e",
-      "bytes": 1433
+      "sha256": "b3243d795a42f4ebdb03e889d6145b5cf9a7db1cf49a642c38b8f7d52c9a91ce",
+      "bytes": 1894
     },
     {
       "path": "gripper_bench.py",
-      "sha256": "89533e4a6334b7472b34ed8f23380e8e0d6631529b1cc98bca03aa3dc2860191",
-      "bytes": 3867
+      "sha256": "24e358d57914d3fac6c8bd8e7853b8eb7b0816b524df5425b7f0f6b16c77f029",
+      "bytes": 4266
     },
     {
       "path": "gripper_control.py",
-      "sha256": "3f1f732dce8e68fa2b8615d861ada6357fbfd6543be0e0e3ad4aa1b71ef956f0",
-      "bytes": 7126
+      "sha256": "1a058a4660ea05d527edd0fd958b9ca466fd2540eea3f86b3cf29ef80dc5e0dd",
+      "bytes": 13800
     },
     {
       "path": "gripper_kinematics.py",
-      "sha256": "fbc3990e8e2998995c636ef6bc24142968c185422140ed7216a105379cbffe08",
-      "bytes": 2002
+      "sha256": "c4112801088a38898514d49d18951b4c5a3b56ba3ae6a56c9eb36a3f762eaf0a",
+      "bytes": 2307
     },
     {
       "path": "gripper_uno.py",
-      "sha256": "7b5d40bdce98cf3a1fa4993454fc7677b46f92157ab1c8bdf3bc45e0c873ea61",
-      "bytes": 6568
+      "sha256": "a88fb37da50e7215ef8bcd8406dd52320f72ec55c4efcbdb5fa5932ad64e4d20",
+      "bytes": 11648
     },
     {
       "path": "grippers.example.json",
@@ -49,23 +49,33 @@
     },
     {
       "path": "tests/test_gripper.py",
-      "sha256": "fdc2acc0f46a72521ad04a862419012e9f20fc630e0ab6984fe9283f7fcb39c9",
-      "bytes": 7416
+      "sha256": "3cb77f5d0dea5b6479a6d247bdf4eb3356b3126572f0c0ec12c18f3f0e18950d",
+      "bytes": 17684
     },
     {
       "path": "tests/test_gripper_assets.mjs",
-      "sha256": "e6e7c2c4fe84e07f638ab83667cbbdd364cbf87cf84c27aa14559bdb71592205",
-      "bytes": 2725
+      "sha256": "ac3c637faf00dc6dcb0851c89020f683aec1780bb2bcac38d9d2e9ff9091a36f",
+      "bytes": 7458
     },
     {
       "path": "tools/gripper_avr_uart.cjs",
-      "sha256": "514cc6e9e0be72786998a68a3f148c7750f957f0773a99a0e15c76d8ca579424",
-      "bytes": 2171
+      "sha256": "b42bb27ed7a10eef2eeb400cf8acfd01c63ee38716bf303a0ca02338cbafd5ee",
+      "bytes": 2469
     },
     {
       "path": "tools/verify_gripper_firmware.py",
-      "sha256": "4f3671e29351fc977e272f31fb48afd2da8a42a1091d61f138da6619b883c956",
-      "bytes": 5776
+      "sha256": "9e2c1845eec58b7fd40e446e853c9e9acd8cf2aa7bae97fca3244ffaba7ea98e",
+      "bytes": 5791
+    },
+    {
+      "path": "firmware/quest_gripper/position_pi.h",
+      "sha256": "4309f2820eee2b0ab9723f4f3247f703bfb4fd202e52cb6c0849e7b5d8e623ca",
+      "bytes": 2529
+    },
+    {
+      "path": "tools/verify_gripper_pi.py",
+      "sha256": "7c5fa53feeb9e8776034d5a79e9d8d0f0d72fdc31d9d7fb9a327004ac2d289eb",
+      "bytes": 3866
     }
   ]
 }

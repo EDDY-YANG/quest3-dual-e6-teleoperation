@@ -100,6 +100,12 @@ class ReturnChannel:
     controller_status: object = None
 
 
+def empty_alarm_ids(ids):
+    if isinstance(ids,list):
+        return all(empty_alarm_ids(i) for i in ids)
+    return type(ids) is int and ids == 0
+
+
 class StartPositions:
     def __init__(self, path, acquire, quiesce, feedback, owner_valid, event=None, *, presets_path=None):
         self.path, self.acquire, self.quiesce = Path(path), acquire, quiesce
@@ -117,6 +123,7 @@ class StartPositions:
         self.audit_path = None
         self.audit_error = None
         self.recover_collision = False
+        self.clear_only = False
         self.states = {s: {"state": "NO_START", "reason": "尚未保存该臂开始位"} for s in SIDES}
         try:
             if self.path.exists():
@@ -312,7 +319,7 @@ class StartPositions:
             self.active_side = None
         return self.snapshot()
 
-    def begin(self, side, source, owner, *, recover_collision=False):
+    def begin(self, side, source, owner, *, recover_collision=False, clear_only=False):
         if side not in SIDES or source not in ("pc", "vr") or not re.fullmatch(r"[A-Za-z0-9_-]{1,80}", owner or ""):
             raise ValueError("START_INVALID_REQUEST")
         if self.busy or self.fault_latched:
@@ -322,11 +329,12 @@ class StartPositions:
             raise ValueError("START_NOT_SAVED")
         self.active_side, self.source, self.owner = side, source, owner
         self.recover_collision = recover_collision
+        self.clear_only = clear_only
         self.operation_id = secrets.token_hex(12)
         self.audit_error = None
         self.audit = {"schema": 1, "operation_id": self.operation_id, "side": side, "source": source,
                       "saved_target": record, "target_source": self._target_source(side),
-                      "collision_recovery_requested": recover_collision, "events": [], "segments": []}
+                      "collision_recovery_requested": recover_collision, "clear_only": clear_only, "events": [], "segments": []}
         self.audit_path = self.path.parent / "start_return_logs" / (
             datetime.now().strftime("%Y-%m-%d-%H-%M-%S")+"-"+side+"-"+self.operation_id+".json")
         self.heartbeat_at = time.monotonic()
@@ -350,10 +358,9 @@ class StartPositions:
                 or info.get("isMotion") is not False or info.get("isCollision") != 1):
             raise ValueError("COLLISION_RECOVERY_REQUIRES_TCP_NO_ESTOP_AND_STATIONARY")
         alarms = json.loads((await channel.call("GetErrorID"))["payload"])
-        def empty_alarm(value):
-            return all(empty_alarm(v) for v in value) if isinstance(value, list) else type(value) is int and value == 0
-        if not empty_alarm(alarms):
-            raise ValueError("COLLISION_RECOVERY_OTHER_CONTROLLER_ALARM_REQUIRES_INSPECTION")
+        if not isinstance(alarms,list) or not empty_alarm_ids(alarms):
+            self._set(side, "ALARM_REVIEW", f"请先排除故障，当前报警 {alarms}", alarm_ids=alarms)
+            raise ValueError(f"COLLISION_RECOVERY_OTHER_CONTROLLER_ALARM_REQUIRES_INSPECTION: {alarms}；排除原因后点击仅清警")
         check_joints(self.feedback(side)["joint_position_deg"])
         self.audit["collision_recovery"] = {"before": info, "error_ids": alarms, "attempts": 1}
         await self._write_audit()
@@ -391,12 +398,88 @@ class StartPositions:
         await self._write_audit()
         return recovered
 
+    def _alarm_packet(self, side):
+        """Evidence for a reset request only. These packets cannot authorize motion."""
+        p = self.feedback(side)
+        age = time.monotonic() - p.get("host_monotonic_s", -math.inf)
+        if (not p.get("connected") or p.get("packet_valid") is not True or not 0 <= age <= WATCHDOG_S or
+                p.get("robot_type") != 150 or p.get("user") != 0 or p.get("tool") != 0 or
+                p.get("robot_mode") not in (9, 11)):
+            raise ValueError("清警需要新鲜的本臂报警反馈，请重新检查")
+        check_joints(p["joint_position_deg"])
+        context = tuple(p.get(k) for k in ("robot_id","frame_id","connection_generation"))
+        if None in context:
+            raise ValueError("清警反馈缺少机器人身份")
+        return p, context
+
+    async def _reset_alarms(self, side, channel):
+        self._owner_guard()
+        if channel.identity != self._target(side)["identity"] or not channel.controller_status or not channel.verify_identity:
+            raise ValueError("清警设备身份未确认")
+        await channel.verify_identity()
+        initial, context = self._alarm_packet(side)
+        def guard():
+            self._owner_guard()
+            packet, current = self._alarm_packet(side)
+            if current != context or max(abs(a-b) for a,b in zip(packet["joint_position_deg"],initial["joint_position_deg"])) > .05:
+                raise ValueError("清警期间机械臂状态变化")
+        async def check_stationary_controller():
+            info = await channel.controller_status()
+            if (info.get("remoteControl")!="tcp" or info.get("emergencyStop") is not False or
+                    info.get("isMotion") is not False or info.get("prjState")!="stopped" or
+                    info.get("powerState")!="on"):
+                raise ValueError("先检查急停、TCP模式、电源和程序停止状态")
+        await check_stationary_controller()
+        await channel.call("Stop",guard=guard)
+        # Require distinct feedback after Stop, with the same six stationary joints.
+        after = time.monotonic()
+        await asyncio.sleep(.12)
+        guard()
+        if self.feedback(side)["host_monotonic_s"] <= after:
+            raise ValueError("控制器停止后缺少新的反馈")
+        before = json.loads((await channel.call("GetErrorID"))["payload"])
+        if not isinstance(before, list):
+            raise ValueError("控制器报警列表不可读")
+        self.audit["alarm_reset"] = {"before":before, "attempts":1}
+        await self._write_audit()
+        await check_stationary_controller()
+        await channel.verify_identity()
+        self.audit["alarm_reset"]["reply"] = await channel.call("RecoveryClearError",guard=guard)
+        cleared_at = time.monotonic()
+        deadline = cleared_at+3
+        after_ids = before
+        while True:
+            self._owner_guard()
+            after_ids = json.loads((await channel.call("GetErrorID"))["payload"])
+            self.audit["alarm_reset"]["after"] = after_ids
+            if isinstance(after_ids,list) and empty_alarm_ids(after_ids):
+                try:
+                    packet, recovered = self._packet(side)
+                except ValueError:
+                    pass
+                else:
+                    if tuple(recovered[:2]) != context[:2]:
+                        raise ValueError("清警后反馈身份发生变化")
+                    if packet["robot_mode"] in (4,5) and packet["host_monotonic_s"]>cleared_at:
+                        await check_stationary_controller()
+                        self._set(side,"ALARMS_CLEARED","报警已清除且控制器已静止；确认工作区后再点回位",alarm_ids=[])
+                        return
+            if time.monotonic() >= deadline:
+                raise ValueError(f"清警未通过复核；报警 {after_ids}，请查看控制器")
+            await asyncio.sleep(.15)
+
     async def _run(self, side):
         channel = None
         context = None
         try:
             await self._write_audit()  # Verify local recording before any motion.
             self._owner_guard()
+            if self.clear_only:
+                await self.quiesce(capture=True)
+                channel = await self.acquire(side)
+                self.channel = channel
+                await self._reset_alarms(side,channel)
+                return
             if self.recover_collision:
                 await self.quiesce(capture=False, recover=True)
             else:
@@ -555,6 +638,13 @@ class StartPositions:
                 idle = usable = False
                 blocked = "未连接或反馈无效；先连接双臂只读监控"
             target = self._target(side)
+            clear_only = False
+            try:
+                alarm_packet, _ = self._alarm_packet(side)
+                clear_only = (alarm_packet["robot_mode"] == 9 or alarm_packet.get("error_status") == 1 or
+                              bool(self.states[side].get("alarm_ids")))
+            except (ValueError, KeyError, TypeError):
+                pass
             if target is None:
                 blocked = "尚未保存该臂开始位" if not self.preset_error else "开始位预设无效："+self.preset_error
             if self.load_error:
@@ -570,7 +660,9 @@ class StartPositions:
                           "recovery_required": protected or self.fault_latched,
                           "blocked_reason": "确认工作区安全后点击，将先清除本臂碰撞保护再回位" if protected and not self.busy else blocked,
                           "can_capture": idle and not self.busy and not self.fault_latched,
-                          "can_return": usable and target is not None and not self.busy}
+                          "clear_only":clear_only,
+                          "can_clear_alarms":clear_only and target is not None and not self.busy and not self.fault_latched,
+                          "can_return": usable and target is not None and not self.busy and not clear_only}
         return {"schema": 1, "active_side": self.active_side, "operation_id": self.operation_id,
                 "source": self.source if self.busy else None, "busy": self.busy,
                 "fault_latched": self.fault_latched, "arms": arms, "load_error": self.load_error,

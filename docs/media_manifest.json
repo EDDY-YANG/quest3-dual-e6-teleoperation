@@ -78,5 +78,41 @@
       "bytes": 5740650,
       "processing": "Full-length transcoding; portrait playback copy downscaled to 480px width; original MP4 retained unchanged."
     }
+  },
+  {
+    "video": 6,
+    "file": "assets/videos/demo_06.mp4",
+    "duration_s": 65.340444,
+    "sha256": "244855876759a0fa475434fc0814d70fcdc4d434bab0c8c9b90ad6a28646d6a8",
+    "source_sha256": "68e2f6fa2ff479dd61fecc0ec233deb898c8adb8e5c6a2ef3e2ebee3f51a71a5",
+    "capture_date_provided_by_author": null,
+    "exact_log_alignment": "not established",
+    "modified_video": true,
+    "audio_policy": "removed",
+    "processing": "Audio removed; original H.264 video stream retained",
+    "browser_alternative": {
+      "file": "assets/videos/demo_06.webm",
+      "sha256": "6ed1b05b2dbec80fcc6ce801e21bddd83c688a3d1f0a75764f61e45e35d23ee9",
+      "bytes": 4282336,
+      "processing": "VP9 browser playback; audio policy matches MP4"
+    }
+  },
+  {
+    "video": 7,
+    "file": "assets/videos/demo_07.mp4",
+    "duration_s": 12.066667,
+    "sha256": "6cc03ea01365b0a6f2a070acc6c28c0e8d233219a1cbbf58267332c92644fdd2",
+    "source_sha256": "33152c462e34ae8d1417dae6ea2c7a4c2f8b3f7c0aa22a24fe6353b212053401",
+    "capture_date_provided_by_author": null,
+    "exact_log_alignment": "not established",
+    "modified_video": true,
+    "audio_policy": "preserved",
+    "processing": "HEVC transcoded to H.264 for browser playback; source AAC audio retained",
+    "browser_alternative": {
+      "file": "assets/videos/demo_07.webm",
+      "sha256": "845392b30b4395033f27085e0e150f24ed27dc3a5cf8239173d6dea9a608e0cc",
+      "bytes": 1287708,
+      "processing": "VP9 browser playback; audio policy matches MP4"
+    }
   }
 ]

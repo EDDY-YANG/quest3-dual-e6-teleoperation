@@ -14,8 +14,8 @@
   "files": [
     {
       "path": "headset_bridge.py",
-      "sha256": "f2904271089031182b9771162036a70a812487d535ab260f7b2abda79bf8f0e9",
-      "bytes": 9789
+      "sha256": "fa692051d3d7f68e515c21e6bfd60616771d43044c848d0a5a961237d4ba312e",
+      "bytes": 9961
     },
     {
       "path": "quest_lan.py",
@@ -29,8 +29,8 @@
     },
     {
       "path": "server.py",
-      "sha256": "38f2c09e13af31744ea6b03ce3eb6ca1ba398c39b8c1ea6ae354d3914d028833",
-      "bytes": 63810
+      "sha256": "03826d1750c83a1687ad98cc66087af626ef75989ee8c0d3faea75d35f97487c",
+      "bytes": 67833
     },
     {
       "path": "web_assets.py",

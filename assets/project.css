@@ -7,3 +7,6 @@
 .workspace-export{display:block;width:100%;height:auto;background:#edf1f5;border:1px solid var(--line);border-radius:6px}
 
 .video-rights{font-size:12px;line-height:1.7;color:var(--muted);padding:12px 15px;margin:-7px 0 22px;border-left:2px solid #bac7d3;background:#f7f9fb}.video-rights strong{color:var(--ink);font-weight:600}
+
+.grasp-pair{grid-template-columns:1.7fr 1fr}.grasp-pair video{height:360px;width:100%;object-fit:contain;aspect-ratio:auto}@media(max-width:760px){.grasp-pair{grid-template-columns:1fr}.grasp-pair video{height:auto;max-height:420px}}
+.grasp-pair figcaption em{display:block;margin:3px 0 7px}.grasp-pair figcaption{font-size:13px}

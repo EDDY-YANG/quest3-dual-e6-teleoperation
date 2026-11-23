@@ -54,24 +54,24 @@ def inspect_video(path: Path, *, decode: bool = False) -> dict:
     except ImportError as exc:
         raise RuntimeError("Install tools/requirements-media.txt to validate media.") from exc
     with av.open(str(path)) as container:
-        if len(container.streams.video) != 1 or len(container.streams.audio) != 1:
-            raise ValueError(f"Expected one video and one audio stream: {path.name}")
+        if len(container.streams.video) != 1 or len(container.streams.audio) > 1:
+            raise ValueError(f"Expected one video and at most one audio stream: {path.name}")
         video = container.streams.video[0]
-        audio = container.streams.audio[0]
+        audio = container.streams.audio[0] if container.streams.audio else None
         video.codec_context.thread_count = 2
-        audio.codec_context.thread_count = 1
+        if audio: audio.codec_context.thread_count = 1
         result = {
             "duration_s": container.duration / av.time_base,
             "width": video.codec_context.width,
             "height": video.codec_context.height,
             "video_codec": video.codec_context.name,
-            "audio_codec": audio.codec_context.name,
+            "audio_codec": audio.codec_context.name if audio else None,
         }
         if decode:
             video_frames = audio_samples = 0
             audio_nonzero = False
             first_video_s = last_video_s = None
-            for frame in container.decode(video, audio):
+            for frame in container.decode(*([video,audio] if audio else [video])):
                 if isinstance(frame, av.VideoFrame):
                     video_frames += 1
                     timestamp = float(frame.pts * frame.time_base)
@@ -87,7 +87,7 @@ def inspect_video(path: Path, *, decode: bool = False) -> dict:
                     audio_nonzero |= any(
                         any(bytes(plane)[:sample_bytes]) for plane in frame.planes
                     )
-            if not video_frames or not audio_samples or not audio_nonzero:
+            if not video_frames or (audio and (not audio_samples or not audio_nonzero)):
                 raise ValueError(f"Missing decoded video or nonzero audio: {path.name}")
             result.update(
                 decoded_video_frames=video_frames,
@@ -101,11 +101,11 @@ def inspect_video(path: Path, *, decode: bool = False) -> dict:
 
 def validate_webm(path: Path, source: dict) -> dict:
     result = inspect_video(path, decode=True)
-    if result["video_codec"] != "vp9" or result["audio_codec"] != "opus":
+    if result["video_codec"] != "vp9" or result["audio_codec"] != ("opus" if source["audio_codec"] else None):
         raise ValueError(f"Expected VP9/Opus: {path.name}")
     if abs(result["duration_s"] - source["duration_s"]) > 0.2:
         raise ValueError(f"Duration changed by more than 0.2 seconds: {path.name}")
-    expected_width = 480 if source["height"] > source["width"] else source["width"]
+    expected_width = min(480,source["width"]) if source["height"] > source["width"] else source["width"]
     if result["width"] != expected_width or result["height"] % 2:
         raise ValueError(f"Unexpected dimensions: {path.name}")
     # All source clips here are about 30 fps. A full decode must reach the end.
@@ -133,17 +133,18 @@ def encode_one(entry: dict, ffmpeg: str, force: bool) -> dict:
         try:
             command = [
                 ffmpeg, "-nostdin", "-hide_banner", "-loglevel", "error", "-y",
-                "-i", str(original), "-map", "0:v:0", "-map", "0:a:0",
+                "-i", str(original), "-map", "0:v:0",
                 "-map_metadata", "-1",
             ]
-            if source["height"] > source["width"]:
+            if source["height"] > source["width"] and source["width"] > 480:
                 command += ["-vf", "scale=480:-2"]
             command += [
                 "-c:v", "libvpx-vp9", "-crf", "33", "-b:v", "0",
                 "-cpu-used", "4", "-row-mt", "1", "-threads", "2",
                 "-pix_fmt", "yuv420p", "-fps_mode", "passthrough",
-                "-c:a", "libopus", "-b:a", "96k", str(temporary),
             ]
+            command += ["-map","0:a:0","-c:a","libopus","-b:a","96k"] if source["audio_codec"] else ["-an"]
+            command.append(str(temporary))
             subprocess.run(command, check=True, capture_output=True, text=True)
             result = validate_webm(temporary, source)
             if sha256(original) != entry["sha256"]:

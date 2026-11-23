@@ -12,7 +12,7 @@ def main():
     sub=cli.add_subparsers(dest="action",required=True)
     for name in ("ports","init","check"):
         sub.add_parser(name)
-    for name in ("identify","jog"):
+    for name in ("identify","adc","jog"):
         p=sub.add_parser(name)
         p.add_argument("--side",choices=["left","right"],required=True)
         p.add_argument("--port",required=True)
@@ -50,6 +50,12 @@ def main():
         try:
             wire.identify();print("Confirmed E6G1",args.side,"; servo output off.")
             if args.action=="identify":return
+            if args.action=="adc":
+                port.write(b"ADC?\n")
+                raw=port.readline().decode("ascii",errors="replace").split()
+                if len(raw)!=2 or raw[0]!="ADC" or not raw[1].isdigit() or int(raw[1])>1023:
+                    raise OSError("This board did not return a calibrated-input ADC reading")
+                print("Raw feedback ADC",raw[1]);return
             cfg=PortSettings(args.port,args.limit_us,args.start_us,args.slew_us_s)
             target=args.start_us;direction=1 if args.limit_us>args.start_us else -1
             lower,upper=sorted((args.start_us,args.limit_us))

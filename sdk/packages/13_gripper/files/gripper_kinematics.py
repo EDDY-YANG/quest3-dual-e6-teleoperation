@@ -33,6 +33,14 @@ class ParallelJaw:
             if self._slide(mid)[2] < opening*self.travel:lo=mid
             else:hi=mid
         crank=0.0 if opening==0 else self.swing if opening==1 else (lo+hi)/2
+        return self._pose_at_crank(crank)
+
+    def pose_at_crank_fraction(self, fraction):
+        if not finite_unit(fraction):
+            raise ValueError("crank fraction must be finite and between 0 and 1")
+        return self._pose_at_crank(self.swing*fraction)
+
+    def _pose_at_crank(self, crank):
         cx,cy,slide=self._slide(crank)
         angle=math.atan2(self.sy-cy,self.sx-slide-cx)-self.rod_rest
         angle=math.atan2(math.sin(angle),math.cos(angle))

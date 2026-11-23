@@ -6,5 +6,5 @@ The original backend remains the sole owner of robot connections and control.
 
 from .client import SDKError, TeleopClient
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = ["SDKError", "TeleopClient", "__version__"]

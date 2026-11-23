@@ -4,6 +4,20 @@
 
 ## 下载后先看哪里
 
+### 本机独立夹爪的松手和可选位置 PI
+
+独立模式处理中，食指读数降至 0.02 或以下时立即请求标定的全开脉宽，超过 0.05 后恢复比例目标。行程中段沿用原来的线性脉宽映射。驱动只保留最新有效目标；全开无需等待闭合到位。STOP、断连、跟踪失效或 E6 保护优先撤销输出。需要重新操作时，先恢复故障，再显式启用。夹爪释放与 E6 回开始位是两项独立操作。
+
+三线舵机的默认配置使用直接脉宽。可选的比例积分（PI）外环需要一个能测出夹指实际行程的传感器。当前实现支持线性模拟位置反馈。校准时分别记录两端的实测指尖间距和 ADC 读数，方向可反。读数应位于 ADC 两个电源轨之间，传感器接口应使断线有可识别的电平。单通道模拟量无法识别仍落在有效量程内的所有故障。
+
+接入传感器时，在 Uno 草图已有的板型、侧别、D2、脉宽端点编译参数上增加 `-DGRIPPER_FEEDBACK_PIN=A0`（仅当现场接 A0）。用 `python -m gripper_bench adc --side right --port COM_PORT` 可在 SDK 已停止、舵机输出关闭的台架上读取原始码。默认固件不会读取未接的模拟脚。
+
+设置位于 `runtime/grippers.local.json` 对应侧的 `position_pi` 对象。省略此项或设 `{"enabled":false}` 即使用原驱动。启用时填写 `enabled=true`、`closed_adc`、`open_adc`、`closed_gap_mm`、`open_gap_mm`、`kp_us`、`ki_us_s`、`max_trim_us`。ADC 与间距来自实测。增益按满行程归一化误差计算，单位分别为 µs 和 µs/s。先用 `ki_us_s=0` 验证修正方向，再针对小的稳态残差调积分。保留 `independent_trigger=true`、`slew_us_s=0`。
+
+Uno 大约每 20 ms 读取位置，在原前馈上加有界修正，指令到来时立即更新目标。积分采用抗饱和，反向误差、全开/全闭、停机均清除积累。全开和全闭直接使用现场标定端点。回执分别报告接受的基准脉宽、实际写入的脉宽和实测 ADC；PC 换算毫米并检查新鲜度。传感器越界或指令超时会停止脉冲。接触物体时没有力反馈，PI 不能充当夹持力控制器。
+
+### 启动 SDK
+
 1. Windows x64 安装 Python 3.10 和 VS Code，完整解压后双击 `OPEN_IN_VSCODE.cmd`。在工作区根目录的 PowerShell 启动服务：
    ```powershell
    powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\sdk.ps1 start -NoBrowser

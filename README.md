@@ -6,7 +6,7 @@ An inspectable VR-to-robot control stack, from first motion to a calibrated bima
 
 [![Download SDK · Windows x64](assets/download-sdk.svg)](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/releases/latest/download/quest-e6-sdk-windows-x64.zip)
 
-[SDK source](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/tree/main/sdk) · [Grippers](docs/GRIPPER.md) · [Changelog](CHANGELOG.md) · [Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development) · [Repository guide](docs/REPOSITORY.md)
+[SDK source](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/tree/main/sdk) · [Grippers](docs/GRIPPER.md) · [Changelog](CHANGELOG.md) · [Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations) · [Repository guide](docs/REPOSITORY.md)
 
 This repository contains the project showcase, documentation and historical-log analysis. The Release ZIP includes all thirteen editable SDK packages and the Windows native solver. Extract it and double-click **OPEN_IN_VSCODE.cmd** on a Windows x64 PC with Python 3.10 and desktop VS Code.
 
@@ -37,6 +37,12 @@ This repository contains the project showcase, documentation and historical-log 
 In these selected left-arm records, v7 has lower processed-goal position RMSE and higher median TCP speed than IK + QP. QP nevertheless has smaller accepted-reference error and substantially smaller command steps; the v7 maximum step remains visible in the figure. These are observational trade-offs, not proof of overall superiority or of a deployed hybrid DLS advantage.
 
 Processed goals, accepted references and raw hand intent are distinct. Command step size measures output continuity, not physical vibration. [Definitions and exclusions](analysis/methods.md) · [Summary CSV](analysis/results_v4/stage_metrics.csv) · [Per-record CSV](analysis/results_v4/per_record_metrics.csv).
+
+**Single-arm manipulation** — Right-hand control of the E6 and gripper. [Watch both demonstrations](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations).
+
+<p><a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations"><img src="assets/videos/poster_06.jpg" width="58%" alt="Screwdriver, PLA part and metal spoon manipulation"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations"><img src="assets/videos/poster_07.jpg" width="28%" alt="M6 nut pickup"></a></p>
+
+Everyday objects — 65.3 s, audio removed. M6 nut pickup — 12.1 s, source audio retained. [Gripper code and setup changes](docs/GRIPPER_UPDATE.md). Videos and posters require written permission for reuse. [Video terms](assets/videos/VIDEO_RIGHTS.md).
 
 **Development footage** — dates supplied by the author; exact clip-to-log alignment has not been established.
 

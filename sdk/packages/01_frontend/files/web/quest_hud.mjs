@@ -4,6 +4,7 @@ import {E6SideModels, SIDE_MODEL_WIDTH, SIDE_MODEL_HEIGHT, preloadE6Assets} from
 export const preloadRobotVisual = preloadE6Assets;
 import {TrackingAnnouncer, trackingWarningView} from "./tracking_warning.mjs";
 import {startPositionView} from "./start_positions.mjs";
+import {TriggerOwnership} from "./gripper_ui_input.mjs";
 export const HUD_WIDTH = 1280, HUD_HEIGHT = 800;
 const BUTTONS = [
   {id: "prepare", label: "连接 / 重检", x: 36, y: 658, w: 244, h: 76},
@@ -20,12 +21,13 @@ const HOME_BUTTONS = [
 const CALIBRATION_BUTTONS = [
   {id:"calibration_select_left",label:"左臂/左手",x:780,y:132,w:200,h:56},
   {id:"calibration_select_right",label:"右臂/右手",x:998,y:132,w:200,h:56},
-  {id:"calibration_record_forward",label:"一键记录操作者前方",x:54,y:282,w:690,h:64},
-  {id: "calibration_begin", label: "1 开始记录X", x: 54, y: 480, w: 555, h: 66},
-  {id: "calibration_capture_x", label: "2 完成X标定 · 自动应用", x: 633, y: 480, w: 555, h: 66},
-  {id: "calibration_cancel", label: "取消采集", x: 54, y: 564, w: 220, h: 54},
-  {id: "calibration_clear", label: "清除标定", x: 294, y: 564, w: 220, h: 54},
-  {id: "voice_toggle", label: "语音提示", x: 784, y: 564, w: 404, h: 54},
+  {id:"calibration_record_forward",label:"一键记录操作者前方",x:54,y:254,w:690,h:54},
+  {id:"gripper_power",label:"独立夹爪",x:780,y:254,w:408,h:54},
+  {id: "calibration_begin", label: "1 开始记录X", x: 54, y: 393, w: 555, h: 56},
+  {id: "calibration_capture_x", label: "2 完成X标定 · 自动应用", x: 633, y: 393, w: 555, h: 56},
+  {id: "calibration_cancel", label: "取消采集", x: 54, y: 460, w: 220, h: 54},
+  {id: "calibration_clear", label: "清除标定", x: 294, y: 460, w: 220, h: 54},
+  {id: "voice_toggle", label: "语音提示", x: 784, y: 460, w: 404, h: 54},
 ];
 const REASONS = {
   LEFT_GRIP_ANCHORED_WORLD_POSE_1_TO_1: "位移与转角按本次握持起点1:1保持目标；倾角≤45°，松Grip暂停",
@@ -95,8 +97,13 @@ export function rayToPanel(origin, ray, panel, pixelWidth = HUD_WIDTH, pixelHeig
 }
 
 export function buttonAt(x, y, calibrationOpen = false) {
-  return [...BUTTONS, ...(calibrationOpen ? CALIBRATION_BUTTONS : HOME_BUTTONS)].find(b =>
+  return [...BUTTONS, ...HOME_BUTTONS, ...(calibrationOpen ? CALIBRATION_BUTTONS : [])].find(b =>
     x >= b.x && x <= b.x + b.w && y >= b.y && y <= b.y + b.h)?.id || null;
+}
+
+function singleRightGripper(state) {
+  return state?.teleop_side === "right" && state.grippers?.arms?.right?.independent_trigger === true &&
+    !state.group?.connected_sides?.includes("left");
 }
 
 export function hudView(remote, receivedAt, client, now) {
@@ -151,7 +158,7 @@ export function hudView(remote, receivedAt, client, now) {
   const connected = client.linkState === "CONNECTED" && fresh;
   const teleopSide = (remote?.teleop_side || control.side) === "right" ? "right" : "left";
   const handName = teleopSide === "right" ? "右" : "左";
-  const calibrationSide = client.calibrationSide || teleopSide;
+  const calibrationSide = singleRightGripper(remote) ? "right" : client.calibrationSide || teleopSide;
   const selectionMatches = Boolean(group) || calibrationSide === teleopSide;
   const activeGripHeld = teleopSide === "right" ? client.rightGripHeld : client.gripHeld;
   const controlCalibration = calibrationView(control, capabilities, connected);
@@ -246,15 +253,16 @@ export function hudView(remote, receivedAt, client, now) {
       `${handName}手 · Grip ${rawGrip.toFixed(2)} ${activeGripHeld ? "握持" : rawGrip > 0.2 ? "请全松" : "释放"}` :
       `${handName}手有效 · Grip ${activeGripHeld ? "握持" : "释放"}`) : `${handName}手追踪 / AR焦点无效`,
     allowed: {prepare: allowed("prepare"), arm: allowed("arm"),
-      return_left_start: allowed("return_left_start") && client.visibility === "visible" && client.gripHeld !== true,
-      return_right_start: allowed("return_right_start") && client.visibility === "visible" && client.rightGripHeld !== true,
+      return_left_start: allowed(homes.arms.left.clear_only?"clear_left_alarms":"return_left_start") && client.visibility === "visible" && client.gripHeld !== true,
+      return_right_start: allowed(homes.arms.right.clear_only?"clear_right_alarms":"return_right_start") && client.visibility === "visible" && client.rightGripHeld !== true,
       ...Object.fromEntries(Object.entries(calibration.allowed).map(([key, permitted]) => [key,
         permitted && !client.busy && (["calibration_cancel", "calibration_clear"].includes(key) ||
           (client.visibility === "visible" && inputFresh &&
            (calibrationSide==="left" ? client.leftTracking===true && client.gripHeld!==true : client.rightTracking===true && client.rightGripHeld!==true)))])),
-      calibration_select_left: !client.busy && !groupBusy && !control.armed && !["ARMING","STOPPING"].includes(state) && !homes.busy,
+      calibration_select_left: !singleRightGripper(remote) && !client.busy && !groupBusy && !control.armed && !["ARMING","STOPPING"].includes(state) && !homes.busy,
       calibration_select_right: !client.busy && !groupBusy && !control.armed && !["ARMING","STOPPING"].includes(state) && !homes.busy,
       calibration_panel: true,
+      gripper_power: allowed(`gripper_${remote?.grippers?.arms?.[calibrationSide]?.independent_enabled ? "disable" : "enable"}_${calibrationSide}`),
       // Stop is still requestable when telemetry is stale, if the WSS link exists.
       stop: client.linkState === "CONNECTED", recenter: true, exit: true},
     actual: robot.valid ? robot.position_mm : null,
@@ -275,24 +283,42 @@ export class HeadsetHUD {
     this._modelDirty = true; this.calibrationOpen = false;
     this.announcer = new TrackingAnnouncer();
     this.remote = null; this.receivedAt = -Infinity;
+    this.singleRightArm = false;
     this.client = {linkState: "DISCONNECTED", visibility: "hidden", calibrationSide:null};
-    this.panel = null; this.trigger = {}; this.stick = {};
+    this.panel = null; this.triggerOwnership = new TriggerOwnership(); this.stick = {};
     this.hover = null; this.history = []; this.lastPaint = -Infinity;
   }
 
   acceptState(state, now = performance.now()) {
     if (state?.type !== "teleop_status" || state.schema !== 1) return;
     this.remote = state; this.receivedAt = now;
+    const arms = state.grippers?.arms;
+    if (arms) {
+      for (const side of ["left","right"])
+        this.triggerOwnership.setDedicated(side, arms[side]?.independent_trigger === true);
+      this.singleRightArm = singleRightGripper(state);
+      if (this.singleRightArm) this.client.calibrationSide = "right";
+    }
     const z = state.robot?.valid ? state.robot.position_mm?.[2] : null;
     if (finite(z)) this.history.push({z, target: state.control?.target?.pose_mm_deg?.[2]});
     if (this.history.length > 150) this.history.shift();
   }
 
   setClient(client) { this.client = {...this.client, ...client}; }
-  resetInteraction() { this.trigger = {}; this.stick = {}; }
+  resetInteraction() { this.triggerOwnership.reset(); this.stick = {}; }
 
   actionMessage(action, id) {
     const side=this.client.calibrationSide || this.remote?.teleop_side || "left";
+    if (action.startsWith("return_")) {
+      const selected = action.split("_")[1];
+      if (this.remote?.start_positions?.arms?.[selected]?.clear_only)
+        return {type:"control_action",id,action:`clear_${selected}_alarms`};
+    }
+    if (action==="gripper_power") {
+      const selected = side==="right" ? "right" : "left";
+      const on = this.remote?.grippers?.arms?.[selected]?.independent_enabled;
+      return {type:"control_action",id,action:`gripper_${on?"disable":"enable"}_${selected}`};
+    }
     if (action.startsWith("calibration_")) return calibrationMessage(action, id, side);
     return ["prepare", "arm", "stop", "return_left_start", "return_right_start"].includes(action) ?
       {type: "control_action", id, action,...(["prepare","arm"].includes(action)?{side:this.remote?.group?"auto":side}:{})} : null;
@@ -326,35 +352,36 @@ export class HeadsetHUD {
     view.allowed.voice_toggle = this.announcer.supported && this.announcer.status !== "UNAVAILABLE";
     for (const side of ["left", "right"]) {
       if (!hands[side]?.pose || hands[side].pose.emulated_position || this.client.visibility !== "visible") {
-        delete this.trigger[side]; delete this.stick[side];
+        delete this.stick[side];
       }
     }
     for (const source of frame.session.inputSources) {
       const side = source.handedness, hand = hands[side], gp = source.gamepad;
-      if (!hand?.is_controller || !hand.pose || hand.pose.emulated_position ||
+      if (!hand?.is_controller || hand.tracking_valid === false || !hand.pose || hand.pose.emulated_position ||
           this.client.visibility !== "visible" || !source.targetRaySpace) continue;
       const pose = frame.getPose(source.targetRaySpace, reference);
       if (!pose) continue;
       const p = pose.transform.position, q = pose.transform.orientation;
       const origin = [p.x, p.y, p.z], ray = direction([q.x, q.y, q.z, q.w]);
       const hit = rayToPanel(origin, ray, this.panel);
-      const pressed = Boolean(gp?.buttons?.[0]?.pressed || gp?.buttons?.[0]?.value >= 0.7);
       const stick = Boolean(gp?.buttons?.[3]?.pressed);
-      if (!pressed) this.trigger[side] = false;
       if (stick && this.stick[side] === false) this.recenter(viewer.transform);
       this.stick[side] = stick;
       const id = hit ? buttonAt(hit.x, hit.y, this.calibrationOpen) : null;
+      const trigger = gp?.buttons?.[0];
+      // Touch Plus xr-standard button 4 is A on the right and X on the left.
+      const claim = this.triggerOwnership.sample(side, trigger?.value, {hit:Boolean(hit),button:id},
+        trigger?.pressed, gp?.buttons?.[4]?.pressed ?? null);
       if (id) hover = id;
-      if (pressed && this.trigger[side] === false && id && view.allowed[id] && !this.readOnly) {
+      if (claim.click && (view.allowed[id] || id.startsWith("return_")) && !this.readOnly) {
         if (id === "voice_toggle") this.announcer.toggle();
         else if (id === "calibration_panel") this.calibrationOpen = !this.calibrationOpen;
-        else if (id === "calibration_select_left") this.client.calibrationSide="left";
+        else if (id === "calibration_select_left") { if (!this.singleRightArm) this.client.calibrationSide="left"; }
         else if (id === "calibration_select_right") this.client.calibrationSide="right";
         else if (id === "recenter") this.recenter(viewer.transform);
         else this.onAction(id);
       }
-      if (pressed) this.trigger[side] = true;
-      rays.push({side, origin, end: hit?.point || origin.map((v, i) => v + 0.7 * ray[i]), hit: Boolean(hit)});
+      rays.push({side, origin, end: hit?.point || origin.map((v, i) => v + 0.7 * ray[i]), hit: Boolean(hit), claim});
     }
     this.hover = hover;
     return rays;
@@ -419,20 +446,30 @@ export class HeadsetHUD {
         '左：'+v.homes.arms.left.label+'   |   右：'+v.homes.arms.right.label,38,553,20,'#ffd27a');
     }
     if (this.calibrationOpen) {
-      rounded(24, 114, 1232, 526, "#161e2b");
+      rounded(24, 114, 1232, 415, "#161e2b");
       const hand=v.calibrationSide==="left"?"左":"右";
       text(`方向标定 · ${hand}臂/手柄`, 54, 169, 32, "#ffffff");
       text(v.calibration.label,54,213,25,v.calibration.ready?"#66efbd":"#ffd27a");
-      text(v.calibration.instruction, 54, 256, 23);
+      text(v.calibration.instruction, 54, 242, 22);
       const op=v.calibration.data.operator_frame || {};
-      text(`记录时的${hand}手柄指向作为前方；同一手柄点击即可，另一手可离线。`,54,374,23);
+      text(`记录时的${hand}手柄指向作为前方`,54,333,21);
       const distance=v.calibration.data.live_horizontal_distance_mm ?? v.calibration.data.axis_lengths_mm?.[0];
-      text(`水平X位移 ${valueText(distance,0)} mm / 至少 ${v.calibration.data.min_distance_mm ?? 80} mm · Y/Z自动补齐 · 前方${op.current?"已记录":"未记录"}`,54,412,24);
+      text(`水平X位移 ${valueText(distance,0)} mm / 至少 ${v.calibration.data.min_distance_mm ?? 80} mm · Y/Z自动补齐 · 前方${op.current?"已记录":"未记录"}`,54,358,21);
       const error=v.calibration.data.last_error;
-      text(error?`失败：${String(error).slice(0,50)}`:`操作者+X在该臂基座内 ${valueText(v.calibration.data.operator_forward_yaw_deg,1)}°；Z向上，不随手腕转动。`,54,448,22,error?"#ff8587":"#aabbd1");
+      text(error?`失败：${String(error).slice(0,50)}`:`操作者+X在该臂基座内 ${valueText(v.calibration.data.operator_forward_yaw_deg,1)}°`,54,382,20,error?"#ff8587":"#aabbd1");
     }
-    for (const b of [...BUTTONS, ...(this.calibrationOpen ? CALIBRATION_BUTTONS : HOME_BUTTONS)]) {
-      const enabled = v.allowed[b.id] && !this.readOnly;
+    const activeHome = v.homes.arms[v.teleopSide] || v.homes.arms.right;
+    const notice = now < (this.client.homeNoticeUntil || 0) ? this.client.homeNotice :
+      ["ERROR","FAULT","ALARMS_CLEARED"].includes(activeHome.state) ? activeHome.reason :
+      activeHome.clear_only ? "排除报警原因后点「仅清警」；清除后另点回位。" : null;
+    if (notice) {
+      rounded(24,530,1232,36,"#161e2b");
+      text(String(notice).slice(0,62),38,555,21,"#ffd27a");
+    }
+    for (const b of [...BUTTONS, ...HOME_BUTTONS, ...(this.calibrationOpen ? CALIBRATION_BUTTONS : [])]) {
+      const selectedGripper = v.grippers?.arms?.[v.calibrationSide];
+      if (b.id==="gripper_power" && !selectedGripper?.independent_trigger) continue;
+      const enabled = (v.allowed[b.id] || b.id.startsWith("return_")) && !this.readOnly;
       const fill = b.id === "stop" ? "#9a3542" : b.id === "arm" ? "#226553" : "#273b58";
       rounded(b.x, b.y, b.w, b.h, enabled ? fill : "#1c293d");
       if (this.hover === b.id && enabled) {
@@ -440,9 +477,11 @@ export class HeadsetHUD {
       }
       const label = b.id === "voice_toggle" ? (v.voice.status === "UNAVAILABLE" ? "语音不可用 · 仅文字" :
         !v.voice.supported ? "不支持语音 · 仅文字提示" : `语音提示：${v.voice.enabled ? "开" : "关"}（最多每10秒）`) :
+        b.id === "gripper_power" ? `${selectedGripper.independent_enabled?"停用":"启用"}${v.calibrationSide==="left"?"左":"右"}夹爪 · 独立` :
         b.id === "calibration_record_forward" ? `${b.label}（${v.calibrationSide==="left"?"左":"右"}手）` :
         b.id === "calibration_select_"+v.calibrationSide ? "✓ "+b.label :
-        b.id.startsWith("return_") ? `${b.label} · ${v.homes.speed ?? "—"}%` :
+        b.id.startsWith("return_") ? (v.homes.arms[b.id.split("_")[1]].clear_only ?
+          `${b.label} · 仅清警` : `${b.label} · ${v.homes.speed ?? "—"}%`) :
         b.id === "arm" && v.paused ? "握持 Grip 继续" : b.id === "arm" && v.pausing ? "正在确认暂停" :
         b.id === "prepare" ? (v.group?"重检已连接臂":`连接${v.calibrationSide==="right"?"右":"左"}臂/重检`) :
         b.id === "arm" ? (v.group?"开始遥操作":`开始${v.handName}臂遥操`) :
@@ -452,6 +491,7 @@ export class HeadsetHUD {
         enabled ? "#ffffff" : "#74849b");
     }
     text(this.readOnly ? "PC只读镜像 · 按钮仅在头显内操作" :
+      this.singleRightArm ? "两手食指均可点击　·　右食指夹爪　·　右中指跟随　·　右 A 也可点击" :
       v.dual ? "回位前确认工作区安全；按需清除对应臂碰撞保护再回位 · 日志保留" :
       v.gripAnchoredPosition ? "回位前确认工作区安全；按需清除本臂碰撞保护再回位 · 无需标定" :
       v.fixedWorld ? "基座方向标定后固定 · Grip松开暂停/再握持继续 · STOP结束控制" :

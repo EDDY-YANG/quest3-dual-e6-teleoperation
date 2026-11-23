@@ -16,7 +16,10 @@ HUD_STATUS_MAX_AGE_MS = 1500
 def validate_action(data):
     if not isinstance(data, dict) or set(data) not in ({"type", "id", "action"}, {"type", "id", "action", "side"}):
         raise ValueError("Expected type, id, action and optional arm side")
-    if data["type"] != "control_action" or data["action"] not in ("prepare", "arm", "stop", "return_left_start", "return_right_start"):
+    if data["type"] != "control_action" or data["action"] not in (
+            "prepare", "arm", "stop", "return_left_start", "return_right_start",
+            "gripper_enable_left","gripper_enable_right","gripper_disable_left","gripper_disable_right",
+            "clear_left_alarms","clear_right_alarms"):
         raise ValueError("Unsupported headset action")
     if not isinstance(data["id"], str) or not re.fullmatch(r"[A-Za-z0-9_-]{1,64}", data["id"]):
         raise ValueError("Invalid headset action ID")

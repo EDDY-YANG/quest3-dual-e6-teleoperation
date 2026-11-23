@@ -1,6 +1,6 @@
 # Quest 3 / Dual DOBOT E6 SDK for Windows x64
 
-**v0.2.0 · Yang Taige · The University of Hong Kong · ME capstone project**
+**v0.3.0 · Yang Taige · The University of Hong Kong · ME capstone project**
 
 [双臂夹爪与两块 Uno](GRIPPER.md) · [逐侧空载测试和标定表](BENCH_TEST.md) · [统一资产接口](ASSETS.md) · [更新日志](CHANGELOG.md)
 

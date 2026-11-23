@@ -2,7 +2,7 @@
 
 Copyright (c) 2026 Yang Taige. All rights reserved.
 
-This notice covers the project's five original demonstration recordings, their MP4 and WebM playback versions (`demo_01` through `demo_05`), and the corresponding `poster_01.jpg` through `poster_05.jpg` preview images in this directory. These materials are excluded from the repository's MIT software license in distributions bearing this notice.
+This notice covers the project's seven original demonstration recordings, their MP4 and WebM playback versions (`demo_01` through `demo_07`), and the corresponding `poster_01.jpg` through `poster_07.jpg` preview images in this directory. These materials are excluded from the repository's MIT software license in distributions bearing this notice.
 
 Permission is granted solely to watch the recordings on the original project website, including transient copying required for normal browser playback.
 
