@@ -21,7 +21,8 @@ main{max-width:1080px;margin:auto;padding:32px 28px 70px}h1,h2,h3,h4{line-height
 
 def build_documents(root=ROOT):
     root = Path(root).resolve()
-    sources = [root / 'README.md', root / 'CHANGELOG.md', *(root / 'docs').glob('*.md'), root / 'analysis/methods.md']
+    sources = [root / 'README.md', root / 'CHANGELOG.md', *(root / 'docs').glob('*.md'), root / 'analysis/methods.md',
+               root / 'assets/videos/VIDEO_RIGHTS.md']
     sources = [p for p in sources if p.is_file()]
     known = {p.resolve() for p in sources}
     written = []

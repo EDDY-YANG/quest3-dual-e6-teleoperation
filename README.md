@@ -40,6 +40,8 @@ Processed goals, accepted references and raw hand intent are distinct. Command s
 
 **Development footage** — dates supplied by the author; exact clip-to-log alignment has not been established.
 
+**© 2026 Yang Taige. All rights reserved for the videos and their preview images.** Viewing on the project website only. Downloading, recording, screenshots, reposting, or other reuse requires prior written permission, subject to applicable law and existing permissions. [Video terms](assets/videos/VIDEO_RIGHTS.md).
+
 <p align="center"><a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development"><img src="assets/videos/poster_04.jpg" width="47%" alt="Video 4: VR workflow, 17 Nov 2026"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development"><img src="assets/videos/poster_05.jpg" width="47%" alt="Video 5: VR workflow, 17 Nov 2026"></a> </p>
 
 <p align="center"><a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development"><img src="assets/videos/poster_01.jpg" height="300" alt="Video 1: early field experiment"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development"><img src="assets/videos/poster_02.jpg" height="300" alt="Video 2: early field experiment"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development"><img src="assets/videos/poster_03.jpg" height="300" alt="Video 3: early field experiment"></a> </p>
