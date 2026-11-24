@@ -10,3 +10,4 @@
 
 .grasp-pair{grid-template-columns:1.7fr 1fr}.grasp-pair video{height:360px;width:100%;object-fit:contain;aspect-ratio:auto}@media(max-width:760px){.grasp-pair{grid-template-columns:1fr}.grasp-pair video{height:auto;max-height:420px}}
 .grasp-pair figcaption em{display:block;margin:3px 0 7px}.grasp-pair figcaption{font-size:13px}
+.nov24-pair figcaption{font-size:14px;line-height:1.65}.nov24-pair figcaption b{font-size:16px;font-weight:600}.nov24-pair figcaption em{display:block;margin:4px 0 8px}.video-archive-links{font-size:14px;margin-top:18px}

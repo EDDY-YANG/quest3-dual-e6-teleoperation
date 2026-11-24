@@ -114,5 +114,61 @@
       "bytes": 1287708,
       "processing": "VP9 browser playback; audio policy matches MP4"
     }
+  },
+  {
+    "video": 8,
+    "title": "Dual-arm virtual dexterity: spoon and bowl",
+    "file": "assets/videos/demo_08.mp4",
+    "duration_s": 61.41678,
+    "sha256": "31d9808737fa4740d8ba5c1671b1d05ebc2a132388e43d30af73dca2b0e1af27",
+    "source_sha256": "31d9808737fa4740d8ba5c1671b1d05ebc2a132388e43d30af73dca2b0e1af27",
+    "capture_date_provided_by_author": "2026-11-24",
+    "environment": "virtual simulation",
+    "environment_confirmed_by_author": true,
+    "task_outcome": "Exploratory manipulation demonstration; no quantitative success criterion",
+    "exact_log_alignment": "not established",
+    "modified_video": false,
+    "audio_policy": "preserved",
+    "processing": "Full-length original H.264/AAC MP4 retained byte-for-byte; no cuts or speed changes.",
+    "poster": {
+      "file": "assets/videos/poster_08.jpg",
+      "source_time_s": 50.4,
+      "sha256": "932d64b8ec7ea1320827e515f9a48516ac37dd0cb624222ab7a55578e2f0062b"
+    },
+    "browser_alternative": {
+      "file": "assets/videos/demo_08.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "71af7d63091b463df67d06db4b44f005d248db1455fb6c224c051401e80ec0fa",
+      "bytes": 3033935,
+      "processing": "Full-length VP9/Opus browser fallback; source audio retained."
+    }
+  },
+  {
+    "video": 9,
+    "title": "Single-arm virtual topping: unsuccessful attempt",
+    "file": "assets/videos/demo_09.mp4",
+    "duration_s": 77.484989,
+    "sha256": "b2bc76263572c7f4b8c30e5c5dcd8203395098a89f7b7388a654bb67dcb21b73",
+    "source_sha256": "b2bc76263572c7f4b8c30e5c5dcd8203395098a89f7b7388a654bb67dcb21b73",
+    "capture_date_provided_by_author": "2026-11-24",
+    "environment": "virtual simulation",
+    "environment_confirmed_by_author": true,
+    "task_outcome": "Unsuccessful task attempt, as reported by the author",
+    "exact_log_alignment": "not established",
+    "modified_video": false,
+    "audio_policy": "preserved",
+    "processing": "Full-length original H.264/AAC MP4 retained byte-for-byte; no cuts or speed changes.",
+    "poster": {
+      "file": "assets/videos/poster_09.jpg",
+      "source_time_s": 42.6,
+      "sha256": "118df8970b4920d9e22dc8954f8d2956336bd4c356a36b6e2fd976f47bc1423a"
+    },
+    "browser_alternative": {
+      "file": "assets/videos/demo_09.webm",
+      "codec": "VP9 / Opus",
+      "sha256": "5b62427833ebd5d400c0a747761b535321e522235e08ed2013206d773b0f36d7",
+      "bytes": 2856027,
+      "processing": "Full-length VP9/Opus browser fallback; source audio retained."
+    }
   }
 ]

@@ -1,5 +1,12 @@
 # Changelog
 
+## Website update · 2026-11-24
+
+- Added two full-length virtual-environment recordings dated 24 November: dual-arm spoon-and-bowl dexterity and an unsuccessful single-arm powder-topping attempt onto a cake.
+- Explicitly identified the topping attempt as unsuccessful and kept simulation footage separate from physical-robot evidence and the existing hardware statistics.
+- Preserved all seven earlier videos and their media files. The two new H.264/AAC MP4 files retain the source bytes and audio, with VP9/Opus alternatives and source-frame posters for browser playback.
+- Updated the website, README, video provenance and rights notice to cover all nine recordings. The virtual-lab implementation and the control SDK are not changed by this media update.
+
 ## v0.3.0 · 2026-11-23
 
 - Published two single-arm manipulation clips, including an audio-free everyday-object sequence and an M6 nut pickup.

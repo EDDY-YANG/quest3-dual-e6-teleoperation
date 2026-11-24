@@ -1,5 +1,6 @@
 """Build English README, local HTML and shared-axis charts from real summaries."""
 from pathlib import Path
+import argparse
 import json
 import numpy as np
 import matplotlib
@@ -19,6 +20,9 @@ def fmt(x):
     return 'N/A' if x is None else f'{x:.2f}'
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--skip-performance-figures',action='store_true',help='Rebuild page and documents while retaining unchanged performance images.')
+    args=parser.parse_args()
     data=json.loads((RESULTS/'summary.json').read_text());groups=data['groups']
     assert [g['algorithm'] for g in groups]==['ik','ik_qp','ranged_v7']
     assert all(g['sides']==['left'] for g in groups)
@@ -44,7 +48,8 @@ def main():
         ax.spines[['top','right']].set_visible(False);ax.spines[['left','bottom']].set_color('#b6c2cf');ax.tick_params(color='#b6c2cf')
     fig.subplots_adjust(left=.065,right=.99,top=.84,bottom=.2,wspace=.37)
     fig.text(.065,.025,'Historical left-arm logs | unequal motions and sample sizes | descriptive, not causal improvement',fontsize=9,color='#586779')
-    for ext in ['png','svg']:fig.savefig(ROOT/f'assets/performance.{ext}',dpi=190,facecolor='white')
+    if not args.skip_performance_figures:
+        for ext in ['png','svg']:fig.savefig(ROOT/f'assets/performance.{ext}',dpi=190,facecolor='white')
     plt.close(fig)
     rows=[]
     def row(label,values):rows.append((label,values))
@@ -68,13 +73,17 @@ def main():
     page=(ROOT/'page.template.html').read_text(encoding='utf-8').replace('{{METRICS_TABLE}}',table).replace('{{FINDINGS}}',findings)
     page=page.replace('{{INTERFACES_SECTION}}',(ROOT/'sections/interfaces.html').read_text(encoding='utf-8')).replace('{{REFERENCES_SECTION}}',(ROOT/'sections/references.html').read_text(encoding='utf-8'))
     page = page.replace('{{SDK_DOWNLOAD_URL}}', SDK_DOWNLOAD_URL).replace('{{GRIPPER_SECTION}}', (ROOT/'sections/gripper_demos.html').read_text(encoding='utf-8'))
+    page = page.replace('{{NOV24_SECTION}}', (ROOT/'sections/nov24_demos.html').read_text(encoding='utf-8'))
     (ROOT/'index.html').write_text(page,encoding='utf-8')
     md='# Quest 3–Based Bimanual Teleoperation of DOBOT E6 Robots\n\n**Yang Taige · The University of Hong Kong · ME capstone project**\n\nAn inspectable VR-to-robot control stack, from first motion to a calibrated bimanual workflow.\n\n![System setup](assets/system_setup.png)\n\n*Data links, power relationships and independent hardware E-stops. E6 appearance uses the official visual meshes; the illustrated pose is not a live measurement.*\n\n![Data flow and control architecture](assets/data_flow.png)\n\n*Current online path: RangedIK v7 direct. No deployed RangedIK-to-DLS cascade is established by these logs.*\n\n![Three-method performance comparison](assets/performance.png)\n\n'
     md=md.replace('![System setup]', f'[![Download SDK · Windows x64](assets/download-sdk.svg)]({SDK_DOWNLOAD_URL})\n\n[SDK source](https://github.com/EDDY-YANG/quest3-dual-e6-teleoperation/tree/main/sdk) · [Grippers](docs/GRIPPER.md) · [Changelog](CHANGELOG.md) · [Installation](docs/SDK_INSTALL.md) · [Terminal examples 01–06](docs/SDK_EXAMPLES.md) · [View the project website](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/) · [▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations) · [Repository guide](docs/REPOSITORY.md)\n\nThis repository contains the project showcase, documentation and historical-log analysis. The Release ZIP includes all thirteen editable SDK packages and the Windows native solver. Extract it and double-click **OPEN_IN_VSCODE.cmd** on a Windows x64 PC with Python 3.10 and desktop VS Code.\n\n![System setup]', 1)
     md+='| Metric | 🔵 IK (no QP) | 🟠 IK + QP | 🟣 RangedIK v7 direct |\n|---|---:|---:|---:|\n'
     md+='\n'.join('| '+label+' | '+' | '.join(values)+' |' for label,values in rows)+'\n\n'+findings+'\n\n'
     md+='Processed goals, accepted references and raw hand intent are distinct. Command step size measures output continuity, not physical vibration. [Definitions and exclusions](analysis/methods.md) · [Summary CSV](analysis/results_v4/stage_metrics.csv) · [Per-record CSV](analysis/results_v4/per_record_metrics.csv).\n\n'
-    md+='**Single-arm manipulation** — Right-hand control of the E6 and gripper. [Watch both demonstrations](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations).\n\n<p><a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations"><img src="assets/videos/poster_06.jpg" width="58%" alt="Screwdriver, PLA part and metal spoon manipulation"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations"><img src="assets/videos/poster_07.jpg" width="28%" alt="M6 nut pickup"></a></p>\n\nEveryday objects — 65.3 s, audio removed. M6 nut pickup — 12.1 s, source audio retained. [Gripper code and setup changes](docs/GRIPPER_UPDATE.md). Videos and posters require written permission for reuse. [Video terms](assets/videos/VIDEO_RIGHTS.md).\n\n'
+    md+='**24 November 2026 · Virtual task trials** — Two new recordings, appended to the seven existing videos. [Watch the virtual trials](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#nov24-virtual-trials).\n\n'
+    md+='<p><a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#dual-arm-spoon-bowl"><img src="assets/videos/poster_08.jpg" width="47%" alt="Dual-arm virtual dexterity test with a spoon and bowl"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#single-arm-topping-attempt"><img src="assets/videos/poster_09.jpg" width="47%" alt="Unsuccessful single-arm virtual powder-topping attempt"></a></p>\n\n'
+    md+='- **Dual-arm dexterity: spoon and bowl** — 61.4 s. Exploratory manipulation using both virtual E6 arms.\n- **Single-arm topping simulation — unsuccessful attempt** — 77.5 s. A virtual arm attempts to scoop dry powder and deposit it onto the central cake. The intended task was not completed successfully.\n\nBoth clips are full-length virtual-environment recordings with original audio. They do not establish physical-robot performance and are not time-aligned with the hardware logs. Videos and posters require written permission for reuse. [Video terms](assets/videos/VIDEO_RIGHTS.md).\n\n'
+    md+='**Single-arm manipulation** — Right-hand control of the physical E6 and gripper. [Watch both demonstrations](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations).\n\n<p><a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations"><img src="assets/videos/poster_06.jpg" width="58%" alt="Screwdriver, PLA part and metal spoon manipulation"></a> <a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations"><img src="assets/videos/poster_07.jpg" width="28%" alt="M6 nut pickup"></a></p>\n\nEveryday objects — 65.3 s, audio removed. M6 nut pickup — 12.1 s, source audio retained. [Gripper code and setup changes](docs/GRIPPER_UPDATE.md). Videos and posters require written permission for reuse. [Video terms](assets/videos/VIDEO_RIGHTS.md).\n\n'
     md+='**Development footage** — dates supplied by the author; exact clip-to-log alignment has not been established.\n\n'
     md+='**© 2026 Yang Taige. All rights reserved for the videos and their preview images.** Viewing on the project website only. Downloading, recording, screenshots, reposting, or other reuse requires prior written permission, subject to applicable law and existing permissions. [Video terms](assets/videos/VIDEO_RIGHTS.md).\n\n'
     md+='<p align="center">'+''.join(f'<a href="https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#development"><img src="assets/videos/poster_{n:02d}.jpg" width="47%" alt="Video {n}: VR workflow, 17 Nov 2026"></a> ' for n in [4,5])+'</p>\n\n'
@@ -84,6 +93,7 @@ def main():
     md+='The headset-first workflow supports a single operator: recheck, calibrate, Grip control, Stop and guarded return-to-start. Recovery clears only eligible collision protection; other alarms and hardware stops still require inspection. [Workflow and recovery](docs/HEADSET_WORKFLOW.md).\n\n'
     md+='**Teleoperation frame calibration** — Record each arm’s base +X direction; fixed WebXR up supplies the vertical constraint, and cross products complete a right-handed frame. Fresh Grip anchors map relative hand motion to TCP targets. [Full procedure and equations](docs/CALIBRATION.md).\n\n'
     md+='**Acknowledgments** — We thank the RangedIK authors and the researchers behind damped least-squares IK (DLS). [IEEE references](docs/REFERENCES.md) · [BibTeX](docs/references.bib).\n'
+    md=md.replace('[▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#gripper-demonstrations)', '[▶ Watch videos](https://eddy-yang.github.io/quest3-dual-e6-teleoperation/#nov24-virtual-trials)')
     (ROOT/'README.md').write_text(md,encoding='utf-8')
     from render_docs import build_documents
     build_documents(ROOT)
